@@ -1,0 +1,1 @@
+insert into cuenta values ('0','admin','$2y$12$AZYKKGlj9EQHGaSZOv0mdOrNd/p8wAQXCe6pIizmt0sTn1YUA.7Re','admin','admin@admin','0');

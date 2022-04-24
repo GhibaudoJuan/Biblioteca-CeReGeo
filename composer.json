@@ -1,0 +1,7 @@
+{
+    "require": {
+        "spipu/html2pdf": "^5.1",
+        "tecnickcom/tcpdf": "^6.4",
+        "composer/semver": "^3.3"
+    }
+}
