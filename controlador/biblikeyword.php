@@ -30,7 +30,7 @@ $keywords= autostring("keywords", "descri");
 
 <input type="hidden" value="insert" name="keyword">
 
-<div class="alignr"><button type="submit" class="indexbutton">Agregar</button></div>
+<button type="submit" class="indexbutton">Agregar</button>
 
 
 
