@@ -17,8 +17,6 @@ if (!isset($_SESSION['res'])){
 
 
 
-
-
 <!doctype html>
 <html>
 <head>
@@ -47,7 +45,10 @@ margin-left:25%;
 .w-2, .w-2 >input{
 width:100%!important;
 }
-
+.span-2{
+margin-left:5%;
+max-width:10rem;
+}
 </style>
 
 
@@ -58,9 +59,9 @@ width:100%!important;
 
 	<header class="titulo" ><h2>Nuevo</h2></header>
 	<!-- separado del menu-->
-	<main class="flex">
+	<main style="text-align:center;">
 	
-	<div class="rela div-ejem">
+	<div class="div-ejem">
 	
 				<div style="">
 					<ul class="desplega2" >
@@ -73,28 +74,28 @@ width:100%!important;
 				
 				
 	<!-- Libro -->		
-	<div id="div1" class ="divicion" style="background-color: #FFE6A2;">
+	<div id="div1" class="divicion" >
 	<form action = "../modelo/biblilibroInsert.php" enctype="multipart/form-data" method="post" >
 	<?php include("../controlador/biblilibroInsert.php"); ?>
 	<button type="submit" class="indexbutton">Registrar</button>
 	</form>
 	</div>
 	<!-- Mapa -->
-	<div id="div2" class ="divicion" style="background-color: #FFE6A2;display:none;">
+	<div id="div2" class="divicion"  style="display:none;">
 	<form action = "../modelo/biblimapaInsert.php" enctype="multipart/form-data" method="post" >
 	<?php include("../controlador/biblimapaInsert.php"); ?>
 	<button type="submit" class="indexbutton">Registrar</button>
 	</form>
 	</div>
 	<!-- Revista -->
-	<div id="div3" class ="divicion" style="background-color: #FFE6A2;display:none;">
+	<div id="div3" class="divicion"  style="display:none;">
 	<form action = "../modelo/biblirevistaInsert.php" enctype="multipart/form-data" method="post" >
 	<?php include("../controlador/biblirevistaInsert.php"); ?>
 	<button type="submit" class="indexbutton">Registrar</button>
 	</form>
 	</div>
 	<!-- Final -->
-	<div id="div4" class ="divicion" style="background-color: #FFE6A2;display:none;">
+	<div id="div4" class="divicion"  style="display:none;">
 	<form action = "../modelo/biblittInsert.php"  enctype="multipart/form-data" method="post" >
 	<?php include("../controlador/biblittInsert.php"); ?>
 	<button type="submit" class="indexbutton">Registrar</button>
@@ -103,10 +104,10 @@ width:100%!important;
 		
 	</div>
 	
-	<div class="rela div-ejem">
+	<div class="div-ejem">
 	
-	<div style="width:100%;text-align:center;background-color: #FFFFFF;"><h2>Palabras claves</h2></div>
-	<div style="background-color: #FFE6A2;"><?php include('../controlador/biblikeyword.php');?></div>
+	<div style="width:100%;text-align:center;"><h2>Palabras claves</h2></div>
+	<div><?php include('../controlador/biblikeyword.php');?></div>
 	
 	</div>
 	
@@ -129,6 +130,7 @@ width:100%!important;
 
 
 </html>
+
 
 
 
