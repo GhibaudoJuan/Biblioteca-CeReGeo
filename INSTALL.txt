@@ -1,1 +1,19 @@
 Instalacion
+
+instalacion de apache2:
+
+sudo apt install apache2
+sudo apt install apache2-utils
+sudo ufw enable
+sudo ufw allow 80/tcp comment 'accept Apache'
+sudo ufw allow 443/tcp comment 'accept HTTPS connections'
+
+instalacion de postgres:
+
+sudo apt install postgresql 
+sudo apt install postgresql-contrib
+
+instalacion de php:
+
+sudo apt install php
+sudo apt install php-pgsql
