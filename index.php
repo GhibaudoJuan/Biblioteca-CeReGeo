@@ -105,7 +105,7 @@ if(!isset($_SESSION['res'])){
 </div>
 </div> 
 <!-- Menu -->
-<header class="titulo" ><h2>Nuevo</h2></header>
+<header class="titulo" ><h2>Inicio</h2></header>
 <main>
 
             
