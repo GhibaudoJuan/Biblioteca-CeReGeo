@@ -33,13 +33,11 @@ body, header, footer, main{
 .titulo{
   position:relative;
   top:40px;
-  left:20px;
   background-color: #2957ba;
   font-size: 20px;
   color: white;
-  width: 250px;
   text-indent: 50px;
- 
+  text-align:center;
 }
 
 
@@ -509,7 +507,7 @@ background-color: #1C43B9;
 }
 
 .top-20{
-	top:2rem;
+	top:5rem;
 	
 }
 .right-20{

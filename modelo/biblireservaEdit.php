@@ -36,7 +36,7 @@ $array=$_POST;
 
 $_SESSION['res']=$res;
 
-header('location:../vista/biblireserva.php?pag=1');
+header('location:../vista/biblireserva.php');
             
 
 

@@ -37,7 +37,10 @@ var table = $('#tabla').DataTable();
 		var data = table.row('.selected').data();
         editar(data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7]);
     } );
-
+	$('#botonpres').click( function () {
+		var data = table.row('.selected').data();
+        pasarprestamo(data[1],data[2],data[4]);
+    } );
 
 
 
@@ -107,6 +110,18 @@ function editar(a,b,c,d,f,g,h,i){
 	
 	}	
 }
+function pasarprestamo(a,b,c){
+	
+	if(document.getElementById("pasarprestamonom"))
+			document.getElementById("pasarprestamonom").value =a;
+	if(document.getElementById("idprestamo"))
+		document.getElementById("idprestamo").value =b;
+	if(document.getElementById("ejemprestamo"))
+		document.getElementById("ejemprestamo").value =c;
+
+}
+
+
 //funcion para intercalar entre mostrar y ocultar
 function mostrarocultar(a){
 	if(document.getElementById( a.id  ).style.display=="block")
@@ -244,6 +259,8 @@ function ocultar(){
 		document.getElementById("prestamo").style.display ="none";
 	if(document.getElementById("buscar"))
 		document.getElementById("buscar").style.display ="none";
+	if(document.getElementById("nuevo"))
+		document.getElementById("nuevo").style.display ="none";
 	if(document.getElementById("borrar"))
 		document.getElementById("borrar").style.display ="none";
 	if(document.getElementById("actualizar"))

@@ -30,7 +30,7 @@ $nombre= autostringn("select nombre from cuenta union select nombre from reserva
 <?php endif;?>
 <div class="flex">
 <div class="span-2 ajuste"><label for="fr">Retiro</label></div>
-<div class="ajuste w-2"><input id ="fr" type='date' name="fecha" class="index"  required></div>
+<div class="ajuste w-2"><input id="fr" type='date' name="fecha" class="index"  required></div>
 </div>
 
 <input type='hidden' name ='activo'value='True'>

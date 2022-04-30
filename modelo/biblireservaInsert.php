@@ -42,6 +42,6 @@ if($res)
 //guardo el resultado
 $_SESSION['res']=$res;
 //redirigo
-header('location:../vista/bibliReserva.php?pag=1');
+header('location:../vista/bibliReserva.php');
 
 ?>

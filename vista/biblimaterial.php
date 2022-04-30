@@ -111,7 +111,7 @@ $_SESSION['atras']= '../vista/biblimaterial.php?pag='.$_GET['pag'];
 	
 	
 	<!-- Buscar -->
-	<div class="abso" style="top:-50px;right:0;">
+	<div class="abso" style="top:0;right:0;">
 	<?php include("../controlador/biblimaterialBuscar.php"); ?>
 	</div>
     <!-- Buscar -->

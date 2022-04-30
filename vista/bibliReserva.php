@@ -71,7 +71,7 @@ $retorno='reserva';
 
 
 
-	 <header class="titulo" ><h2>Reserva</h2></header>
+	<header class="titulo"><h2>Reserva</h2></header>
 	<main class="flex">
 	
 	<!-- Tabla -->
@@ -81,25 +81,25 @@ $retorno='reserva';
 	</div>
 	
 	<div class="ajuste r-3 m-1">
-	
+	<?php if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']<'2')):?>
+	<!-- Nuevo -->
+	<a href="#miModal" class="sindec"><button type="submit" id="botonnuevo" class="indexbutton" onclick="mostrar('nuevo')">Nuevo</button> </a>
+	<?php endif;?>
 	<!-- Editar -->	
 		<a href="#miModal" class="sindec"><button type="submit" id="botoneditar" class="indexbutton" onclick="mostrar('actualizar')">Editar</button> </a>
-	<!-- Editar -->	
 	<!-- Borrar -->		
 		<a href="#miModal" class="sindec"><button type="submit" id="botonborrar" class="indexbutton" onclick="mostrar('borrar')">Borrar</button> </a>
 		
-	<!-- Borrar -->		
-		<!-- Borrar Todo -->		
+	<!-- Borrar Todo -->		
 		<a href="#miModal" class="sindec"><button type="submit" class="indexbutton" onclick="mostrar('borrartodo')">Borrar Todo</button> </a>
 		
-	<!-- Borrar Todo-->	
-	 <!-- Pasar a Prestamo -->	
+	
 		<?php if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']<'2')):?>
-		
-		 <a href="#miModal" class="sindec"><button type="submit" class="indexbutton" onclick="mostrar('prestamo')">Prestamo</button> </a>
+		 <!-- Pasar a Prestamo -->	
+		 <a href="#miModal" class="sindec"><button type="submit" id="botonpres" class="indexbutton" onclick="mostrar('prestamo')">Prestamo</button> </a>
 		 
 		<?php endif;?>
-	 <!-- Pasar a Prestamo -->	
+	 
      </div>
   
 	
@@ -119,7 +119,11 @@ $retorno='reserva';
 
 
 <div id="miModal" class="modal">
-  
+   <div class="modal-contenido modal-buscar" id="nuevo" style="display:none;">
+    <a href="#" class="sindec negro"  onclick="ocultar()">X</a>
+    <h2>Nuevo</h2>
+    <?php include("../controlador/biblireservaNuevo.php") ?>
+  </div>  
   <div class="modal-contenido modal-buscar" id="actualizar" style="display:none;">
     <a href="#" class="sindec negro"  onclick="ocultar()">X</a>
     <h2>Editar</h2>

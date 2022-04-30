@@ -39,7 +39,10 @@
 </form>
 
 
+<script>
 
+mindate('frp',0);
+</script>
 </body>
 
 

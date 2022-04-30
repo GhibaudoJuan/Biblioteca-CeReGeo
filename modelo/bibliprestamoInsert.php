@@ -42,6 +42,6 @@ select("update ejemplares set estado='p' where idmaterial='".$material."' and id
    //guardo el resultado
 	$_SESSION['res']=$res;
 	//redirigo
-header('location:../vista/bibliPrestamos.php?pag=1');	
+header('location:../vista/bibliPrestamos.php');	
 
 ?>

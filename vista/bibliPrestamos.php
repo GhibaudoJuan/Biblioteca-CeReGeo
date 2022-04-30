@@ -79,24 +79,23 @@ $retorno = 'prestamo';
 	<?php include("../modelo/bibliprestamoSelect.php"); ?>
 	
 	</div>
-	
+	<?php if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']<'2')):?>
 	<div class="ajuste r-3 m-1">
+	<!-- Nuevo -->
+		<a href="#miModal" class="sindec"><button type="submit" id="botonnuevo" class="indexbutton" onclick="mostrar('nuevo')">Nuevo</button> </a>
 	<!-- Actualizar -->
-		<?php if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']<'2')):?>
 		<a href="#miModal" class="sindec"><button type="submit" id="botoneditar" class="indexbutton" onclick="mostrar('actualizar')">Editar</button> </a>
-	<!-- Actualizar -->	
-		
+			
 	<!-- Borrar -->		
 		<a href="#miModal" class="sindec"><button type="submit" id="botonborrar" class="indexbutton" onclick="mostrar('borrar')">Borrar</button> </a>
 		
-	<!-- Borrar -->		
+		
 	<!-- Borrar Todo -->		
 		<a href="#miModal" class="sindec"><button type="submit" class="indexbutton" onclick="mostrar('borrartodo')">Borrar todo</button> </a>
 		
-	<!-- Borrar Todo-->		
-		<?php endif;?>
-	</div>
 	
+	</div>
+	<?php endif;?>
 	</main>
 
 	<!-- Menu -->
@@ -112,7 +111,11 @@ $retorno = 'prestamo';
 	<?php include("../controlador/vent_error.php");?>
 
 <div id="miModal" class="modal">
-  
+  <div class="modal-contenido modal-buscar" id="nuevo" style="display:none;">
+    <a href="#" class="sindec negro"  onclick="ocultar()">X</a>
+    <h2>Nuevo</h2>
+    <?php include("../controlador/bibliPrestamoEdit.php") ?>
+  </div>  
   
   <div class="modal-contenido modal-buscar" id="actualizar" style="display:none;">
     <a href="#" class="sindec negro"  onclick="ocultar()">X</a>

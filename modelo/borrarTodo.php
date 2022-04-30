@@ -16,9 +16,9 @@ $_SESSION['res']=$res;
 
 switch($retorno){
     case 'prestamo':
-        header('location:../vista/bibliPrestamos.php?pag=1');	  
+        header('location:../vista/bibliPrestamos.php?');	  
     case 'reserva':
-        header('location:../vista/bibliReserva.php?pag=1');	
+        header('location:../vista/bibliReserva.php');	
     default:
         header('location:../vista/biblimaterial.php?pag=1');	
 }

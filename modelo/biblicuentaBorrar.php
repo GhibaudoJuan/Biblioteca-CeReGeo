@@ -23,7 +23,7 @@ $sql = "delete from cuenta where nombreuser='".$user."'";
    //guardo el resultado
 	$_SESSION['res']=$res;
 	//redirigo
-	header('location:../vista/bibliCuenta.php?pag=1');	
+	header('location:../vista/bibliCuenta.php');	
 /*
 }
 else{

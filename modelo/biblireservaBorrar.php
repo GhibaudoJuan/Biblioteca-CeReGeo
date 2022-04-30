@@ -30,6 +30,6 @@ $sql = "delete from reservas where nombre = '". $_SESSION['nombre']. "' and idre
    //guardo el resultado
 	$_SESSION['res']=$res;
 	//redirigo
-header('location:../vista/bibliReserva.php?pag=1');	
+header('location:../vista/bibliReserva.php');	
 
 ?>

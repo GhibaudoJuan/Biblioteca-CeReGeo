@@ -49,7 +49,7 @@ $array=$_POST;
 
 $_SESSION['res']=$res;
 
-header('location:../vista/bibliPrestamos.php?pag=1');
+header('location:../vista/bibliPrestamos.php');
             
 
 
