@@ -114,7 +114,7 @@ $retorno = 'prestamo';
   <div class="modal-contenido modal-buscar" id="nuevo" style="display:none;">
     <a href="#" class="sindec negro"  onclick="ocultar()">X</a>
     <h2>Nuevo</h2>
-    <?php include("../controlador/bibliPrestamoEdit.php") ?>
+    <?php include("../controlador/bibliprestamoNuevo.php") ?>
   </div>  
   
   <div class="modal-contenido modal-buscar" id="actualizar" style="display:none;">

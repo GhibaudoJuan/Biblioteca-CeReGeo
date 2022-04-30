@@ -20,7 +20,7 @@ $nombre1= autostringn("select nombre from cuenta union select nombre from reserv
 <div class="flex">
 <div class="span-2 ajuste"><label for="nombre1">Nombre</label></div>
 <div class="ajuste w-2 autocomplete">
-<input type='text' name="nombre" id="nombre1" class="index" placeholder="Titulo" maxlength="100" required></div>
+<input type='text' name="nombre" id="nombre1" class="index"  maxlength="100" required></div>
 </div>
 
 <div class="flex">
