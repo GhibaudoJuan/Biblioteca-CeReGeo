@@ -1,4 +1,4 @@
-function conftabla(){
+function conftabla(tipo){
 	$(document).ready( function () {
     $('#tabla').DataTable( {
         "language": {
@@ -13,10 +13,10 @@ function conftabla(){
             "info": "Pagina _PAGE_ de _PAGES_",
             "infoEmpty": "Sin filas disponibles"
         },
-    
 	
 	}
 );
+console.log(tipo);
 var table = $('#tabla').DataTable();
  //seleccion y deseleccion
     $('#tabla tbody').on( 'click', 'tr', function () {
@@ -39,7 +39,7 @@ var table = $('#tabla').DataTable();
     } );
 	$('#botonpres').click( function () {
 		var data = table.row('.selected').data();
-        pasarprestamo(data[1],data[2],data[4]);
+        pasarprestamo(data[0],data[1],data[2],data[4]);
     } );
 
 
@@ -111,14 +111,16 @@ function editar(a,b,c,d,f,g,h,i){
 	
 	}	
 }
-function pasarprestamo(a,b,c){
+function pasarprestamo(a,b,c,d){
 	
+	if(document.getElementById("prest"))
+			document.getElementById("prest").value =a;
 	if(document.getElementById("pasarprestamonom"))
-			document.getElementById("pasarprestamonom").value =a;
+			document.getElementById("pasarprestamonom").value =b;
 	if(document.getElementById("idprestamo"))
-		document.getElementById("idprestamo").value =b;
+		document.getElementById("idprestamo").value =c;
 	if(document.getElementById("ejemprestamo"))
-		document.getElementById("ejemprestamo").value =c;
+		document.getElementById("ejemprestamo").value =d;
 
 }
 

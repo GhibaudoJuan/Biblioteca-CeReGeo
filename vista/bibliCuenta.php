@@ -9,17 +9,6 @@ require_once("../accesos/biblifiltrar.php");
 $sql = "select idcuenta, nombreuser, nombre, email, nombrecuenta from cuenta c inner join tipocuenta t on (c.tipo=t.id) ";
 
 
-if(isset($_POST)){
-   
-    $array= $_POST;
-    //concatenacion
-    
-    
-    $sql.=armarWhere($array);
-}
-
-
-
 $_SESSION['sql'] = $sql;
 
 

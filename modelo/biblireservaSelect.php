@@ -15,6 +15,7 @@ $columnas= array (
     '5'=>'ejemplar',
     '6'=>'fecha',
     '7'=>'activo',
+
   
     
 );
@@ -32,6 +33,7 @@ $tabla="<table id='tabla' class='display tabth' style='width:100%'>
 <th>Ejemplar</th>
 <th>Retiro</th>
 <th>Estado</th>
+
 </thead>
 <tbody>";
 $tabla.=tabladata($resultado, $columnas);

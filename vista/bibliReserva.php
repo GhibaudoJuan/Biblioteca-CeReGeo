@@ -6,39 +6,15 @@ require_once("../accesos/biblifiltrar.php");
 
 
     //select de bibliotecario
-    $sql = "select idres, nombre, material, titulo, ejemplar, fecha,(CASE WHEN activo ='True' THEN 'Activo' ELSE 'Cerrado' END ) as activo  
+    $sql = "select idres, nombre, material, titulo, ejemplar, fecha,(CASE WHEN activo ='True' THEN 'Activo' ELSE 'Cerrado' END ) as activo
             from reservas re inner join material ma on (ma.idmat= re.material) ";
-    if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']<'2')){
-        
-        
-        
-        if(isset($_POST)){
-            
-            $array= $_POST;
-            //concatenacion
-            
-         
-                $where=armarWherereserva($array, true);
-             
-        }
-    }
-    else{
+    if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']>'1')){
+      
 //select de estudiante
     $where= " where nombre = '". $_SESSION['nombre'] ."'";
-
-
-    if(isset($_POST)){
-    
-    $array= $_POST;
-    //concatenacion
-    
-    
-     $where.=armarWherereserva($array, false);
-    }
-   }
     $sql.=$where;
     
-
+    }
 
 
 
@@ -149,7 +125,7 @@ $retorno='reserva';
 
 
 <script type="text/javascript">
-conftabla();
+conftabla(<?php echo $_SESSION['tipouser'];?>);
 </script>
 </body>
 

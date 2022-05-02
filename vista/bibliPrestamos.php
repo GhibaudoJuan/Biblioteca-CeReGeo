@@ -9,42 +9,20 @@ require_once("../accesos/biblifiltrar.php");
     $sql = "select idpre,nombre, titulo,ejemplar, desde, hasta, devuelto, (CASE WHEN activo ='True' THEN 'Activo' ELSE 'Cerrado' END ) as activo
             from prestamos re inner join material ma on (ma.idmat= re.material) ";
     //select de bibliotecarios
-    if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']<'2')){
-       
-        
-        
-        if(isset($_POST)){
-                     
-            $array= $_POST;
-            //concatenacion
-            
-            
-            $where=armarWhereprestamo($array, true);
-        }
-    }
-    else{
-    
+    if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']>'1')){
     
 //select de estudiante
     $where= " where nombre = '". $_SESSION['nombre'] ."'";
-
-
-    if(isset($_POST)){
-
-   
-    $array= $_POST;
-    //concatenacion
-    
-    
-    $where.=armarWhereprestamo($array, false);
+    $sql.=$where;
     }
 
-    }
+    
     
 
 $_SESSION['sql'] = $sql;
 $delete = 'delete from prestamos '.$where.';';
 $retorno = 'prestamo';
+
 ?>
 
 
@@ -93,7 +71,7 @@ $retorno = 'prestamo';
 	<!-- Borrar Todo -->		
 		<a href="#miModal" class="sindec"><button type="submit" class="indexbutton" onclick="mostrar('borrartodo')">Borrar Todo</button> </a>
 	<!-- Devolucion -->	
-		<?php include('../controlador/bibliDevolucion.php');?>
+		<a href="#miModal" class="sindec"><button type="submit" class="indexbutton" onclick="mostrar('prestamo')">Devolucion</button> </a>
 	
 	</div>
 	<?php endif;?>
@@ -134,6 +112,11 @@ $retorno = 'prestamo';
     <h2>Borrar Todo</h2>
     <?php include("../controlador/borrarTodo.php") ?>
   </div> 
+  <div class="modal-contenido modal-buscar" id="prestamo" style="display:none;">
+    <a href="#" class="sindec negro"  onclick="ocultar()">X</a>
+    <h2>Devolucion</h2>
+    <?php include("../controlador/bibliDevolucion.php") ?>
+  </div>  
 </div>
 
 

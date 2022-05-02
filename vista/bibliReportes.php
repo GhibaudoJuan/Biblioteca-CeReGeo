@@ -9,21 +9,6 @@ require_once("../accesos/biblifiltrar.php");
     
     $sql = "select nombre, fecha, descripcion
             from reportes ";
-   
-        
-        
-        
-        if(isset($_POST)){
-                     
-            $array= $_POST;
-            //concatenacion
-            
-            
-            $sql.=armarWherereserva($array, true);
-        }
-   
-    
-    
 
 $_SESSION['sql'] = $sql;
 
