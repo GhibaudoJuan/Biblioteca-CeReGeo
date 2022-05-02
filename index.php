@@ -43,7 +43,7 @@ if(!isset($_SESSION['res'])){
 
 <!-- Menu -->
 	<div class="fondo">  
-	<a href="index.php"><img src="../imagenes/logoceregeo-horizontal.jpg" alt="Logo-GeReGeo" class="logo" height="40px" width="auto"></a>
+	<a href="index.php"><img src="imagenes/logoceregeo-horizontal.jpg" alt="Logo-GeReGeo" class="logo" height="40px" width="auto"></a>
 <ul id="menu0" class="desplega1" >
 	<li><a href="vista/biblimaterial.php?pag=1">Biblioteca</a></li>
 	
