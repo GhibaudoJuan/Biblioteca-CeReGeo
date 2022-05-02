@@ -18,9 +18,9 @@ $nombre1= autostringn("select nombre from cuenta union select nombre from reserv
 <input type='hidden' name="ejemplar" id="presejemplar">
 
 <div class="flex">
-<div class="span-2 ajuste"><label for="nombre1">Nombre</label></div>
+<div class="span-2 ajuste"><label for="nombre2">Nombre</label></div>
 <div class="ajuste w-2 autocomplete">
-<input type='text' name="nombre" id="nombre1" class="index"  maxlength="100" required></div>
+<input type='text' name="nombre" id="nombre2" class="index"  maxlength="100" required></div>
 </div>
 
 <div class="flex">
@@ -43,7 +43,7 @@ $nombre1= autostringn("select nombre from cuenta union select nombre from reserv
 </form>
 
 <script>
-autocomplete(document.getElementById("nombre1"), <?php echo $nombre1;?>);
+autocomplete(document.getElementById("nombre2"), <?php echo $nombre1;?>);
 </script>
 </body>
 

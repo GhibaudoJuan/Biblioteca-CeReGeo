@@ -13,7 +13,7 @@
 <br><br>
 <div class="flex">
 <div class="span-2 ajuste"><label for="nombre1">Nombre</label></div>
-<div class="ajuste w-3"><input type='text' name="nombre" id="nombre1" class="index" required></div>
+<div class="ajuste w-3"><input type='text' name="nombre" id="nombre1"  class="index" required></div>
 </div>
 
 <div class="flex">

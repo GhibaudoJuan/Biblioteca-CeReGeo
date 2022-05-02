@@ -28,11 +28,7 @@ $array=$_POST;
             $a=1;
     }
     
-    if($array['activo'])
-        $act='Activo';
-    else 
-        $act='Cerrado';
-    if($array['cact'] != $act){
+    if($array['cact'] != $array['activo']){
         if($a==1)
             $set.=", ";
         $set.=" activo='".$array['activo']."' ";

@@ -27,9 +27,9 @@ $material=autostring("material","idmat");
 </div>
 
 <div class="flex">
-<div class="span-2 ajuste"><label for="nombre1">Nombre</label></div>
+<div class="span-2 ajuste"><label for="nombre">Nombre</label></div>
 <div class="ajuste w-2 autocomplete">
-<input type='text' name="nombre" id="nombre1" class="index"  maxlength="100" required></div>
+<input type='text' name="nombre" id="nombre" class="index"  maxlength="100" required></div>
 </div>
 
 <div class="flex">
@@ -53,7 +53,7 @@ $material=autostring("material","idmat");
 
 <script>
 mindate('bpid',0);
-autocomplete(document.getElementById("nombre1"), <?php echo $nombre1;?>);
+autocomplete(document.getElementById("nombre"), <?php echo $nombre1;?>);
 autocomplete(document.getElementById("presmaterial"), <?php echo $material;?>);
 </script>
 </body>

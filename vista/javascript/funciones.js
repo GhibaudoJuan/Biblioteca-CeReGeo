@@ -12,10 +12,10 @@ function conftabla(){
             "zeroRecords": "Sin resultados.",
             "info": "Pagina _PAGE_ de _PAGES_",
             "infoEmpty": "Sin filas disponibles"
-        }
+        },
+    
 	
-    } 
-
+	}
 );
 var table = $('#tabla').DataTable();
  //seleccion y deseleccion
@@ -54,6 +54,7 @@ function borrar(a,b){
 		document.getElementById("nombre1").value =b;
 }
 function editar(a,b,c,d,f,g,h,i){
+	//actualizar prestamo
 	if(document.getElementById("pid"))
 		document.getElementById("pid").value =a;
 	if(document.getElementById("pnom"))		

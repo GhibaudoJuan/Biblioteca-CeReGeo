@@ -91,8 +91,9 @@ $retorno = 'prestamo';
 		
 		
 	<!-- Borrar Todo -->		
-		<a href="#miModal" class="sindec"><button type="submit" class="indexbutton" onclick="mostrar('borrartodo')">Borrar todo</button> </a>
-		
+		<a href="#miModal" class="sindec"><button type="submit" class="indexbutton" onclick="mostrar('borrartodo')">Borrar Todo</button> </a>
+	<!-- Devolucion -->	
+		<?php include('../controlador/bibliDevolucion.php');?>
 	
 	</div>
 	<?php endif;?>
