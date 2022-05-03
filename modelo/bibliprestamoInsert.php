@@ -28,15 +28,7 @@ $sql= "insert into prestamos (idpre,nombre, material, ejemplar, desde, hasta, ac
 //inserto
 
 $res= select($sql);
-if(($res)&&(isset($_POST['prest']))){
-    $update="update reservas set activo='false', retirado='true' where idres='".$idpres."' and nombre ='".$nombre."';";
-   $res=select($update);
-   
-}
-if($res){
-    $upd="update ejemplares set estado='p' where idmaterial='".$material."' and idejemplar='".$ejemplar."';" ;
-$res=select($upd);
-}
+
 
    //guardo el resultado
 	$_SESSION['res']=$res;

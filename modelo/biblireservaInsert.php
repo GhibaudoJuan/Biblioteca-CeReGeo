@@ -35,10 +35,6 @@ else
 //inserto
 $res = select($sql);
 
-if($res)
-    select("update ejemplares set estado='r' where idmaterial='".$_POST['material']."' and idejemplar='".$_POST['ejemplar']."';" );
-//echo $res;
-
 //guardo el resultado
 $_SESSION['res']=$res;
 //redirigo
