@@ -17,8 +17,8 @@ function token(){
 }
 // Conectando y seleccionado la base de datos
 function conexionPostgresql(){
-    
-    $dbconn = pg_connect("host=127.0.0.1 dbname=biblioteca user=juan password=juan")
+    include("conectserver.php");
+    $dbconn = pg_connect($conect)
     or die(header('location:../vista/bibliErrorServer.php'));
     
     return $dbconn;
@@ -27,8 +27,8 @@ function conexionPostgresql(){
 }
 
 function conexionPostgresql2(){
-    
-    $dbconn = pg_connect("host=127.0.0.1 dbname=biblioteca user=juan password=juan")
+    include("conectserver.php");
+    $dbconn = pg_connect($conect)
     or die(header('location:vista/bibliErrorServer.php'));
     
     return $dbconn;

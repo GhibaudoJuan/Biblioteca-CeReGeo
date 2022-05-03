@@ -9,7 +9,6 @@ $sql = "select distinct idmat, titulo, descripcion, portada, tipo from material 
 
 
 
-
 if(isset($_POST)){
 
     $array= $_POST;

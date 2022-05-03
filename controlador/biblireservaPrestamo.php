@@ -41,7 +41,7 @@
 
 <script>
 
-mindate('frp',0);
+mindate('frp',premindate);
 </script>
 </body>
 

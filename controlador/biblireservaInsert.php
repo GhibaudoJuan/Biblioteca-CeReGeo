@@ -44,7 +44,7 @@ $nombre= autostringn("select nombre from cuenta union select nombre from reserva
 
 <script>
 autocomplete(document.getElementById("nombre"), <?php echo $nombre;?>);
-mindate('fr',7);
+mindate('fr',resmindate);
 </script>
 </body>
 

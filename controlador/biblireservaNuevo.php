@@ -50,7 +50,7 @@ $material=autostring("material","idmat");
 </form>
 
 <script>
-mindate('frn',7);
+mindate('frn',resmindate);
 autocomplete(document.getElementById("nombre"), <?php echo $nombre;?>);
 autocomplete(document.getElementById("resmaterial"), <?php echo $material;?>);
 

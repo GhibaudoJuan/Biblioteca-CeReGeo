@@ -43,6 +43,7 @@ $nombre1= autostringn("select nombre from cuenta union select nombre from reserv
 </form>
 
 <script>
+mindate('bpid',premindate);
 autocomplete(document.getElementById("nombre2"), <?php echo $nombre1;?>);
 </script>
 </body>

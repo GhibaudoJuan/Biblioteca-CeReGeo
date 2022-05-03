@@ -52,7 +52,7 @@ $material=autostring("material","idmat");
 </form>
 
 <script>
-mindate('bpid',0);
+mindate('bpid',premindate);
 autocomplete(document.getElementById("nombre"), <?php echo $nombre1;?>);
 autocomplete(document.getElementById("presmaterial"), <?php echo $material;?>);
 </script>
