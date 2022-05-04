@@ -71,7 +71,7 @@ $retorno = 'prestamo';
 	<!-- Borrar Todo -->		
 		<a href="#miModal" class="sindec"><button type="submit" class="indexbutton" onclick="mostrar('borrartodo')">Borrar Todo</button> </a>
 	<!-- Devolucion -->	
-		<a href="#miModal" class="sindec"><button type="submit" class="indexbutton" onclick="mostrar('prestamo')">Devolucion</button> </a>
+		<a href="#miModal" class="sindec"><button type="submit" id="botonprestamo" class="indexbutton" onclick="mostrar('prestamo')">Devolucion</button> </a>
 	
 	</div>
 	<?php endif;?>

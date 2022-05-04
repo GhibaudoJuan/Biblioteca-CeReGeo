@@ -8,14 +8,21 @@
 
 <form action = "../modelo/bibliDevolucion.php" method="post" >
 
-<input type='hidden' id="pidd" name ='idpre' >
-<input type='hidden' id="pnomd" name ='pnom' >
-<input type='hidden' id="cdesded" name ='cdesde' >
-<input type='hidden' id="chastad" name ='chasta' >
-<input type='hidden' id="cactd" name ='cact' >
-<input type='hidden' id="cdevueltod" name ='cdevuelto' >
+<input type='hidden' id="bdid" name ='idpre' >
+<input type='hidden' id="bdnom" name ='nombre' >
 
-<button type="submit" class="indexbutton">Devolucion</button>
+
+<div class="flex">
+<div class="span-2 ajuste"><label>Nombre:</label></div>
+<div class="span-2 ajuste"><label id="bdnombre"></label></div>
+</div>
+<div class="flex">
+<div class="span-2 ajuste"><label>Prestamo Num:</label></div>
+<div class="span-2 ajuste"><label id="bdprestamo"></label></div>
+</div>
+
+
+<div class="alignr"><button type="submit" class="indexbutton">Devolucion</button></div>
 
 
 </form>

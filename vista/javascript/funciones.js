@@ -41,7 +41,10 @@ var table = $('#tabla').DataTable();
 		var data = table.row('.selected').data();
         pasarprestamo(data[0],data[1],data[2],data[4]);
     } );
-
+	$('#botonprestamo').click( function () {
+		var data = table.row('.selected').data();
+        devolucion(data[0],data[1]);
+    } );
 
 
 
@@ -122,6 +125,16 @@ function pasarprestamo(a,b,c,d){
 	if(document.getElementById("ejemprestamo"))
 		document.getElementById("ejemprestamo").value =d;
 
+}
+function devolucion(a,b){
+	if(document.getElementById("bdnombre")){
+			document.getElementById("bdnombre").innerHTML =b;
+			document.getElementById("bdnom").value =b;
+	}
+	if(document.getElementById("bdprestamo")){
+			document.getElementById("bdprestamo").innerHTML =a;
+			document.getElementById("bdid").value =a;
+	}
 }
 
 
