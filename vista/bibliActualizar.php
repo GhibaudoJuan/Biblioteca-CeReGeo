@@ -59,8 +59,10 @@ $material= autostring("material", "idmat");
 <?php include("style/biblicss.html"); ?>
 
 <style>
-.index{
- width: 500px;
+.span-2{
+text-align:right;
+margin-right:10rem;
+
 }
 </style>
 
@@ -78,30 +80,30 @@ $material= autostring("material", "idmat");
 	
 	<?php if($array['tipo']=="Libro"):?>				
 	<!-- Libro -->		
-	<div id="div1" class ="divicion" style="background-color: #FFE6A2;">
+	<div id="div1" class ="div-ejem">
 	<form action = "../modelo/bibliactualizar.php" enctype="multipart/form-data" method="post" >
 	<?php include("../controlador/biblilibroInsert.php"); ?>	
 	<?php endif;?>
 	<?php if($array['tipo']=="Mapa"):?>
 	<!-- Mapa -->
-	<div id="div2" class ="divicion" style="background-color: #FFE6A2;">
+	<div id="div2" class ="div-ejem" >
 	<form action = "../modelo/bibliactualizar.php" enctype="multipart/form-data" method="post" >
 	<?php include("../controlador/biblimapaInsert.php"); ?>	
 	<?php endif;?>
 	<?php if($array['tipo']=="Revista"):?>
 	<!-- Revista -->
-	<div id="div3" class ="divicion" style="background-color: #FFE6A2;">
+	<div id="div3" class ="div-ejem" >
 	<form action = "../modelo/bibliactualizar.php" enctype="multipart/form-data" method="post" >
 	<?php include("../controlador/biblirevistaInsert.php"); ?>
 	<?php endif;?>
 	<?php if($array['tipo']=="Final"):?>
 	<!-- Final -->
-	<div id="div4" class ="divicion" style="background-color: #FFE6A2;">
+	<div id="div4" class ="div-ejem">
 	<form action = "../modelo/bibliactualizar.php"  enctype="multipart/form-data" method="post" >
 	<?php include("../controlador/biblittInsert.php"); ?>
 	<?php endif;?>
 	
-	<div class="abso right-20"><button type="submit"  class="indexbutton">Registrar</button></div>
+	<div class="alignr"><button type="submit"  class="indexbutton">Registrar</button></div>
 	</form>
 	</div>
 	
@@ -113,8 +115,8 @@ $material= autostring("material", "idmat");
 
 
         <!-- Boton atras -->
-   		<div  class="abso atras">
-			<form action = <?php  echo $form;?> method="post">
+   		<div  class="abso atras" style="top:6rem!important;">
+			<form action = <?php   echo $form;?> method="post">
 
 			<button type="submit" class="indexbutton">Atras</button>
 

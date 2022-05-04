@@ -23,11 +23,10 @@ body, header, footer, main{
 	display:block;
 }
 .div-ejem{
-	width:40%;
+	width:80%;
 	min-width:25rem;
-	height:auto;
-	left:1rem;
 	padding-right:2rem;
+	
 }
 
 .titulo{

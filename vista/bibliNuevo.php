@@ -27,6 +27,8 @@ if (!isset($_SESSION['res'])){
 <?php include("style/biblicss.html"); ?>
 
 <style>
+
+
 .desplega2 li{
 	
 	
@@ -39,16 +41,13 @@ if (!isset($_SESSION['res'])){
 .desplega2 li:hover {
 	background-color:#577EF6;
 }
-.indexbutton{
-margin-left:25%;
-}
-.w-2, .w-2 >input{
-width:100%!important;
-}
+
 .span-2{
-margin-left:5%;
-max-width:10rem;
+text-align:right;
+margin-right:10rem;
+
 }
+
 </style>
 
 
@@ -59,11 +58,11 @@ max-width:10rem;
 
 	<header class="titulo" ><h2>Nuevo</h2></header>
 	<!-- separado del menu-->
-	<main style="text-align:center;">
+	<main> 
 	
 	<div class="div-ejem">
 	
-				<div style="">
+				<div style="text-align:center;">
 					<ul class="desplega2" >
 						<li id="li1" onclick="funcionnuevo(li1, div1)" style="background-color: #2957ba;color:#FFF;">Libro</li>
 						<li id="li2" onclick="funcionnuevo(li2, div2)" style="color:#1C43B9;">Mapa</li>
@@ -77,28 +76,28 @@ max-width:10rem;
 	<div id="div1" class="divicion" >
 	<form action = "../modelo/biblilibroInsert.php" enctype="multipart/form-data" method="post" >
 	<?php include("../controlador/biblilibroInsert.php"); ?>
-	<button type="submit" class="indexbutton">Registrar</button>
+	<div class="alignr"><button type="submit" class="indexbutton">Registrar</button></div>
 	</form>
 	</div>
 	<!-- Mapa -->
 	<div id="div2" class="divicion"  style="display:none;">
 	<form action = "../modelo/biblimapaInsert.php" enctype="multipart/form-data" method="post" >
 	<?php include("../controlador/biblimapaInsert.php"); ?>
-	<button type="submit" class="indexbutton">Registrar</button>
+	<div class="alignr"><button type="submit" class="indexbutton">Registrar</button></div>
 	</form>
 	</div>
 	<!-- Revista -->
 	<div id="div3" class="divicion"  style="display:none;">
 	<form action = "../modelo/biblirevistaInsert.php" enctype="multipart/form-data" method="post" >
 	<?php include("../controlador/biblirevistaInsert.php"); ?>
-	<button type="submit" class="indexbutton">Registrar</button>
+	<div class="alignr"><button type="submit" class="indexbutton">Registrar</button></div>
 	</form>
 	</div>
 	<!-- Final -->
 	<div id="div4" class="divicion"  style="display:none;">
 	<form action = "../modelo/biblittInsert.php"  enctype="multipart/form-data" method="post" >
 	<?php include("../controlador/biblittInsert.php"); ?>
-	<button type="submit" class="indexbutton">Registrar</button>
+	<div class="alignr"><button type="submit" class="indexbutton">Registrar</button></div>
 	</form>
 	</div>
 		
@@ -106,7 +105,7 @@ max-width:10rem;
 	
 	<div class="div-ejem">
 	
-	<div style="width:100%;text-align:center;"><h2>Palabras claves</h2></div>
+	<div style="text-align:center;"><h2>Palabras claves</h2></div>
 	<div><?php include('../controlador/biblikeyword.php');?></div>
 	
 	</div>
