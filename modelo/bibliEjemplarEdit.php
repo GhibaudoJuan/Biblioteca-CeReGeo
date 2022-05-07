@@ -1,4 +1,9 @@
 <?php 
+/*
+Update de ejemplar
+El $_POST proviene de "../controlador/bibliEjemplarEdit.php"
+Se utilizan los if para armar el set
+*/
 if(!isset($_SESSION))session_start();
 //copio _POST a otras variable
 require_once('../accesos/biblifiltrar.php');
@@ -38,7 +43,6 @@ $array=$_POST;
             $set.=", ";
             $set.=" disponibilidad='".$array['disponibilidad']."' ";
             $a=1;
-            echo "si";
     }
     
     
@@ -49,7 +53,7 @@ $array=$_POST;
     
     
   
-    $res=0;
+    $res=0; //se coloca en cero para que no de un error si el set el vacio
      
   if($set!="")
         $res = select($sql);
