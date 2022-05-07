@@ -1,4 +1,8 @@
 <?php 
+/*
+Update de la tabla prestamos.
+El $_POST proviene de "--/controlador/bibliDevolucion.php"
+*/
 if(!isset($_SESSION))session_start();
 //copio _POST a otras variable
 require_once('../accesos/biblifiltrar.php');
