@@ -1,4 +1,10 @@
 <?php
+/*
+Se controla el inicio de sesion
+Hay un control de un Token para que solo probenga de "../vista/iniciosesion.php"
+Aqui se cargar en $_SESSION el usuario, su nombre y su tipo
+
+*/
 session_start();
 $user =$_POST['user']; 
 $pass =$_POST['password'];
