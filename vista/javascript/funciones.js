@@ -72,6 +72,7 @@ function editar(a,b,c,d,f,g,h,i){
 		document.getElementById("chasta").value =g;
 	}
 	if(document.getElementById("pdevuelto")){
+		document.getElementById("pdevuelto").min=f;
 		document.getElementById("pdevuelto").value =h;
 		document.getElementById("cdevuelto").value =h;
 	}
