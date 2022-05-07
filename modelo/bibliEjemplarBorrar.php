@@ -1,5 +1,8 @@
 <?php
-
+/*
+Delete de un ejemplar.
+El $_POST proviene de "./controlaror/bibliEjemplarBorrar.php"
+*/
 if(!isset($_SESSION))session_start();
 //copio _POST a otras variable
 require_once('../accesos/biblifiltrar.php');
