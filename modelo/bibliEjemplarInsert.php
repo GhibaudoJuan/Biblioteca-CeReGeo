@@ -1,5 +1,9 @@
 <?php
+/*
+Insert de ejemplar
+El $_POST proviene de "../controlador/bibliEjemplarInsert.php"
 
+*/
 if(!isset($_SESSION))session_start();
 //copio _POST a otras variable
 require_once('../accesos/biblifiltrar.php');
