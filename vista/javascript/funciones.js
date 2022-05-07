@@ -301,7 +301,7 @@ function idtabla(a, b, c, d, e, f, g, h ,i){
 	if(document.getElementById("prest"))
 		document.getElementById("prest").value =b;
 	if(document.getElementById("pasarprestamoid"))
-		document.getElementById("pasarprestamoid").value =b; //no se usa m�s
+		document.getElementById("pasarprestamoid").value =b; //no se usa más
 	if(document.getElementById("pasarprestamonom"))
 			document.getElementById("pasarprestamonom").value =c;
    
@@ -401,7 +401,10 @@ function mindate(a, b){
 	}
 }
 
-
+function setmindate(a,b){
+	if(document.getElementById(a))
+		document.getElementById(a).min=b;
+}
 
 function idejemplar(a,b,c,d,e,f){
 	deseleccion()
@@ -635,7 +638,7 @@ function actualizar(a){
 function contraconfir(){
 	if(document.getElementById("confpass").value!="")
 		if(document.getElementById("newpass").value!=document.getElementById("confpass").value){
-			document.getElementById("mostrarerror").innerHTML =" * Las contraseñas no coinciden * ";
+			document.getElementById("mostrarerror").innerHTML =" * Las contraseÃ±as no coinciden * ";
 		}else{
 			document.getElementById("mostrarerror").innerHTML ="";
 			}
