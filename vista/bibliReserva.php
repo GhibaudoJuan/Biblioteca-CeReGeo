@@ -96,28 +96,28 @@ $retorno='reserva';
 
 <div id="miModal" class="modal">
    <div class="modal-contenido modal-buscar" id="nuevo" style="display:none;">
-    <a href="#" class="sindec negro"  onclick="ocultar()">X</a>
+    <div class="alignr"><a href="#" class="sindec negro"  onclick="ocultar()">X</a></div>
     <h2>Nuevo</h2>
     <?php include("../controlador/biblireservaNuevo.php") ?>
   </div>  
   <div class="modal-contenido modal-buscar" id="actualizar" style="display:none;">
-    <a href="#" class="sindec negro"  onclick="ocultar()">X</a>
+    <div class="alignr"><a href="#" class="sindec negro"  onclick="ocultar()">X</a></div>
     <h2>Editar</h2>
     <?php include("../controlador/biblireservaEdit.php") ?>
   </div>  
   <div class="modal-contenido modal-buscar" id="prestamo" style="display:none;">
-    <a href="#" class="sindec negro"  onclick="ocultar()">X</a>
+    <div class="alignr"><a href="#" class="sindec negro"  onclick="ocultar()">X</a></div>
     <h2>Prestamo</h2>
     <?php include("../controlador/biblireservaPrestamo.php"); ?>
   </div>  
 
   <div class="modal-contenido modal-borrar" id="borrar" style="display:none;">
-    <a href="#" class="sindec negro"  onclick="ocultar()">X</a>
+    <div class="alignr"><a href="#" class="sindec negro"  onclick="ocultar()">X</a></div>
     <h2>Borrar</h2>
     <?php include("../controlador/biblireservaBorrar.php"); ?>
   </div> 
   <div class="modal-contenido modal-borrar" id="borrartodo" style="display:none;">
-    <a href="#" class="sindec negro"  onclick="ocultar()">X</a>
+    <div class="alignr"><a href="#" class="sindec negro"  onclick="ocultar()">X</a></div>
     <h2>Borrar Todo</h2>
     <?php include("../controlador/borrarTodo.php") ?>
   </div> 

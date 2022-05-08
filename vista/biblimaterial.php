@@ -132,14 +132,7 @@ $_SESSION['atras']= '../vista/biblimaterial.php?pag='.$_GET['pag'];
 	<?php include("../controlador/vent_error.php");?>
 	
 	
- <div id="miModal" class="modal">
-  <div class="modal-contenido" id="borrar" style="display:none;">
-    <a href="#" class="sindec"  onclick="ocultar()">X</a>
-    <h2>Buscar</h2>
-    <?php include("../controlador/biblilibroBuscar.php"); ?>
-  </div> 
 
- </div>
 
 
 <script type="text/javascript">

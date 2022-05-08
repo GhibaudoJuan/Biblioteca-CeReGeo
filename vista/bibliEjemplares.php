@@ -206,41 +206,41 @@ min-height:20rem!important;
 
 <div id="miModal" class="modal">
   <div class="modal-contenido modal-buscar" id="reserva" style="display:none;">
-    <a href="#" class="sindec negro" onclick="ocultar()">X</a>
+    <div class="alignr"><a href="#" class="sindec negro" onclick="ocultar()">X</a></div>
     <h2>Reserva</h2>
     <?php include("../controlador/biblireservaInsert.php"); ?>
   </div> 
 
   <div class="modal-contenido modal-buscar" id="prestamo" style="display:none;">
-    <a href="#" class="sindec negro" onclick="ocultar()">X</a>
+    <div class="alignr"><a href="#" class="sindec negro" onclick="ocultar()">X</a></div>
     <h2>Prestamo</h2>
     <?php include("../controlador/bibliprestamoInsert.php"); ?>
   </div>
 
 
   <div class="modal-contenido modal-buscar" id="modalkeyword" style="display:none;">
-    <a href="#" class="sindec negro"  onclick="ocultar()">X</a>
+    <div class="alignr"><a href="#" class="sindec negro"  onclick="ocultar()">X</a></div>
     <h2>Palabras claves</h2>
     <?php include("../controlador/biblikeywordEdit.php"); ?>
   </div> 
 
   <div class="modal-contenido modal-borrar" id="borrar" style="display:none;">
-    <a href="#" class="sindec negro" onclick="ocultar()">X</a>
-    <h2>Borrar falta</h2>
+    <div class="alignr"><a href="#" class="sindec negro" onclick="ocultar()">X</a></div>
+    <h2>Borrar</h2>
     <?php include("../controlador/biblimaterialBorrar.php"); ?>
   </div>
   <div class="modal-contenido modal-buscar" id="insert" style="display:none;">
-    <a href="#" class="sindec negro"  onclick="ocultar()">X</a>
+    <div class="alignr"><a href="#" class="sindec negro"  onclick="ocultar()">X</a></div>
     <h2>Nuevo</h2>
     <?php include("../controlador/bibliEjemplarInsert.php"); ?>
   </div> 
   <div class="modal-contenido modal-buscar" id="actualizar" style="display:none;">
-    <a href="#" class="sindec negro" onclick="ocultar()">X</a>
+    <div class="alignr"><a href="#" class="sindec negro" onclick="ocultar()">X</a></div>
     <h2>Editar</h2>
     <?php include("../controlador/bibliEjemplarEdit.php"); ?>
   </div> 
-  <div class="modal-contenido modal-buscar" id="borrar2" style="display:none;">
-    <a href="#" class="sindec negro"  onclick="ocultar()">X</a>
+  <div class="modal-contenido modal-borrar" id="borrar2" style="display:none;">
+    <div class="alignr"><a href="#" class="sindec negro"  onclick="ocultar()">X</a></div>
     <h2>Borrar</h2>
     <?php include("../controlador/bibliEjemplarBorrar.php"); ?>
   </div> 

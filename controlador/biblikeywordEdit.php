@@ -42,7 +42,7 @@ while($valor=pg_fetch_assoc($palabrasclave)){
 
 <input type="hidden" value="update" name="keyword">
 
-<div class="alingr"><button type="submit" class="indexbutton">Agregar</button></div>
+<div class="alignr"><button type="submit" class="indexbutton">Agregar</button></div>
 
 
 

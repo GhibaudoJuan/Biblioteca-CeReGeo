@@ -87,17 +87,17 @@ $_SESSION['sql'] = $sql;
 	
 <div id="miModal" class="modal">
   <div class="modal-contenido modal-buscar" id="insert" style="display:none;">
-    <a href="#" class="sindec negro" onclick="ocultar()">X</a>
+    <div class="alignr"><a href="#" class="sindec negro" onclick="ocultar()">X</a></div>
     <h2>Nuevo</h2>
      <?php include("../controlador/biblicuentaInsert.php"); ?>
   </div> 
   <div class="modal-contenido modal-buscar" id="actualizar" style="display:none;">
-    <a href="#" class="sindec negro" onclick="ocultar()">X</a>
+    <div class="alignr"><a href="#" class="sindec negro" onclick="ocultar()">X</a></div>
     <h2>Actualizar</h2>
      <?php include("../controlador/biblicuentaActualizar.php"); ?>
   </div> 
  <div class="modal-contenido modal-borrar" id="borrar" style="display:none;">
-    <a href="#" class="sindec negro"  onclick="ocultar()">X</a>
+    <div class="alignr"><a href="#" class="sindec negro"  onclick="ocultar()">X</a></div>
     <h2>Borrar</h2>
      <?php include("../controlador/biblicuentaBorrar.php"); ?>
   </div> 
