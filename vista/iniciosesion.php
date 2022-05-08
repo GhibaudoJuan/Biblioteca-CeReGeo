@@ -19,7 +19,7 @@ $_SESSION['cod']=token();
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Inicio de Sesion</title>
+<title>Inicio de Sesi&oacuten</title>
 
 
 <!-- cargamos los estilos -->
@@ -71,7 +71,7 @@ width:70%!important;
 
 
 <br>
-<button type="submit" class="indexbutton" >Iniciar Sesion</button>
+<button type="submit" class="indexbutton" >Iniciar Sesi&oacuten</button>
 </form>
 </div>
 

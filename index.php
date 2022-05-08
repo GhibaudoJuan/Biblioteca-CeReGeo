@@ -95,13 +95,13 @@ if(!isset($_SESSION['res'])){
 	
 	
 <?php else: ?>
-	<a class="perfil" href="vista/iniciosesion.php">Iniciar Sesion</a>
+	<a class="perfil" href="vista/iniciosesion.php">Iniciar Sesi&oacuten</a>
 <?php endif;?>
 </div>
 <div id="miperfil" class="abso menu2 ">
 		<a class="pad" href="vista/bibliPerfilUsuario.php"><div class="colorperfil">Mi perfil</div></a>
 		
-		<a class="pad" href="vista/bibliCerrarSesion.php"><div class="colorperfil">Cerrar Sesion</div></a>
+		<a class="pad" href="vista/bibliCerrarSesion.php"><div class="colorperfil">Cerrar Sesi&oacuten</div></a>
 </div>
 </div> 
 <!-- Menu -->
