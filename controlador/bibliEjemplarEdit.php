@@ -34,7 +34,7 @@ $prop= autostring("ejemplares", "propietario");
 </div>
 <div class="flex">
 <div class="span-2 ajuste"><label for="pes">Estado</label></div>
-<div class="ajuste" >
+<div class="ajuste w-2" >
 <select id="pes" name= "es" class="index" >
   <option id="l" value="l">Libre</option>
   <option id="r" value="r">Reservado</option>

@@ -11,20 +11,12 @@
 
 <form action = "../modelo/bibliprestamoInsert.php" method="post" >
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="pasarprestamonom">Nombre</label></div>
-<div class="ajuste w-2"><input type='text' name="nombre" id="pasarprestamonom" autofocus class="index"  maxlength="100" placeholder="Nombre"  required></div>
-</div>
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="idprestamo">Codigo Material</label></div>
-<div class="ajuste w-2"><input type='text' name="material" id="idprestamo"  class="index"  maxlength="50" placeholder="Codigo material"  required></div>
-</div>
+<input type="hidden" name="nombre" id="pasarprestamonom">
+<input type="hidden" name="material" id="idprestamo">
+<input type="hidden" name="ejemplar" id="ejemprestamo">
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="ejemprestamo">Codigo ejemplar</label></div>
-<div class="ajuste w-2"><input type='text' name="ejemplar" id="ejemprestamo"  class="index"  maxlength="50" placeholder="Codigo ejemplar"  required></div>
-</div>
+
 
 <div class="flex">
 <div class="span-2 ajuste"><label for="frp">Devolucion</label></div>
