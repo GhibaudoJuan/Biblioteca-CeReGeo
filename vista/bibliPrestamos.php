@@ -62,16 +62,16 @@ $retorno = 'prestamo';
 	<!-- Nuevo -->
 		<a href="#miModal" class="sindec"><button type="submit" id="botonnuevo" class="indexbutton" onclick="mostrar('nuevo')">Nuevo</button> </a>
 	<!-- Actualizar -->
-		<a href="#miModal" class="sindec"><button type="submit" id="botoneditar" class="indexbutton" onclick="mostrar('actualizar')">Editar</button> </a>
+		<a href="#miModal" class="sindec"><button type="submit" id="botoneditar" disabled class="indexbutton" onclick="mostrar('actualizar')">Editar</button> </a>
 			
 	<!-- Borrar -->		
-		<a href="#miModal" class="sindec"><button type="submit" id="botonborrar" class="indexbutton" onclick="mostrar('borrar')">Borrar</button> </a>
+		<a href="#miModal" class="sindec"><button type="submit" id="botonborrar" disabled class="indexbutton" onclick="mostrar('borrar')">Borrar</button> </a>
 		
 		
 	<!-- Borrar Todo -->		
 		<a href="#miModal" class="sindec"><button type="submit" class="indexbutton" onclick="mostrar('borrartodo')">Borrar Todo</button> </a>
 	<!-- Devolucion -->	
-		<a href="#miModal" class="sindec"><button type="submit" id="botonprestamo" class="indexbutton" onclick="mostrar('prestamo')">Devolucion</button> </a>
+		<a href="#miModal" class="sindec"><button type="submit" id="botonprestamo" disabled class="indexbutton" onclick="mostrar('prestamo')">Devolucion</button> </a>
 	
 	</div>
 	<?php endif;?>

@@ -22,10 +22,19 @@ var table = $('#tabla').DataTable();
     $('#tabla tbody').on( 'click', 'tr', function () {
         if ( $(this).hasClass('selected') ) {
             $(this).removeClass('selected');
+			$('#botonborrar').attr("disabled","disabled");
+			$('#botoneditar').attr("disabled","disabled");
+			$('#botonpres').attr("disabled","disabled");
+			$('#botonprestamo').attr("disabled","disabled");
         }
         else {
             table.$('tr.selected').removeClass('selected');
             $(this).addClass('selected');
+			$('#botonborrar').removeAttr("disabled");
+			$('#botoneditar').removeAttr("disabled");
+			$('#botonpres').removeAttr("disabled");
+			$('#botonprestamo').removeAttr("disabled");
+			
         }
     } );
 	//borrar
