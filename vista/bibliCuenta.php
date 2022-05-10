@@ -61,11 +61,11 @@ $_SESSION['sql'] = $sql;
 	<!-- Nuevo -->
 	<!-- Actualizar -->
 		
-		<a href="#miModal" class="sindec"><button type="submit" id="botoneditar" class="indexbutton" onclick="mostrar('actualizar')">Editar</button> </a>
+		<a href="#miModal" class="sindec"><button type="submit" id="botoneditar" disabled class="indexbutton" onclick="mostrar('actualizar')">Editar</button> </a>
 	<!-- Actualizar -->	
 		
 	<!-- Borrar -->		
-		<a href="#miModal" class="sindec"><button type="submit" id="botonborrar" class="indexbutton" onclick="mostrar('borrar')">Borrar</button> </a>
+		<a href="#miModal" class="sindec"><button type="submit" id="botonborrar" disabled class="indexbutton" onclick="mostrar('borrar')">Borrar</button> </a>
 		
 	<!-- Borrar -->		
 		<?php endif;?>

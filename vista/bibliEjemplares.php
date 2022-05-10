@@ -13,8 +13,12 @@ else{
 }
 
 
-$sql = "select idmaterial, idejemplar, codigo_externo, propietario,(CASE WHEN estado='l' THEN 'Libre' WHEN estado='r' THEN 'Reservado' WHEN estado='p' THEN 'Prestado' END) as estado, (CASE WHEN disponibilidad ='True' THEN 'SI' ELSE 'NO' END ) as disponibilidad
-                 from ejemplares where idmaterial = '".$idej."';";
+$sql = "select idmaterial, idejemplar, codigo_externo, propietario,
+        (CASE WHEN estado='l' THEN 'Libre' WHEN estado='r' THEN 'Reservado' WHEN estado='p' THEN 'Prestado' when estado='o' THEN 'Obsoleto' END) as estado, 
+        (CASE WHEN disponibilidad ='True' THEN 'SI' ELSE 'NO' END ) as disponibilidad,
+        min(fecha) as proxima         
+        from ejemplares e inner join reservas r on (r.material=e.idmaterial) and(r.ejemplar=e.idejemplar) where idmaterial = '".$idej."' 
+        group by idmaterial, idejemplar, codigo_externo, propietario, estado, disponibilidad;";
 
 
 $resultado=select($sql);
@@ -47,13 +51,6 @@ $portada=pg_fetch_assoc(select($sql2));
 $sql3="select descri from keywords where mat_id='".$idej."' order by word_id asc;";
 
 $keyword=select($sql3);
-
-$sql4="select ejemplar, min(fecha) as minimo from reservas where material='".$idej."' group by ejemplar;";
-$l=select($sql4);
-$limit= array();
-while($f=pg_fetch_assoc($l)){
-    $limit[$f['ejemplar']]=$f['minimo'];
-}
 
 
 $form='"'.$_SESSION['atras'].'"';
@@ -110,67 +107,33 @@ min-height:20rem!important;
 	<main  style="padding-top:20px;">
         <div class="flex" style="height: 100%;">
         	<!-- Tabla Ejemplares -->
-			<div   class='tabladiv ajuste'>
-    		<table class='decss'>
-    		<tr>
-			<th>Ejemplar</th>
-			<th>Cod. Externo</th>
-			<th>Propietario</th>
-			<th>Estado</th>
-			<th>Disponibilidad</th>
-	
-    	
-    		<?php 
-    		$i=0;
-    		while ($datos = pg_fetch_assoc($resultado)){
-    	    
-    	  
-            $tabla= '<tr id="id'.$i.'" ';
-            $tabla.=' onclick="idejemplar(' ;
-            $tabla.= "'id".$i.  "','".$datos['idejemplar']."','".$datos['codigo_externo']."','".$datos['propietario']."','".$datos['estado']."','".$datos['disponibilidad']."'";
-            $tabla.=')">';
-            $tabla.='<td>'.$datos['idejemplar'].'</td><td>'.$datos['codigo_externo'];
-            $tabla.='</td><td>'.$datos['propietario'].'</td><td>'.$datos['estado'].'</td><td>'.$datos['disponibilidad'].'</td>';
-            //botonreservar
-            
-            if((isset($_SESSION['tipouser']))&&($datos['disponibilidad']=='SI')&&($datos['estado']!='Obsoleto')){
-                 $tabla.= '<td style="width:200px;"><a class="sindec" href="#miModal">	<button type="submit" class="button" onclick="valuereserva('."'reserva',";
-                 $tabla.="'".$datos['idmaterial']."','".$datos['idejemplar']."')" ;
-                 $tabla.='">Res</button> </a>';
-                
-                    if(($_SESSION['tipouser']<'2')&&($datos['estado']!='Prestado')){
-                        $tabla.=' <a class="sindec" href="#miModal"> <button type="submit" class="button" onclick="valueprestamo('."'prestamo',";
-                        $tabla.="'".$datos['idmaterial']."','".$datos['idejemplar']."','".$limit[$datos['idejemplar']]."')" ;
-                        $tabla.='">Pre</button> </a>
-                        </td>';
-        
-                    }
-             }
-            
-            $i++;
-    	    echo $tabla;
-    	    }?>
-    	
-    		</tr>
-    		</table>
+			<div  class="tabladiv ajuste" style="padding-right:1rem;">
+	   		<?php include("../modelo/bibliEjemplarSelect.php");?>
     		</div>
-    	<!-- Tabla Ejemplares -->
-		<!-- Menu Ejemplares -->
+   
+		    <!-- Menu Ejemplares -->
         	<div class="ajuste " style="max-width:8rem;">
         		<div class="sticky">
 	            
 				<?php if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']<'2')):?>
 				<!-- Nuevo -->	
-				<a href="#miModal" class="sindec"><button type="submit" class="indexbutton" onclick="mostrar('insert')">Nuevo</button> </a>
-	            <!-- Nuevo -->	
+				<a href="#miModal" class="sindec"><button type="submit" id="botonnuevo" class="indexbutton" onclick="mostrar('insert')">Nuevo</button> </a>
+	            
 				<!-- Editar -->	
-				<a href="#miModal" class="sindec"><button type="submit" class="indexbutton" onclick="mostrar('actualizar')">Editar</button> </a>
-	            <!-- Editar -->	
+				<a href="#miModal" class="sindec"><button type="submit" id="botoneditar" disabled class="indexbutton" onclick="mostrar('actualizar')">Editar</button> </a>
+	            
 	            <!-- Borrar -->		
-				<a href="#miModal" class="sindec"><button type="submit" class="indexbutton"  onclick="mostrar('borrar2')">Borrar</button> </a>
-				<!-- Borrar -->	
+				<a href="#miModal" class="sindec"><button type="submit" id="botonborrar" disabled class="indexbutton"  onclick="mostrar('borrar2')">Borrar</button> </a>
+				
 				<?php endif;?>
-	
+				<?php if(isset($_SESSION['tipouser'])):?>
+				<!-- Reserva -->
+				<a href="#miModal" class="sindec"><button type="submit" id="botonreservaejmplar" disabled class="indexbutton"  onclick="mostrar('reserva')">Reserva</button> </a>
+				<?php  if($_SESSION['tipouser']<'2'):?>
+				<!-- Prestamo -->
+				<a href="#miModal" class="sindec"><button type="submit" id="botonprestamoejemplar" disabled class="indexbutton"  onclick="mostrar('prestamo')">Prestamo</button> </a>
+     			<?php endif;
+     			 endif;?>
      			</div>
         	</div>
         <!-- Menu Ejemplares -->
@@ -247,7 +210,10 @@ min-height:20rem!important;
 
  </div>
 
+<script type="text/javascript">
+conftabla();
 
+</script>
 
 </body>
 

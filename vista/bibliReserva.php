@@ -72,7 +72,7 @@ $retorno='reserva';
 	
 		<?php if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']<'2')):?>
 		 <!-- Pasar a Prestamo -->	
-		 <a href="#miModal" class="sindec"><button type="submit" id="botonpres" disabled class="indexbutton" onclick="mostrar('prestamo')">Prestamo</button> </a>
+		 <a href="#miModal" class="sindec"><button type="submit" id="botonreserva" disabled class="indexbutton" onclick="mostrar('prestamo')">Prestamo</button> </a>
 		 
 		<?php endif;?>
 	 

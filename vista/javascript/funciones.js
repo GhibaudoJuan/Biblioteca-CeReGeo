@@ -1,4 +1,4 @@
-function conftabla(tipo){
+function conftabla(){
 	$(document).ready( function () {
     $('#tabla').DataTable( {
         "language": {
@@ -16,7 +16,7 @@ function conftabla(tipo){
 	
 	}
 );
-console.log(tipo);
+
 var table = $('#tabla').DataTable();
  //seleccion y deseleccion
     $('#tabla tbody').on( 'click', 'tr', function () {
@@ -24,17 +24,26 @@ var table = $('#tabla').DataTable();
             $(this).removeClass('selected');
 			$('#botonborrar').attr("disabled","disabled");
 			$('#botoneditar').attr("disabled","disabled");
-			$('#botonpres').attr("disabled","disabled");
+			$('#botonreserva').attr("disabled","disabled");
 			$('#botonprestamo').attr("disabled","disabled");
+			$('#botonreservaejmplar').attr("disabled","disabled");
+			$('#botonprestamoejemplar').attr("disabled","disabled");
         }
         else {
             table.$('tr.selected').removeClass('selected');
             $(this).addClass('selected');
+			var data = table.row('.selected').data();
 			$('#botonborrar').removeAttr("disabled");
 			$('#botoneditar').removeAttr("disabled");
-			$('#botonpres').removeAttr("disabled");
-			$('#botonprestamo').removeAttr("disabled");
-			
+			if(data[6]!="Cerrado")
+				$('#botonreserva').removeAttr("disabled");
+			if(data[7]!="Cerrado")
+				$('#botonprestamo').removeAttr("disabled");
+			if(data[4]!="Obsoleto"){
+			$('#botonreservaejmplar').removeAttr("disabled");
+			if(data[4]!='Prestado')
+			$('#botonprestamoejemplar').removeAttr("disabled");
+			}
         }
     } );
 	//borrar
@@ -46,106 +55,156 @@ var table = $('#tabla').DataTable();
 		var data = table.row('.selected').data();
         editar(data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7]);
     } );
-	$('#botonpres').click( function () {
+	$('#botonreserva').click( function () {
 		var data = table.row('.selected').data();
-        pasarprestamo(data[0],data[1],data[2],data[4]);
+        pasarprestamo(data[1],data[2],data[4]);
     } );
 	$('#botonprestamo').click( function () {
 		var data = table.row('.selected').data();
         devolucion(data[0],data[1]);
     } );
-
-
-
+	$('#botonreservaejemplar').click( function () {
+		var data = table.row('.selected').data();
+        valuereserva(data[0],data[1]);
+    } );
+	$('#botonprestamoejemplar').click( function () {
+		var data = table.row('.selected').data();
+        devolucion(data[0],data[1]);
+    } );
 } );
 }
 function borrar(a,b){
-	if (document.getElementById("borrar1"))
-		document.getElementById("borrar1").value =a;
-	if(document.getElementById("nombre1"))
-		document.getElementById("nombre1").value =b;
+	$('#borrar1').attr('value',a);
+	$('#nombre1').attr('value',b);
+	$('#bejempplar').attr('value',b);
 }
-function editar(a,b,c,d,f,g,h,i){
-	//actualizar prestamo
-	if(document.getElementById("pid"))
-		document.getElementById("pid").value =a;
-	if(document.getElementById("pnom"))		
-		document.getElementById("pnom").value =b;
+//funciones para mostrar el modal especifica con parametros
+function valuereserva( a, b){
+		$('#resmaterial').attr('value',a);
+		$('#resejemplar').attr('value',b);
+}
+function valueprestamo(a, b,c){
+		$('#presmaterial').attr('value',a);
+		$('#presejemplar').attr('value',b);
+		$('#reservaprox').attr('value',c);
 		
-	if(document.getElementById("pdesde")){
-		document.getElementById("pdesde").value =f;
-		document.getElementById("cdesde").value =f;
-	}
-	if(document.getElementById("phasta")){
-		document.getElementById("phasta").value =g;
-		document.getElementById("chasta").value =g;
-	}
-	if(document.getElementById("pdevuelto")){
-		document.getElementById("pdevuelto").min=f;
-		document.getElementById("pdevuelto").value =h;
-		document.getElementById("cdevuelto").value =h;
-	}
 
 		
-	if((document.getElementById("pce"))&&(document.getElementById("pac"))){
-		if(i=="Activo"){
-			document.getElementById("pac").checked = true;
-			document.getElementById("cact").value = 'True';
-		}
-		if(i=="Cerrado"){
-			document.getElementById("pce").checked = true;
-			document.getElementById("cact").value = 'False';
-		}
-	
-	}
-	
-	
-	//actualizar reserva
-
-
-	if(document.getElementById("resid"))
-		document.getElementById("resid").value =a;
-	if(document.getElementById("resnom"))
-		document.getElementById("resnom").value =b;	
-	if(document.getElementById("resdesde")){
-		document.getElementById("resdesde").value =g;
-		document.getElementById("cresdesde").value =g;
-	}
-	
-	if((document.getElementById("resce"))&&(document.getElementById("resac"))){
-		if(h=="Activo"){
-			document.getElementById("resac").checked = true;
-			document.getElementById("resact").value = 'True';
-		}
-		if(h=="Cerrado"){
-			document.getElementById("resce").checked = true;
-			document.getElementById("resact").value = 'False';
-		}
-	
-	}	
 }
-function pasarprestamo(a,b,c,d){
-	
-	if(document.getElementById("prest"))
-			document.getElementById("prest").value =a;
-	if(document.getElementById("pasarprestamonom"))
-			document.getElementById("pasarprestamonom").value =b;
-	if(document.getElementById("idprestamo"))
-		document.getElementById("idprestamo").value =c;
-	if(document.getElementById("ejemprestamo"))
-		document.getElementById("ejemprestamo").value =d;
+function pasarprestamo(a,b,c){
+
+	$('#pasarprestamonom').attr('value',a);
+	$('#idprestamo').attr('value',b);
+	$('#ejemprestamo').attr('value',c);
+
 
 }
 function devolucion(a,b){
-	if(document.getElementById("bdnombre")){
-			document.getElementById("bdnombre").innerHTML =b;
-			document.getElementById("bdnom").value =b;
-	}
-	if(document.getElementById("bdprestamo")){
-			document.getElementById("bdprestamo").innerHTML =a;
-			document.getElementById("bdid").value =a;
-	}
+	$('#bdid').attr('value',a);
+	$('#bdnom').attr('value',b);
+	document.getElementById("bdnombre").innerHTML =b;
+	document.getElementById("bdprestamo").innerHTML =a;
+	
 }
+function editar(a,b,c,d,e,f,g,h){
+	
+	//actualizar prestamo
+	
+	$('#pid').attr('value',a);
+	$('#pnom').attr('value',b);
+			
+	$('#pdesde').attr('value',e);
+	$('#cdesde').attr('value',e);
+	
+	
+	$('#phasta').attr('value',f);
+	$('#chasta').attr('value',f);
+	
+	$('#pdevuelto').attr('min',e);
+	$('#pdevuelto').attr('value',g);
+	$('#cdevuelto').attr('value',g);
+	
+
+	
+	
+	if(h=="Activo"){
+		$('#pac').attr('checked','true');
+		$('#cact').attr('value','true');
+		}
+	if(h=="Cerrado"){
+		$('#pce').attr('checked','true');
+		$('#cact').attr('value','false');
+		}
+	
+
+	//actualizar reserva
+
+	$('#resid').attr('value',a);
+	$('#resnom').attr('value',b);
+	$('#resdesde').attr('value',f);
+	$('#cresdesde').attr('value',f);
+	
+	if(g=="Activo"){
+		$('#resac').attr('checked','true');
+		$('#resact').attr('value','true');
+		}
+	if(g=="Cerrado"){
+		$('#resce').attr('checked','true');
+		$('#resact').attr('value','false');
+		}
+	
+	
+
+	//actualizar ejemplar
+	
+	$('#pidejem').attr('value',b);
+	$('#cidejem').attr('value',b);
+	
+	$('#pce').attr('value',c);
+	$('#cce').attr('value',c);
+	
+	$('#pprop').attr('value',d);
+	$('#cprop').attr('value',d);
+	
+	switch(e){
+			case 'Libre':
+				$('#l').attr('selected','true');
+				$('#ces').attr('value','l');
+				break;
+			case 'Reservado':
+				$('#r').attr('selected','true');
+				$('#ces').attr('value','r');
+				break;
+			case 'Prestado':
+				$('#p').attr('selected','true');
+				$('#ces').attr('value','p');
+				break;
+			case 'Obsoleto':
+				$('#o').attr('selected','true');
+				$('#ces').attr('value','o');
+				break;
+		}
+	
+		
+	
+	if(f=="SI")
+			$('#dis').attr('checked','true');//revisar
+			
+	
+		if(f=="SI"){
+			$('#pdis1').attr('checked','true');
+			$('#cdis').attr('value','true');
+			document.getElementById("cdis").value = 'True';
+		}
+		if(f=="NO"){
+			$('#pdis2').attr('checked','true');
+			$('#cdis').attr('value','false');
+		}
+	
+	
+	}	
+
+
 
 
 //funcion para intercalar entre mostrar y ocultar
@@ -242,23 +301,7 @@ function funcionnuevo(a, b){
 	document.getElementById(a.id).style.color=" #fff";
 }
 
-//funciones para mostrar el modal especifica con parametros
-function valuereserva(a, b, c){
-		mostrar(a)
-		if(document.getElementById("resmaterial"))
-		document.getElementById("resmaterial").value =b;
-		if(document.getElementById("resejemplar"))
-		document.getElementById("resejemplar").value =c;
-}
-function valueprestamo(a, b,c,d){
-		mostrar(a)
-		if(document.getElementById("presmaterial"))
-		document.getElementById("presmaterial").value =b;
-		if(document.getElementById("resejemplar"))
-		document.getElementById("presejemplar").value =c;
-		if(document.getElementById("reservaprox"))
-		document.getElementById("reservaprox").value =d;
-}
+
 function reportes(a,b){
 	mostrar(a)
 	document.getElementById('pdf').src="../reportes/"+b;
@@ -416,65 +459,6 @@ function setmindate(a,b){
 		document.getElementById(a).min=b;
 }
 
-function idejemplar(a,b,c,d,e,f){
-	deseleccion()
-	selection(a)
-	
-	
-	//borrar
-	if(document.getElementById("bejempplar"))
-		document.getElementById("bejempplar").value =b; 
-	
-	//editar
-	if(document.getElementById("pidejem")){
-		document.getElementById("pidejem").value =b;
-		document.getElementById("cidejem").value =b;
-	}
-	if(document.getElementById("pce")){
-		document.getElementById("pce").value =c;
-		document.getElementById("cce").value =c;
-	}
-	if(document.getElementById("ces")){
-		switch(e){
-			case 'Libre':
-				document.getElementById("l").selected =true;
-				document.getElementById("ces").value ='l';
-				break;
-			case 'Reservado':
-				document.getElementById("r").selected =true;
-				document.getElementById("ces").value ='r';
-				break;
-			case 'Prestado':
-				document.getElementById("p").selected =true;
-				document.getElementById("ces").value ='p';
-				break;
-			case 'Obsoleto':
-				document.getElementById("o").selected =true;
-				document.getElementById("ces").value ='o';
-				break;
-		}
-	}
-	if(document.getElementById("pprop")){
-		document.getElementById("pprop").value =d;
-		document.getElementById("cprop").value =d;
-	}
-	if(document.getElementById("dis"))
-		if(f=="SI")
-			document.getElementById("dis").checked = true;	 //revisar
-			
-	if((document.getElementById("pdis1"))&&(document.getElementById("pdis2"))){
-		if(f=="SI"){
-			document.getElementById("pdis1").checked = true;
-			document.getElementById("cdis").value = 'True';
-		}
-		if(f=="NO"){
-			document.getElementById("pdis2").checked = true;
-			document.getElementById("cdis").value = 'False';
-		}
-	
-	}
-
-}
 
 
 function selection(a){

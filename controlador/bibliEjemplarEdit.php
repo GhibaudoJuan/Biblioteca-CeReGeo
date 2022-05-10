@@ -72,7 +72,7 @@ $prop= autostring("ejemplares", "propietario");
 </form>
 <script>
 
-autocomplete(document.getElementById("pprop"),' <?php echo $prop;?>');
+autocomplete(document.getElementById("pprop"), <?php echo $prop;?>);
 </script>
 
 </body>

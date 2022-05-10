@@ -7,7 +7,7 @@ if(!isset($_SESSION))session_start();
 //copio _POST a otras variable
 
 $fecha=$_POST['fecha'];
-$idpres=$_POST['prest'];
+
 require_once('../accesos/biblifiltrar.php');
 //llamo a una funcion para limbiar datos
 

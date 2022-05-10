@@ -13,10 +13,10 @@ $nombre= autostringn("select nombre from cuenta union select nombre from reserva
 
 <form action = "../modelo/biblireservaInsert.php" method="post" >
 
-<input type='hidden' name="material" id="resmaterial">
+<input type='text' name="material" id="resmaterial">
 
 
-<input type='hidden' name="ejemplar" id="resejemplar">
+<input type='text' name="ejemplar" id="resejemplar">
 
 
 

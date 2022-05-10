@@ -23,7 +23,7 @@
 <div class="ajuste w-2"><input id ="frp" type='date' name="fecha" class="index" required></div>
 </div>
 
-<input type='hidden' id='prest' name='prest'>
+
 <div class="alignr"><button type="submit" class="indexbutton">Pasar</button></div>
 
 
