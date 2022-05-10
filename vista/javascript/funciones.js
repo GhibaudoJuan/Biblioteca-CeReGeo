@@ -26,7 +26,7 @@ var table = $('#tabla').DataTable();
 			$('#botoneditar').attr("disabled","disabled");
 			$('#botonreserva').attr("disabled","disabled");
 			$('#botonprestamo').attr("disabled","disabled");
-			$('#botonreservaejmplar').attr("disabled","disabled");
+			$('#botonreservaejemplar').attr("disabled","disabled");
 			$('#botonprestamoejemplar').attr("disabled","disabled");
         }
         else {
@@ -39,10 +39,10 @@ var table = $('#tabla').DataTable();
 				$('#botonreserva').removeAttr("disabled");
 			if(data[7]!="Cerrado")
 				$('#botonprestamo').removeAttr("disabled");
-			if(data[4]!="Obsoleto"){
-			$('#botonreservaejmplar').removeAttr("disabled");
-			if(data[4]!='Prestado')
-			$('#botonprestamoejemplar').removeAttr("disabled");
+			if((data[4]!="Obsoleto") && (data[5]=='SI')){
+				$('#botonreservaejemplar').removeAttr("disabled");
+					if(data[4]!='Prestado')
+						$('#botonprestamoejemplar').removeAttr("disabled");
 			}
         }
     } );
@@ -69,7 +69,7 @@ var table = $('#tabla').DataTable();
     } );
 	$('#botonprestamoejemplar').click( function () {
 		var data = table.row('.selected').data();
-        devolucion(data[0],data[1]);
+        valueprestamo(data[0],data[1],data[6]);
     } );
 } );
 }
@@ -78,8 +78,8 @@ function borrar(a,b){
 	$('#nombre1').attr('value',b);
 	$('#bejempplar').attr('value',b);
 }
-//funciones para mostrar el modal especifica con parametros
-function valuereserva( a, b){
+
+function valuereserva(a, b){
 		$('#resmaterial').attr('value',a);
 		$('#resejemplar').attr('value',b);
 }

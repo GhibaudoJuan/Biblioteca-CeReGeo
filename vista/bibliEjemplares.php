@@ -128,7 +128,7 @@ min-height:20rem!important;
 				<?php endif;?>
 				<?php if(isset($_SESSION['tipouser'])):?>
 				<!-- Reserva -->
-				<a href="#miModal" class="sindec"><button type="submit" id="botonreservaejmplar" disabled class="indexbutton"  onclick="mostrar('reserva')">Reserva</button> </a>
+				<a href="#miModal" class="sindec"><button type="submit" id="botonreservaejemplar" disabled class="indexbutton"  onclick="mostrar('reserva')">Reserva</button> </a>
 				<?php  if($_SESSION['tipouser']<'2'):?>
 				<!-- Prestamo -->
 				<a href="#miModal" class="sindec"><button type="submit" id="botonprestamoejemplar" disabled class="indexbutton"  onclick="mostrar('prestamo')">Prestamo</button> </a>
