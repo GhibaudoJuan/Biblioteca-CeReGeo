@@ -122,6 +122,7 @@ $retorno = 'prestamo';
 
 <script type="text/javascript">
 conftabla('prestamos');
+document.getElementById('reservaprox').style.display="none";
 
 </script>
 </body>

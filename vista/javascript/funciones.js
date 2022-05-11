@@ -37,8 +37,12 @@ var table = $('#'+a).DataTable();
 			$('#botoneditar').removeAttr("disabled");
 			if(data[6]!="Cerrado")
 				$('#botonreserva').removeAttr("disabled");
+			else
+				$('#botonreserva').attr("disabled","disabled");
 			if(data[7]!="Cerrado")
 				$('#botonprestamo').removeAttr("disabled");
+			else
+				$('#botonprestamo').attr("disabled","disabled");
 			if((data[4]!="Obsoleto") && (data[5]=='SI')){
 				$('#botonreservaejemplar').removeAttr("disabled");
 					if(data[4]!='Prestado')
