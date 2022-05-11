@@ -14,7 +14,7 @@ $columnas= array (
 
 $resultado = select($sql);
 
-$tabla="<table id='tabla' class='display tabth' style='width:100%'>
+$tabla="<table id='cuentas' class='display tabth' style='width:100%'>
 <thead>
 <tr>
 <th>Nombre Usuario</th>

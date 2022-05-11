@@ -1,7 +1,7 @@
 <?php 
 
 
-$tabla="<table id='tabla' class='display tabth' style='width:100%'>
+$tabla="<table id='ejemplar' class='display tabth' style='width:100%'>
 <thead>
 <tr>
 <th>Material</th>

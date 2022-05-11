@@ -75,7 +75,7 @@ left:30rem;
 	
 
 <script type="text/javascript">
-conftabla();
+conftabla('reportes');
 </script>
 </body>
 

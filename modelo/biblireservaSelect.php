@@ -23,7 +23,7 @@ $columnas= array (
 
 $resultado = select($sql);
 
-$tabla="<table id='tabla' class='display tabth' style='width:100%'>
+$tabla="<table id='reservas' class='display tabth' style='width:100%'>
 <thead>
 <tr>
 <th>Reserva</th>

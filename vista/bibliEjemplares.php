@@ -214,7 +214,7 @@ min-height:20rem!important;
  </div>
 
 <script type="text/javascript">
-conftabla();
+conftabla('ejemplar');
 
 </script>
 

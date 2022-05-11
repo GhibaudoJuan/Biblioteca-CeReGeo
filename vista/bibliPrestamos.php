@@ -49,7 +49,7 @@ $retorno = 'prestamo';
 
 
 
-	 <header class="titulo" ><h2>Prestamo</h2></header>
+	 <header class="titulo" ><h2>Pr&eacutestamos</h2></header>
 	<main class="flex">
 	
 	<!-- Tabla -->
@@ -121,7 +121,7 @@ $retorno = 'prestamo';
 
 
 <script type="text/javascript">
-conftabla();
+conftabla('prestamos');
 
 </script>
 </body>

@@ -104,7 +104,7 @@ $_SESSION['sql'] = $sql;
 </div>
 	
 <script type="text/javascript">
-conftabla();
+conftabla('cuentas');
 
 </script>
 

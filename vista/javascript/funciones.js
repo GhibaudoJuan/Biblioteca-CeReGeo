@@ -1,6 +1,6 @@
-function conftabla(){
+function conftabla(a){
 	$(document).ready( function () {
-    $('#tabla').DataTable( {
+    $('#'+a).DataTable( {
         "language": {
             "lengthMenu": "Mostrar _MENU_ filas por pagina.",
 			"search":"Buscar:",
@@ -13,13 +13,13 @@ function conftabla(){
             "info": "Pagina _PAGE_ de _PAGES_",
             "infoEmpty": "Sin filas disponibles"
         },
-	
+		
 	}
 );
-
-var table = $('#tabla').DataTable();
+console.log(a);
+var table = $('#'+a).DataTable();
  //seleccion y deseleccion
-    $('#tabla tbody').on( 'click', 'tr', function () {
+    $('#'+a+' tbody').on( 'click', 'tr', function () {
         if ( $(this).hasClass('selected') ) {
             $(this).removeClass('selected');
 			$('#botonborrar').attr("disabled","disabled");

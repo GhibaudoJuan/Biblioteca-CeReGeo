@@ -125,7 +125,7 @@ $retorno='reserva';
 
 
 <script type="text/javascript">
-conftabla(<?php echo $_SESSION['tipouser'];?>);
+conftabla('reservas');
 </script>
 </body>
 
