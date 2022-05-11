@@ -16,12 +16,15 @@ else{
 $sql = "select idmaterial, idejemplar, codigo_externo, propietario,
         (CASE WHEN estado='l' THEN 'Libre' WHEN estado='r' THEN 'Reservado' WHEN estado='p' THEN 'Prestado' when estado='o' THEN 'Obsoleto' END) as estado, 
         (CASE WHEN disponibilidad ='True' THEN 'SI' ELSE 'NO' END ) as disponibilidad,
-        min(fecha) as proxima         
-        from ejemplares e inner join reservas r on (r.material=e.idmaterial) and(r.ejemplar=e.idejemplar) where idmaterial = '".$idej."' 
-        group by idmaterial, idejemplar, codigo_externo, propietario, estado, disponibilidad;";
-
+        (CASE WHEN activo='true' THEN min(fecha) ELSE NULL END )as proxima         
+        from ejemplares e left join reservas r on (r.material=e.idmaterial) and(r.ejemplar=e.idejemplar) 
+        where idmaterial = '".$idej."' 
+        group by idmaterial, idejemplar, codigo_externo, propietario, estado, disponibilidad, activo;";
+        
 
 $resultado=select($sql);
+
+
 
 switch($tipo){
     Case 'Libro':

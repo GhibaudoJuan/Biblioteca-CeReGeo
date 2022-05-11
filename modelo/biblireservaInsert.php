@@ -37,6 +37,9 @@ $res = select($sql);
 
 //guardo el resultado
 $_SESSION['res']=$res;
+
+//echo $sql;
+
 //redirigo
 header('location:../vista/bibliReserva.php');
 
