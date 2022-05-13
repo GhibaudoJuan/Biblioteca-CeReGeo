@@ -15,7 +15,7 @@ $tabla="<table id='reportes' class='display tabth' style='width:100%'>
 <th>Fecha</th>
 <th>Descripcion</th>
 <th>PDF</th>
-<tr>
+</tr>
 </thead>
 <tbody>";
 
