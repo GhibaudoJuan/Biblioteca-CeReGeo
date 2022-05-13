@@ -101,91 +101,7 @@ function tabladata($sql,$array){
     }
     return $tabla;
 }
-//para armar una tabla
-function armarTabla($sql, $array){
-    
-    $tabla="";
-    $i=0;
-    while ($mifila = pg_fetch_assoc($sql))
-    {
-        $tabla.="<tr id='id".$i."' ";
-        $tabla.=" onclick='idtabla(" ;
-        $tabla.= '"id'.$i.  '"';
-        
-        $size=count($array)+1;
-        for($g=1;$g<$size;$g++){
-            $tabla.= ', "'.$mifila[$array[$g]].'"';
-        }
-        $tabla.=")'>";
-      
-        foreach ($array as $columna){
-        $mifila[$columna] = filtrar($mifila[$columna]);
-        $tabla.="<td>".$mifila[$columna]."</td>";
-                 }
-        $tabla.=" </tr>";
-        $i+=1;
-    }
-    return $tabla;
-    
-}
-//para armar una tabla con imagenes, no se usa
-function armarGaleria($sql,$tipo){
-//$tipo = 0: material, =1:libro,=2:revista,=3:mapa,=4:final     
-    $galeria="";
-    
-    while ($mifila = pg_fetch_assoc($sql))
-    {
-        
-        $galeria.='<div class="galeria">
-        <div class="desc">
-        <span>Codigo:'.$mifila['idmat'].  ' Tipo:'.$mifila['tipo'].'</span><br>
-        <span>Titulo:'.$mifila['titulo'].' </span>     
-        <br>';
-        switch ($tipo){
-            case 1:
-                $galeria.='<span>Autores:'.$mifila['autores'].' Editorial:'.$mifila['editorial'].
-                ' Edicion:'.$mifila['edicion'].' Tomo:'.$mifila['tomo'].'</span></br>';
-                break;
-            case 2:
-                $galeria.='<span>Volumen:'.$mifila['volumen'].' Editorial:'.$mifila['editorial'].
-                ' Ejemplar:'.$mifila['ejemplar'].' Coleccion:'.$mifila['coleccion'].' Num:'.$mifila['num'].' ISSN:'.$mifila['issn'].'</span></br>';
-                break;
-            case 3:
-                $galeria.='<span>Tipo:'.$mifila['tipom'].' Hoja:'.$mifila['hoja'].' Escala:'.$mifila['escala'].
-                '</span></br><span> Pais:'.$mifila['pais'].' Provincia:'.$mifila['provincia'].' Localidad:'.$mifila['localidad'].'</span></br>';
-                break;
-            case 4:
-                $galeria.='<span>Tipo:'.$mifila['tipott'].' Autores:'.$mifila['autores'].' Directores:'.$mifila['directores'].
-                '</span></br><span> Universidad:'.$mifila['universidad'].' Lugar:'.$mifila['lugar'].' Paginas:'.$mifila['numpag'].'</span></br>';
-                break;
-            
-        }
-       
-        $galeria.='<span>Descripcion: '.$mifila['descripcion'].'</span>
-                    </div>';
-        
-        $galeria.= '<div style="position:absolute;right:10px; ">
-            <form action = "../vista/bibliEjemplares.php" method="post" >
-            <input type="hidden" name ="id" value='.$mifila['idmat'].'>
-            <button type="submit" class="button">Ver</button>
-            </form>';
-        if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']<'2'))
-        $galeria.='<form action = "../vista/bibliActualizar.php" method="post" >
-                   <input type="hidden" name ="id" value='.$mifila['idmat'].'>
-                   <input type="hidden" name ="tipo" value='.$mifila['tipo'].'>
-                   <button type="submit" class="button">Actualizar</button></form>';
-        $galeria.='<a href="#miModal"><button type="submit" class="button" onclick="valueborrar('."'borrar','".$mifila['idmat']."'".')">Borrar</button> </a>';
-        $galeria.='</div>';
-    
-        if($mifila['portada']=='')
-            $galeria.=' <img src="../imagenes/noimage.jpg" alt="Sin imagen" width="160px" height="auto"></div>';
-        else 
-            $galeria.=' <img src="../imagenes/'.$mifila['portada'].'" alt="Sin imagen" width="160px" height="auto"></div>';
-        
-    }
-    return $galeria;
-   
-}
+
 
 
 //para armar la portadoen ejemplares
@@ -362,111 +278,6 @@ function armarWhere ($array){
     return '';
 }
 
-//para armar el where de una consulta sin el where delante
-function armarsinWhere ($array){
-    $h ='';
-   
-        foreach ($array as $clave=>$valor){
-            if ($clave!='w'){
-                if(!empty($valor)){
-                        $h.=" and ";
-                        
-                        $valor=filtrar($valor);
-                        
-                        if( is_numeric($valor))
-                            $h .= $clave. "= '".$valor."' ";
-                        else
-                            $h .= $clave. " like '%".$valor."%' ";
-                                
-                             
-                
-            }
-            }
-        }
-            
-  return $h;
-   
-    
-}
-//para armar el where en reserva
-function armarWherereserva ($array, $where){
-    $h= '';
-    $a=0;
-    if($where)
-        $h.= ' where ';
-    else 
-        $a=1;
-    
-      
-        if(!empty ($array['nombre'])){
-            if($a==1)
-                $h.=' and ';
-            $h.= " nombre like '%". $array['nombre']."%' "   ;
-            $a=1;
-        }
-       if(!empty($array['material'])){
-            if($a==1)
-                $h.=' and ';
-            $h.=" material like '%".$array['material']."%' " ;
-            $a=1;
-        }
-        if(!empty ($array['fecha'])){
-            if($a==1)
-                $h.=' and ';
-                $h.= 'fecha'.$array['signo']."'". $array['fecha']."' "   ;
-                $a=1;
-        }
-        if(!empty ($array['activo'])){
-            if($a==1)
-                $h.=' and ';
-            $h.= " activo ='". $array['activo']."' "   ;
-            $a=1;
-        }
-        if($a==0)
-            return '';
-        else
-            return $h;
-}
-//para armar el where en reserva
-function armarWhereprestamo ($array, $where){
-    $h= '';
-    $a=0;
-    if($where)
-        $h.= ' where ';
-        else
-            $a=1;
-            
-            
-            if(!empty ($array['nombre'])){
-                if($a==1)
-                    $h.=' and ';
-                    $h.= " nombre like '%". $array['nombre']."%' "   ;
-                    $a=1;
-            }
-           if(!empty($array['titulo'])){
-                if($a==1)
-                    $h.=' and ';
-                    $h.=" titulo like '%".$array['titulo']."%' " ;
-                    $a=1;
-            }
-            if(!empty ($array['fecha'])){
-                if($a==1)
-                    $h.=' and ';
-                    $h.= $array['tipo'].$array['signo']."'". $array['fecha']."' "   ;
-                    $a=1;
-            }
-            if(!empty ($array['activo'])){
-                if($a==1)
-                    $h.=' and ';
-                    $h.= " activo ='". $array['activo']."' "   ;
-                    $a=1;
-            }
-            if($a==0)
-                return '';
-                else
-                    return $h;
-}
-
 
 function comprobar($algo){
     if($algo!=0){
@@ -560,10 +371,7 @@ function autostringn ($tabla){
     return $lista;
 }
 
-function paginacion($pagina){ 
-   return $pagina *5;
-        
-}
+
 function reportes($a, $b){
     $c="";
     
@@ -589,7 +397,7 @@ function reportes2($a,$b){
     $c="";
     switch ($a){
         case '1':{
-            $c.=" 'Todos' as todos, count(*) as cantidad ".$b;
+            $c.=" material, titulo, nombre, count(*) as cantidad ".$b."group by material , titulo, nombre ";
             break;
         }
         case '2':{

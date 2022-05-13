@@ -20,21 +20,21 @@ else{
 
 
 switch($array['datos']){
-    case '1':{
+    case '1':{ //prestamos realizados
         $from= " from prestamos inner join material on (idmat=material) ";
         $from.=reportes($array['datos'], $array['tiempo']);
         $titulo="Prestamos realizados";
         $nombrepdf="prestamos_realizados".mostrardia().".pdf";
         break;
     }
-    case '2':{
+    case '2':{ //prestamos retrasados
         $from=" from prestamos inner join material on (idmat=material) where devuelto > hasta ";
         $from.=reportes($array['datos'], $array['tiempo']);
         $titulo="Prestamos retrasados";
         $nombrepdf="prestamos_retrasados".mostrardia().".pdf";
         break;
     }
-    case '3':{
+    case '3':{ //prestamos no devueltos
         $from=" from prestamos inner join material on (idmat=material) where devuelto is null ";
         $from.=reportes($array['datos'], $array['tiempo']);
         $titulo="Prestamos no devueltos";
@@ -54,37 +54,43 @@ $sql.=";";
 
 $descri;
 
+$tabla="<table>
+<thead>
+<tr>";
 
 
 
+
+//echo $sql;
 $resultado = select($sql);
 
-$tabla="<div class='auto border1'>";
 
-$c="";
-switch ($array['cantidad']){
-    case '1':{
-        $c.="<div class='largo1 linea'> </div>";
+switch ($array['cantidad']){ 
+    case '1':{ //todos
+        $tabla.="<th>Material</th>
+                  <th>Titulo</th>
+                  <th>Nombre</th>
+                  <th>Cantidad</th></tr></thead><tbody>";
+        $total='<tr><td>Total</td><td></td><td></td><td>';
         $descri=$titulo." agrupado por Todos ";
         break;
     }
-    case '2':{
-        $c.= "<div class='largo1 linea'>Nombre completo</div>";
+    case '2':{ //segun usuario
+        $tabla.="<th>Nombre</th>
+                  <th>Cantidad</th></tr></thead><tbody>;";
+        $total='<tr><td>Total</td><td>';
         $descri=$titulo." agrupado por Usuario ";
         break;
     }
-    case '3':{
-        $c.="<div class='largo2 linea'>Material</div>
-                 <div class='largo1 linea'>Titulo</div>";
+    case '3':{ //segun material
+        $tabla.="<th>Material</th>
+                  <th>Titulo</th>
+                  <th>Cantidad</th></tr></thead><tbody>;";
+        $total='<tr><td>Total</td><td></td><td>';
         $descri=$titulo." agrupado por Material ";
         break;
     }
 }
-$tabla.=$c;
-
-
-$tabla.="<div class='largo3 linea'>Total</div>
-         </div>";
 
 
 
@@ -104,32 +110,43 @@ switch($array['tiempo']){
 }
 
 
-
-
-while ($mifila = pg_fetch_assoc($resultado))
-{
-    $tabla.="<div class='auto border1'>";
+$acum;
+$tabla1;
+while ($datos = pg_fetch_assoc($resultado)){
+        $tabla1.='<tr>';
     
-    if(isset($mifila['todos'])){
-        $tabla.="<div class='largo1 linea'>Todos</div>";
-    }
-    if(isset($mifila['material'])){
-        $tabla.="<div class='largo2 linea'>".$mifila['material']."</div>";
-    }
-    if(isset($mifila['titulo'])){
-        $tabla.="<div class='largo1 linea'>".$mifila['titulo']."</div>";
-    }
-    if(isset($mifila['nombre'])){
-        $tabla.="<div class='largo1 linea'>".$mifila['nombre']."</div>";
-    }
-    $tabla.="<div class='largo3 linea'>".$mifila['cantidad']."</div>";
-
-    $tabla.=" </div>";
-   
+        
+       
+        
+        switch ($array['cantidad']){
+            case '1':{ //todos
+                $tabla1.='<td>'.$datos['material'].'</td>';
+                
+                $tabla1.='<td>'.$datos['titulo'].'</td>';
+                
+                $tabla1.='<td>'.$datos['nombre'].'</td>';
+                break;
+            }
+            case '2':{ //segun usuario
+                $tabla1.='<td>'.$datos['nombre'].'</td>';
+                break;
+            }
+            case '3':{ //segun material
+                $tabla1.='<td>'.$datos['material'].'</td>';
+                
+                $tabla1.='<td>'.$datos['titulo'].'</td>';
+                break;
+            }
+        }
+        $tabla1.='<td>'.$datos['cantidad'].'</td>';
+        
+        $tabla1.="</tr>";
+        $acum+=$datos['cantidad'];
+    
 }
+$tabla1.=$total.$acum.'</td></tr>';
 
-
-
+$tabla1.=" </tbody></table>";
 
 
 
@@ -141,43 +158,29 @@ while ($mifila = pg_fetch_assoc($resultado))
 <head>
 
 <style type="text/css">
-.colorperfil{
-	background-color: #1C43B9;
-	padding:7px 7px;
+
+table {
+  border-collapse: collapse;
+  width: 800px;
+  
 }
-.border1{
-	border:1px solid #c6c6c6;
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
 }
-.border2{
-	border:1px solid #c6c6c6;
-	border-top-style:none;
-}
-.auto{
-width:auto;
-}
-.linea{
-padding:7px;
-display:inline;
-}
-.largo1{
-width:200px;
-}
-.largo2{
-width:100px;
-}
-.largo3{
-width:50px;
-}
+
 </style>
 </head>
 <body>
 
 <!-- <img src="../imagenes/logoceregeo-horizontal.jpg" alt="Logo-GeReGeo" height="40px" width="100px">-->
 
-<h3><?=$titulo;?></h3>
+<h3 style="text-align:center"><?=$titulo;?></h3>
+<?=$tabla;?>
+<?=$tabla1;?>
 
-
-<?php echo $tabla;?>
 
 </body>
 

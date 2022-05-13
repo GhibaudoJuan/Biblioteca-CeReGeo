@@ -3,7 +3,7 @@ if(!isset($_SESSION))session_start();
 
 
 require_once("../accesos/biblifiltrar.php");
-
+require_once("../accesos/conf.php");
 if($_GET['pag']==1){ //genera un error, cuando se busca y se va de la pag 2 a la pag 1 entra y no carga el post de la busqueda(solo ocurre cuando vas a la pagina 1)
 $sql = "select distinct idmat, titulo, descripcion, portada, tipo from material m left join keywords k on (k.mat_id= m.idmat) ";
 
@@ -18,9 +18,10 @@ if(isset($_POST)){
    $sql.=armarWhere($array);
    
    }
-$sql.="order by tipo, titulo limit 24 offset ";
 
-$mul = ($_GET['pag']-1)*24;
+$sql.="order by tipo, titulo limit ".$paginacion." offset ";
+
+$mul = ($_GET['pag']-1)*$paginacion;
 
 $sql.=$mul;
 $sql.=";";
@@ -29,7 +30,7 @@ else{
     $s=$_SESSION['sql'];
     $array=explode('offset',$s);
     $array[0].=" offset ";
-    $mul = ($_GET['pag']-1)*24;
+    $mul = ($_GET['pag']-1)*$paginacion;
     $array[0].=$mul.";";
     $sql=$array[0];
     

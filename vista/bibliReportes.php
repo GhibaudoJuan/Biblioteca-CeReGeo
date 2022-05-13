@@ -48,12 +48,13 @@ left:30rem;
 	 <main class="flex">
 	
 	<!-- Tabla -->
-	<?php include("../controlador/biblireportes.php")?>
 	<div  class="tabladiv ajuste" >
 	<?php include("../modelo/bibliReportesselect.php"); ?>
-	
-	
 	</div>
+	<div class="ajuste" style="max-width: 25rem; padding-left:1rem;padding-right:1rem;">
+	<?php include("../controlador/biblireportes.php")?>
+	</div>
+	
 	
 	
 	

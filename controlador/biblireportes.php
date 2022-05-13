@@ -12,7 +12,7 @@ padding-bottom:1rem;
 <body>
 
 
-<div class="ajuste"style="max-width: 25rem; padding-left:1rem;padding-right:1rem;">
+
 
 <div class="sticky top-0">
 <form action="../modelo/reportes.php" method="post">
@@ -100,11 +100,11 @@ padding-bottom:1rem;
 */?>
 
 
-<button type="submit" class="indexbutton">Registrar</button>
+<div class="alignr"><button type="submit" class="indexbutton">Registrar</button></div>
 </form>
 </div>
 
-</div>
+
 
 
 </body>
