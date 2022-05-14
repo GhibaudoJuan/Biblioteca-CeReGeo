@@ -72,14 +72,14 @@ switch ($array['cantidad']){
                   <th>Nombre</th>
                   <th>Cantidad</th></tr></thead><tbody>";
         $total='<tr><td>Total</td><td></td><td></td><td>';
-        $descri=$titulo." agrupado por Todos ";
+        $descri=$titulo." agrupado segun Todos ";
         break;
     }
     case '2':{ //segun usuario
         $tabla.="<th>Nombre</th>
                   <th>Cantidad</th></tr></thead><tbody>;";
         $total='<tr><td>Total</td><td>';
-        $descri=$titulo." agrupado por Usuario ";
+        $descri=$titulo." agrupado segun Usuario ";
         break;
     }
     case '3':{ //segun material
@@ -87,7 +87,7 @@ switch ($array['cantidad']){
                   <th>Titulo</th>
                   <th>Cantidad</th></tr></thead><tbody>;";
         $total='<tr><td>Total</td><td></td><td>';
-        $descri=$titulo." agrupado por Material ";
+        $descri=$titulo." agrupado segun Material ";
         break;
     }
 }
@@ -105,7 +105,7 @@ switch($array['tiempo']){
         $descri.=" en tres meses.";
         break;
     default:
-        $descri.=" todos.";
+        $descri.=" desde el comienzo.";
         break;
 }
 

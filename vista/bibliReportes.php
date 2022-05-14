@@ -8,7 +8,7 @@ require_once("../accesos/biblifiltrar.php");
     
     
     $sql = "select nombre, fecha, descripcion
-            from reportes ";
+            from reportes order by id asc;";
 
 $_SESSION['sql'] = $sql;
 
