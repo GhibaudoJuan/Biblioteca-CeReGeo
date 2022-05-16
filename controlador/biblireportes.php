@@ -31,10 +31,13 @@ padding-bottom:1rem;
 <div class="flex">
 <div class="span-2 ajuste"><span>Datos sobre: </span></div>
 <div class="ajuste" >
-<select id="datos" name= "datos" class="index" style="width:12rem;">
+<select id="datos" name="datos" class="index" style="width:12rem;">
   <option value="1">Prestamos realizados</option>
   <option value="2">Prestamos retrasados</option>
   <option value="3">Prestamos no devueltos</option>
+  <option value="4">Reservas realizadas</option>
+  <option value="5">Reservas no retiradas</option>
+  
 </select>
 </div>
 </div>
@@ -44,7 +47,7 @@ padding-bottom:1rem;
 <div class="flex">
 <div class="span-2 ajuste"><span>Intervalo de tiempo</span></div>
 <div class="ajuste" >
-<select id="tiempo" name= "tiempo" class="index" style="width:12rem;">
+<select id="tiempo" name="tiempo" class="index" style="width:12rem;">
   <option value=" >= current_date - interval '24 hours' ">&Uacuteltimas 24 horas</option>
   <option value=" >= current_date - interval '1 month' ">&Uacuteltimo mes</option>
   <option value=" >= current_date - interval '3 month' ">&Uacuteltimos 3 meses</option>
@@ -56,7 +59,7 @@ padding-bottom:1rem;
 <div class="flex">
 <div class="span-2 ajuste"><span>Agrupar segun:</span></div>
 <div class="ajuste" >
-<select id="cantidad" name= "cantidad" class="index" style="width:12rem;">
+<select id="cantidad" name="cantidad" class="index" style="width:12rem;">
   <option value="1">Todos</option>
   <option value="2">Segun usuario</option>
   <option value="3">Segun material</option>

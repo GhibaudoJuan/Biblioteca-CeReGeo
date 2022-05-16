@@ -388,6 +388,14 @@ function reportes($a, $b){
             $c.=" and hasta ".$b;
             break;
         }
+        case '4':{
+            $c.=" where fecha ".$b;
+            break;
+        }
+        case '5':{
+            $c.=" fecha ".$b;
+            break;
+        }
     }
     return $c;
     

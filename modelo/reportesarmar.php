@@ -41,7 +41,20 @@ switch($array['datos']){
         $nombrepdf="prestamos_no_devueltos".mostrardia().".pdf";
         break;
     }
-        
+    case '4':{ //reservas realizados
+        $from=" from reservas inner join material on (idmat=material) ";
+        $from.=reportes($array['datos'], $array['tiempo']);
+        $titulo="Reservas realizadas";
+        $nombrepdf="reservas_realizadas".mostrardia().".pdf";
+        break;
+    }
+    case '5':{ //Reservas no retiradas
+        $from=" from reservas inner join material on (idmat=material) where activo='false' and retirado='false' ";
+        $from.=reportes($array['datos'], $array['tiempo']);
+        $titulo="Reservas no retiradas";
+        $nombrepdf="reservas_no_retiradas".mostrardia().".pdf";
+        break;
+    }
 }
 
 $sql.=reportes2($array['cantidad'],$from);
