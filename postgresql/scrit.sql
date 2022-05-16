@@ -93,6 +93,15 @@ foreign key (tipo) references tipocuenta(id));
 
 insert into tipocuenta values (0,'Administrador'),(1,'Bibliotacario'),(2,'Docente'),(3,'Estudiante');
 
+create table multas(
+idmulta int primary key,
+idcuenta int,
+desmultado date,
+multa_estado boolean,
+foreign key (idcuenta) references cuenta(idcuenta)
+);
+
+
 create table reservas (
 idres int,
 nombre varchar(100),
