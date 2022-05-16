@@ -26,7 +26,7 @@ $tlug= autostring("tt", "lugar");
 </div>
 <div class="flex">
 <div class="span-2 ajuste"><label for="rdirec">Directores</label></div>
-<div class="ajuste w-1 autocomplete"><input type='text' name="directores"  id="rdirec" class="index"  maxlength="300"  placeholder=""></div>
+<div class="ajuste w-1 autocomplete"><input type='text' name="directores"  id="tdirec" class="index"  maxlength="300"  placeholder=""></div>
 </div>
 
 <div class="flex">

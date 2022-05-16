@@ -1,7 +1,8 @@
 <?php 
 if(!isset($_SESSION))session_start();
 
-
+require_once("../accesos/validacion.php");
+validaracceso(0);
 require_once("../accesos/biblifiltrar.php");
 
 

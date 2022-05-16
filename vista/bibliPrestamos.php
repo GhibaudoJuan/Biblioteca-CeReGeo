@@ -121,7 +121,7 @@ $retorno = 'prestamo';
 
 
 <script type="text/javascript">
-conftabla('prestamos');
+conftabla('prestamos','<?php echo $_SESSION['tipouser']?>');
 document.getElementById('reservaprox').style.display="none";
 
 </script>

@@ -1,5 +1,19 @@
-function conftabla(a){
+function conftabla(a,b=0){
 	$(document).ready( function () {
+	var nover;	
+	if(b>1){
+		switch(a){
+			case 'reservas':
+				nover=[0,1,2,4];
+				break;
+			case 'prestamos':
+				nover=[0,1,3];
+				break;
+			case 'ejemplar':
+				nover=[0,1,2,3];
+				break;
+		}
+	}
     $('#'+a).DataTable( {
         "language": {
             "lengthMenu": "Mostrar _MENU_ filas por pagina.",
@@ -13,6 +27,12 @@ function conftabla(a){
             "info": "Pagina _PAGE_ de _PAGES_",
             "infoEmpty": "Sin filas disponibles"
         },
+		"columnDefs":[
+			{	
+				visible:false
+				,targets: nover}
+			
+		],
 		
 	}
 );
@@ -35,11 +55,17 @@ var table = $('#'+a).DataTable();
 			var data = table.row('.selected').data();
 			$('#botonborrar').removeAttr("disabled");
 			$('#botoneditar').removeAttr("disabled");
-			if(data[6]!="Cerrado")
+			if(data[6]!="Cerrado"){ //reservas
+				$('#botonborrar').removeAttr("disabled");
+				$('#botoneditar').removeAttr("disabled");
 				$('#botonreserva').removeAttr("disabled");
-			else
+			}
+			else{
+				$('#botonborrar').attr("disabled","disabled");
+				$('#botoneditar').attr("disabled","disabled");
 				$('#botonreserva').attr("disabled","disabled");
-			if(data[7]!="Cerrado")
+			}
+			if(data[7]!="Cerrado")//prestamos
 				$('#botonprestamo').removeAttr("disabled");
 			else
 				$('#botonprestamo').attr("disabled","disabled");

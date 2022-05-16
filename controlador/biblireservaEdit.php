@@ -35,7 +35,10 @@
 
 </form>
 
+<script type="text/javascript">
+mindate('cresdesde',resmindate);
 
+</script>
 </body>
 
 

@@ -38,7 +38,7 @@ $mtipo= autostring("mapas", "tipom");
 </div>
 <div class="flex">
 <div class="span-2 ajuste"><label for="tipomapa">Tipo Mapa</label></div>
-<div class="ajuste w-1 autocomplete"><input type='text' name="tipom"  id="tipomapa" class="index"  maxlength="50"  placeholder=""> </div>
+<div class="ajuste w-1 autocomplete"><input type='text' name="tipom"  id="tipom" class="index"  maxlength="50"  placeholder=""> </div>
 </div>
 
 

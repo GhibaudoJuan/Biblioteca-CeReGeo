@@ -43,8 +43,10 @@ $nombre= autostringn("select nombre from cuenta union select nombre from reserva
 </form>
 
 <script>
-autocomplete(document.getElementById("nombre"), <?php echo $nombre;?>);
 mindate('fr',resmindate);
+if(document.getElementById("nombre")){
+autocomplete(document.getElementById("nombre"), <?php echo $nombre;?>);
+}
 </script>
 </body>
 

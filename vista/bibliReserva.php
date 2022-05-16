@@ -65,16 +65,13 @@ $retorno='reserva';
 		<a href="#miModal" class="sindec"><button type="submit" id="botoneditar" disabled class="indexbutton" onclick="mostrar('actualizar')">Editar</button> </a>
 	<!-- Borrar -->		
 		<a href="#miModal" class="sindec"><button type="submit" id="botonborrar"  disabled class="indexbutton" onclick="mostrar('borrar')">Borrar</button> </a>
-		
+	<?php if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']<'2')):?>
 	<!-- Borrar Todo -->		
 		<a href="#miModal" class="sindec"><button type="submit" class="indexbutton" onclick="mostrar('borrartodo')">Borrar Todo</button> </a>
-		
-	
-		<?php if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']<'2')):?>
-		 <!-- Pasar a Prestamo -->	
+    <!-- Pasar a Prestamo -->	
 		 <a href="#miModal" class="sindec"><button type="submit" id="botonreserva" disabled class="indexbutton" onclick="mostrar('prestamo')">Prestamo</button> </a>
 		 
-		<?php endif;?>
+	<?php endif;?>
 	 
      </div>
   
@@ -125,7 +122,7 @@ $retorno='reserva';
 
 
 <script type="text/javascript">
-conftabla('reservas');
+conftabla('reservas','<?php echo $_SESSION['tipouser']?>');
 </script>
 </body>
 
