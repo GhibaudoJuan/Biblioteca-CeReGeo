@@ -53,6 +53,7 @@ returns trigger AS $$
 DECLARE
 cantidad int;
 cantidad1 int;
+retiro boolean;
 BEGIN
 
 IF(tg_op ='INSERT') THEN
@@ -60,8 +61,15 @@ IF(tg_op ='INSERT') THEN
 	update ejemplares set estado='p' where idmaterial=new.material and idejemplar=new.ejemplar;
 
 select count(*) from reservas where nombre=new.nombre and material=new.material and ejemplar=new.ejemplar and activo='true' INTO cantidad;
+
+select case when (fecha=current_date) then 'true' else 'false' end from reservas where nombre=new.nombre and material=new.material and ejemplar=new.ejemplar and activo='true' INTO retiro;
+
 if(cantidad<>0) then
-update reservas set activo='false', retirado='true' where nombre=new.nombre and material=new.material and ejemplar=new.ejemplar and activo='true';
+	if(retiro) then
+	update reservas set retirado='true' where nombre=new.nombre and material=new.material and ejemplar=new.ejemplar and activo='true';
+	end if;
+update reservas set activo='false' where nombre=new.nombre and material=new.material and ejemplar=new.ejemplar and activo='true';
+	
 end if;
 
 end if;
