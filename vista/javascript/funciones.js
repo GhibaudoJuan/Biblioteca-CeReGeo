@@ -1,19 +1,31 @@
 function conftabla(a,b=0){
 	$(document).ready( function () {
 	var nover;	
+	var columna;
 	if(b>1){
 		switch(a){
 			case 'reservas':
 				nover=[0,1,2,4];
+				columna=6;
 				break;
 			case 'prestamos':
 				nover=[0,1,3];
+				columna=7;
 				break;
 			case 'ejemplar':
 				nover=[0,1,2,3];
 				break;
 		}
 	}
+	switch(a){
+			case 'reservas':				
+				columna=6;
+				break;
+			case 'prestamos':
+				columna=7;
+				break;
+	}
+	
     $('#'+a).DataTable( {
         "language": {
             "lengthMenu": "Mostrar _MENU_ filas por pagina.",
@@ -30,7 +42,24 @@ function conftabla(a,b=0){
 		"columnDefs":[
 			{	
 				visible:false
-				,targets: nover}
+				,targets: nover},
+				{
+					render: function (data) {
+						let color;
+						console.log(columna);
+						if(data=='Cerrado'){
+							color = 'red';
+							return '<span style="color:' + color + '">' + data + '</span>';
+						}
+						else{
+							color='blue';
+								return '<span style="color:' + color + '">' + data + '</span>';
+						}
+                    
+                },
+                targets: columna,
+					
+				}
 			
 		],
 		

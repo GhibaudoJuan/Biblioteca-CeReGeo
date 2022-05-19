@@ -88,13 +88,7 @@ function tabladata($sql,$array){
         
         foreach ($array as $columna){
             $mifila[$columna] = filtrar($mifila[$columna]);
-            if($columna=='activo')
-                if($mifila[$columna]=="Cerrado")
-                    $tabla.="<td style='color:red'>".$mifila[$columna]."</td>";
-                else 
-                    $tabla.="<td style='color:blue'>".$mifila[$columna]."</td>";
-            else
-                $tabla.="<td>".$mifila[$columna]."</td>";
+            $tabla.="<td>".$mifila[$columna]."</td>";
         }
         $tabla.=" </tr>";
         
