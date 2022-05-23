@@ -7,7 +7,7 @@ $backup = 'pg_dump --user=juan --host=127.0.0.1 --port=5432 --dbname=biblioteca 
 //hay un archivo .pgpass para introducir contraseña automatica
 $password='juan';
 
-$nom=shell_exec($backup);
+$nom=exec($backup);
 echo $nom;
 echo '<br>';
 

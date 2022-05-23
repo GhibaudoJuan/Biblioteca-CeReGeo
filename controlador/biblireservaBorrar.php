@@ -11,20 +11,24 @@
 
 <form action = "../modelo/biblireservaBorrar.php" method="post" >
 
+<input type='hidden' id="borrar1" name ='id' >
+<input type='hidden' id="nombre1" name ='nombre' >
+
+
+
 <span style="font-size: 25px;">&#191Esta seguro de que quiere eliminarlo? </span>
 <br><br>
 <?php if ($_SESSION['tipouser']<'2'):?>
 <div class="flex">
-<div class="span-2 ajuste"><span>Nombre</span></div>
-<div class="ajuste w-3"><input type='text' name="nombre" id="nombre1"  class="index" required></div>
+<div class="span-2 ajuste"><label>Nombre:</label></div>
+<div class="ajuste w-3"><input type='text' id="nombreborrar" class="index" disabled></div>
 </div>
 <?php endif;?>
 
 <div class="flex">
-<div class="span-2 ajuste"><span>Reserva Num</span></div>
-<div class="ajuste w-3"><input type='text' name="id" id="borrar1" class="index" required></div>
+<div class="span-2 ajuste"><label>Reserva Num:</label></div>
+<div class="ajuste w-3"><input type='text' id="borrarprimero" class="index" disabled></div>
 </div>
-
 
 
 <button type="submit" class="indexbutton">Borrar</button>

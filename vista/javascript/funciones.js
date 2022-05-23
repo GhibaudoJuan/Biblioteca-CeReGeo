@@ -84,7 +84,7 @@ var table = $('#'+a).DataTable();
 			var data = table.row('.selected').data();
 			$('#botonborrar').removeAttr("disabled");
 			$('#botoneditar').removeAttr("disabled");
-			if(data[6]!="Cerrado"){ //reservas
+			if((data[6]!="Cerrado")||(b<=1)){ //reservas
 				$('#botonborrar').removeAttr("disabled");
 				$('#botoneditar').removeAttr("disabled");
 				$('#botonreserva').removeAttr("disabled");
@@ -136,6 +136,11 @@ function borrar(a,b){
 	$('#borrar1').attr('value',a);
 	$('#nombre1').attr('value',b);
 	$('#bejempplar').attr('value',b);
+	$('#borrarprimero').attr('value',a);
+	$('#nombreborrar').attr('value',b);
+	
+	
+
 }
 
 function valuereserva(a, b){
@@ -161,8 +166,9 @@ function pasarprestamo(a,b,c){
 function devolucion(a,b){
 	$('#bdid').attr('value',a);
 	$('#bdnom').attr('value',b);
-	document.getElementById("bdnombre").innerHTML =b;
-	document.getElementById("bdprestamo").innerHTML =a;
+	$('#bdprestamo').attr('value',a);
+	$('#bdnombre').attr('value',b);
+
 	
 }
 function editar(a,b,c,d,e,f,g,h){
