@@ -125,6 +125,7 @@ margin-right:10rem;
 	<?php include("../controlador/footer.php");?>
 	</footer>
 	<?php include("../controlador/vent_error.php");?>
+	<?php include("javascript/pluginBootstrap.html"); ?>
 </body>
 
 

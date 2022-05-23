@@ -61,7 +61,7 @@ require_once("../accesos/biblifiltrar.php");
 	</div> 
 
 
-
+<?php include("javascript/pluginBootstrap.html"); ?>
 
 </body>
 

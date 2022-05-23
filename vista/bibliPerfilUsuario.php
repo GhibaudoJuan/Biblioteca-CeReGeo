@@ -53,7 +53,7 @@ require_once("../accesos/validacion.php");
 
 	?>
 	</div> 
-
+<?php include("javascript/pluginBootstrap.html"); ?>
 </body>
 
 

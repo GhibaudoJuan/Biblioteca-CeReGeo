@@ -120,21 +120,21 @@ min-height:20rem!important;
 	            
 				<?php if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']<'2')):?>
 				<!-- Nuevo -->	
-				<a href="#miModal" class="sindec"><button type="submit" id="botonnuevo" class="indexbutton" onclick="mostrar('insert')">Nuevo</button> </a>
+				<button type="button" id="botonnuevo" data-bs-toggle="modal" data-bs-target="#miModal" class="indexbutton" onclick="mostrar('insert')">Nuevo</button>
 	            
 				<!-- Editar -->	
-				<a href="#miModal" class="sindec"><button type="submit" id="botoneditar" disabled class="indexbutton" onclick="mostrar('actualizar')">Editar</button> </a>
+				<button type="button" id="botoneditar" data-bs-toggle="modal" data-bs-target="#miModal" disabled class="indexbutton" onclick="mostrar('actualizar')">Editar</button>
 	            
 	            <!-- Borrar -->		
-				<a href="#miModal" class="sindec"><button type="submit" id="botonborrar" disabled class="indexbutton"  onclick="mostrar('borrar2')">Borrar</button> </a>
+				<button type="button" id="botonborrar" data-bs-toggle="modal" data-bs-target="#miModal" disabled class="indexbutton"  onclick="mostrar('borrar2')">Borrar</button>
 				
 				<?php endif;?>
 				<?php if(isset($_SESSION['tipouser'])):?>
 				<!-- Reserva -->
-				<a href="#miModal" class="sindec"><button type="submit" id="botonreservaejemplar" disabled class="indexbutton"  onclick="mostrar('reserva')">Reserva</button> </a>
+				<button type="button" id="botonreservaejemplar" data-bs-toggle="modal" data-bs-target="#miModal" disabled class="indexbutton"  onclick="mostrar('reserva')">Reserva</button>
 				<?php  if($_SESSION['tipouser']<'2'):?>
 				<!-- Prestamo -->
-				<a href="#miModal" class="sindec"><button type="submit" id="botonprestamoejemplar" disabled class="indexbutton"  onclick="mostrar('prestamo')">Prestamo</button> </a>
+				<button type="button" id="botonprestamoejemplar" data-bs-toggle="modal" data-bs-target="#miModal" disabled class="indexbutton"  onclick="mostrar('prestamo')">Prestamo</button>
      			<?php endif;
      			 endif;?>
      			</div>
@@ -171,53 +171,139 @@ min-height:20rem!important;
 
 
 <div id="miModal" class="modal">
-  <div class="modal-contenido modal-buscar" id="reserva" style="display:none;">
-    <div class="alignr"><a href="#" class="sindec negro" onclick="ocultar()">X</a></div>
-    <h2>Reserva</h2>
-    <?php include("../controlador/biblireservaInsert.php"); ?>
-  </div> 
+    <div  id="reserva" style="display:none;">
+      <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" >Reserva</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="ocultar()"></button>
+              </div>
+              <div class="modal-body">
+               <?php include("../controlador/biblireservaInsert.php"); ?>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+    </div>
 
-  <div class="modal-contenido modal-buscar" id="prestamo" style="display:none;">
-    <div class="alignr"><a href="#" class="sindec negro" onclick="ocultar()">X</a></div>
-    <h2>Prestamo</h2>
-    <?php include("../controlador/bibliprestamoInsert.php"); ?>
-  </div>
 
-
-  <div class="modal-contenido modal-buscar" id="modalkeyword" style="display:none;">
-    <div class="alignr"><a href="#" class="sindec negro"  onclick="ocultar()">X</a></div>
-    <h2>Palabras claves</h2>
-    <?php include("../controlador/biblikeywordEdit.php"); ?>
-  </div> 
-
-  <div class="modal-contenido modal-borrar" id="borrar" style="display:none;">
-    <div class="alignr"><a href="#" class="sindec negro" onclick="ocultar()">X</a></div>
-    <h2>Borrar</h2>
-    <?php include("../controlador/biblimaterialBorrar.php"); ?>
-  </div>
-  <div class="modal-contenido modal-buscar" id="insert" style="display:none;">
-    <div class="alignr"><a href="#" class="sindec negro"  onclick="ocultar()">X</a></div>
-    <h2>Nuevo</h2>
-    <?php include("../controlador/bibliEjemplarInsert.php"); ?>
-  </div> 
-  <div class="modal-contenido modal-buscar" id="actualizar" style="display:none;">
-    <div class="alignr"><a href="#" class="sindec negro" onclick="ocultar()">X</a></div>
-    <h2>Editar</h2>
-    <?php include("../controlador/bibliEjemplarEdit.php"); ?>
-  </div> 
-  <div class="modal-contenido modal-borrar" id="borrar2" style="display:none;">
-    <div class="alignr"><a href="#" class="sindec negro"  onclick="ocultar()">X</a></div>
-    <h2>Borrar</h2>
-    <?php include("../controlador/bibliEjemplarBorrar.php"); ?>
-  </div> 
-
- </div>
+    <div  id="prestamo" style="display:none;">
+      <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" >Prestamo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="ocultar()"></button>
+              </div>
+              <div class="modal-body">
+                 <?php include("../controlador/bibliprestamoInsert.php"); ?>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+    </div>
+    
+    
+    <div  id="modalkeyword" style="display:none;">
+      
+      <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" >Palabras claves</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="ocultar()"></button>
+              </div>
+              <div class="modal-body">
+               <?php include("../controlador/biblikeywordEdit.php"); ?>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div  id="borrar" style="display:none;">
+      
+    <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" >Borrar</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="ocultar()"></button>
+              </div>
+              <div class="modal-body">
+                 <?php include("../controlador/biblimaterialBorrar.php"); ?>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+       </div>
+    <div  id="insert" style="display:none;">
+    <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" >Nuevo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="ocultar()"></button>
+              </div>
+              <div class="modal-body">
+               <?php include("../controlador/bibliEjemplarInsert.php"); ?>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+       </div>
+    <div  id="actualizar" style="display:none;">
+        <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" >Editar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="ocultar()"></button>
+                  </div>
+                  <div class="modal-body">
+                   <?php include("../controlador/bibliEjemplarEdit.php"); ?>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+    </div>
+    <div  id="borrar2" style="display:none;">
+      <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" >Borrar</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="ocultar()"></button>
+              </div>
+              <div class="modal-body">
+               <?php include("../controlador/bibliEjemplarBorrar.php"); ?>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+       </div>
+       
+    </div>
+</div>
 
 <script type="text/javascript">
 conftabla('ejemplar','<?php echo $_SESSION['tipouser']?>');
 
 </script>
-
+<?php include("javascript/pluginBootstrap.html"); ?>
 </body>
 
 

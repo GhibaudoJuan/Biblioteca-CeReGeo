@@ -78,6 +78,7 @@ left:30rem;
 <script type="text/javascript">
 conftabla('reportes');
 </script>
+<?php include("javascript/pluginBootstrap.html"); ?>
 </body>
 
 

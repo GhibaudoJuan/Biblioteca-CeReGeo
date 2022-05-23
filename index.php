@@ -34,11 +34,11 @@ if(!isset($_SESSION['res'])){
   crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body style="background-color:#F6F6F6;">
-
 
 
 <!-- Menu -->
@@ -111,10 +111,7 @@ if(!isset($_SESSION['res'])){
             
 </main>
 
-<script type="text/javascript">
-$(document).ready(function() {
-    $('#example').DataTable();
-} );</script>
+
 </body>
 
 </html>

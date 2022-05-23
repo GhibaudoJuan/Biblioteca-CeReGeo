@@ -155,7 +155,7 @@ if(document.getElementById("mapacodigo"))
 
 
 </script>
-
+<?php include("javascript/pluginBootstrap.html"); ?>
 </body>
 
 

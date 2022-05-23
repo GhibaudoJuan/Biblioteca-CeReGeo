@@ -3,22 +3,26 @@ if(!isset($_SESSION))session_start();
 require_once("../accesos/validacion.php");
 require("../accesos/conectserver.php");
 validaracceso(0);
-$backup = 'pg_dump --user=juan --host=127.0.0.1 --port=5432 --dbname=biblioteca > /var/www/html/Biblioteca-CeReGeo/backup/aaas.sql';
+$backup = 'pg_dump -U juan -w -h 127.0.0.1 -p 5432 -d biblioteca  2>&1';
 //hay un archivo .pgpass para introducir contraseña automatica
-$password='juan';
 
-$nom=exec($backup);
-echo $nom;
-echo '<br>';
+
+echo exec($backup); 
+echo "<br>";
 
 //header('location:../vista/backup.php');
-
+/*
 ?>
 
 
 necesito nombre de backup
 
+/usr/lib/postgresql/12/bin/
+> /var/www/html/Biblioteca-CeReGeo/backup/aaas.sql
 
-pg_dump -U juan -W -h 127.0.0.1 biblioteca > /var/www/html/backup/nombre.sql
 
 
+
+
+
+*/?>

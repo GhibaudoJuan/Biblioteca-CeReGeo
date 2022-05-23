@@ -145,7 +145,7 @@ pagsig('sig','<?php echo $count;?>');
 
 
 
-
+<?php include("javascript/pluginBootstrap.html"); ?>
 </body>
 
 

@@ -46,7 +46,6 @@ function conftabla(a,b=0){
 				{
 					render: function (data) {
 						let color;
-						console.log(columna);
 						if(data=='Cerrado'){
 							color = 'red';
 							return '<span style="color:' + color + '">' + data + '</span>';
@@ -379,14 +378,14 @@ function valuekeyword(a,b){
 }
 //funcion para mostrar el modal general
 function mostrar(a){
-	document.body.style.overflow="hidden";  
+	//document.body.style.overflow="hidden";  
 	if(document.getElementById(a))
 		document.getElementById(a).style.display ="block";
 }
 
 //funcion de la pagina ejemplares
 function ocultar(){
-	document.body.style.overflow="visible";
+	//document.body.style.overflow="visible";
 	if(document.getElementById("reserva"))
 		document.getElementById("reserva").style.display ="none";
 	if(document.getElementById("prestamo"))

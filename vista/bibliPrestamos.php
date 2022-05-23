@@ -60,18 +60,18 @@ $retorno = 'prestamo';
 	<?php if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']<'2')):?>
 	<div class="ajuste r-3 m-1">
 	<!-- Nuevo -->
-		<a href="#miModal" class="sindec"><button type="submit" id="botonnuevo" class="indexbutton" onclick="mostrar('nuevo')">Nuevo</button> </a>
+<button type="button" id="botonnuevo" data-bs-toggle="modal" data-bs-target="#miModal" class="indexbutton" onclick="mostrar('nuevo')">Nuevo</button>
 	<!-- Actualizar -->
-		<a href="#miModal" class="sindec"><button type="submit" id="botoneditar" disabled class="indexbutton" onclick="mostrar('actualizar')">Editar</button> </a>
+<button type="button" id="botoneditar" data-bs-toggle="modal" data-bs-target="#miModal" disabled class="indexbutton" onclick="mostrar('actualizar')">Editar</button>
 			
 	<!-- Borrar -->		
-		<a href="#miModal" class="sindec"><button type="submit" id="botonborrar" disabled class="indexbutton" onclick="mostrar('borrar')">Borrar</button> </a>
+<button type="button" id="botonborrar" data-bs-toggle="modal" data-bs-target="#miModal" disabled class="indexbutton" onclick="mostrar('borrar')">Borrar</button>
 		
 		
 	<!-- Borrar Todo -->		
-		<a href="#miModal" class="sindec"><button type="submit" class="indexbutton" onclick="mostrar('borrartodo')">Borrar Todo</button> </a>
+<button type="button" class="indexbutton" data-bs-toggle="modal" data-bs-target="#miModal" onclick="mostrar('borrartodo')">Borrar Todo</button>
 	<!-- Devolucion -->	
-		<a href="#miModal" class="sindec"><button type="submit" id="botonprestamo" disabled class="indexbutton" onclick="mostrar('prestamo')">Devolucion</button> </a>
+<button type="button" id="botonprestamo" data-bs-toggle="modal" data-bs-target="#miModal" disabled class="indexbutton" onclick="mostrar('prestamo')">Devolucion</button>
 	
 	</div>
 	<?php endif;?>
@@ -90,32 +90,103 @@ $retorno = 'prestamo';
 	<?php include("../controlador/vent_error.php");?>
 
 <div id="miModal" class="modal">
-  <div class="modal-contenido modal-buscar" id="nuevo" style="display:none;">
-    <div class="alignr"><a href="#" class="sindec negro"  onclick="ocultar()">X</a></div>
-    <h2>Nuevo</h2>
-    <?php include("../controlador/bibliprestamoNuevo.php") ?>
+  <div id="nuevo" style="display:none;">
+ 
+    	<div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" >Nuevo</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="ocultar()"></button>
+          </div>
+          <div class="modal-body">
+            <?php include("../controlador/bibliprestamoNuevo.php") ?>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      
+    </div>
+   
+   
+   
   </div>  
   
-  <div class="modal-contenido modal-buscar" id="actualizar" style="display:none;">
-    <div class="alignr"><a href="#" class="sindec negro"  onclick="ocultar()">X</a></div>
-    <h2>Actualizar</h2>
-    <?php include("../controlador/bibliPrestamoEdit.php") ?>
+  <div id="actualizar" style="display:none;">
+  <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" >Actualizar</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="ocultar()"></button>
+          </div>
+          <div class="modal-body">
+             <?php include("../controlador/bibliPrestamoEdit.php") ?>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+  
   </div>  
 
-  <div class="modal-contenido modal-borrar" id="borrar" style="display:none;">
-    <div class="alignr"><a href="#" class="sindec negro"  onclick="ocultar()">X</a></div>
-    <h2>Borrar</h2>
-    <?php include("../controlador/bibliPrestamoBorrar.php") ?>
+  <div  id="borrar" style="display:none;">
+  <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" >Nuevo</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="ocultar()"></button>
+          </div>
+          <div class="modal-body">
+           <?php include("../controlador/bibliPrestamoBorrar.php") ?>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+  
   </div> 
-  <div class="modal-contenido modal-borrar" id="borrartodo" style="display:none;">
-    <div class="alignr"><a href="#" class="sindec negro"  onclick="ocultar()">X</a></div>
-    <h2>Borrar Todo</h2>
-    <?php include("../controlador/borrarTodo.php") ?>
+  <div  id="borrartodo" style="display:none;">
+  <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" >Borrar Todo</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="ocultar()"></button>
+          </div>
+          <div class="modal-body">
+          <?php include("../controlador/borrarTodo.php") ?>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    
   </div> 
-  <div class="modal-contenido modal-buscar" id="prestamo" style="display:none;">
-    <div class="alignr"><a href="#" class="sindec negro"  onclick="ocultar()">X</a></div>
-    <h2>Devolucion</h2>
-    <?php include("../controlador/bibliDevolucion.php") ?>
+  <div  id="prestamo" style="display:none;">
+  <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" >Devolucion</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="ocultar()"></button>
+          </div>
+          <div class="modal-body">
+            <?php include("../controlador/bibliDevolucion.php") ?>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    
+
+   
   </div>  
 </div>
 
@@ -125,6 +196,7 @@ conftabla('prestamos','<?php echo $_SESSION['tipouser']?>');
 document.getElementById('reservaprox').style.display="none";
 
 </script>
+<?php include("javascript/pluginBootstrap.html"); ?>
 </body>
 
 

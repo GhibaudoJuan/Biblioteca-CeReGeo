@@ -57,20 +57,26 @@ $_SESSION['sql'] = $sql;
 		
 	
 	<!-- Nuevo -->
-	<a href="#miModal" class="sindec"><button type="submit" class="indexbutton" onclick="mostrar('insert')">Nuevo</button> </a>
-	<!-- Nuevo -->
+<button type="button" class="indexbutton" data-bs-toggle="modal" data-bs-target="#miModal" onclick="mostrar('insert')">Nuevo</button>
+
 	<!-- Actualizar -->
 		
-		<a href="#miModal" class="sindec"><button type="submit" id="botoneditar" disabled class="indexbutton" onclick="mostrar('actualizar')">Editar</button> </a>
-	<!-- Actualizar -->	
+<button type="button" id="botoneditar" disabled class="indexbutton" data-bs-toggle="modal" data-bs-target="#miModal" onclick="mostrar('actualizar')">Editar</button>
 		
 	<!-- Borrar -->		
-		<a href="#miModal" class="sindec"><button type="submit" id="botonborrar" disabled class="indexbutton" onclick="mostrar('borrar')">Borrar</button> </a>
-		
-	<!-- Borrar -->		
+<button type="button" id="botonborrar" disabled data-bs-toggle="modal" data-bs-target="#miModal" class="indexbutton" onclick="mostrar('borrar')">Borrar</button>
+
 		<?php endif;?>
 	</div>
 	
+		
+		
+		
+		
+		
+
+		
+		
 		
 	</main>
 	<!-- Menu -->
@@ -85,26 +91,85 @@ $_SESSION['sql'] = $sql;
 	</footer>
 	<?php include("../controlador/vent_error.php");?>
 	
-<div id="miModal" class="modal">
-  <div class="modal-contenido modal-buscar" id="insert" style="display:none;">
-    <div class="alignr"><a href="#" class="sindec negro" onclick="ocultar()">X</a></div>
-    <h2>Nuevo</h2>
-     <?php include("../controlador/biblicuentaInsert.php"); ?>
+	
+<div id="miModal" class="modal">	
+    <div id="insert" style="display:none;">	
+    	<div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" >Nuevo</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="ocultar()"></button>
+          </div>
+          <div class="modal-body">
+           <?php include("../controlador/biblicuentaInsert.php"); ?>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div id="actualizar" style="display:none;">
+   
+    
+    <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" >Actualizar</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="ocultar()"></button>
+          </div>
+          <div class="modal-body">
+            <?php include("../controlador/biblicuentaActualizar.php"); ?>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
   </div> 
-  <div class="modal-contenido modal-buscar" id="actualizar" style="display:none;">
-    <div class="alignr"><a href="#" class="sindec negro" onclick="ocultar()">X</a></div>
-    <h2>Actualizar</h2>
-     <?php include("../controlador/biblicuentaActualizar.php"); ?>
-  </div> 
- <div class="modal-contenido modal-borrar" id="borrar" style="display:none;">
-    <div class="alignr"><a href="#" class="sindec negro"  onclick="ocultar()">X</a></div>
-    <h2>Borrar</h2>
-     <?php include("../controlador/biblicuentaBorrar.php"); ?>
-  </div> 
+  
+  
+  
+<div  id="borrar" style="display:none;">
+        <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" >Borrar</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="ocultar()"></button>
+          </div>
+          <div class="modal-body">
+           <?php include("../controlador/biblicuentaBorrar.php"); ?>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+     
+     
+     </div> 
+      
+  
+  
+  
+  
 </div>
+	
+	
+
+
+
+
+<?php include("javascript/pluginBootstrap.html"); ?>
+	
 	
 <script type="text/javascript">
 conftabla('cuentas');
+
 
 </script>
 
