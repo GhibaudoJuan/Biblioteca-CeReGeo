@@ -92,7 +92,7 @@ $_SESSION['sql'] = $sql;
 	<?php include("../controlador/vent_error.php");?>
 	
 	
-<div id="miModal" class="modal">	
+<div id="miModal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">	
     <div id="insert" style="display:none;">	
     	<div class="modal-dialog">
         <div class="modal-content">
@@ -100,13 +100,7 @@ $_SESSION['sql'] = $sql;
             <h5 class="modal-title" >Nuevo</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="ocultar()"></button>
           </div>
-          <div class="modal-body">
            <?php include("../controlador/biblicuentaInsert.php"); ?>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
         </div>
       </div>
     </div>
@@ -120,13 +114,7 @@ $_SESSION['sql'] = $sql;
             <h5 class="modal-title" >Actualizar</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="ocultar()"></button>
           </div>
-          <div class="modal-body">
             <?php include("../controlador/biblicuentaActualizar.php"); ?>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
         </div>
       </div>
   </div> 
@@ -140,13 +128,7 @@ $_SESSION['sql'] = $sql;
             <h5 class="modal-title" >Borrar</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="ocultar()"></button>
           </div>
-          <div class="modal-body">
            <?php include("../controlador/biblicuentaBorrar.php"); ?>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
         </div>
       </div>
      

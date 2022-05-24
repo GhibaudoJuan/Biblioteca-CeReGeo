@@ -12,7 +12,7 @@ $nombre= autostringn("select nombre from cuenta union select nombre from reserva
 
 
 <form action = "../modelo/biblireservaInsert.php" method="post" >
-
+<div class="modal-body">
 <input type='hidden' name="material" id="resmaterial">
 
 
@@ -34,8 +34,8 @@ $nombre= autostringn("select nombre from cuenta union select nombre from reserva
 </div>
 
 <input type='hidden' name ='activo'value='True'>
-
-<div class="alignr"><button type="submit" class="indexbutton">Registrar</button></div>
+</div>
+<div class="modal-footer"><button type="submit" class="indexbutton">Registrar</button></div>
 
 
 

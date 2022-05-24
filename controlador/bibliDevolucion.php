@@ -7,7 +7,7 @@
 
 
 <form action = "../modelo/bibliDevolucion.php" method="post" >
-
+<div class="modal-body">
 <input type='hidden' id="bdid" name ='idpre' >
 <input type='hidden' id="bdnom" name ='nombre' >
 
@@ -23,8 +23,8 @@
 <div class="ajuste w-3"><input type='text' id="bdprestamo" class="index" disabled></div>
 </div>
 
-
-<div class="alignr"><button type="submit" class="indexbutton">Devolucion</button></div>
+</div>
+<div class="modal-footer"><button type="submit" class="indexbutton">Devolucion</button></div>
 
 
 </form>

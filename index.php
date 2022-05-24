@@ -40,11 +40,13 @@ if(!isset($_SESSION['res'])){
 
 <body style="background-color:#F6F6F6;">
 
-
+<header class="titulo" ><h2>Inicio</h2></header>
 <!-- Menu -->
-	<div class="fondo">  
-	<a href="index.php"><img src="imagenes/logoceregeo-horizontal.jpg" alt="Logo-GeReGeo" class="logo" height="40px" width="auto"></a>
-<ul id="menu0" class="desplega1" >
+<div class="fondo">  
+	<div class="abso menulogo menu-top "><a class="perfil border-right" href="../index.php">CeReGeo</a></div>
+	
+	
+<ul id="menu0" class="desplega1 menu-top" >
 	<li><a href="vista/biblimaterial.php?pag=1">Biblioteca</a></li>
 	
 	<?php if(isset($_SESSION['tipouser'])): ?>
@@ -62,7 +64,7 @@ if(!isset($_SESSION['res'])){
 	
 </ul>
 
-<div class="abso menu1">
+<div class="abso menu1 menu-top">
 <?php if(isset($_SESSION['tipouser'])): ?>
 	<a class="perfil" style="cursor:pointer" onclick="mostrarocultar(miperfil)">
 	<?php 
@@ -105,7 +107,7 @@ if(!isset($_SESSION['res'])){
 </div>
 </div> 
 <!-- Menu -->
-<header class="titulo" ><h2>Inicio</h2></header>
+
 <main>
 
             

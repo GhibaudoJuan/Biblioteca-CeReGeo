@@ -15,7 +15,7 @@ $ejempprop= autostring("ejemplares", "propietario");
 
 
 <form action = "../modelo/bibliEjemplarInsert.php" enctype="multipart/form-data" method="post" >
-
+<div class="modal-body">
 <?php include("getejemplar.php");?>
 <div class="flex">
 <div class="span-2 ajuste"><label for="beice">Codigo Ejemplar</label></div>
@@ -41,8 +41,8 @@ $ejempprop= autostring("ejemplares", "propietario");
 <label class="span" for="dis">Disponible</label>
 </div>
 </div>
-
-<div class="alignr"><button type="submit" class="indexbutton">Registrar</button></div>
+</div>
+<div class="modal-footer"><button type="submit" class="indexbutton">Registrar</button></div>
 </form>
 <script>
 autocomplete(document.getElementById("ejemprop"), <?php echo $ejempprop;?>);

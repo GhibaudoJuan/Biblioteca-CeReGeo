@@ -81,13 +81,13 @@ $_SESSION['atras']= '../vista/biblimaterial.php?pag='.$_GET['pag'];
 	
 	
 	<!-- Tabla -->
-	<div  class="tabladiv top-20 flex" style=" left:310px;background-color:rgb(202,236,137);">
+	<div  class="tabladiv top-20 flex" style="left:310px;">
 	<?php include("../modelo/biblimaterialSelect.php"); ?>
 	
 	
 	<!-- -------------paginacion---------------- -->
 	<div class="paginacion1">
-	<ul >
+	<ul style="padding:1rem;">
   		<li><a id="ant" href="../vista/biblimaterial.php?pag=<?php echo $_GET['pag']-1;?> ">Anterior</a></li>
    		<li ><a id="sig" href="../vista/biblimaterial.php?pag=<?php echo $_GET['pag']+1;?>">Siguiente</a></li>
   	</ul>
@@ -125,8 +125,8 @@ $_SESSION['atras']= '../vista/biblimaterial.php?pag='.$_GET['pag'];
 	<div class="fondo">  
 	<?php include("../controlador/biblimenu.php");?>
 	</div> 
-
-	<footer style="margin-top:5rem;">
+	<div style="padding:40px;" ></div>
+	<footer>
 	<?php include("../controlador/footer.php");?>
 	</footer>
 	

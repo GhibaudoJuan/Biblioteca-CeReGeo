@@ -7,7 +7,7 @@
 
 
 <form action = "../modelo/bibliPrestamoEdit.php" method="post" >
-
+ <div class="modal-body">
 <input type='hidden' id="pid" name ='idpre' >
 <input type='hidden' id="pnom" name ='pnom' >
 <input type='hidden' id="cdesde" name ='cdesde' >
@@ -36,7 +36,8 @@
 <label class="span" for="activo">Activo</label>
 </div>
 </div>
-<div class="alignr"><button type="submit" class="indexbutton">Actualizar</button></div>
+</div>
+<div class="modal-footer"><button type="submit" class="indexbutton">Actualizar</button></div>
 
 
 </form>

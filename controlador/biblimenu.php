@@ -11,18 +11,19 @@ if(!isset($_SESSION))session_start();
 <html>
 
 <head>
-<meta charset="UTF-8">
 
 </head>
 <body> 
 
+<!-- existe una divicion que encierra a esta pagina con la class fondo -->
 
  <?php // echo $_SESSION['tipouser'];    ?>
+<div class="abso menulogo menu-top "><a class="perfil border-right" href="../index.php">CeReGeo</a></div>
 
-<a href="../index.php"><img src="../imagenes/logoceregeo-horizontal.jpg" alt="Logo-GeReGeo" class="logo" height="40px" width="auto"></a>
+<!-- <img src="../imagenes/logoceregeo-horizontal.jpg" alt="Logo-GeReGeo"  height="40px" width="auto"> -->
 
-
-<ul id="menu0" class="desplega1" >
+<ul id="menu0" class="desplega1 menu-top" >
+	
 	<li><a href="../vista/biblimaterial.php?pag=1">Biblioteca</a></li>
 	
 	<?php if(isset($_SESSION['tipouser'])): ?>
@@ -41,7 +42,7 @@ if(!isset($_SESSION))session_start();
 	
 </ul>
 
-<div class="abso menu1">
+<div class="abso menu1 menu-top">
 <?php if(isset($_SESSION['tipouser'])): ?>
 	<a class="perfil" style="cursor:pointer" onclick="mostrarocultar(miperfil)">
 	<?php 
@@ -77,7 +78,7 @@ if(!isset($_SESSION))session_start();
 	<a class="perfil" href="../vista/iniciosesion.php">Iniciar Sesi&oacuten</a>
 <?php endif;?>
 </div>
-<div id="miperfil" class="abso menu2 ">
+<div id="miperfil" class="abso menu2">
 		<a class="pad" href="../vista/bibliPerfilUsuario.php"><div class="colorperfil">Mi perfil</div></a>
 		
 		<a class="pad" href="../vista/bibliCerrarSesion.php"><div class="colorperfil">Cerrar Sesi&oacuten</div></a>

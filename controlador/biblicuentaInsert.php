@@ -13,9 +13,9 @@ $nombre=autostring('cuenta','nombre');
 
 </head>
 <body>
-
-
 <form action = "../modelo/biblicuentaInsert.php" method="post">
+<div class="modal-body">
+
 
 <div class="flex">
 <div class="span-2 ajuste"><label for="bcinu">Nombre Usuario</label></div>
@@ -65,9 +65,9 @@ $nombre=autostring('cuenta','nombre');
 <span class="span error" id="mostrarerror"></span>
 <br>
 
+</div>
 
-
-<div class="alignr"><button type="submit" class="indexbutton">Registrar</button></div>
+ <div class="modal-footer"><button type="submit" class="indexbutton">Registrar</button></div>
 
 
 

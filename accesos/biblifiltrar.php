@@ -193,15 +193,25 @@ function armarPortada($mifila,$tipo,$keyword){
                    <input type="hidden" name ="id" value='.$mifila['idmat'].'>
                    <input type="hidden" name ="tipo" value='.$mifila['tipo'].'>
                    <button type="submit" class="indexbutton">Actualizar</button></form>';
-            $galeria.='<a class="sindec" href="#miModal"><button type="submit" class="indexbutton" onclick="mostrar('."'borrar','"."'".')">Borrar</button> </a>';
+            $galeria.='<button type="buttom" data-bs-toggle="modal" data-bs-target="#miModal" class="indexbutton" onclick="mostrar('."'borrar','"."'".')">Borrar</button>';
             $galeria.='</div>';
         }
         //imagen
+        /*
             if($mifila['portada']=='')
                 $galeria.=' <img src="../imagenes/noimage.jpg" alt="Sin imagen" ></div>';
                 else
                     $galeria.=' <img src="../imagenes/'.$mifila['portada'].'" alt="'.$mifila['titulo'].'" ></div>';
+            */
+                
+    $galeria.='<div class="div-imagen-portada"><div class="imagen-portada" style="background-image:';
                     
+    if($mifila['portada']=='')
+        $galeria.=" url('../imagenes/noimage.jpg');";
+    else
+        $galeria.="url('../imagenes/".$mifila['portada']."');";
+        
+    $galeria.='"></div></div></div>';
     
     return $galeria;
     

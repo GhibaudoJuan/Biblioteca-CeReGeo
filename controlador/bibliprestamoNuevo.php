@@ -12,7 +12,7 @@ $material=autostring("material","idmat");
 
 
 <form action = "../modelo/bibliprestamoInsert.php" method="post" >
-
+<div class="modal-body">
 
 
 <div class="flex">
@@ -38,12 +38,14 @@ $material=autostring("material","idmat");
 </div>
 
 <div class="flex">
-<div class="span-2 ajuste"><label for="reservaprox">Pr&oacutexima reserva:</label></div>
+<div class="span-2 ajuste"><label for="reservaprox" id="labelprox">Pr&oacutexima reserva:</label></div>
 <div class="ajuste w-2"><input type='date' class="index" id="reservaprox" disabled></div>
 </div>
 
-
-<div class="alignr"><button type="submit" class="indexbutton">Registrar</button></div>
+</div>
+ <div class="modal-footer">
+<button type="submit" class="indexbutton">Registrar</button>
+</div>
 
 
 

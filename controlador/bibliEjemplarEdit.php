@@ -14,7 +14,7 @@ $prop= autostring("ejemplares", "propietario");
 
 
 <form action = "../modelo/bibliEjemplarEdit.php" method="post" >
-
+<div class="modal-body">
 <?php include("getejemplar.php");?>
 
 <input type='hidden' id="cidejem" name ='cidejem' >
@@ -63,10 +63,10 @@ $prop= autostring("ejemplares", "propietario");
 </div>
 </div>
 
+</div>
 
 
-
-<div class="alignr"><button type="submit" class="indexbutton">Actualizar</button></div>
+<div class="modal-footer"><button type="submit" class="indexbutton">Actualizar</button></div>
 
 
 </form>

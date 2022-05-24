@@ -13,7 +13,7 @@ $material=autostring("material","idmat");
 
 
 <form action = "../modelo/biblireservaInsert.php" method="post" >
-
+<div class="modal-body">
 
 <div class="flex">
 <div class="span-2 ajuste"><label for="material">Codigo Material</label></div>
@@ -41,8 +41,9 @@ $material=autostring("material","idmat");
 </div>
 
 <input type='hidden' name ='activo'value='True'>
+</div>
 
-<div class="alignr"><button type="submit" class="indexbutton">Registrar</button></div>
+<div class="modal-footer"><button type="submit" class="indexbutton">Registrar</button></div>
 
 
 

@@ -7,7 +7,7 @@
 
 
 <form action = "../modelo/biblireservaEdit.php" method="post" >
-
+<div class="modal-body">
 <input type='hidden' id="resid" name ='idres' >
 <input type='hidden' id="resnom" name ='resnom' >
 <input type='hidden' id="resdesde" name ='resdesde' >
@@ -30,7 +30,8 @@
 </div>
 </div>
 <?php endif; ?>
-<div class="alignr"><button type="submit" class="indexbutton">Actualizar</button></div>
+</div>
+<div class="modal-footer"><button type="submit" class="indexbutton">Actualizar</button></div>
 
 
 </form>

@@ -21,7 +21,7 @@ while($valor=pg_fetch_assoc($palabrasclave)){
 
 
 <form action = "../modelo/biblikeyword.php" method="post">
-
+<div class="modal-body">
 <input type='hidden' id="mat_id" name="mat_id">
 
 
@@ -41,8 +41,8 @@ while($valor=pg_fetch_assoc($palabrasclave)){
 
 
 <input type="hidden" value="update" name="keyword">
-
-<div class="alignr"><button type="submit" class="indexbutton">Agregar</button></div>
+</div>
+<div class="modal-footer"><button type="submit" class="indexbutton">Agregar</button></div>
 
 
 

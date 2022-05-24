@@ -10,7 +10,7 @@
 
 
 <form action = "../modelo/bibliprestamoInsert.php" method="post" >
-
+<div class="modal-body">
 
 <input type="hidden" name="nombre" id="pasarprestamonom">
 <input type="hidden" name="material" id="idprestamo">
@@ -23,8 +23,8 @@
 <div class="ajuste w-2"><input id ="frp" type='date' name="fecha" class="index" required></div>
 </div>
 
-
-<div class="alignr"><button type="submit" class="indexbutton">Pasar</button></div>
+</div>
+<div class="modal-footer"><button type="submit" class="indexbutton">Pasar</button></div>
 
 
 
