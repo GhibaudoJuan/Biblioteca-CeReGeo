@@ -17,20 +17,19 @@ $nombre1= autostringn("select nombre from cuenta union select nombre from reserv
 <input type='hidden' name="material" id="presmaterial">
 <input type='hidden' name="ejemplar" id="presejemplar">
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="nombre2">Nombre</label></div>
-<div class="ajuste w-2 autocomplete">
-<input type='text' name="nombre" id="nombre2" class="index"  maxlength="100" required></div>
+<div class="input-group m-div">
+<label class="input-group-text" for="nombre2">Nombre</label>
+<div class="ajuste autocomplete"><input type='text' name="nombre" id="nombre2" class="form-control"  maxlength="100" required></div>
 </div>
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="bpid">Devolucion</label></div>
-<div class="ajuste w-2"><input type='date' id="bpid" name="fecha" class="index" required></div>
+<div class="input-group m-div">
+<label class="input-group-text" for="bpid">Devolucion</label>
+<div class="ajuste"><input type='date' id="bpid" name="fecha" class="form-control" required></div>
 </div>
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="reservaprox">Pr&oacutexima reserva:</label></div>
-<div class="ajuste w-2"><input type='date' class="index" id="reservaprox" disabled></div>
+<div class="input-group m-div">
+<label class="input-group-text" for="reservaprox">Pr&oacutexima reserva:</label>
+<div class="ajuste"><input type='date' class="form-control" id="reservaprox" disabled></div>
 </div>
 
 </div>

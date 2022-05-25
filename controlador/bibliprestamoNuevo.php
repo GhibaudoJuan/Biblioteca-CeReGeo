@@ -15,31 +15,31 @@ $material=autostring("material","idmat");
 <div class="modal-body">
 
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="presmaterial">Codigo Material</label></div>
-<div class="ajuste w-2 autocomplete">
-<input type='text' name="material" id="presmaterial" class="index"  maxlength="100" required></div>
+<div class="input-group m-div">
+<label class="input-group-text" for="presmaterial">Codigo Material</label>
+<div class="ajuste autocomplete">
+<input type='text' name="material" id="presmaterial" class="form-control"  maxlength="100" required></div>
 </div>
-<div class="flex">
-<div class="span-2 ajuste"><label for="presejemplar">Codigo Ejemplar</label></div>
-<div class="ajuste w-2 autocomplete">
-<input type='text' name="ejemplar" id="presejemplar" class="index"  maxlength="100" required></div>
-</div>
-
-<div class="flex">
-<div class="span-2 ajuste"><label for="nombre">Nombre</label></div>
-<div class="ajuste w-2 autocomplete">
-<input type='text' name="nombre" id="nombre" class="index"  maxlength="100" required></div>
+<div class="input-group m-div">
+<label class="input-group-text" for="presejemplar">Codigo Ejemplar</label>
+<div class="ajuste autocomplete">
+<input type='text' name="ejemplar" id="presejemplar" class="form-control"  maxlength="100" required></div>
 </div>
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="bpid">Devolucion</label></div>
-<div class="ajuste w-2"><input type='date' id="bpid" name="fecha" class="index" required></div>
+<div class="input-group m-div">
+<label class="input-group-text" for="nombre">Nombre</label>
+<div class="ajuste autocomplete">
+<input type='text' name="nombre" id="nombre" class="form-control"  maxlength="100" required></div>
 </div>
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="reservaprox" id="labelprox">Pr&oacutexima reserva:</label></div>
-<div class="ajuste w-2"><input type='date' class="index" id="reservaprox" disabled></div>
+<div class="input-group m-div">
+<label class="input-group-text" for="bpid">Devolucion</label>
+<div class="ajuste"><input type='date' id="bpid" name="fecha" class="form-control" required></div>
+</div>
+
+<div class="input-group m-div">
+<label class="input-group-text" for="reservaprox" id="labelprox">Pr&oacutexima reserva:</label>
+<div class="ajuste"><input type='date' class="form-control" id="reservaprox" disabled></div>
 </div>
 
 </div>

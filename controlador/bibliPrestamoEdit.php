@@ -15,20 +15,20 @@
 <input type='hidden' id="cact" name ='cact' >
 <input type='hidden' id="cdevuelto" name ='cdevuelto' >
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="pdesde">Retirado</label></div>
-<div class="ajuste w-2"><input type='date' id="pdesde" name="desde" class="index"></div>
+<div class="input-group m-div">
+<label class="input-group-text" for="pdesde">Retirado</label>
+<div class="ajuste"><input type='date' id="pdesde" name="desde" class="form-control"></div>
 </div>
-<div class="flex">
-<div class="span-2 ajuste"><label for="phasta">Devolucion</label></div>
-<div class="ajuste w-2"><input type='date' id="phasta" name="hasta" class="index"></div>
+<div class="input-group m-div">
+<label class="input-group-text" for="phasta">Devolucion</label>
+<div class="ajuste"><input type='date' id="phasta" name="hasta" class="form-control"></div>
 </div>
-<div class="flex">
-<div class="span-2 ajuste"><label for="pdevuelto">Devuelto</label></div>
-<div class="ajuste w-2"><input type='date' id="pdevuelto" name="devuelto" class="index"></div>
+<div class="input-group m-div">
+<label class="input-group-text" for="pdevuelto">Devuelto</label>
+<div class="ajuste"><input type='date' id="pdevuelto" name="devuelto" class="form-control"></div>
 </div>
-<div class="flex">
-<div class="ajuste w-2">
+<div class="input-group m-div">
+<div class="ajuste">
 <input type="radio" style="width: auto" id="pce" name="activo" value="False">
 <label class="span" for="activo">Cerrado</label>
 

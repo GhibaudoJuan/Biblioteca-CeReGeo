@@ -24,18 +24,18 @@ $prop= autostring("ejemplares", "propietario");
 <input type='hidden' id="cdis" name ='cdis' >
 
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="pidejem">Codigo Ejemplar</label></div>
-<div class="ajuste w-2"><input type='text' id="pidejem" name="idejemplar" class="index"></div>
+<div class="input-group m-div">
+<label class="input-group-text" for="pidejem">Codigo Ejemplar</label>
+<div class="ajuste"><input type='text' id="pidejem" name="idejemplar" class="form-control"></div>
 </div>
-<div class="flex">
-<div class="span-2 ajuste"><label for="pce">Cod. Externo</label></div>
-<div class="ajuste w-2 autocomplete"><input type='text' id="pce" name="ce" class="index"></div>
+<div class="input-group m-div">
+<label class="input-group-text" for="pce">Cod. Externo</label>
+<div class="ajuste autocomplete"><input type='text' id="pce" name="ce" class="form-control"></div>
 </div>
-<div class="flex">
-<div class="span-2 ajuste"><label for="pes">Estado</label></div>
-<div class="ajuste w-2" >
-<select id="pes" name= "es" class="index" >
+<div class="input-group m-div">
+<label class="input-group-text" for="pes">Estado</label>
+<div class="ajuste">
+<select id="pes" name= "es" class="form-control" >
   <option id="l" value="l">Libre</option>
   <option id="r" value="r">Reservado</option>
   <option id="p" value="p">Prestado</option>
@@ -44,20 +44,21 @@ $prop= autostring("ejemplares", "propietario");
 </div>
 </div>
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="pprop">Propietario</label></div>
-<div class="ajuste w-2 autocomplete"><input type='text' id="pprop" name="propietario" class="index"></div>
+<div class="input-group m-div">
+<label class="input-group-text" for="pprop">Propietario</label>
+<div class="ajuste autocomplete"><input type='text' id="pprop" name="propietario" class="form-control"></div>
 </div>
 
 
-<div class="flex">
-<div class="span-2 ajuste"><label>Disponibilidad</label></div>
-<div class="ajuste w-2">
-<input type="radio" style="width: auto" id="pdis1" name="disponibilidad" value="True">
-<label class="span" for="activo">Si</label>
-
-<input type="radio" style="width: auto" id="pdis2" name="disponibilidad" value="False">
-<label class="span" for="activo">No</label>
+<div class="input-group m-div">
+<label class="input-group-text">Disponibilidad</label>
+<div class="ajuste form-check form-check-inline">
+<input class="form-check-input" type="radio" id="pdis1" name="disponibilidad" value="True">
+<label class="form-check-label" for="activo">Si</label>
+</div>
+<div class="ajuste form-check form-check-inline">
+<input class="form-check-input" type="radio" id="pdis2" name="disponibilidad" value="False">
+<label class="form-check-label" for="activo">No</label>
 
 
 </div>

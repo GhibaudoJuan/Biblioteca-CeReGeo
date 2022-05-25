@@ -43,7 +43,7 @@ if(!isset($_SESSION['res'])){
 <header class="titulo" ><h2>Inicio</h2></header>
 <!-- Menu -->
 <div class="fondo">  
-	<div class="abso menulogo menu-top "><a class="perfil border-right" href="../index.php">CeReGeo</a></div>
+	<div class="abso menulogo menu-top "><a class="perfil border-right" href="index.php">CeReGeo</a></div>
 	
 	
 <ul id="menu0" class="desplega1 menu-top" >

@@ -232,37 +232,37 @@ function editar(a,b,c,d,e,f,g,h){
 	
 	switch(e){
 			case 'Libre':
-				$('#l').attr('selected','true');
+				document.getElementById("pes").value ='l';
+				//$('#l').attr('selected','true');
 				$('#ces').attr('value','l');
 				break;
 			case 'Reservado':
-				$('#r').attr('selected','true');
+				document.getElementById("pes").value ='r';
+				//$('#r').attr('selected','true');
 				$('#ces').attr('value','r');
 				break;
 			case 'Prestado':
-				$('#p').attr('selected','true');
+				document.getElementById("pes").value ='p';
+				//$('#p').attr('selected','true');
 				$('#ces').attr('value','p');
 				break;
 			case 'Obsoleto':
-				$('#o').attr('selected','true');
+				document.getElementById("pes").value ='o';
+				//$('#o').attr('selected','true');
 				$('#ces').attr('value','o');
 				break;
 		}
 	
-		
-	
-	if(f=="SI")
-			$('#dis').attr('checked','true');//revisar
-			
-	
+
 		if(f=="SI"){
-			$('#pdis1').attr('checked','true');
+			//$('#pdis1').attr('checked','true');
 			$('#cdis').attr('value','true');
-			document.getElementById("cdis").value = 'True';
+			document.getElementById('pdis1').checked='true';
 		}
 		if(f=="NO"){
-			$('#pdis2').attr('checked','true');
+			//$('#pdis2').attr('checked','true');
 			$('#cdis').attr('value','false');
+			document.getElementById('pdis2').checked='true';
 		}
 	
 	
@@ -359,7 +359,7 @@ function funcionnuevo(a, b){
 	
 	
 	
-	document.getElementById(b.id).style.display="block"
+	document.getElementById(b.id).style.display="flex"
 	
 	document.getElementById(a.id).style.backgroundColor=" #2957ba";
 	document.getElementById(a.id).style.color=" #fff";

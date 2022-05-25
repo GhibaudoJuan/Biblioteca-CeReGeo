@@ -3,10 +3,10 @@
 <head>
 </head>
 <body>
-<div class="flex">
-<div class="span-2 ajuste"><span>Tipo</span></div>
+<div class="input-group m-div">
+<label class="input-group-text w-av">Tipo</label>
 <div class="ajuste" >
-<select id="tipoB" name= "tipo" class="index" style="width:12rem;" onchange="buscarAV()">
+<select id="tipoB" name= "tipo" class="form-control" onchange="buscarAV()">
   <option value="">---</option>
   <option value="Libro">Libro</option>
   <option value="Mapa">Mapa</option>

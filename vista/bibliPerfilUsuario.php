@@ -32,13 +32,13 @@ require_once("../accesos/validacion.php");
 	<!-- separado del menu-->
 	<main>
 	
-	<div class="rela" style="width:50%;left:50px;">
 	
 	
-	
+	<div class="divicion">
+	<div style="width:30rem;">
 	<?php include("../controlador/bibliPerfilUsuario.php"); ?>
 	<?php include("../modelo/biblimail.php"); ?>
-	
+	</div>
 	
 	</div>
 	

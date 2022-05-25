@@ -30,8 +30,6 @@ if (!isset($_SESSION['res'])){
 
 
 .desplega2 li{
-	
-	
 	text-decoration:none;
 	display: inline;
 	padding:7px 7px;

@@ -6,7 +6,7 @@ margin:0 auto!important;
 main{
 	top: 60px; 
 	position:relative;  
-	width:95%;
+	width:97%;
 	margin:1rem;
 	height:100%;
 	margin-bottom:5rem;
@@ -20,12 +20,14 @@ body, header, footer, main{
 	display:block;
 }
 .div-ejem{
-	width:80%;
-	min-width:25rem;
-	padding-right:2rem;
-	
+	width:100%;
+	margin: 0 auto;
 }
-
+.divicion{
+	display: flex;
+	justify-content: center;
+  	
+}
 .titulo{
   position:relative;
   top:60px;
@@ -504,7 +506,18 @@ background-color: #1C43B9;
 .w-4 > input, .w-4 > select{
 	width:10rem;
 }
-
+.w-label{
+	width:10rem!important;
+}
+.w-input{
+	width:20rem!important;
+}
+.w-av{
+	min-width:6rem!important;
+}
+.m-div{
+	margin-bottom:0.5rem;
+}
 .top-20{
 	top:5rem;
 	

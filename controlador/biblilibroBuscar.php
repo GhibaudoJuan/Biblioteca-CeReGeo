@@ -12,32 +12,32 @@ $libroedit= autostring("libros", "editorial");
 </head>
 <body>
 
-<div class="flex">
-<div class="span-2 ajuste "><label for="autor1">Autor</label></div>
-<div class="ajuste w-1 autocomplete"><input type='text' id="autor1" name="autor"  class="index"   maxlength="150" placeholder=""> </div>
+<div class="input-group m-div">
+<label class="input-group-text w-av" for="autor1">Autor</label>
+<div class="ajuste autocomplete"><input type='text' id="autor1" name="autor"  class="form-control"   maxlength="150" placeholder=""> </div>
 </div>
 
 
-<div class="flex">
-<div class="span-2 ajuste "><label for="edi1">Editorial</label></div>
-<div class="ajuste w-1 autocomplete"><input type='text' id="edi1" name="editorial"  class="index"  maxlength="30"  placeholder=""></div>
+<div class="input-group m-div">
+<label class="input-group-text w-av" for="edi1">Editorial</label>
+<div class="ajuste autocomplete"><input type='text' id="edi1" name="editorial"  class="form-control"  maxlength="30"  placeholder=""></div>
 </div>
 
 
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="edicion1">Edicion</label></div>
-<div class="ajuste w-1"><input type='number' id="edicion1" name="edicion"  class="index"  maxlength="50" min="0" max="50" placeholder=""></div>
+<div class="input-group m-div">
+<label class="input-group-text w-av" for="edicion1">Edicion</label>
+<div class="ajuste"><input type='number' id="edicion1" name="edicion"  class="form-control"  maxlength="50" min="0" max="50" placeholder=""></div>
 </div>
-<div class="flex">
-<div class="span-2 ajuste"><label for="isbn">ISBN</label></div>
-<div class="ajuste w-1"><input type='text' id="isbn" name="isbn"  class="index"  maxlength="50" placeholder=""></div>
+<div class="input-group m-div">
+<label class="input-group-text w-av" for="isbn">ISBN</label>
+<div class="ajuste"><input type='text' id="isbn" name="isbn"  class="form-control"  maxlength="50" placeholder=""></div>
 </div>
 
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="tomo">Tomo</label></div>
-<div class="ajuste w-1"><input type='number' id="tomo" name="tomo"  class="index"  maxlength="50" min="0" max="50" placeholder=""></div>
+<div class="input-group m-div">
+<label class="input-group-text w-av" for="tomo">Tomo</label>
+<div class="ajuste"><input type='number' id="tomo" name="tomo"  class="form-control"  maxlength="50" min="0" max="50" placeholder=""></div>
 </div>
 
 

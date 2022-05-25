@@ -17,41 +17,41 @@ $nombre=autostring('cuenta','nombre');
 <div class="modal-body">
 
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="bcinu">Nombre Usuario</label></div>
-<div class="ajuste w-2"><input type='text' id="bcinu"name="user" autofocus class="index"  maxlength="50" onfocusout="estaenlalista('bcinu',<?php echo $nomuser;?>)" placeholder="Nombre usuario" required></div>
+<div class="input-group m-div">
+<label class="input-group-text" for="bcinu">Nombre Usuario</label>
+<div class="ajuste"><input type='text' id="bcinu"name="user" autofocus class="form-control"  maxlength="50" onfocusout="estaenlalista('bcinu',<?php echo $nomuser;?>)" placeholder="Nombre usuario" required></div>
 </div>
 
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="nom">Nombre Completo</label></div>
-<div class="ajuste w-2 autocomplete"><input id="nom" type='text' name="nom"  class="index"  placeholder="Nombre completo" onfocusout="estaenlalista('nom',<?php echo $nombre;?>)" maxlength="100" required></div>
+<div class="input-group m-div">
+<label class="input-group-text" for="nom">Nombre Completo</label>
+<div class="ajuste autocomplete"><input id="nom" type='text' name="nom"  class="form-control"  placeholder="Nombre completo" onfocusout="estaenlalista('nom',<?php echo $nombre;?>)" maxlength="100" required></div>
 </div>
 
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="newpass">Contraseña</label></div>
-<div class="ajuste w-2"><input type='password' name="contra" class="index" id="newpass" maxlength="150" onfocusout="contraconfir()" required></div>
+<div class="input-group m-div">
+<label class="input-group-text" for="newpass">Contraseña</label>
+<div class="ajuste"><input type='password' name="contra" class="form-control" id="newpass" maxlength="150" onfocusout="contraconfir()" placeholder="Contraseña" required></div>
 </div>
-<div class="flex">
-<div class="span-2 ajuste"><label for="confpass">Confirmar</label></div>
-<div class="ajuste w-2"><input type='password' name="confir" class="index" id="confpass" maxlength="150" onfocusout ="contraconfir()" required></div>
-</div>
-
-<div class="flex">
-<div class="span-2 ajuste"><label for="bciem">E-mail</label></div>
-<div class="ajuste w-2"><input type='email' id="bciem" name="email"  class="index"  placeholder="e-mail" maxlength="150" required></div>
+<div class="input-group m-div">
+<label class="input-group-text" for="confpass">Confirmar</label>
+<div class="ajuste"><input type='password' name="confir" class="form-control" id="confpass" maxlength="150" onfocusout ="contraconfir()" placeholder="Confirmar Contraseña" required></div>
 </div>
 
+<div class="input-group m-div">
+<label class="input-group-text" for="bciem">E-mail</label>
+<div class="ajuste"><input type='email' id="bciem" name="email"  class="form-control"  placeholder="e-mail" maxlength="150" required></div>
+</div>
 
 
 
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="bcitc">Tipo usuario</label></div>
+
+<div class="input-group m-div">
+<label class="input-group-text" for="bcitc">Tipo usuario</label>
 
 
-<div class="ajuste w-2"><select name= "tipo" id="bcitc" class="index">
+<div class="ajuste"><select name= "tipo" id="bcitc" class="form-control">
   <option value="0">Administrador</option>
   <option value="1">Bibliotecario</option>
   <option value="2">Docente</option>

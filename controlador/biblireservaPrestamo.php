@@ -18,9 +18,9 @@
 
 
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="frp">Devolucion</label></div>
-<div class="ajuste w-2"><input id ="frp" type='date' name="fecha" class="index" required></div>
+<div class="input-group m-div">
+<label class="input-group-text" for="frp">Devolucion</label>
+<div class="ajuste"><input id ="frp" type='date' name="fecha" class="form-control" required></div>
 </div>
 
 </div>

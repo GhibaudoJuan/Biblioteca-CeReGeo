@@ -19,15 +19,15 @@
 <span style="font-size: 25px;">&#191Esta seguro de que quiere eliminarlo? </span>
 <br><br>
 <?php if ($_SESSION['tipouser']<'2'):?>
-<div class="flex">
-<div class="span-2 ajuste"><label>Nombre:</label></div>
-<div class="ajuste w-3"><input type='text' id="nombreborrar" class="index" disabled></div>
+<div class="input-group m-div">
+<label class="input-group-text">Nombre:</label>
+<div class="ajuste"><input type='text' id="nombreborrar" class="form-control" disabled></div>
 </div>
 <?php endif;?>
 
-<div class="flex">
-<div class="span-2 ajuste"><label>Reserva Num:</label></div>
-<div class="ajuste w-3"><input type='text' id="borrarprimero" class="index" disabled></div>
+<div class="input-group m-div">
+<label class="input-group-text">Reserva Num:</label>
+<div class="ajuste"><input type='text' id="borrarprimero" class="form-control" disabled></div>
 </div>
 
 </div>

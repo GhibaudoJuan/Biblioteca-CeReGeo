@@ -13,9 +13,9 @@
 <label for="bejempplar" style="font-size: 25px;">&#191Esta seguro de que quiere eliminarlo? </label>
 <br><br>
 <?php include("getejemplar.php");?>
-<div class="flex">
-<div class="span-2 ajuste"><label>Ejemplar</label></div>
-<div class="ajuste w-3"><input type='text' id="nombreborrar" class="index" disabled></div>
+<div class="input-group m-div">
+<label class="input-group-text">Ejemplar</label>
+<div class="ajuste"><input type='text' id="nombreborrar" class="form-control" disabled></div>
 </div>
 
 </div>

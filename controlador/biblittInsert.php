@@ -23,74 +23,70 @@ $tidioma=autostring("material","idioma");
 
 
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="ttcodigo">Codigo Material</label></div>
-<div class="ajuste w-2 autocomplete" >
-<input type='text' id="ttcodigo"name="idmat" autofocus class="index"  maxlength="100"  placeholder="" required></div>
+<div class="input-group m-div">
+<label class="input-group-text w-label" for="ttcodigo">Codigo Material</label>
+<div class="autocomplete"><input type='text' id="ttcodigo"name="idmat" autofocus class="form-control w-input"  maxlength="100"  placeholder="" required></div>
 </div>
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="ttitulo">Titulo</label></div>
-<div class="ajuste w-2"><input  type='text' id="ttitulo" name="titulo" class="index"  maxlength="100"  placeholder="" required></div>
+<div class="input-group m-div">
+<label class="input-group-text w-label" for="ttitulo">Titulo</label>
+<div><input  type='text' id="ttitulo" name="titulo" class="form-control w-input"  maxlength="100"  placeholder="" required></div>
 </div>
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="tportada">Portada</label></div>
- <div class="ajuste w-2"><input type='file' id="tportada" name="portada" class="index"  placeholder=""> </div>
- </div>
-
-<div class="flex">
-<div class="span-2 ajuste"><label for="tcatalogo">Catalogo</label></div>
-<div class="ajuste w-2"><input type='text' id="tcatalogo" name="idcatalogo" class="index" maxlength="100"  placeholder=""></div>
+<div class="input-group m-div">
+<label class="input-group-text w-label" for="tportada">Portada</label>
+<div><input type='file' id="tportada" name="portada" class="form-control w-input"  placeholder=""> </div>
 </div>
-<div class="flex">
-<div class="span-2 ajuste"><label for="tanio">A&ntildeo</label></div>
-<div class="ajuste w-2"><input type='text' id="tanio" name="anio" class="index" maxlength="4"> </div>
- </div>
+
+<div class="input-group m-div">
+<label class="input-group-text w-label" for="tcatalogo">Catalogo</label>
+<div><input type='text' id="tcatalogo" name="idcatalogo" class="form-control w-input" maxlength="100"  placeholder=""></div>
+</div>
+
+<div class="input-group m-div">
+<label class="input-group-text w-label" for="tanio">A&ntildeo</label>
+<div><input type='text' id="tanio" name="anio" class="form-control w-input" maxlength="4"> </div>
+</div>
  
-<div class="flex">
-<div class="span-2 ajuste"><label for="tidioma">Idioma</label></div>
-<div class="ajuste w-2 autocomplete"><input type='text' id="tidioma" name="idioma" class="index" > </div>
-</div>
-<div class="flex">
-<div class="span-2 ajuste"><label for="tdesc">Descripcion</label></div>
-<div class="ajuste w-2"><input type='text' id="tdesc" name="descripcion"  class="index" maxlength="300" placeholder=""></div>
+<div class="input-group m-div">
+<label class="input-group-text w-label" for="tidioma">Idioma</label>
+<div class="autocomplete"><input type='text' id="tidioma" name="idioma" class="form-control w-input" > </div>
 </div>
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="tipott">Tipo</label></div>
-<div class="ajuste w-2 autocomplete">
-<input id="tipott" type='text' name="tipott" class="index"   maxlength="300"  placeholder=""></div>
+<div class="input-group m-div">
+<label class="input-group-text w-label" for="tdesc">Descripcion</label>
+<div><input type='text' id="tdesc" name="descripcion"  class="form-control w-input" maxlength="300" placeholder=""></div>
 </div>
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="finalautor">Autores</label></div>
-<div class="ajuste w-2 autocomplete" >
-<input id="finalautor" type='text' name="autores" class="index"   maxlength="300"  placeholder=""></div>
+<div class="input-group m-div">
+<label class="input-group-text w-label" for="tipott">Tipo</label>
+<div class="autocomplete"><input id="tipott" type='text' name="tipott" class="form-control w-input"   maxlength="300"  placeholder=""></div>
+</div>
+
+<div class="input-group m-div">
+<label class="input-group-text w-label" for="finalautor">Autores</label>
+<div class="autocomplete"><input id="finalautor" type='text' name="autores" class="form-control w-input"   maxlength="300"  placeholder=""></div>
 </div>
 
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="finaldirector">Directores</label></div>
-<div class="ajuste w-2 autocomplete" >
-<input id="finaldirector" type='text' name="directores" class="index"  maxlength="300"  placeholder=""></div>
+<div class="input-group m-div">
+<label class="input-group-text w-label" for="finaldirector">Directores</label>
+<div class="autocomplete"><input id="finaldirector" type='text' name="directores" class="form-control w-input"  maxlength="300"  placeholder=""></div>
 </div>
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="finaluni">Universidad</label></div>
-<div class="ajuste w-2 autocomplete" >
-<input id="finaluni" type='text' name="universidad" class="index"  maxlength="100"  placeholder=""></div>
+<div class="input-group m-div">
+<label class="input-group-text w-label" for="finaluni">Universidad</label>
+<div class="autocomplete"><input id="finaluni" type='text' name="universidad" class="form-control w-input"  maxlength="100"  placeholder=""></div>
 </div>
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="finallugar">Lugar</label></div>
-<div class="ajuste w-2 autocomplete">
-<input id="finallugar" type='text' name="lugar" class="index"  maxlength="100"  placeholder=""></div>
+<div class="input-group m-div">
+<label class="input-group-text w-label" for="finallugar">Lugar</label>
+<div class="autocomplete"><input id="finallugar" type='text' name="lugar" class="form-control w-input"  maxlength="100"  placeholder=""></div>
 </div>
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="numpag">Nro Paginas</label></div>
-<div class="ajuste w-2"><input type='number' id="numpag" name="numpag" class="index"  maxlength="30" min="0" max="1000" placeholder=""></div>
+<div class="input-group m-div">
+<label class="input-group-text w-label" for="numpag">Nro Paginas</label>
+<div><input type='number' id="numpag" name="numpag" class="form-control w-input"  maxlength="30" min="0" max="1000" placeholder=""></div>
 </div>
 
 

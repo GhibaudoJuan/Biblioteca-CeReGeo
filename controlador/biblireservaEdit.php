@@ -14,14 +14,14 @@
 <input type='hidden' id="resact" name ='resact' >
 
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="cresdesde">Retiro</label></div>
-<div class="ajuste w-2"><input type='date' id="cresdesde" name="fecha" class="index"></div>
+<div class="input-group m-div">
+<label class="input-group-text" for="cresdesde">Retiro</label>
+<div class="ajuste"><input type='date' id="cresdesde" name="fecha" class="form-control"></div>
 </div>
 
 <?php if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']<='1')): ?>
-<div class="flex">
-<div class="ajuste w-2">
+<div class="input-group m-div">
+<div class="ajuste">
 <input type="radio" style="width: auto" id="resce" name="activo" value="False">
 <label class="span" for="activo">Cerrado</label>
 

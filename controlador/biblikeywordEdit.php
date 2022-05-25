@@ -25,18 +25,18 @@ while($valor=pg_fetch_assoc($palabrasclave)){
 <input type='hidden' id="mat_id" name="mat_id">
 
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="word">Cambiar: </label></div>
-<div class="ajuste w-3 ">
-<select id="word" name= "word" class="index">
+<div class="input-group m-div">
+<label class="input-group-text" for="word">Cambiar: </label>
+<div class="ajuste">
+<select id="word" name= "word" class="form-control">
 <option value='---'>---</option>
 <?php echo $keyselect;?>
 </select>
 </div>
 </div>
-<div class="flex">
-<div class="span-2 ajuste"><label for="wordnew">Por: </label></div>
-<div class="ajuste w-3 autocomplete"><input type='text' id="wordnew" name="wordnew"  class="index" placeholder="Palabra nueva" maxlength="100"></div>
+<div class="input-group m-div">
+<label class="input-group-text" for="wordnew">Por: </label>
+<div class="ajuste autocomplete"><input type='text' id="wordnew" name="wordnew"  class="form-control" placeholder="Palabra nueva" maxlength="100"></div>
 </div>
 
 

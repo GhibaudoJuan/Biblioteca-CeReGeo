@@ -5,36 +5,35 @@
 </head>
 <body>
 
-
 <form action = "../modelo/bibliPerfilUsuario.php" method="post" >
 
 
 
 
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="email">E-mail</label></div>
-<div class="ajuste w-2"><input type='email' id="email" name="email" class="index" maxlength="150"  required 
+<div class="input-group m-div">
+<label class="input-group-text" for="email">E-mail</label>
+<div class="ajuste"><input type='email' id="email" name="email" class="form-control" maxlength="150"  required 
 value="<?php $a ="select email from cuenta where nombreuser = '". $_SESSION["user"]."';";
 $a=pg_fetch_assoc(select($a));
 echo $a['email'];?>"></div>
 </div>
 
 
-<span class="span-2" style="margin-left:30px;">Cambiar Contraseña</span>
+<span class="span-2">Cambiar Contraseña</span>
 <br>
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="contact">Contraseña actual</label></div>
-<div class="ajuste w-2"><input type='password' id="contact" name="contraactual" class="index" maxlength="150"></div>
+<div class="input-group m-div">
+<label class="input-group-text" for="contact">Contraseña actual</label>
+<div class="ajuste"><input type='password' id="contact" name="contraactual" class="form-control" maxlength="150"></div>
 </div>
-<div class="flex">
-<div class="span-2 ajuste"><label for="newpass">Contraseña nueva</label></div>
-<div class="ajuste w-2"><input type='password' name="contranueva" class="index" id="newpass" maxlength="150" onfocusout="contraconfir()"></div>
+<div class="input-group m-div">
+<label class="input-group-text" for="newpass">Contraseña nueva</label>
+<div class="ajuste"><input type='password' name="contranueva" class="form-control" id="newpass" maxlength="150" onfocusout="contraconfir()"></div>
 </div>
-<div class="flex">
-<div class="span-2 ajuste"><label for="canfpass">Confirmar</label></div>
-<div class="ajuste w-2"><input type='password' name="conf" class="index" id="confpass" maxlength="150" onfocusout="contraconfir()"></div>
+<div class="input-group m-div">
+<label class="input-group-text" for="canfpass">Confirmar</label>
+<div class="ajuste"><input type='password' name="conf" class="form-control" id="confpass" maxlength="150" onfocusout="contraconfir()"></div>
 </div>
 <span class="span error" id="mostrarerror"></span>
 <br>
@@ -44,7 +43,6 @@ echo $a['email'];?>"></div>
 
 
 </form>
-
 
 </body>
 

@@ -16,69 +16,66 @@ $libroidioma=autostring("material","idioma");
 
 
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="librocodigo">Codigo Material</label></div>
-<div class="ajuste w-2 autocomplete" >
-<input type='text' id="librocodigo"name="idmat" class="index"  maxlength="100" placeholder="" required></div>
+<div class="input-group m-div">
+<label class="input-group-text w-label" for="librocodigo">Codigo Material</label>
+<div class="autocomplete"><input type='text' id="librocodigo" name="idmat" class="form-control w-input"  maxlength="100" placeholder="" required></div>
 </div>
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="ltitulo">Titulo</label></div>
-<div class="ajuste w-2"><input  type='text' id="ltitulo" name="titulo" class="index"  maxlength="100" placeholder="" required></div>
+<div class="input-group m-div">
+<label class="input-group-text w-label" for="ltitulo">Titulo</label>
+<div><input  type='text' id="ltitulo" name="titulo" class="form-control w-input"  maxlength="100" placeholder="" required></div>
 </div>
 
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="lportada">Portada</label></div>
-<div class="ajuste w-2"><input type='file' id="lportada" name="portada" class="index"placeholder=""> </div>
+<div class="input-group m-div">
+<label class="input-group-text w-label" for="lportada">Portada</label>
+<div><input type='file' id="lportada" name="portada" class="form-control w-input" placeholder=""></div>
 </div>
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="lcatalogo">Catalogo</label></div>
-<div class="ajuste w-2"><input type='text' id="lcatalogo" name="idcatalogo" class="index" maxlength="100"placeholder=""></div>
+<div class="input-group m-div">
+<label class="input-group-text w-label" for="lcatalogo">Catalogo</label>
+<div><input type='text' id="lcatalogo" name="idcatalogo" class="form-control w-input" maxlength="100"placeholder=""></div>
 </div>
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="lanio">A&ntildeo</label></div>
-<div class="ajuste w-2 autocomplete"><input type='text' id="lanio" name="anio" class="index" maxlength="4"> </div>
+<div class="input-group m-div">
+<label class="input-group-text w-label" for="lanio">A&ntildeo</label>
+<div class="autocomplete"><input type='text' id="lanio" name="anio" class="form-control w-input" maxlength="4"> </div>
  </div>
  
-<div class="flex">
-<div class="span-2 ajuste"><label for="lidioma">Idioma</label></div>
-<div class="ajuste w-2 autocomplete"><input type='text' id="lidioma" name="idioma" class="index" > </div>
+<div class="input-group m-div">
+<label class="input-group-text w-label" for="lidioma">Idioma</label>
+<div class="autocomplete"><input type='text' id="lidioma" name="idioma" class="form-control w-input" > </div>
 </div>
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="ldesc">Descripcion</label></div>
-<div class="ajuste w-2"><input type='text' id="ldesc" name="descripcion" class="index" maxlength="300" placeholder=""></div>
+<div class="input-group m-div">
+<label class="input-group-text w-label" for="ldesc">Descripcion</label>
+<div><input type='text' id="ldesc" name="descripcion" class="form-control w-input" maxlength="300" placeholder=""></div>
 </div>
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="libroautor">Autores</label></div>
-<div class="ajuste w-2 autocomplete" >
-<input type='text' id="libroautor" name="autor"  class="index"   maxlength="150" placeholder=""></div>
+<div class="input-group m-div">
+<label class="input-group-text w-label" for="libroautor">Autores</label>
+<div class=" autocomplete" ><input type='text' id="libroautor" name="autor"  class="form-control w-input"   maxlength="150" placeholder=""></div>
 </div>
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="libroedit">Editorial</label></div>
-<div class="ajuste w-2 autocomplete" >
-<input type='text' id="libroedit" name="editorial"  class="index"  maxlength="30" placeholder=""></div>
-</div>
-<div class="flex">
-<div class="span-2 ajuste"><label for="isbn">ISBN</label></div>
-<div class="ajuste w-2" >
-<input type='text' id="isbn" name="isbn"  class="index"  maxlength="50" placeholder=""></div>
+<div class="input-group m-div">
+<label class="input-group-text w-label" for="libroedit">Editorial</label>
+<div class=" autocomplete" ><input type='text' id="libroedit" name="editorial"  class="form-control w-input"  maxlength="30" placeholder=""></div>
 </div>
 
-
-<div class="flex">
-<div class="span-2 ajuste"><label for="edicion">Edicion</label></div>
-<div class="ajuste w-2"><input type='number' id="ledicion" name="edicion"  class="index"  maxlength="50" min="0" max="50" placeholder=""></div>
+<div class="input-group m-div">
+<label class="input-group-text w-label" for="isbn">ISBN</label>
+<div><input type='text' id="isbn" name="isbn"  class="form-control w-input"  maxlength="50" placeholder=""></div>
 </div>
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="tomo">Tomo</label></div>
-<div class="ajuste w-2"><input type='number' id="ltomo" name="tomo"  class="index"  maxlength="50" min="0" max="50" placeholder=""></div>
+ 
+<div class="input-group m-div">
+<label class="input-group-text w-label" for="edicion">Edicion</label>
+<div><input type='number' id="ledicion" name="edicion"  class="form-control w-input"  maxlength="50" min="0" max="50" placeholder=""></div>
+</div>
+
+<div class="input-group m-div">
+<label class="input-group-text w-label" for="tomo">Tomo</label>
+<div><input type='number' id="ltomo" name="tomo"  class="form-control w-input"  maxlength="50" min="0" max="50" placeholder=""></div>
 </div>
 
 <input type='hidden' name ='tipo'value='Libro'>

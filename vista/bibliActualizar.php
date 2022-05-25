@@ -77,34 +77,35 @@ margin-right:10rem;
 	<main>
 	
 	
-	
+	<div  class ="div-ejem">
 	<?php if($array['tipo']=="Libro"):?>				
 	<!-- Libro -->		
-	<div id="div1" class ="div-ejem">
+	<div id="div1" class="divicion">
 	<form action = "../modelo/bibliactualizar.php" enctype="multipart/form-data" method="post" >
 	<?php include("../controlador/biblilibroInsert.php"); ?>	
 	<?php endif;?>
 	<?php if($array['tipo']=="Mapa"):?>
 	<!-- Mapa -->
-	<div id="div2" class ="div-ejem" >
+	<div id="div2" class="divicion">
 	<form action = "../modelo/bibliactualizar.php" enctype="multipart/form-data" method="post" >
 	<?php include("../controlador/biblimapaInsert.php"); ?>	
 	<?php endif;?>
 	<?php if($array['tipo']=="Revista"):?>
 	<!-- Revista -->
-	<div id="div3" class ="div-ejem" >
+	<div id="div3" class="divicion">
 	<form action = "../modelo/bibliactualizar.php" enctype="multipart/form-data" method="post" >
 	<?php include("../controlador/biblirevistaInsert.php"); ?>
 	<?php endif;?>
 	<?php if($array['tipo']=="Final"):?>
 	<!-- Final -->
-	<div id="div4" class ="div-ejem">
+	<div id="div4" class="divicion">
 	<form action = "../modelo/bibliactualizar.php"  enctype="multipart/form-data" method="post" >
 	<?php include("../controlador/biblittInsert.php"); ?>
 	<?php endif;?>
 	
 	<div class="alignr"><button type="submit"  class="indexbutton">Registrar</button></div>
 	</form>
+	</div>
 	</div>
 	
 	

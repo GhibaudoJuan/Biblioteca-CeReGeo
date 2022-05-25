@@ -14,16 +14,16 @@ $keywords= autostring("keywords", "descri");
 
 <form action = "../modelo/biblikeyword.php" method="post">
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="mat_id">Codido Material</label></div>
-<div class="ajuste w-2 autocomplete"><input type='text' id="mat_id" name="mat_id" class="index" required></div>
+<div class="input-group m-div">
+<label class="input-group-text" for="mat_id">Codido Material</label>
+<div class="ajuste autocomplete"><input type='text' id="mat_id" name="mat_id" class="form-control" required></div>
 </div>
 
 
 <?php for($i=1;$i<6;$i++):?>
-<div class="flex">
-<div class="span-2 ajuste"><label for="word<?php echo $i;?>">Palabra clave <?php echo $i;?></label></div>
-<div class="ajuste w-2 autocomplete"><input type='text' id="word<?php echo $i;?>" name="word<?php echo $i;?>"  class="index" value=""  <?php if($i==1) echo required; ?>></div>
+<div class="input-group m-div">
+<label class="input-group-text" for="word<?php echo $i;?>">Palabra clave <?php echo $i;?></label>
+<div class="ajuste autocomplete"><input type='text' id="word<?php echo $i;?>" name="word<?php echo $i;?>"  class="form-control" value=""  <?php if($i==1) echo required; ?>></div>
 </div>
 
 <?php endfor;?>

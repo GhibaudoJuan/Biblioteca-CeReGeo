@@ -48,10 +48,10 @@ width:100%;
 
 
 <!-- Palabras claves -->
-<div class="flex">
-<div class="span-2 ajuste"><span>Palabras claves</span></div>
-<div class="ajuste w-1 autocomplete" >
-<input type='text' id="pala" name="descri" class="index"  maxlength="100" placeholder="---">
+<div class="input-group m-div">
+<label class="input-group-text w-av" >Palabras claves</label>
+<div class="ajuste autocomplete" >
+<input type='text' id="pala" name="descri" class="form-control"  maxlength="100" placeholder="---">
 </div>
 </div>
 

@@ -15,29 +15,26 @@ $material=autostring("material","idmat");
 <form action = "../modelo/biblireservaInsert.php" method="post" >
 <div class="modal-body">
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="material">Codigo Material</label></div>
-<div class="ajuste w-2 autocomplete">
-<input type='text' name="material" id="resmaterial" class="index" maxlength="100" required>
+<div class="input-group m-div">
+<label class="input-group-text" for="material">Codigo Material</label>
+<div class="ajuste autocomplete"><input type='text' name="material" id="resmaterial" class="form-control" maxlength="100" required>
 </div>
 </div>
-<div class="flex">
-<div class="span-2 ajuste"><label for="ejemplar">Codigo Ejemplar</label></div>
-<div class="ajuste w-2 autocomplete">
-<input type='text' name="ejemplar" id="resejemplar" class="index" maxlength="100" required>
-</div>
-</div>
-
-<div class="flex">
-<div class="span-2 ajuste"><label for="nombre">Nombre</label></div>
-<div class="ajuste w-2 autocomplete">
-<input type='text' name="nombre" id="nombre" class="index" maxlength="100" required>
+<div class="input-group m-div">
+<label class="input-group-text" for="ejemplar">Codigo Ejemplar</label>
+<div class="ajuste autocomplete"><input type='text' name="ejemplar" id="resejemplar" class="form-control" maxlength="100" required>
 </div>
 </div>
 
-<div class="flex">
-<div class="span-2 ajuste"><label for="fr">Retiro</label></div>
-<div class="ajuste w-2"><input id="frn" type='date' name="fecha" class="index"  required></div>
+<div class="input-group m-div">
+<label class="input-group-text" for="nombre">Nombre</label>
+<div class="ajuste autocomplete"><input type='text' name="nombre" id="nombre" class="form-control" maxlength="100" required>
+</div>
+</div>
+
+<div class="input-group m-div">
+<label class="input-group-text" for="fr">Retiro</label>
+<div class="ajuste"><input id="frn" type='date' name="fecha" class="form-control"  required></div>
 </div>
 
 <input type='hidden' name ='activo'value='True'>
