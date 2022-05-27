@@ -76,7 +76,7 @@ left:30rem;
 	
 
 <script type="text/javascript">
-conftabla('reportes');
+conftabla('reportes','<?php echo $_SESSION['tipouser']?>');
 </script>
 <?php include("javascript/pluginBootstrap.html"); ?>
 </body>

@@ -23,7 +23,7 @@ $tabla.='<td>'.$datos['idmaterial'].'</td>
 $tabla.='<td>'.$datos['propietario'].'</td>
          <td>'.$datos['estado'].'</td>
          <td>'.$datos['disponibilidad'].'</td>
-         <td>'.$datos['proxima'].'</td>';
+         <td>'.$array[$datos[idejemplar]].'</td>';
             
 $tabla.=" </tr>";
 

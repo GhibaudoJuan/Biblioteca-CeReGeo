@@ -150,7 +150,7 @@ $_SESSION['sql'] = $sql;
 	
 	
 <script type="text/javascript">
-conftabla('cuentas');
+conftabla('cuentas','<?php echo $_SESSION['tipouser']?>');
 
 
 </script>

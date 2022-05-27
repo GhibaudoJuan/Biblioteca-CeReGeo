@@ -179,9 +179,9 @@ function armarPortada($mifila,$tipo,$keyword){
           
         }
         if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']<'2')){
-        $galeria.='
-                   <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#miModal"
-                    onclick="valuekeyword('."'modalkeyword','".$mifila['idmat']."'".')">Editar</button>';
+            $galeria.='<a type="button" data-bs-toggle="modal" data-bs-target="#miModal" onclick="valuekeyword('."'modalkeyword','".$mifila['idmat']."'".')">
+                       <img src="../imagenes/editar.png" alt="Editar">
+                       </a>';
         }
         $galeria.='</div>';
         $galeria.='</div>';

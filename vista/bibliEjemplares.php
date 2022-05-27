@@ -15,13 +15,16 @@ else{
 
 $sql = "select idmaterial, idejemplar, codigo_externo, propietario,
         (CASE WHEN estado='l' THEN 'Libre' WHEN estado='r' THEN 'Reservado' WHEN estado='p' THEN 'Prestado' when estado='o' THEN 'Obsoleto' END) as estado, 
-        (CASE WHEN disponibilidad ='True' THEN 'SI' ELSE 'NO' END ) as disponibilidad,
-        (CASE WHEN activo='true' THEN min(fecha) ELSE NULL END )as proxima         
-        from ejemplares e left join reservas r on (r.material=e.idmaterial) and(r.ejemplar=e.idejemplar) 
+        (CASE WHEN disponibilidad ='True' THEN 'SI' ELSE 'NO' END ) as disponibilidad
+             
+        from ejemplares 
         where idmaterial = '".$idej."' 
-        group by idmaterial, idejemplar, codigo_externo, propietario, estado, disponibilidad, activo;";
+        ;";
         
-
+/*
+  
+ 
+ */
 $resultado=select($sql);
 
 
@@ -54,6 +57,22 @@ $portada=pg_fetch_assoc(select($sql2));
 $sql3="select descri from keywords where mat_id='".$idej."' order by word_id asc;";
 
 $keyword=select($sql3);
+
+
+$sql4= "select ejemplar, min(fecha) as proxima         
+        from ejemplares e inner join reservas r on (r.material=e.idmaterial) and(r.ejemplar=e.idejemplar) 
+        where idmaterial = '".$idej."' and activo='true'
+        group by ejemplar, activo;";
+
+$proximo=select($sql4);
+
+$array = array();
+while ($datos = pg_fetch_assoc($proximo)){
+   $array[$datos['ejemplar']]=$datos['proxima'];
+    
+}
+
+    
 
 
 $form='"'.$_SESSION['atras'].'"';
@@ -265,7 +284,7 @@ $_SESSION['atrasejemplar']="../vista/bibliEjemplares.php?cod=".$idej."&tipo=".$t
 </div>
 
 <script type="text/javascript">
-conftabla('ejemplar','<?php echo $_SESSION['tipouser']?>');
+conftabla('ejemplar','<?php if($_SESSION['tipouser']=='') echo 4; else echo $_SESSION['tipouser'];?>');
 
 </script>
 <?php include("javascript/pluginBootstrap.html"); ?>

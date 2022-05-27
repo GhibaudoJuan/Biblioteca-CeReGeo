@@ -1,4 +1,4 @@
-function conftabla(a,b=0){
+function conftabla(a,b=4){
 	$(document).ready( function () {
 	var nover;	
 	var columna;
