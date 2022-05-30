@@ -1,4 +1,5 @@
 <?php  
+
     require_once('../accesos/conf.php');
     require_once('../vendor/autoload.php');
     
@@ -19,6 +20,8 @@
    
     $html2pdf->writeHTML($html);
     
+    if($_POST['guardar']){
+    
     $html2pdf->output($nombrefile,'f');
     //$html2pdf->output();
     
@@ -31,8 +34,17 @@
     
     $res=select($insert);
     $_SESSION['res']=$res;
+    
+    
+    
+    }
+    else {
+        $html2pdf->output($nombrepdf,'D');
+        
+    }
     header('location:../vista/bibliReportes.php?pag=1');	
 
+    
 
 
 ?>
