@@ -12,16 +12,14 @@
 
 
 
-<span class="span" style="margin-left:0px;">Backup</span>
-<input type='text' name="backup" class="index" maxlength="150">
-<br>
-<span class="span" style="margin-left:0px;">Restore</span>
-<input type='text' name="restore" class="index"  maxlength="150" >
-<br>
+<div class="input-group m-div">
+<label class="input-group-text">Nombre</label>
+<input type='text' name="backup" class="form-control" maxlength="100">
+</div>
+<div class="alignr"><button type="submit" class="indexbutton">Backup</button></div>
 
 
-<br>
-<button type="submit" class="indexbutton">Guardar</button>
+
 
 
 

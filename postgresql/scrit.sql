@@ -108,7 +108,7 @@ nombre varchar(100),
 material varchar(100),
 ejemplar varchar(100),
 fecha date,
-activo boolean;
+activo boolean,
 retirado boolean,
 primary key (idres, nombre),
 foreign key (material,ejemplar) references ejemplares(idmaterial,idejemplar)
@@ -131,6 +131,11 @@ create table reportes(
 id int primary key,
 nombre varchar(100),
 fecha date,
-descripcion varchar(500),
+descripcion varchar(500)
 );
 
+create table backup(
+id int primary key,
+nombre varchar(100),
+fecha date
+);

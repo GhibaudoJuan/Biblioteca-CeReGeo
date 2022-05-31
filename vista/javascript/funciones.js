@@ -76,6 +76,7 @@ var table = $('#'+a).DataTable();
 			$('#botonprestamo').attr("disabled","disabled");
 			$('#botonreservaejemplar').attr("disabled","disabled");
 			$('#botonprestamoejemplar').attr("disabled","disabled");
+			$('#botonrestore').attr("disabled","disabled");			
         }
         else {
             table.$('tr.selected').removeClass('selected');
@@ -83,7 +84,8 @@ var table = $('#'+a).DataTable();
 			var data = table.row('.selected').data();
 			$('#botonborrar').removeAttr("disabled");
 			$('#botoneditar').removeAttr("disabled");
-			if((data[6]!="Cerrado")||(b<=1)){ //reservas
+			$('#botonrestore').removeAttr("disabled");
+			if(data[6]!="Cerrado"){ //reservas
 				$('#botonborrar').removeAttr("disabled");
 				$('#botoneditar').removeAttr("disabled");
 				$('#botonreserva').removeAttr("disabled");
@@ -93,7 +95,7 @@ var table = $('#'+a).DataTable();
 				$('#botoneditar').attr("disabled","disabled");
 				$('#botonreserva').attr("disabled","disabled");
 			}
-			if(data[7]!="Cerrado")//prestamos
+			if((a='prestamos')&&(data[7]!="Cerrado"))//prestamos
 				$('#botonprestamo').removeAttr("disabled");
 			else
 				$('#botonprestamo').attr("disabled","disabled");
@@ -102,9 +104,9 @@ var table = $('#'+a).DataTable();
 					if(data[4]!='Prestado')
 						$('#botonprestamoejemplar').removeAttr("disabled");
 			}
+			
         }
     } );
-	//borrar
 	$('#botonborrar').click( function () {
 		var data = table.row('.selected').data();
         borrar(data[0],data[1]);
@@ -129,6 +131,15 @@ var table = $('#'+a).DataTable();
 		var data = table.row('.selected').data();
         valueprestamo(data[0],data[1],data[6]);
     } );
+	$('#descargar').click( function () {
+		var data = table.row('.selected').data();
+        descargar(data[0]);
+    } );
+	$('#botonrestore').click( function () {
+		var data = table.row('.selected').data();
+        $('#restaurar').attr('value',data[0]);
+		
+    } );
 } );
 }
 function borrar(a,b){
@@ -137,11 +148,11 @@ function borrar(a,b){
 	$('#bejempplar').attr('value',b);
 	$('#borrarprimero').attr('value',a);
 	$('#nombreborrar').attr('value',b);
-	
-	
-
 }
-
+function descargar(a){
+	$('#descargar').attr('href','../backup/'+a+'.sql');
+	
+}
 function valuereserva(a, b){
 		$('#resmaterial').attr('value',a);
 		$('#resejemplar').attr('value',b);
