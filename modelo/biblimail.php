@@ -45,15 +45,15 @@ $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
 $mail->SMTPAuth = true;
 
 
-$mail->Username = 'ghibaudojmanuel@hotmail.com';
+$mail->Username = '';
 
 
-$mail->Password = 'campanita13';
+$mail->Password = '';
 
 
-$mail->setFrom('ghibaudojmanuel@hotmail.com', 'juanmanuel');
+$mail->setFrom('');
 
-$mail->addAddress('ghibaudjuan@gmail.com');
+$mail->addAddress('');
 $mail->isHTML(true);
 //Set the subject line
 $mail->Subject = 'PHPMailer GMail SMTP test';
@@ -87,7 +87,7 @@ if(isset($_POST)){
 </head>
 <body>
 <h1>Esto es un H1</h1>
-<p>Esto es un p·rrafo en HTML</p>
+<p>Esto es un p√°rrafo en HTML</p>
 </body>
 </html>";
     
@@ -98,7 +98,7 @@ if(isset($_POST)){
             echo "no enviado";
     
     
-    $email="ghibaudjuan@gmail.com";
+    $email="";
     $asunto="prueva";
     $mensaje="holiss";
     $header= "From: noreply@example.com"."\r\n";
@@ -112,7 +112,7 @@ if(isset($_POST)){
             echo "no enviado";
     
     
-    mail("ghibaudjuan@gmail.com","asunto","mensaje");
+    mail("","asunto","mensaje");
 }
     
 
@@ -139,7 +139,7 @@ if(isset($_POST)){
 <?php 
 /*
 
-$to = "ghibaudjuan@gmail.com";
+$to = "";
 $subject = "Asunto del email";
 $headers = "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
@@ -151,7 +151,7 @@ $message = "
 </head>
 <body>
 <h1>Esto es un H1</h1>
-<p>Esto es un p·rrafo en HTML</p>
+<p>Esto es un p√°rrafo en HTML</p>
 </body>
 </html>";
 
@@ -159,7 +159,7 @@ mail($to, $subject, $message, $headers);
 
 
 
-$email="ghibaudjuan@gmail.com";
+$email="";
 $asunto="prueva";
 $mensaje="holiss";
 $header= "From: noreply@example.com"."\r\n";
