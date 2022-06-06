@@ -13,7 +13,10 @@
 <input type='hidden' id="resdesde" name ='resdesde' >
 <input type='hidden' id="resact" name ='resact' >
 
-
+<div class="input-group m-div">
+<label class="input-group-text" for="cresejem">Ejemplar</label>
+<div class="ajuste"><input type='text' id="cresejem" name="ejemplar" class="form-control"></div>
+</div>
 <div class="input-group m-div">
 <label class="input-group-text" for="cresdesde">Retiro</label>
 <div class="ajuste"><input type='date' id="cresdesde" name="fecha" class="form-control"></div>

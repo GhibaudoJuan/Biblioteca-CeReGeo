@@ -27,9 +27,21 @@ ver varchar(1);
 BEGIN
 
 IF(tg_op ='INSERT') THEN
+
+	if (new.ejemplar!='') then
 	select estado from ejemplares where idmaterial=new.material and idejemplar=new.ejemplar INTO ver;
 	if(ver='l') then
 		update ejemplares set estado='r' where idmaterial=new.material and idejemplar=new.ejemplar;
+	end if;
+	end if;
+	
+end if;
+IF(tg_op ='UPDATE') THEN
+	if (new.ejemplar!='') then
+	select estado from ejemplares where idmaterial=new.material and idejemplar=new.ejemplar INTO ver;
+	if(ver='l') then
+		update ejemplares set estado='r' where idmaterial=new.material and idejemplar=new.ejemplar;
+	end if;
 	end if;
 end if;
 IF (tg_op='DELETE') THEN
@@ -105,3 +117,83 @@ else
 end if;
 end; $$ language 'plpgsql';
 ---------------------------------------------------------------------------------
+
+create or replace function fxmaterial()
+returns trigger AS $$
+begin
+
+IF(tg_op ='INSERT') THEN
+	new.fecha_creacion=current_timestamp -interval '3 hour';
+	new.usuario_creacion=user;	
+end if;
+IF(tg_op ='UPDATE') THEN
+	new.fecha_ult_modif=current_timestamp -interval '3 hour';
+	new.usuario_ult_modif=user;
+end if;
+	return new;
+end; $$ language 'plpgsql';
+---------------------------------------------------------------------------------
+
+create or replace function fxejemplar()
+returns trigger AS $$
+begin
+
+IF(tg_op ='INSERT') THEN
+	new.fecha_creacion=current_timestamp -interval '3 hour';
+	new.usuario_creacion=user;	
+end if;
+IF(tg_op ='UPDATE') THEN
+	new.fecha_ult_modif=current_timestamp -interval '3 hour';
+	new.usuario_ult_modif=user;
+end if;
+	return new;
+end; $$ language 'plpgsql';
+
+---------------------------------------------------------------------------------
+
+create or replace function fxprestamos()
+returns trigger AS $$
+begin
+
+IF(tg_op ='INSERT') THEN
+	new.fecha_creacion=current_timestamp -interval '3 hour';
+	new.usuario_creacion=user;	
+end if;
+IF(tg_op ='UPDATE') THEN
+	new.fecha_ult_modif=current_timestamp -interval '3 hour';
+	new.usuario_ult_modif=user;
+end if;
+	return new;
+end; $$ language 'plpgsql';
+---------------------------------------------------------------------------------
+
+create or replace function fxreservas()
+returns trigger AS $$
+begin
+
+IF(tg_op ='INSERT') THEN
+	new.fecha_creacion=current_timestamp -interval '3 hour';
+	new.usuario_creacion=user;	
+end if;
+IF(tg_op ='UPDATE') THEN
+	new.fecha_ult_modif=current_timestamp -interval '3 hour';
+	new.usuario_ult_modif=user;
+end if;
+	return new;
+end; $$ language 'plpgsql';
+---------------------------------------------------------------------------------
+
+create or replace function fxcuenta()
+returns trigger AS $$
+begin
+
+IF(tg_op ='INSERT') THEN
+	new.fecha_creacion=current_timestamp -interval '3 hour';
+	new.usuario_creacion=user;	
+end if;
+IF(tg_op ='UPDATE') THEN
+	new.fecha_ult_modif=current_timestamp -interval '3 hour';
+	new.usuario_ult_modif=user;
+end if;
+	return new;
+end; $$ language 'plpgsql';

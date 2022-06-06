@@ -10,6 +10,10 @@ portada varchar(300),
 primary key (idmat)
 );
 alter table material add column idCatalogo varchar(100);
+alter table material add column fecha_creacion timestamp;
+alter table material add column usuario_creacion varchar(100);
+alter table material add column fecha_ult_modif timestamp;
+alter table material add column usuario_ult_modif varchar(100);
 
 create table keywords(
 mat_id varchar(100),
@@ -29,7 +33,10 @@ disponibilidad boolean,
 estado varchar(1),
 primary key (idmaterial, idejemplar),
 foreign key (idmaterial) references material(idmat));
-
+alter table ejemplares add column fecha_creacion timestamp;
+alter table ejemplares add column usuario_creacion varchar(100);
+alter table ejemplares add column fecha_ult_modif timestamp;
+alter table ejemplares add column usuario_ult_modif varchar(100);
 
 create table mapas(
 idmapa varchar(100),
@@ -89,7 +96,10 @@ nombre varchar(100) unique,
 email varchar(150),
 tipo int,
 foreign key (tipo) references tipocuenta(id));
-
+alter table cuenta add column fecha_creacion timestamp;
+alter table cuenta add column usuario_creacion varchar(100);
+alter table cuenta add column fecha_ult_modif timestamp;
+alter table cuenta add column usuario_ult_modif varchar(100);
 
 insert into tipocuenta values (0,'Administrador'),(1,'Bibliotacario'),(2,'Docente'),(3,'Estudiante');
 
@@ -113,6 +123,10 @@ retirado boolean,
 primary key (idres, nombre),
 foreign key (material,ejemplar) references ejemplares(idmaterial,idejemplar)
 );
+alter table reservas add column fecha_creacion timestamp;
+alter table reservas add column usuario_creacion varchar(100);
+alter table reservas add column fecha_ult_modif timestamp;
+alter table reservas add column usuario_ult_modif varchar(100);
 
 create table prestamos(
 idpre int,
@@ -126,6 +140,10 @@ activo boolean,
 primary key (idpre, nombre),
 foreign key (material,ejemplar) references ejemplares(idmaterial,idejemplar)
 );
+alter table prestamos add column fecha_creacion timestamp;
+alter table prestamos add column usuario_creacion varchar(100);
+alter table prestamos add column fecha_ult_modif timestamp;
+alter table prestamos add column usuario_ult_modif varchar(100);
 
 create table reportes(
 id int primary key,

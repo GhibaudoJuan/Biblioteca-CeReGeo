@@ -25,7 +25,7 @@ if(!isset($_SESSION))session_start();
 <ul id="menu0" class="desplega1 menu-top" >
 	
 	<li><a href="../vista/biblimaterial.php?pag=1">Biblioteca</a></li>
-	
+	<li><a href="../modelo/biblimail.php">mail</a></li>
 	<?php if(isset($_SESSION['tipouser'])): ?>
 	<li><a href="../vista/bibliReserva.php">Reservas</a></li>
 	<!--<li><a href="../vista/bibliAgenda.php">Agenda</a></li>-->

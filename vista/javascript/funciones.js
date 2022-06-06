@@ -216,6 +216,11 @@ function editar(a,b,c,d,e,f,g,h){
 
 	$('#resid').attr('value',a);
 	$('#resnom').attr('value',b);
+	if(e!=""){
+		$('#cresejem').attr('value',e);
+		$('#cresejem').attr('disabled','disabled');
+	}
+	
 	$('#resdesde').attr('value',f);
 	$('#cresdesde').attr('value',f);
 	
