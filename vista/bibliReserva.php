@@ -66,8 +66,11 @@ $retorno='reserva';
 	<!-- Borrar -->		
 	<button type="button" id="botonborrar"  data-bs-toggle="modal" data-bs-target="#miModal" disabled class="indexbutton" onclick="mostrar('borrar')">Borrar</button>
 	<?php if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']<'2')):?>
-	<!-- Borrar Todo -->		
+	<!-- Borrar Todo -->	
+	<?php if($_SESSION['tipouser']==0):?>
+	<!-- Borrar Todo -->	
 	<button type="button" class="indexbutton" data-bs-toggle="modal" data-bs-target="#miModal" onclick="mostrar('borrartodo')">Borrar Todo</button>
+    <?php endif;?>
     <!-- Pasar a Prestamo -->	
 	<button type="button" id="botonreserva" data-bs-toggle="modal" data-bs-target="#miModal" disabled class="indexbutton" onclick="mostrar('prestamo')">Prestamo</button>
 		 

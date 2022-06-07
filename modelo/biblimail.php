@@ -17,7 +17,7 @@
  * example to see how to use XOAUTH2.
  * The IMAP section shows how to save this message to the 'Sent Mail' folder using IMAP commands.
  */
-
+/*
 //Import PHPMailer classes into the global namespace
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -71,7 +71,7 @@ if (!$mail->send()) {
 
 
 
-
+*/
 /*
 if(isset($_POST)){
     
@@ -137,9 +137,9 @@ if(isset($_POST)){
 
 
 <?php 
-/*
 
-$to = "";
+
+$to = "ghibaudjuan@gmail.com";
 $subject = "Asunto del email";
 $headers = "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
@@ -155,11 +155,14 @@ $message = "
 </body>
 </html>";
 
-mail($to, $subject, $message, $headers);
+$mail=mail($to, $subject, $message, $headers);
 
+if ($mail)
+    echo "enviado1";
+    else
+        echo "no enviado1";
 
-
-$email="";
+$email="ghibaudjuan@gmail.com";
 $asunto="prueva";
 $mensaje="holiss";
 $header= "From: noreply@example.com"."\r\n";
@@ -168,8 +171,8 @@ $header.="X-Mailer: PHP/". phpversion();
 
 $mail= mail($email,$asunto,$mensaje,$header);
 if ($mail)
-echo "enviado";
+echo "enviado2";
 else
-echo "no enviado";
-*/
+echo "no enviado2";
+
 ?>

@@ -67,9 +67,10 @@ $retorno = 'prestamo';
 	<!-- Borrar -->		
 <button type="button" id="botonborrar" data-bs-toggle="modal" data-bs-target="#miModal" disabled class="indexbutton" onclick="mostrar('borrar')">Borrar</button>
 		
-		
+		<?php if($_SESSION['tipouser']==0):?>
 	<!-- Borrar Todo -->		
 <button type="button" class="indexbutton" data-bs-toggle="modal" data-bs-target="#miModal" onclick="mostrar('borrartodo')">Borrar Todo</button>
+	<?php endif;?>
 	<!-- Devolucion -->	
 <button type="button" id="botonprestamo" data-bs-toggle="modal" data-bs-target="#miModal" disabled class="indexbutton" onclick="mostrar('prestamo')">Devolucion</button>
 	

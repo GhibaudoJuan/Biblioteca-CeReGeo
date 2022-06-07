@@ -33,6 +33,7 @@ if(!isset($_SESSION))session_start();
 	<?php endif; ?>
 	<?php if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']<='1')): ?>
 	<li><a href="../vista/bibliNuevo.php">Nuevo</a></li>
+	<li><a href="../vista/bibliMultas.php">Multas</a></li>
 	<?php endif; ?>
 	<?php if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']=='0')): ?>
 	<li><a href="../vista/bibliCuenta.php">Cuentas</a></li>
