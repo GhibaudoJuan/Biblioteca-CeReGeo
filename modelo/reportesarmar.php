@@ -24,35 +24,35 @@ switch($array['datos']){
         $from= " from prestamos inner join material on (idmat=material) ";
         $from.=reportes($array['datos'], $array['tiempo']);
         $titulo="Prestamos realizados";
-        $nombrepdf="prestamos_realizados".mostrardia().".pdf";
+        $nombrepdf="prestamos_realizados_".mostrardia();
         break;
     }
     case '2':{ //prestamos retrasados
         $from=" from prestamos inner join material on (idmat=material) where devuelto > hasta ";
         $from.=reportes($array['datos'], $array['tiempo']);
         $titulo="Prestamos retrasados";
-        $nombrepdf="prestamos_retrasados".mostrardia().".pdf";
+        $nombrepdf="prestamos_retrasados_".mostrardia();
         break;
     }
     case '3':{ //prestamos no devueltos
         $from=" from prestamos inner join material on (idmat=material) where devuelto is null ";
         $from.=reportes($array['datos'], $array['tiempo']);
         $titulo="Prestamos no devueltos";
-        $nombrepdf="prestamos_no_devueltos".mostrardia().".pdf";
+        $nombrepdf="prestamos_no_devueltos_".mostrardia();
         break;
     }
     case '4':{ //reservas realizados
         $from=" from reservas inner join material on (idmat=material) ";
         $from.=reportes($array['datos'], $array['tiempo']);
         $titulo="Reservas realizadas";
-        $nombrepdf="reservas_realizadas".mostrardia().".pdf";
+        $nombrepdf="reservas_realizadas_".mostrardia();
         break;
     }
     case '5':{ //Reservas no retiradas
         $from=" from reservas inner join material on (idmat=material) where activo='false' and retirado='false' ";
         $from.=reportes($array['datos'], $array['tiempo']);
         $titulo="Reservas no retiradas";
-        $nombrepdf="reservas_no_retiradas".mostrardia().".pdf";
+        $nombrepdf="reservas_no_retiradas_".mostrardia();
         break;
     }
 }
@@ -67,7 +67,7 @@ $sql.=";";
 
 $descri;
 
-$tabla="<table style='width:100%'>
+$tabla="<table style='width:800px'>
 <thead>
 <tr>";
 

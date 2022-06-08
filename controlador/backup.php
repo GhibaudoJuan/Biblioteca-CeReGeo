@@ -14,7 +14,7 @@
 
 <div class="input-group m-div">
 <label class="input-group-text">Nombre</label>
-<input type='text' name="backup" class="form-control" maxlength="100">
+<input type='text' name="backup" class="form-control" maxlength="100" required>
 </div>
 <div class="alignr"><button type="submit" class="indexbutton">Backup</button></div>
 

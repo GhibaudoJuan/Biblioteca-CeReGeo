@@ -24,6 +24,9 @@ function conftabla(a,b=4){
 			case 'prestamos':
 				columna=7;
 				break;
+			case 'multas':
+				columna=3;
+				break;
 	}
 	
     $('#'+a).DataTable( {
@@ -233,8 +236,24 @@ function editar(a,b,c,d,e,f,g,h){
 		$('#resact').attr('value','false');
 		}
 	
+	//actualizar multas
 	
-
+	$('#cidmulta').attr('value',a);
+	$('#cdesmultado').attr('value',c);
+	$('#desmultado').attr('value',c);
+	
+	if(d=="Activo"){
+		$('#test').attr('checked','true');
+		$('#cest').attr('value','true');
+		}
+	if(d=="Cerrado"){
+		$('#fest').attr('checked','true');
+		$('#cest').attr('value','false');
+		}
+	
+	
+	
+	
 	//actualizar ejemplar
 	
 	$('#pidejem').attr('value',b);

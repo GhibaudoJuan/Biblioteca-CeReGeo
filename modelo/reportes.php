@@ -10,9 +10,8 @@
     include_once('reportesarmar.php');
     $html=ob_get_clean();
     
-    
-  $nombrefile=$reportesdir.$nombrepdf;
-    
+   
+  $nombrefile=$reportesdir.$nombrepdf.".pdf";
 
 
    
@@ -28,21 +27,20 @@
    
     
     $insert="insert into reportes (id,nombre,fecha,descripcion) 
-                values((select case when max(id)>0 then max (id)+1 else 1 end from reportes),'".$nombrepdf."','".date('Y-m-d')."','".$descri."');";
-    #echo $insert;
+                values((select case when max(id)>0 then max (id)+1 else 1 end from reportes),'".$nombrepdf."',current_timestamp - interval '3 hours','".$descri."');";
+    
    
     
     $res=select($insert);
     $_SESSION['res']=$res;
     
-    
-    
+       
     }
     else {
-        $html2pdf->output($nombrepdf,'D');
+        $html2pdf->output($nombrepdf.'.pdf','D');
         
     }
-    header('location:../vista/bibliReportes.php?pag=1');	
+    header('location:../vista/bibliReportes.php');	
 
     
 

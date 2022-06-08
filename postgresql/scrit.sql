@@ -148,7 +148,7 @@ alter table prestamos add column usuario_ult_modif varchar(100);
 create table reportes(
 id int primary key,
 nombre varchar(100),
-fecha date,
+fecha timestamp,
 descripcion varchar(500)
 );
 

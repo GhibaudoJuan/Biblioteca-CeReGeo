@@ -64,7 +64,7 @@ margin:0!important;
 	</div>
 	</div>
 	
-	 href='../backup/".$mifila['nombre'].".sql' 
+	 
 	
 	
 	

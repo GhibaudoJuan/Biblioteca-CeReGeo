@@ -6,7 +6,7 @@ require_once("../accesos/validacion.php");
 require_once("../accesos/biblifiltrar.php");
 
     
-    $sql = "select idmulta, nombre, desmultado, multa_estado
+    $sql = "select idmulta, nombre, desmultado, (CASE WHEN multa_estado ='True' THEN 'Activo' ELSE 'Cerrado' END ) as multa_estado
             from multas m inner join cuenta c on m.idcuenta=c.idcuenta ";
     //select de bibliotecarios
     if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']>'1')){
@@ -20,8 +20,8 @@ require_once("../accesos/biblifiltrar.php");
     
 
 $_SESSION['sql'] = $sql;
-$delete = 'delete from prestamos '.$where.';';
-$retorno = 'prestamo';
+
+$retorno = 'multas';
 
 ?>
 
@@ -110,7 +110,7 @@ $retorno = 'prestamo';
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="ocultar()"></button>
           </div>
          
-             <?php include("../controlador/bibliPrestamoEdit.php") ?>
+             <?php include("../controlador/bibliMultaseditar.php") ?>
           
         </div>
       </div>
@@ -125,7 +125,7 @@ $retorno = 'prestamo';
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="ocultar()"></button>
           </div>
           
-           <?php include("../controlador/bibliPrestamoBorrar.php") ?>
+           <?php include("../controlador/bibliMultasborrar.php") ?>
          
         </div>
       </div>

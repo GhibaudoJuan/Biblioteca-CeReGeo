@@ -23,13 +23,13 @@ while ($mifila = pg_fetch_assoc($resultado))
 {
     
     
-    IF(file_exists('../reportes/'.$mifila['nombre'])){
+    IF(file_exists('../reportes/'.$mifila['nombre'].'.pdf')){
     $tabla.="<tr>
              <td>".$mifila['nombre']."</td>
              <td>".$mifila['fecha']."</td>
              <td>".$mifila['descripcion']."</td>
              <td>
-             <a href='../reportes/".$mifila['nombre']."' class='sindec' target='_blank' rel='noopener noreferrer'>
+             <a href='../reportes/".$mifila['nombre'].".pdf' class='sindec' target='_blank' rel='noopener noreferrer'>
              <button type='submit' class='indexbutton'>Ver</button>
              </a>
              </td>
