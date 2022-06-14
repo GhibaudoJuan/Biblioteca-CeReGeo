@@ -9,7 +9,7 @@ require_once('../accesos/biblifiltrar.php');
 //llamo a una funcion para limbiar datos
 
 
-$sql="insert into reservas (idres,nombre,material,ejemplar,fecha,activo,retirado)
+$sql="insert into reservas (idres,nombre,material,fecha,activo,retirado)
 values((select case when max(idres)>0 then max (idres)+1 else 1 end from reservas where nombre = '";
 
 
@@ -27,7 +27,7 @@ if ($_SESSION['tipouser']<'2'){
 else 
     $sql .=$_SESSION['nombre']."'),'".$_SESSION['nombre']."','";
     
-    $sql.= $_POST['material']."','".$_POST['ejemplar']."',TO_DATE('".$_POST['fecha']."','YYYY-MM-DD'),'".$_POST['activo']."','false');";
+    $sql.= $_POST['material']."',TO_DATE('".$_POST['fecha']."','YYYY-MM-DD'),'".$_POST['activo']."','false');";
     
     
    

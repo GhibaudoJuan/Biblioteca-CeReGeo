@@ -5,7 +5,7 @@ function conftabla(a,b=4){
 	if(b>1){
 		switch(a){
 			case 'reservas':
-				nover=[0,1,2,4];
+				nover=[0,1,2];
 				columna=6;
 				break;
 			case 'prestamos':
@@ -19,7 +19,7 @@ function conftabla(a,b=4){
 	}
 	switch(a){
 			case 'reservas':				
-				columna=6;
+				columna=5;
 				break;
 			case 'prestamos':
 				columna=7;
@@ -120,7 +120,7 @@ var table = $('#'+a).DataTable();
     } );
 	$('#botonreserva').click( function () {
 		var data = table.row('.selected').data();
-        pasarprestamo(data[1],data[2],data[4]);
+        pasarprestamo(data[1],data[2]);
     } );
 	$('#botonprestamo').click( function () {
 		var data = table.row('.selected').data();
@@ -156,9 +156,9 @@ function descargar(a){
 	$('#descargar').attr('href','../backup/'+a+'.sql');
 	
 }
-function valuereserva(a, b){
+function valuereserva(a){
 		$('#resmaterial').attr('value',a);
-		$('#resejemplar').attr('value',b);
+		
 }
 function valueprestamo(a, b,c){
 		$('#presmaterial').attr('value',a);
@@ -168,11 +168,11 @@ function valueprestamo(a, b,c){
 
 		
 }
-function pasarprestamo(a,b,c){
+function pasarprestamo(a,b){
 
 	$('#pasarprestamonom').attr('value',a);
 	$('#idprestamo').attr('value',b);
-	$('#ejemprestamo').attr('value',c);
+	
 
 
 }
@@ -219,19 +219,15 @@ function editar(a,b,c,d,e,f,g,h){
 
 	$('#resid').attr('value',a);
 	$('#resnom').attr('value',b);
-	if(e!=""){
-		$('#cresejem').attr('value',e);
-		$('#cresejem').attr('disabled','disabled');
-	}
+		
+	$('#resdesde').attr('value',e);
+	$('#cresdesde').attr('value',e);
 	
-	$('#resdesde').attr('value',f);
-	$('#cresdesde').attr('value',f);
-	
-	if(g=="Activo"){
+	if(f=="Activo"){
 		$('#resac').attr('checked','true');
 		$('#resact').attr('value','true');
 		}
-	if(g=="Cerrado"){
+	if(f=="Cerrado"){
 		$('#resce').attr('checked','true');
 		$('#resact').attr('value','false');
 		}

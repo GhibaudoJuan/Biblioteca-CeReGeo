@@ -12,11 +12,9 @@ $columnas= array (
     '2'=>'nombre',
     '3'=>'material',
     '4'=>'titulo',
-    '5'=>'ejemplar',
-    '6'=>'fecha',
-    '7'=>'activo',
-
-  
+    '5'=>'fecha',
+    '6'=>'activo',
+ 
     
 );
 
@@ -30,7 +28,6 @@ $tabla="<table id='reservas' class='display tabth' style='width:100%'>
 <th>Nombre</th>
 <th>Codigo</th>
 <th>Titulo</th>
-<th>Ejemplar</th>
 <th>Retiro</th>
 <th>Estado</th>
 

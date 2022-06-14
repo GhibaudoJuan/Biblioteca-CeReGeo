@@ -14,12 +14,7 @@ $array=$_POST;
         $set.=" fecha='".$array['fecha']."' ";
         $a=1;
     }
-    if($array['ejemplar']!=''){
-        if($a==1)
-            $set.=", ";
-        $set.= " ejemplar='".$array['ejemplar']."' ";
-        $a=1;
-    }
+   
     if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']<='1')){
     if($array['activo'])
         $act='Activo';

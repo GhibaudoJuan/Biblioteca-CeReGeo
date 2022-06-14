@@ -20,11 +20,6 @@ $material=autostring("material","idmat");
 <div class="ajuste autocomplete"><input type='text' name="material" id="resmaterial" class="form-control" maxlength="100" required>
 </div>
 </div>
-<div class="input-group m-div">
-<label class="input-group-text" for="ejemplar">Codigo Ejemplar</label>
-<div class="ajuste autocomplete"><input type='text' name="ejemplar" id="resejemplar" class="form-control" maxlength="100" required>
-</div>
-</div>
 
 <div class="input-group m-div">
 <label class="input-group-text" for="nombre">Nombre</label>

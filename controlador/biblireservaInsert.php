@@ -16,7 +16,7 @@ $nombre= autostringn("select nombre from cuenta union select nombre from reserva
 <input type='hidden' name="material" id="resmaterial">
 
 
-<input type='hidden' name="ejemplar" id="resejemplar">
+
 
 
 

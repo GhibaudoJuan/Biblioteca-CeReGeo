@@ -116,12 +116,11 @@ create table reservas (
 idres int,
 nombre varchar(100),
 material varchar(100),
-ejemplar varchar(100),
 fecha date,
 activo boolean,
 retirado boolean,
 primary key (idres, nombre),
-foreign key (material,ejemplar) references ejemplares(idmaterial,idejemplar)
+foreign key (material) references material(idmat)
 );
 alter table reservas add column fecha_creacion timestamp;
 alter table reservas add column usuario_creacion varchar(100);

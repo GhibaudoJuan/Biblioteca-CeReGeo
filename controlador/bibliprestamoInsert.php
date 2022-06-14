@@ -14,8 +14,8 @@ $nombre1= autostringn("select nombre from cuenta union select nombre from reserv
 <form action = "../modelo/bibliprestamoInsert.php" method="post" >
 <div class="modal-body">
 
-<input type='hidden' name="material" id="presmaterial">
-<input type='hidden' name="ejemplar" id="presejemplar">
+<input type='text' name="material" id="presmaterial">
+<input type='text' name="ejemplar" id="presejemplar">
 
 <div class="input-group m-div">
 <label class="input-group-text" for="nombre2">Nombre</label>
