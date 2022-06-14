@@ -17,42 +17,42 @@ else{
 */
 
 //from
-
+$fecha=mostrardia();
 
 switch($array['datos']){
     case '1':{ //prestamos realizados
         $from= " from prestamos inner join material on (idmat=material) ";
         $from.=reportes($array['datos'], $array['tiempo']);
-        $titulo="Prestamos realizados";
-        $nombrepdf="prestamos_realizados_".mostrardia();
+        $titulo="Cantidad de prestamos realizados";
+        $nombrepdf="prestamos_realizados_".$fecha;
         break;
     }
     case '2':{ //prestamos retrasados
         $from=" from prestamos inner join material on (idmat=material) where devuelto > hasta ";
         $from.=reportes($array['datos'], $array['tiempo']);
-        $titulo="Prestamos retrasados";
-        $nombrepdf="prestamos_retrasados_".mostrardia();
+        $titulo="Cantidad de prestamos retrasados";
+        $nombrepdf="prestamos_retrasados_".$fecha;
         break;
     }
     case '3':{ //prestamos no devueltos
         $from=" from prestamos inner join material on (idmat=material) where devuelto is null ";
         $from.=reportes($array['datos'], $array['tiempo']);
-        $titulo="Prestamos no devueltos";
-        $nombrepdf="prestamos_no_devueltos_".mostrardia();
+        $titulo="Cantidad de prestamos no devueltos";
+        $nombrepdf="prestamos_no_devueltos_".$fecha;
         break;
     }
     case '4':{ //reservas realizados
         $from=" from reservas inner join material on (idmat=material) ";
         $from.=reportes($array['datos'], $array['tiempo']);
-        $titulo="Reservas realizadas";
-        $nombrepdf="reservas_realizadas_".mostrardia();
+        $titulo="Cantidad de reservas realizadas";
+        $nombrepdf="reservas_realizadas_".$fecha;
         break;
     }
     case '5':{ //Reservas no retiradas
         $from=" from reservas inner join material on (idmat=material) where activo='false' and retirado='false' ";
         $from.=reportes($array['datos'], $array['tiempo']);
-        $titulo="Reservas no retiradas";
-        $nombrepdf="reservas_no_retiradas_".mostrardia();
+        $titulo="Cantidad de reservas no retiradas";
+        $nombrepdf="reservas_no_retiradas_".$fecha;
         break;
     }
 }
@@ -189,7 +189,7 @@ td, th {
 
 <img src="../imagenes/logoceregeo-horizontal.jpg" alt="Logo-GeReGeo" height="40" width="250">
 
-<h3 style="text-align:center"><?=$titulo;?></h3>
+<h3 style="text-align:center"><?=$descri;?></h3>
 
 <?=$tabla;?>
 
