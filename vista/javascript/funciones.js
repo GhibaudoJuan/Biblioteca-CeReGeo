@@ -6,14 +6,12 @@ function conftabla(a,b=4){
 		switch(a){
 			case 'reservas':
 				nover=[0,1,2];
-				columna=6;
 				break;
 			case 'prestamos':
 				nover=[0,1,3];
-				columna=7;
 				break;
 			case 'ejemplar':
-				nover=[0,1,2,3];
+				nover=[0,1,2,3,6];
 				break;
 		}
 	}
@@ -107,6 +105,11 @@ var table = $('#'+a).DataTable();
 					if(data[4]!='Prestado')
 						$('#botonprestamoejemplar').removeAttr("disabled");
 			}
+			else{
+				$('#botonreservaejemplar').attr("disabled","disabled");
+				$('#botonprestamoejemplar').attr("disabled","disabled");
+			}
+				
 			
         }
     } );

@@ -3,33 +3,36 @@ if(!isset($_SESSION))session_start();
 require_once("../accesos/biblifiltrar.php");
 
 
-if(isset($_GET['cod'])){
+if(isset($_GET['cod']))
+{
     $idej=$_GET['cod'];
     $tipo=$_GET['tipo'];
 }
-else{
+else
+{
     $idej=$_POST['id'];
     $tipo=$_POST['tipo'];
 }
 
-
+//datos de ejemplar
 $sql = "select idmaterial, idejemplar, codigo_externo, propietario,
-        (CASE WHEN estado='l' THEN 'Libre' WHEN estado='r' THEN 'Reservado' WHEN estado='p' THEN 'Prestado' when estado='o' THEN 'Obsoleto' END) as estado, 
+        (CASE WHEN estado='l' THEN 'Libre' WHEN estado='p' THEN 'Prestado' when estado='o' THEN 'Obsoleto' END) as estado, 
         (CASE WHEN disponibilidad ='True' THEN 'SI' ELSE 'NO' END ) as disponibilidad
-             
         from ejemplares 
-        where idmaterial = '".$idej."' 
-        ;";
-        
-/*
-  
- 
- */
+        where idmaterial = '".$idej."'";
+if(!isset($_SESSION['tipouser'])||$_SESSION['tipouser']>'1')
+{
+    $sql.=" and estado !='o' and disponibilidad = 'true'";
+}
+
+
+$sql.=";";
 $resultado=select($sql);
 
 
-
-switch($tipo){
+//datos de portada
+switch($tipo)
+{
     Case 'Libro':
         $sql2 = "select idmat, titulo,tipo, descripcion, anio, idioma, portada, autor, edicion, tomo, editorial,isbn
                 from material inner join libros on (idmat=idlibro) where idmat='".$idej."';";
@@ -53,12 +56,12 @@ switch($tipo){
 }
 
 $portada=pg_fetch_assoc(select($sql2));
-
+//palabras claves
 $sql3="select descri from keywords where mat_id='".$idej."' order by word_id asc;";
 
 $keyword=select($sql3);
 
-
+//fecha proxima reserva
 $sql4= "select ejemplar, min(fecha) as proxima         
         from ejemplares e inner join reservas r on (r.material=e.idmaterial) and(r.ejemplar=e.idejemplar) 
         where idmaterial = '".$idej."' and activo='true'
@@ -67,7 +70,8 @@ $sql4= "select ejemplar, min(fecha) as proxima
 $proximo=select($sql4);
 
 $array = array();
-while ($datos = pg_fetch_assoc($proximo)){
+while ($datos = pg_fetch_assoc($proximo))
+{
    $array[$datos['ejemplar']]=$datos['proxima'];
     
 }
@@ -101,7 +105,6 @@ $_SESSION['atrasejemplar']="../vista/bibliEjemplares.php?cod=".$idej."&tipo=".$t
 <!-- cargamos los estilos -->
 <?php include("style/biblicss.html"); ?>
 
-
 </head>
 <body>
 
@@ -118,8 +121,9 @@ $_SESSION['atrasejemplar']="../vista/bibliEjemplares.php?cod=".$idej."&tipo=".$t
     	
       </div>
 	
-	
+	<header class="titulo"><h2>Ejemplares</h2></header>
 	<main>
+	
         <div class="flex" style="height: 100%;">
         	<!-- Tabla Ejemplares -->
 			<div  class="tabladiv ajuste" style="padding-right:1rem;">
