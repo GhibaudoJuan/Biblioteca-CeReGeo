@@ -22,7 +22,7 @@ $sql = "select idmaterial, idejemplar, codigo_externo, propietario,
         where idmaterial = '".$idej."'";
 if(!isset($_SESSION['tipouser'])||$_SESSION['tipouser']>'1')
 {
-    $sql.=" and estado !='o' and disponibilidad = 'true'";
+    $sql.=" and estado !='o' and disponibilidad = 'true' limit 1";
 }
 
 
