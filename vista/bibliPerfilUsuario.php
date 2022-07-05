@@ -37,7 +37,7 @@ require_once("../accesos/validacion.php");
 	<div class="divicion">
 	<div style="width:30rem;">
 	<?php include("../controlador/bibliPerfilUsuario.php"); ?>
-	<?php include("../modelo/biblimail.php"); ?>
+
 	</div>
 	
 	</div>

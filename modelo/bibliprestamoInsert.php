@@ -19,7 +19,7 @@ $material=filtrar($material);
 $ejemplar=$_POST['ejemplar'];
 $ejemplar=filtrar($ejemplar);
 
-$conf ="select count(*) as c from prestamos where activo ='true' and material='2' and ejemplar='1';";
+$conf ="select count(*) as c from prestamos where activo ='true' and material='".$material."' and ejemplar='".$ejemplar."';";
 $conf = pg_fetch_assoc(select($conf));
 if($conf['c']==0){
     

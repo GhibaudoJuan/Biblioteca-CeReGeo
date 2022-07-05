@@ -102,6 +102,15 @@ $_SESSION['atras']= '../vista/biblimaterial.php?pag='.$_GET['pag'];
 	<!-- Buscar avanzada -->
 	
 	<div class="abso top-20" style="width:300px;height:100%;left:0;">
+	<div>
+	<form action="../vista/bibliNuevo.php" method="post">
+	<div style="text-align:center;">
+	<button type="submit"  class="indexbutton" >Nuevo</button>
+	</div>
+	</form>
+	
+	</div>
+	
 	<div class="sticky top-0">
 	<?php include("../controlador/biblimaterialBuscarAV.php"); ?>
 	</div>

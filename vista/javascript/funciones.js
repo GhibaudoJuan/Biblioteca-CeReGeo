@@ -86,7 +86,7 @@ var table = $('#'+a).DataTable();
 			$('#botonborrar').removeAttr("disabled");
 			$('#botoneditar').removeAttr("disabled");
 			$('#botonrestore').removeAttr("disabled");
-			if(data[6]!="Cerrado"){ //reservas
+			if(data[5]!="Cerrado"){ //reservas
 				$('#botonborrar').removeAttr("disabled");
 				$('#botoneditar').removeAttr("disabled");
 				$('#botonreserva').removeAttr("disabled");
