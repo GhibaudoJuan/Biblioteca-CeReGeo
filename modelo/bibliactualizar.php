@@ -92,9 +92,9 @@ $sql2.=';';
 
 $_SESSION['res']=$res;
 
-header('location:../vista/biblimaterial.php?pag=1');
+header('location:../vista/bibliEjemplares.php?cod='.$compro['idmat'].'&tipo='.$array['tipo']);
             
-
+    
 
 
 

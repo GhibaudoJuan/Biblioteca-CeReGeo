@@ -115,52 +115,51 @@ function armarPortada($mifila,$tipo,$keyword){
             case 1:
                 $galeria.='
                 <div class="flex">
-                <div class="ajuste"><span>Autores:'.$mifila['autor'].'</span></div>
-                <div class="ajuste"><span>Editorial:'.$mifila['editorial'].'</span></div>
-                <div class="ajuste"><span>ISBN:'.$mifila['isbn'].'</span></div>
+                <div class="ajuste"><span>Autor/es: '.$mifila['autor'].'</span></div>
+                <div class="ajuste"><span>Editorial: '.$mifila['editorial'].'</span></div>
+                <div class="ajuste"><span>ISBN: '.$mifila['isbn'].'</span></div>
                 </div>
                 <div class="flex">
-                <div class="ajuste"><span>Edicion:'.$mifila['edicion'].'</span></div>
-                <div class="ajuste"><span>Tomo:'.$mifila['tomo'].'</span></div>
+                <div class="ajuste"><span>Edicion: '.$mifila['edicion'].'</span></div>
+                <div class="ajuste"><span>Tomo: '.$mifila['tomo'].'</span></div>
                 </div>';
                 break;
             case 2:
                 $galeria.='
                 <div class="flex">
-                <div class="ajuste"><span>Volumen:'.$mifila['volumen'].'</span></div>
-                <div class="ajuste"><span>Editorial:'.$mifila['reveditorial'].'</span></div>
-                <div class="ajuste"><span>Ejemplar:'.$mifila['ejemplar'].'</span></div>
+                <div class="ajuste"><span>Volumen: '.$mifila['volumen'].'</span></div>
+                <div class="ajuste"><span>Editorial: '.$mifila['reveditorial'].'</span></div>
+                <div class="ajuste"><span>Ejemplar: '.$mifila['ejemplar'].'</span></div>
                 </div>
                 <div class="flex">
-                <div class="ajuste"><span>Coleccion:'.$mifila['coleccion'].'</span></div>
-                <div class="ajuste"><span>Num:'.$mifila['num'].'</span></div>
-                <div class="ajuste"><span>ISSN:'.$mifila['issn'].'</span></div>
+                <div class="ajuste"><span>Coleccion: '.$mifila['coleccion'].'Nº '.$mifila['num'].'</span></div>
+                <div class="ajuste"><span>ISSN: '.$mifila['issn'].'</span></div>
                 </div>';
                 break;
             case 3:
                 $galeria.='
                 <div class="flex">
-                <div class="ajuste"><span>Tipo:'.$mifila['tipom'].'</span></div>
-                <div class="ajuste"><span>Hoja:'.$mifila['hoja'].'</span></div>
-                <div class="ajuste"><span>Escala:'.$mifila['escala'].'</span></div>
+                <div class="ajuste"><span>Tipo: '.$mifila['tipom'].'</span></div>
+                <div class="ajuste"><span>Hoja: '.$mifila['hoja'].'</span></div>
+                <div class="ajuste"><span>Escala: '.$mifila['escala'].'</span></div>
                 </div>
                 <div class="flex">
-                <div class="ajuste"><span> Pais:'.$mifila['pais'].'</span></div>
-                <div class="ajuste"><span>Provincia:'.$mifila['provincia'].'</span></div>
-                <div class="ajuste"><span>Localidad:'.$mifila['localidad'].'</span></div>
+                <div class="ajuste"><span> Pais: '.$mifila['pais'].'</span></div>
+                <div class="ajuste"><span>Provincia: '.$mifila['provincia'].'</span></div>
+                <div class="ajuste"><span>Localidad: '.$mifila['localidad'].'</span></div>
                 </div>';
                 break;
             case 4:
                 $galeria.='
                 <div class="flex">
-                <div class="ajuste"><span>Tipo:'.$mifila['tipott'].'</span></div>
-                <div class="ajuste"><span>Autores:'.$mifila['autores'].'</span></div>
-                <div class="ajuste"><span>Directores:'.$mifila['directores'].'</span></div>
+                <div class="ajuste"><span>Tipo: '.$mifila['tipott'].'</span></div>
+                <div class="ajuste"><span>Autor/es: '.$mifila['autores'].'</span></div>
+                <div class="ajuste"><span>Director/es: '.$mifila['directores'].'</span></div>
                 </div>
                 <div class="flex">
-                <div class="ajuste"><span> Universidad:'.$mifila['universidad'].'</span></div>
-                <div class="ajuste"><span>Lugar:'.$mifila['lugar'].'</span></div>
-                <div class="ajuste"><span>Paginas:'.$mifila['numpag'].'</span></div>
+                <div class="ajuste"><span> Universidad: '.$mifila['universidad'].'</span></div>
+                <div class="ajuste"><span>Lugar: '.$mifila['lugar'].'</span></div>
+                <div class="ajuste"><span>Paginas: '.$mifila['numpag'].'</span></div>
                 </div>';
                 break;
                 
@@ -173,10 +172,18 @@ function armarPortada($mifila,$tipo,$keyword){
         //palabras claves
         $galeria.='<div class="rela"><span>Palabras claves: </span>';
         
-        
+        $c=0;
         while($valor=pg_fetch_assoc($keyword)){
-           $galeria.='<span class="keyword">'.$valor['descri'].'</span>';
-          
+            if($valor['descri']!=""){
+            if($c==1){
+                $galeria.='<span class="keyword">|</span>';
+            }
+            $galeria.='<span class="keyword">'.$valor['descri'].'</span>';
+            
+           $c=1;
+            }
+            $sqlkeywords="delete from keywords where mat_id='".$mifila['idmat']."' and descri=''";
+            select($sqlkeywords);
         }
         if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']<'2')){
             $galeria.='<a type="button" data-bs-toggle="modal" data-bs-target="#miModal" onclick="valuekeyword('."'modalkeyword','".$mifila['idmat']."'".')">

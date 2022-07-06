@@ -333,6 +333,8 @@ function mostrar_error(a,b){
 		ocultar_error();
 	}
 	else{
+		
+	
 		document.getElementById('error').style.display="block";
 		if(a!='')
 			document.getElementById('mens').innerHTML=a;

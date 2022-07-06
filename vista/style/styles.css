@@ -310,13 +310,13 @@ ul, ol {
 .top-0{
 	top:0px;
 }
+
+
 .vent_error{
 	width:30rem;
 	height:5rem;
-	bottom:1rem;
 	border-radius:1rem;
-	left:100%;
-	background-color:rgb(168,231,231);
+	top:2rem;	
 }
 .ajuste_error{
 	flex-basis:0;

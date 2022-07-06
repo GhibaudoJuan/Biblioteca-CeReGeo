@@ -1,4 +1,5 @@
 <?php 
+
 if(!isset($_SESSION))session_start();
 $error="'";
 $error.=$_SESSION['error'];
@@ -11,9 +12,10 @@ $error.="'";
 </head>
 <body>
 
-<div id="error" class="sticky vent_error" style="display:none;">
+<div id="error" style="position:absolute;top:2rem;left:30%;height:100%;display:none;">
+<div class="alert-danger sticky vent_error" >
 
-<div class="flex" >
+<div class="flex">
 
 <div class="ajuste_error text_error">
 <p id="mens">Error: La acci&oacuten ejecutada no se pud&oacute completar, pruebe ejecutarla de vuelta</p>
@@ -28,9 +30,8 @@ $error.="'";
 </div>
 
 
-
 </div>
-
+</div>
 </div>
 <script type="text/javascript">
 mostrar_error(<?php echo $error;?>,<?php echo $_SESSION['res'];?>)
