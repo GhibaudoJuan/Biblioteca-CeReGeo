@@ -1,6 +1,6 @@
 
 create table material(
-idmat varchar(100),
+idmat int,
 titulo varchar(300),
 anio int,
 idioma varchar (50),
@@ -16,7 +16,7 @@ alter table material add column fecha_ult_modif timestamp;
 alter table material add column usuario_ult_modif varchar(100);
 
 create table keywords(
-mat_id varchar(100),
+mat_id int,
 word_id int,
 descri varchar(100),
 primary key (mat_id, word_id),
@@ -25,9 +25,9 @@ foreign key (mat_id) references material(idmat)
 
 
 create table ejemplares(
-idmaterial varchar(100),
+idmaterial int,
 idejemplar varchar(100),
-codigo_externo(100);
+codigo_externo varchar(100),
 propietario varchar (100),
 disponibilidad boolean,
 estado varchar(1),
@@ -39,7 +39,7 @@ alter table ejemplares add column fecha_ult_modif timestamp;
 alter table ejemplares add column usuario_ult_modif varchar(100);
 
 create table mapas(
-idmapa varchar(100),
+idmapa int,
 hoja varchar (30),
 escala varchar(30),
 localidad varchar (150),
@@ -50,7 +50,7 @@ primary key (idmapa),
 foreign key (idmapa) references material(idmat));
 
 create table libros(
-idlibro varchar(100),
+idlibro int,
 autor varchar (150),
 edicion int,
 tomo int,
@@ -60,7 +60,7 @@ primary key (idlibro),
 foreign key (idlibro) references material(idmat));
 
 create table revistas(
-idrevista varchar(100),
+idrevista int,
 issn varchar (30),
 volumen int,
 ejemplar int,
@@ -73,7 +73,7 @@ foreign key (idrevista) references material(idmat));
 
 
 create table TT(
-idtt varchar(100),
+idtt int,
 tipott varchar (50),
 Autores varchar(300),
 Directores varchar(300),
@@ -107,7 +107,7 @@ insert into tipocuenta values (0,'Administrador'),(1,'Bibliotacario'),(2,'Docent
 create table reservas (
 idres int,
 nombre varchar(100),
-material varchar(100),
+material int,
 fecha date,
 activo boolean,
 retirado boolean,
@@ -122,7 +122,7 @@ alter table reservas add column usuario_ult_modif varchar(100);
 create table prestamos(
 idpre int,
 nombre varchar(100),
-material varchar(100),
+material int,
 ejemplar varchar(100),
 desde date,
 hasta date,
