@@ -16,10 +16,6 @@ $libroidioma=autostring("material","idioma");
 
 
 
-<div class="input-group m-div">
-<label class="input-group-text w-label" for="librocodigo">Codigo Material</label>
-<div class="autocomplete"><input type='text' id="librocodigo" name="idmat" class="form-control w-input"  maxlength="100" placeholder="" required></div>
-</div>
 
 <div class="input-group m-div">
 <label class="input-group-text w-label" for="ltitulo">Titulo</label>
@@ -87,7 +83,6 @@ $libroidioma=autostring("material","idioma");
 autocomplete(document.getElementById("libroautor"), <?php echo $libroautores;?>);
 autocomplete(document.getElementById("libroedit"), <?php echo $libroeditorial;?>);
 autocomplete(document.getElementById("lidioma"), <?php echo $libroidioma;?>);
-autocomplete(document.getElementById("librocodigo"), <?php echo $material;?>);
 </script>
 </body>
 

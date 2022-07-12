@@ -31,7 +31,7 @@ codigo_externo varchar(100),
 propietario varchar (100),
 disponibilidad boolean,
 estado varchar(1),
-primary key (idmaterial, idejemplar),
+primary key (idejemplar),
 foreign key (idmaterial) references material(idmat));
 alter table ejemplares add column fecha_creacion timestamp;
 alter table ejemplares add column usuario_creacion varchar(100);
@@ -122,14 +122,13 @@ alter table reservas add column usuario_ult_modif varchar(100);
 create table prestamos(
 idpre int,
 nombre varchar(100),
-material int,
 ejemplar varchar(100),
 desde date,
 hasta date,
 devuelto date,
 activo boolean,
 primary key (idpre, nombre),
-foreign key (material,ejemplar) references ejemplares(idmaterial,idejemplar)
+foreign key (ejemplar) references ejemplares(idejemplar)
 );
 alter table prestamos add column fecha_creacion timestamp;
 alter table prestamos add column usuario_creacion varchar(100);

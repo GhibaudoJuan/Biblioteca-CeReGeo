@@ -1,6 +1,6 @@
 <?php 
 if(!isset($_SESSION))session_start();
-$id=$_POST['idmat'];
+
 $titulo=$_POST['titulo'];
 $tipo=$_POST['tipo'];
 $idcatalogo=$_POST['idcatalogo'];
@@ -9,7 +9,7 @@ $idioma=$_POST['idioma'];
 $portada=$_FILES['portada']['name'];
 $descripcion=$_POST['descripcion'];
 require_once('../accesos/biblifiltrar.php');
-$id=filtrar($id);
+
 $titulo=filtrar($titulo);
 $idcatalogo=filtrar($idcatalogo);
 $anio=filtrar($anio);
@@ -19,20 +19,19 @@ $descripcion=filtrar($descripcion);
 
 
 
-$compr = "select idmat from material where idmat ='".$id."';";
+$compr = "select case when max(idmat)>0 then max(idmat)+1 else 1 end from material;";
 $compr2 = select($compr);
 
-$a = pg_affected_rows($compr2);
+$id = pg_fetch_assoc($compr2);
 
 
 
 
-if( $a == 0){
-    
+   
     subirimagen('portada');
     
     $sql= array (
-    'idmat'=>$id,
+    'idmat'=>$id['case'],
     'titulo'=>$titulo,
     'tipo'=>$tipo,
     'idcatalogo'=>$idcatalogo,
@@ -43,11 +42,6 @@ if( $a == 0){
     );
 $res = insertar('material',$sql);
 $_SESSION['res']=$res;
-}
-else {
-    $_SESSION['res']=false;
-    $_SESSION['error']="Ya existe ese codigo, no se puede insertar.";
-    header('location:../vista/bibliNuevo.php');
-}
+
     
 ?>

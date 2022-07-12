@@ -31,7 +31,7 @@ $isbn=filtrar($isbn);
     	//armo un array para insertar
     	    	
     	$seg= array(
-    	    'idlibro'=>$id,
+    	    'idlibro'=>$id['case'],
     	    'autor'=>$autores,
     	    'edicion'=>$edicion,
     	    'tomo'=>$tomo,
@@ -51,7 +51,7 @@ $isbn=filtrar($isbn);
     //guardo el resultado
     	$_SESSION['res']=$res;
     	//redirigo
-    	$link='location:../vista/bibliEjemplares.php?cod='.$id.'&tipo=Libro';
+    	$link='location:../vista/bibliEjemplares.php?cod='.$id['case'].'&tipo=Libro';
     	header($link);
 
 ?>

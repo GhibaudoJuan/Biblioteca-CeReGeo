@@ -6,8 +6,8 @@ require_once("../accesos/validacion.php");
 require_once("../accesos/biblifiltrar.php");
 
     
-    $sql = "select idpre,nombre, titulo,ejemplar, desde, hasta, devuelto, (CASE WHEN activo ='True' THEN 'Activo' ELSE 'Cerrado' END ) as activo
-            from prestamos re inner join material ma on (ma.idmat= re.material) ";
+    $sql = "select idpre,nombre, ejemplar, desde, hasta, devuelto, (CASE WHEN activo ='True' THEN 'Activo' ELSE 'Cerrado' END ) as activo
+            from prestamos re  ";
     //select de bibliotecarios
     if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']>'1')){
     

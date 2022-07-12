@@ -15,11 +15,7 @@ $material=autostring("material","idmat");
 <div class="modal-body">
 
 
-<div class="input-group m-div">
-<label class="input-group-text" for="presmaterial">Codigo Material</label>
-<div class="ajuste autocomplete">
-<input type='text' name="material" id="presmaterial" class="form-control"  maxlength="100" required></div>
-</div>
+
 <div class="input-group m-div">
 <label class="input-group-text" for="presejemplar">Codigo Ejemplar</label>
 <div class="ajuste autocomplete">

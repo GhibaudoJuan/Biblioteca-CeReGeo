@@ -8,7 +8,7 @@ function conftabla(a,b=4){
 				nover=[0,1,2];
 				break;
 			case 'prestamos':
-				nover=[0,1,3];
+				nover=[0,1,2];
 				break;
 			case 'ejemplar':
 				nover=[0,1,2,3,6];
@@ -20,11 +20,9 @@ function conftabla(a,b=4){
 				columna=5;
 				break;
 			case 'prestamos':
-				columna=7;
+				columna=6;
 				break;
-			case 'multas':
-				columna=3;
-				break;
+		
 	}
 	
     $('#'+a).DataTable( {
@@ -96,7 +94,7 @@ var table = $('#'+a).DataTable();
 				$('#botoneditar').attr("disabled","disabled");
 				$('#botonreserva').attr("disabled","disabled");
 			}
-			if((a='prestamos')&&(data[7]!="Cerrado"))//prestamos
+			if((a='prestamos')&&(data[6]!="Cerrado"))//prestamos
 				$('#botonprestamo').removeAttr("disabled");
 			else
 				$('#botonprestamo').attr("disabled","disabled");
@@ -135,7 +133,7 @@ var table = $('#'+a).DataTable();
     } );
 	$('#botonprestamoejemplar').click( function () {
 		var data = table.row('.selected').data();
-        valueprestamo(data[0],data[1],data[6]);
+        valueprestamo(data[1],data[6]);
     } );
 	$('#descargar').click( function () {
 		var data = table.row('.selected').data();
@@ -163,8 +161,8 @@ function valuereserva(a){
 		$('#resmaterial').attr('value',a);
 		
 }
-function valueprestamo(a, b,c){
-		$('#presmaterial').attr('value',a);
+function valueprestamo(b,c){
+		
 		$('#presejemplar').attr('value',b);
 		$('#reservaprox').attr('value',c);
 		
@@ -194,25 +192,25 @@ function editar(a,b,c,d,e,f,g,h){
 	$('#pid').attr('value',a);
 	$('#pnom').attr('value',b);
 			
-	$('#pdesde').attr('value',e);
-	$('#cdesde').attr('value',e);
+	$('#pdesde').attr('value',d);
+	$('#cdesde').attr('value',d);
 	
 	
-	$('#phasta').attr('value',f);
-	$('#chasta').attr('value',f);
+	$('#phasta').attr('value',e);
+	$('#chasta').attr('value',e);
 	
-	$('#pdevuelto').attr('min',e);
-	$('#pdevuelto').attr('value',g);
-	$('#cdevuelto').attr('value',g);
+	$('#pdevuelto').attr('min',d);
+	$('#pdevuelto').attr('value',f);
+	$('#cdevuelto').attr('value',f);
 	
 
 	
 	
-	if(h=="Activo"){
+	if(g=="Activo"){
 		$('#pac').attr('checked','true');
 		$('#cact').attr('value','true');
 		}
-	if(h=="Cerrado"){
+	if(g=="Cerrado"){
 		$('#pce').attr('checked','true');
 		$('#cact').attr('value','false');
 		}

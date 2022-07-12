@@ -18,7 +18,7 @@ $error.="'";
 <div class="flex">
 
 <div class="ajuste_error text_error">
-<p id="mens">Error: La acci&oacuten ejecutada no se pud&oacute completar, pruebe ejecutarla de vuelta</p>
+<p id="mens">Error: La acci&oacuten ejecutada no se pud&oacute completar, pruebe ejecutarla de vuelta.</p>
 </div>
 
 

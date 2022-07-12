@@ -3,7 +3,6 @@ if(!isset($_SESSION))session_start();
 require_once("../accesos/biblifiltrar.php");
 require_once("../accesos/validacion.php");
 validaracceso(1);
-$material= autostring("material", "idmat");
 
 if (!isset($_SESSION['res'])){
     $_SESSION['res']=0;

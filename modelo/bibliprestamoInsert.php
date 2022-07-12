@@ -14,19 +14,17 @@ require_once('../accesos/biblifiltrar.php');
 
 $nombre=$_POST['nombre'];
 $nombre=filtrar($nombre);
-$material=$_POST['material'];
-$material=filtrar($material);
 $ejemplar=$_POST['ejemplar'];
 $ejemplar=filtrar($ejemplar);
 
-$conf ="select count(*) as c from prestamos where activo ='true' and material='".$material."' and ejemplar='".$ejemplar."';";
+$conf ="select count(*) as c from prestamos where activo ='true' and ejemplar='".$ejemplar."';";
 $conf = pg_fetch_assoc(select($conf));
 if($conf['c']==0){
     
     //armo el select
     
-    $sql= "insert into prestamos (idpre,nombre, material, ejemplar, desde, hasta, activo) values
-((select case when max(idpre)>0 then max (idpre)+1 else 1 end from prestamos where nombre = '".$nombre. "'),'".$nombre."','".$material."','".$ejemplar."',current_date,'".$fecha."',true); " ;
+    $sql= "insert into prestamos (idpre,nombre, ejemplar, desde, hasta, activo) values
+((select case when max(idpre)>0 then max (idpre)+1 else 1 end from prestamos where nombre = '".$nombre. "'),'".$nombre."','".$ejemplar."',current_date,'".$fecha."',true); " ;
     
     //inserto
     
@@ -36,12 +34,15 @@ if($conf['c']==0){
 else{
     $_SESSION['error']="Ejemplar ya prestado.";
     $res =1;
+    
 }
 
 
    //guardo el resultado
 	$_SESSION['res']=$res;
 	//redirigo
-header('location:../vista/bibliPrestamos.php');	
+	
+        header('location:../vista/bibliPrestamos.php');	
+
 
 ?>

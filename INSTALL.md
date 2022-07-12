@@ -24,7 +24,3 @@ una ves instalado git coloque el repositorio en /var/ww/html, si no tiene acceso
                     sudo chown -R www-data:www-data /var/www/html     
                     sudo chmod -R 777 /var/www/html
 
-
-instalar composer y ejecutar:
-
-                            composer require sipu/html2pdf
