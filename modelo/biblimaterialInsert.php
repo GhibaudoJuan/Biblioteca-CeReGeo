@@ -3,7 +3,7 @@ if(!isset($_SESSION))session_start();
 
 $titulo=$_POST['titulo'];
 $tipo=$_POST['tipo'];
-$idcatalogo=$_POST['idcatalogo'];
+$mes=$_POST['mes'];
 $anio=$_POST['anio'];
 $idioma=$_POST['idioma'];
 $portada=$_FILES['portada']['name'];
@@ -11,7 +11,7 @@ $descripcion=$_POST['descripcion'];
 require_once('../accesos/biblifiltrar.php');
 
 $titulo=filtrar($titulo);
-$idcatalogo=filtrar($idcatalogo);
+
 $anio=filtrar($anio);
 $idioma=filtrar($idioma);
 $descripcion=filtrar($descripcion);
@@ -34,7 +34,7 @@ $id = pg_fetch_assoc($compr2);
     'idmat'=>$id['case'],
     'titulo'=>$titulo,
     'tipo'=>$tipo,
-    'idcatalogo'=>$idcatalogo,
+    'mes'=>$mes,
     'anio'=>$anio,
     'idioma'=>$idioma,
     'portada'=>$portada,

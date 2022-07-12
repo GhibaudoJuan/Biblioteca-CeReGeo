@@ -34,7 +34,7 @@ $autores=filtrar($autores);
 
 
 $seg= array(
-    'idtt'=>$id,
+    'idtt'=>$id['case'],
     'tipott'=>$tipos,
     'autores'=>$autores,
     'directores'=>$directores,
@@ -56,7 +56,7 @@ $res = insertar('tt',$seg);
 //guardo el resultado
 $_SESSION['res']=$res;
 //redirigo
-$link='location:../vista/bibliEjemplares.php?cod='.$id.'&tipo=Final';
+$link='location:../vista/bibliEjemplares.php?cod='.$id['case'].'&tipo=Final';
 header($link);
 
 ?>

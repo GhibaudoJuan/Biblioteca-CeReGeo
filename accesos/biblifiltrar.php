@@ -132,7 +132,7 @@ function armarPortada($mifila,$tipo,$keyword){
                 <div class="ajuste"><span>Ejemplar: '.$mifila['ejemplar'].'</span></div>
                 </div>
                 <div class="flex">
-                <div class="ajuste"><span>Coleccion: '.$mifila['coleccion'].'Nº '.$mifila['num'].'</span></div>
+                <div class="ajuste"><span>Coleccion: '.$mifila['coleccion'].' &#8470 '.$mifila['num'].'</span></div>
                 <div class="ajuste"><span>ISSN: '.$mifila['issn'].'</span></div>
                 </div>';
                 break;
@@ -164,7 +164,7 @@ function armarPortada($mifila,$tipo,$keyword){
                 break;
                 
         }
-        $galeria.='<div class="flex"><div class="ajuste"><span>A&ntildeo: '.$mifila['anio'].'</span></div><div class="ajuste"> Idioma: '.$mifila['idioma'].'</span></div></div>';
+        $galeria.='<div class="flex"><div class="ajuste"><span>Fecha: '.$mifila['mes'].'/'.$mifila['anio'].'</span></div><div class="ajuste"> Idioma: '.$mifila['idioma'].'</span></div></div>';
          
         //descripcion
         $galeria.='<div class="ajuste"><span>Descripcion: '.$mifila['descripcion'].'</span></div>';

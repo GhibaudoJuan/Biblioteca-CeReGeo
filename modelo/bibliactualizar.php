@@ -15,7 +15,7 @@ $portada=$_FILES['portada']['name'];
 
 
 //tabla material
-    $lista=array('idmat','portada','descripcion','idcatalogo','titulo','anio','idioma');
+    $lista=array('portada','descripcion','titulo','mes','anio','idioma');
     $a=0;
     $b=0;
     $set1='';
@@ -91,6 +91,7 @@ $sql2.=';';
 
 
 $_SESSION['res']=$res;
+
 
 header('location:../vista/bibliEjemplares.php?cod='.$compro['idmat'].'&tipo='.$array['tipo']);
             

@@ -100,14 +100,7 @@ margin-right:10rem;
 		
 	</div>
 	
-	<div class="div-ejem">
-	
-	<div style="text-align:center;"><h2>Palabras claves</h2></div>
-	<div><?php include('../controlador/biblikeyword.php');?></div>
-	
-	</div>
-	
-	
+		
     
 	</main>
 	

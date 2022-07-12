@@ -32,7 +32,7 @@ $num=filtrar($num);
 //armo un array para insertar
 
 $seg= array(
-    'idrevista'=>$id,
+    'idrevista'=>$id['case'],
     'issn'=>$issn,
     'volumen'=>$volumen,
     'ejemplar'=>$ejemplar,
@@ -55,7 +55,7 @@ $res = insertar('revistas',$seg);
 $_SESSION['res']=$res;
 //redirigo
 
-$link='location:../vista/bibliEjemplares.php?cod='.$id.'&tipo=Revista';
+$link='location:../vista/bibliEjemplares.php?cod='.$id['case'].'&tipo=Revista';
 header($link);
 
 ?>

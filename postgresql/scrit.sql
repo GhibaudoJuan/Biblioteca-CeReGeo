@@ -2,6 +2,7 @@
 create table material(
 idmat int,
 titulo varchar(300),
+mes int,
 anio int,
 idioma varchar (50),
 tipo varchar (40),
@@ -9,7 +10,6 @@ descripcion varchar (1000),
 portada varchar(300),
 primary key (idmat)
 );
-alter table material add column idCatalogo varchar(100);
 alter table material add column fecha_creacion timestamp;
 alter table material add column usuario_creacion varchar(100);
 alter table material add column fecha_ult_modif timestamp;
@@ -102,7 +102,7 @@ alter table cuenta add column fecha_ult_modif timestamp;
 alter table cuenta add column usuario_ult_modif varchar(100);
 
 insert into tipocuenta values (0,'Administrador'),(1,'Bibliotacario'),(2,'Docente'),(3,'Estudiante');
-
+insert into cuenta values ('0','admin','$2y$12$AZYKKGlj9EQHGaSZOv0mdOrNd/p8wAQXCe6pIizmt0sTn1YUA.7Re','admin','admin@admin','0');
 
 create table reservas (
 idres int,

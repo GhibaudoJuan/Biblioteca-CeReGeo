@@ -47,17 +47,25 @@ switch ($array['keyword']){
         
         }
         else{
+            if($array['wordnew']==''){ //pregunto su la nueva palabla es vacia
+                //si es vacio elimino la palabra
+                $delete="delete from keywords where mat_id='".$array['mat_id']."' and descri='".$array['word']."';";
+                select($delete);
+            }
+            else{//si no lo es inserto nueva palabla
             $nuevo=$max+1;
             //se inserta una nueva palabra desde el update
             $insert2="insert into keywords (mat_id, word_id, descri) values('".$array['mat_id']."','".$nuevo."','".$array['wordnew']."');";
             //ejecuto el select
             select($insert2); 
-           
+            }
         }
         //redirigo
         header('location:'.$_SESSION['atrasejemplar']);
         break;
     case 'delete':
+        //esta en el update
+        
         break;
     
     

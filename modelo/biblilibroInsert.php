@@ -8,7 +8,7 @@ include("../modelo/biblimaterialInsert.php");
 
 
 
-$autores=$_POST['autores'];
+$autores=$_POST['autor'];
 $edicion=$_POST['edicion'];
 $tomo=$_POST['tomo'];
 $editorial=$_POST['editorial'];

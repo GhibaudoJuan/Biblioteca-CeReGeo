@@ -34,22 +34,22 @@ $resultado=select($sql);
 switch($tipo)
 {
     Case 'Libro':
-        $sql2 = "select idmat, titulo,tipo, descripcion, anio, idioma, portada, autor, edicion, tomo, editorial,isbn
+        $sql2 = "select idmat, titulo,tipo, descripcion, mes, anio, idioma, portada, autor, edicion, tomo, editorial,isbn
                 from material inner join libros on (idmat=idlibro) where idmat='".$idej."';";
         $i=1;
         break;
     case 'Revista':
-        $sql2 = "select idmat, titulo,tipo, descripcion, anio, idioma, portada, issn, volumen, ejemplar, reveditorial, coleccion, num
+        $sql2 = "select idmat, titulo,tipo, descripcion, mes,anio, idioma, portada, issn, volumen, ejemplar, reveditorial, coleccion, num
                 from material inner join revistas on (idmat=idrevista) where idmat='".$idej."';";
         $i=2;
         break;
     case 'Mapa':
-        $sql2 = "select idmat, titulo,tipo, descripcion, anio, idioma, portada, hoja, escala, localidad, provincia, pais, tipom
+        $sql2 = "select idmat, titulo,tipo, descripcion, mes, anio, idioma, portada, hoja, escala, localidad, provincia, pais, tipom
                 from material inner join mapas on (idmat=idmapa) where idmat='".$idej."';";
         $i=3;
         break;
     case 'Final':
-        $sql2 = "select idmat, titulo, tipo, descripcion, anio, idioma, portada, tipott, autores, directores, universidad, lugar, numpag 
+        $sql2 = "select idmat, titulo, tipo, descripcion, mes, anio, idioma, portada, tipott, autores, directores, universidad, lugar, numpag 
                 from material mat inner join tt on (mat.idmat=tt.idtt) where idmat='".$idej."';";
         $i=4;
         break;
@@ -62,10 +62,9 @@ $sql3="select descri from keywords where mat_id='".$idej."' order by word_id asc
 $keyword=select($sql3);
 
 //fecha proxima reserva
-$sql4= "select ejemplar, min(fecha) as proxima         
+$sql4= "select min(fecha) as proxima         
         from ejemplares e inner join reservas r on (r.material=e.idmaterial) and(r.ejemplar=e.idejemplar) 
-        where idmaterial = '".$idej."' and activo='true'
-        group by ejemplar, activo;";
+        where idmaterial = '".$idej."' and activo='true';";
 
 $proximo=select($sql4);
 
@@ -114,7 +113,7 @@ $_SESSION['atrasejemplar']="../vista/bibliEjemplares.php?cod=".$idej."&tipo=".$t
 	<!-- separado del menu-->
 	
 	
-	<div class="port-ejemplar" style="background-color: #FFE6A2;">     
+	<div class="port-ejemplar" style="background-color: #Ffffff;border-top: 1px solid black;border-bottom:1px solid black;">     
       
       
        <?php   echo armarPortada($portada,$i,$keyword);  ?>

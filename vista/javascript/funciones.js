@@ -583,7 +583,6 @@ function actualizar(a){
 	
 		/*id material */
 		
-		console.log(a.tipo);
 		switch (a.tipo){
 		case 'Libro':{
 		/*id libros */
@@ -593,8 +592,9 @@ function actualizar(a){
 		if(document.getElementById("ltitulo"))
 		document.getElementById("ltitulo").value =a.titulo;
 		
-		if(document.getElementById("lcatalogo"))
-		document.getElementById("lcatalogo").value =a.idcatalogo;
+		
+		if(document.getElementById("lmes"))
+		document.getElementById("lmes").value=a.mes;
 		if(document.getElementById("lanio"))
 		document.getElementById("lanio").value =a.anio;
 
@@ -624,8 +624,8 @@ function actualizar(a){
 		if(document.getElementById("mtitulo"))
 		document.getElementById("mtitulo").value =a.titulo;
 		
-		if(document.getElementById("mcatalogo"))
-		document.getElementById("mcatalogo").value =a.idcatalogo;
+		if(document.getElementById("mmes"))
+		document.getElementById("mmes").value=a.mes;
 		if(document.getElementById("manio"))
 		document.getElementById("manio").value =a.anio;
 
@@ -657,26 +657,26 @@ function actualizar(a){
 		if(document.getElementById("revcodigo")){
 		document.getElementById("revcodigo").value =a.idmat;
 		}
-		if(document.getElementById("ttitulo"))
-		document.getElementById("ttitulo").value =a.titulo;
+		if(document.getElementById("rtitulo"))
+		document.getElementById("rtitulo").value =a.titulo;
 		
-		if(document.getElementById("tcatalogo"))
-		document.getElementById("tcatalogo").value =a.idcatalogo;
-		if(document.getElementById("tanio"))
-		document.getElementById("tanio").value =a.anio;
+		if(document.getElementById("rmes"))
+		document.getElementById("rmes").value=a.mes;
+		if(document.getElementById("ranio"))
+		document.getElementById("ranio").value =a.anio;
 
-		if(document.getElementById("tdesc"))
-		document.getElementById("tdesc").value =a.descripcion;
+		if(document.getElementById("rdesc"))
+		document.getElementById("rdesc").value =a.descripcion;
 		if(document.getElementById("ridioma"))
 		document.getElementById("ridioma").value =a.idioma;
 		if(document.getElementById("revedit"))
 		document.getElementById("revedit").value =a.reveditorial;
 		
-		if(document.getElementById("volumen"))
-		document.getElementById("volumen").value =a.volumen;
+		if(document.getElementById("rvolumen"))
+		document.getElementById("rvolumen").value =a.volumen;
 		
-		if(document.getElementById("ejemplar"))
-		document.getElementById("ejemplar").value =a.ejemplar;
+		if(document.getElementById("rejemplar"))
+		document.getElementById("rejemplar").value =a.ejemplar;
 		
 		if(document.getElementById("revcol"))
 		document.getElementById("revcol").value =a.coleccion;
@@ -696,8 +696,8 @@ function actualizar(a){
 		if(document.getElementById("ttitulo"))
 		document.getElementById("ttitulo").value =a.titulo;
 		
-		if(document.getElementById("tcatalogo"))
-		document.getElementById("tcatalogo").value =a.idcatalogo;
+		if(document.getElementById("tmes"))
+		document.getElementById("tmes").value=a.mes;
 		if(document.getElementById("tanio"))
 		document.getElementById("tanio").value =a.anio;
 

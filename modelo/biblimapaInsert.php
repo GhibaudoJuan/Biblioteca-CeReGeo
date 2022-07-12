@@ -31,7 +31,7 @@ $escala=filtrar($escala);
 //armo un array para insertar
 
 $seg= array(
-    'idmapa'=>$id,
+    'idmapa'=>$id['case'],
     'hoja'=>$hoja,
     'escala'=>$escala,
     'localidad'=>$localidad,
@@ -50,7 +50,7 @@ $res = insertar('mapas',$seg);
 //guardo el resultado
 $_SESSION['res']=$res;
 //redirigo
-$link='location:../vista/bibliEjemplares.php?cod='.$id.'&tipo=Mapa';
+$link='location:../vista/bibliEjemplares.php?cod='.$id['case'].'&tipo=Mapa';
 header($link);
 
 ?>

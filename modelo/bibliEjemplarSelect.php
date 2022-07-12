@@ -10,7 +10,7 @@ $tabla="<table id='ejemplar' class='display tabth' style='width:100%'>
 <th>Propietario</th>
 <th>Estado</th>
 <th>Disponibilidad</th>   		
-<th>Proxima</th> 
+
 </thead><tbody>";
 
 while ($datos = pg_fetch_assoc($resultado)){
@@ -22,8 +22,7 @@ $tabla.='<td>'.$datos['idmaterial'].'</td>
          <td>'.$datos['codigo_externo'].'</td>';
 $tabla.='<td>'.$datos['propietario'].'</td>
          <td>'.$datos['estado'].'</td>
-         <td>'.$datos['disponibilidad'].'</td>
-         <td>'.$array[$datos[idejemplar]].'</td>';
+         <td>'.$datos['disponibilidad'].'</td>';
             
 $tabla.=" </tr>";
 
