@@ -1,7 +1,7 @@
 <?php 
 
 $nombre1= autostringn("select nombre from cuenta union select nombre from reservas union select nombre from prestamos;");
-$material=autostring("material","idmat");
+
 
 ?>
 <!doctype html>
@@ -52,7 +52,7 @@ $material=autostring("material","idmat");
 <script>
 mindate('bpid',premindate);
 autocomplete(document.getElementById("nombre"), <?php echo $nombre1;?>);
-autocomplete(document.getElementById("presmaterial"), <?php echo $material;?>);
+
 </script>
 </body>
 

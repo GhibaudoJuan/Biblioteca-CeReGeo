@@ -15,23 +15,20 @@ $array=$_POST;
     $set="";
     $a=0;
     
-    if($array['cidejem'] != $array['idejemplar']){
-        $set.=" idejemplar='".$array['idejemplar']."' ";
-        $a=1;
-    }
-    
+        
     if($array['cce'] != $array['ce']){
         if($a==1)
             $set.=", ";
         $set.=" codigo_externo='".$array['ce']."' ";
         $a=1;
     }
+    /*
     if($array['ces'] != $array['es']){
         if($a==1)
             $set.=", ";
             $set.=" estado='".$array['es']."' ";
             $a=1;
-    }
+    }*/
     if($array['cprop'] != $array['propietario']){
         if($a==1)
             $set.=", ";
@@ -44,12 +41,17 @@ $array=$_POST;
             $set.=" disponibilidad='".$array['disponibilidad']."' ";
             $a=1;
     }
-    
+    if($array['condicion']!=$array['ccon']){
+        if($a==1)
+            $set.=", ";
+            $set.=" condicion='".$array['condicion']."' ";
+            $a=1;
+    }
     
 
         
                 
-    $sql="update ejemplares set ".$set." where idmaterial='".$array['idmaterial']."' and idejemplar='".$array['cidejem']."';";
+    $sql="update ejemplares set ".$set." where idejemplar='".$array['cidejem']."';";
     
     
   

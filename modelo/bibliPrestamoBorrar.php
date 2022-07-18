@@ -3,7 +3,8 @@
 if(!isset($_SESSION))session_start();
 //copio _POST a otras variable
 require_once('../accesos/biblifiltrar.php');
-
+require_once('../accesos/validacion.php');
+validaracceso(1);
 
 $array=$_POST;
 

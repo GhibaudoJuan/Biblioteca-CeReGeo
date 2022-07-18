@@ -15,18 +15,7 @@ $array=$_POST;
         $a=1;
     }
    
-    if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']<='1')){
-    if($array['activo'])
-        $act='Activo';
-    else 
-        $act='Cerrado';
-    if($array['resact'] != $act){
-        if($a==1)
-            $set.=", ";
-        $set.=" activo='".$array['activo']."' ";
-        $a=1;
-    }
-    }
+ 
                 
     $sql="update reservas set ".$set." where idres='".$array['idres']."' and nombre='".$array['resnom']."';";
     

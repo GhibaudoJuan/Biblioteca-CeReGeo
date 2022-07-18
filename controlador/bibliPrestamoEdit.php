@@ -27,15 +27,7 @@
 <label class="input-group-text" for="pdevuelto">Devuelto</label>
 <div class="ajuste"><input type='date' id="pdevuelto" name="devuelto" class="form-control"></div>
 </div>
-<div class="input-group m-div">
-<div class="ajuste">
-<input type="radio" style="width: auto" id="pce" name="activo" value="False">
-<label class="span" for="activo">Cerrado</label>
 
-<input type="radio" style="width: auto" id="pac" name="activo" value="True">
-<label class="span" for="activo">Activo</label>
-</div>
-</div>
 </div>
 <div class="modal-footer"><button type="submit" class="indexbutton">Actualizar</button></div>
 

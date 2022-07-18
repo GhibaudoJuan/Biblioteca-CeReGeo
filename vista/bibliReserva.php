@@ -6,7 +6,7 @@ require_once("../accesos/biblifiltrar.php");
 
 
     //select de bibliotecario
-    $sql = "select idres, nombre, material, titulo, fecha,(CASE WHEN activo ='True' THEN 'Activo' ELSE 'Cerrado' END ) as activo
+    $sql = "select idres, nombre, material, titulo, fecha,(CASE WHEN activo ='True' THEN '' ELSE 'Concretado' END ) as activo
             from reservas re inner join material ma on (ma.idmat= re.material) ";
     if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']>'1')){
       

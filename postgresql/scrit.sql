@@ -37,6 +37,7 @@ alter table ejemplares add column fecha_creacion timestamp;
 alter table ejemplares add column usuario_creacion varchar(100);
 alter table ejemplares add column fecha_ult_modif timestamp;
 alter table ejemplares add column usuario_ult_modif varchar(100);
+alter table ejemplares add column condicion varchar(500);
 
 create table mapas(
 idmapa int,

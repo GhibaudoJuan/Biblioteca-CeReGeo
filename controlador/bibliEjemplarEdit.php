@@ -22,16 +22,15 @@ $prop= autostring("ejemplares", "propietario");
 <input type='hidden' id="ces" name ='ces' >
 <input type='hidden' id="cprop" name ='cprop' >
 <input type='hidden' id="cdis" name ='cdis' >
+<input type='hidden' id='ccon' name='ccon'>
 
 
-<div class="input-group m-div">
-<label class="input-group-text" for="pidejem">Codigo Ejemplar</label>
-<div class="ajuste"><input type='text' id="pidejem" name="idejemplar" class="form-control"></div>
-</div>
+
 <div class="input-group m-div">
 <label class="input-group-text" for="pce">Cod. Externo</label>
 <div class="ajuste autocomplete"><input type='text' id="pce" name="ce" class="form-control"></div>
 </div>
+<?php /*
 <div class="input-group m-div">
 <label class="input-group-text" for="pes">Estado</label>
 <div class="ajuste">
@@ -43,12 +42,15 @@ $prop= autostring("ejemplares", "propietario");
 </select>
 </div>
 </div>
-
+*/?>
 <div class="input-group m-div">
 <label class="input-group-text" for="pprop">Propietario</label>
 <div class="ajuste autocomplete"><input type='text' id="pprop" name="propietario" class="form-control"></div>
 </div>
-
+<div class="input-group m-div">
+<label class="input-group-text" for="pcon">Condicion</label>
+<div class="ajuste"><input type='text' id="pcon" name="condicion" class="form-control"></div>
+</div>
 
 <div class="input-group m-div">
 <label class="input-group-text">Disponibilidad</label>

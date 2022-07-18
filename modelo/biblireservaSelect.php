@@ -26,7 +26,7 @@ $tabla="<table id='reservas' class='display tabth' style='width:100%'>
 <tr>
 <th>Reserva</th>
 <th>Nombre</th>
-<th>Codigo</th>
+<th>Cod. Material</th>
 <th>Titulo</th>
 <th>Retiro</th>
 <th>Estado</th>

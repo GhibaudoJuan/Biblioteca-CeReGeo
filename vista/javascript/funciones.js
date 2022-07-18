@@ -2,26 +2,28 @@ function conftabla(a,b=4){
 	$(document).ready( function () {
 	var nover;	
 	var columna;
-	if(b>1){
-		switch(a){
-			case 'reservas':
-				nover=[0,1,2];
-				break;
-			case 'prestamos':
-				nover=[0,1,2];
-				break;
-			case 'ejemplar':
-				nover=[0,1,2,3,6];
-				break;
-		}
-	}
+	
 	switch(a){
 			case 'reservas':				
 				columna=5;
+				if(b>2)
+					nover=[0,1,2];
+				if(b==1)
+					nover=[0,2];
 				break;
 			case 'prestamos':
-				columna=6;
+				columna=7;
+				if(b>2)
+					nover=[0,1];
+				if(b==1)
+					nover=[0];
 				break;
+			case 'ejemplar':
+				columna=0;
+				if(b>2)
+					nover=[0,1,2,3,6];
+				if(b==1)
+					nover=[0];
 		
 	}
 	
@@ -45,13 +47,13 @@ function conftabla(a,b=4){
 				{
 					render: function (data) {
 						let color;
-						if(data=='Cerrado'){
+						if(data=='Concretado'){
 							color = 'red';
 							return '<span style="color:' + color + '">' + data + '</span>';
 						}
 						else{
-							color='blue';
-								return '<span style="color:' + color + '">' + data + '</span>';
+							
+								return '<span>' + data + '</span>';
 						}
                     
                 },
@@ -84,20 +86,21 @@ var table = $('#'+a).DataTable();
 			$('#botonborrar').removeAttr("disabled");
 			$('#botoneditar').removeAttr("disabled");
 			$('#botonrestore').removeAttr("disabled");
-			if(data[5]!="Cerrado"){ //reservas
-				$('#botonborrar').removeAttr("disabled");
-				$('#botoneditar').removeAttr("disabled");
-				$('#botonreserva').removeAttr("disabled");
-			}
-			else{
+			
+			console.log(data[5]);
+			if((data[5]=="Concretado")||(data[7]=="Concretado")){ 
 				$('#botonborrar').attr("disabled","disabled");
 				$('#botoneditar').attr("disabled","disabled");
 				$('#botonreserva').attr("disabled","disabled");
-			}
-			if((a='prestamos')&&(data[6]!="Cerrado"))//prestamos
-				$('#botonprestamo').removeAttr("disabled");
-			else
 				$('#botonprestamo').attr("disabled","disabled");
+			}
+			else{
+				
+				$('#botonborrar').removeAttr("disabled");
+				$('#botoneditar').removeAttr("disabled");
+				$('#botonreserva').removeAttr("disabled");
+				$('#botonprestamo').removeAttr("disabled");
+			}
 			if((data[4]!="Obsoleto") && (data[5]=='SI')){
 				$('#botonreservaejemplar').removeAttr("disabled");
 					if(data[4]!='Prestado')
@@ -192,30 +195,19 @@ function editar(a,b,c,d,e,f,g,h){
 	$('#pid').attr('value',a);
 	$('#pnom').attr('value',b);
 			
-	$('#pdesde').attr('value',d);
-	$('#cdesde').attr('value',d);
+	$('#pdesde').attr('value',e);
+	$('#cdesde').attr('value',e);
 	
 	
-	$('#phasta').attr('value',e);
-	$('#chasta').attr('value',e);
+	$('#phasta').attr('value',f);
+	$('#chasta').attr('value',f);
 	
-	$('#pdevuelto').attr('min',d);
-	$('#pdevuelto').attr('value',f);
-	$('#cdevuelto').attr('value',f);
-	
-
-	
-	
-	if(g=="Activo"){
-		$('#pac').attr('checked','true');
-		$('#cact').attr('value','true');
-		}
-	if(g=="Cerrado"){
-		$('#pce').attr('checked','true');
-		$('#cact').attr('value','false');
-		}
+	$('#pdevuelto').attr('min',e);
+	$('#pdevuelto').attr('value',g);
+	$('#cdevuelto').attr('value',g);
 	
 
+	
 	//actualizar reserva
 
 	$('#resid').attr('value',a);
@@ -224,36 +216,10 @@ function editar(a,b,c,d,e,f,g,h){
 	$('#resdesde').attr('value',e);
 	$('#cresdesde').attr('value',e);
 	
-	if(f=="Activo"){
-		$('#resac').attr('checked','true');
-		$('#resact').attr('value','true');
-		}
-	if(f=="Cerrado"){
-		$('#resce').attr('checked','true');
-		$('#resact').attr('value','false');
-		}
-	
-	//actualizar multas
-	
-	$('#cidmulta').attr('value',a);
-	$('#cdesmultado').attr('value',c);
-	$('#desmultado').attr('value',c);
-	
-	if(d=="Activo"){
-		$('#test').attr('checked','true');
-		$('#cest').attr('value','true');
-		}
-	if(d=="Cerrado"){
-		$('#fest').attr('checked','true');
-		$('#cest').attr('value','false');
-		}
-	
-	
 	
 	
 	//actualizar ejemplar
 	
-	$('#pidejem').attr('value',b);
 	$('#cidejem').attr('value',b);
 	
 	$('#pce').attr('value',c);
@@ -261,7 +227,7 @@ function editar(a,b,c,d,e,f,g,h){
 	
 	$('#pprop').attr('value',d);
 	$('#cprop').attr('value',d);
-	
+	/*
 	switch(e){
 			case 'Libre':
 				document.getElementById("pes").value ='l';
@@ -284,7 +250,7 @@ function editar(a,b,c,d,e,f,g,h){
 				$('#ces').attr('value','o');
 				break;
 		}
-	
+	*/
 
 		if(f=="SI"){
 			//$('#pdis1').attr('checked','true');
@@ -296,7 +262,8 @@ function editar(a,b,c,d,e,f,g,h){
 			$('#cdis').attr('value','false');
 			document.getElementById('pdis2').checked='true';
 		}
-	
+	$('#ccon').attr('value',g);
+	$('#pcon').attr('value',g);
 	
 	}	
 

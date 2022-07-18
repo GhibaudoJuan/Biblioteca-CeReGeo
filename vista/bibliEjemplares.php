@@ -17,7 +17,7 @@ else
 //datos de ejemplar
 $sql = "select idmaterial, idejemplar, codigo_externo, propietario,
         (CASE WHEN estado='l' THEN 'Libre' WHEN estado='p' THEN 'Prestado' when estado='o' THEN 'Obsoleto' END) as estado, 
-        (CASE WHEN disponibilidad ='True' THEN 'SI' ELSE 'NO' END ) as disponibilidad
+        (CASE WHEN disponibilidad ='True' THEN 'SI' ELSE 'NO' END ) as disponibilidad, condicion
         from ejemplares 
         where idmaterial = '".$idej."'";
 if(!isset($_SESSION['tipouser'])||$_SESSION['tipouser']>'1')
@@ -287,8 +287,7 @@ $_SESSION['atrasejemplar']="../vista/bibliEjemplares.php?cod=".$idej."&tipo=".$t
 </div>
 
 <script type="text/javascript">
-conftabla('ejemplar','<?php if($_SESSION['tipouser']=='') echo 4; else echo $_SESSION['tipouser'];?>');
-
+conftabla('ejemplar','<?php if(!isset($_SESSION['tipouser'])) echo 4; else echo $_SESSION['tipouser'];?>');
 </script>
 <?php include("javascript/pluginBootstrap.html"); ?>
 </body>

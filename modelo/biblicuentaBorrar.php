@@ -1,7 +1,8 @@
 <?php
 //inicio secion
 if(!isset($_SESSION))session_start();
-
+require_once('../accesos/validacion.php');
+validaracceso(0);
 
 
 //copio _POST a otras variable

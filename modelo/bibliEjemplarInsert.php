@@ -14,6 +14,7 @@ $idejem=$_POST['idejemplar'];
 $prop=$_POST['propietario'];
 $dis=$_POST['disponibilidad'];
 $ce=$_POST['ce'];
+$con=$_POST['condicion'];
 
 if($dis=='')
     $dis='false';
@@ -24,7 +25,7 @@ $idmat=filtrar($idmat);
 $idejem=filtrar($idejem);
 $prop=filtrar($prop);
 $ce=filtrar($ce);
-
+$con=filtrar($con);
 
 
 
@@ -38,7 +39,8 @@ $ce=filtrar($ce);
     	    'codigo_externo'=>$ce,
     	    'propietario'=>$prop,
     	    'disponibilidad'=>$dis,
-    	    'estado'=>'l'
+    	    'estado'=>'l',
+    	    'condicion'=>$con
 
     	);
     	
@@ -55,7 +57,7 @@ $ce=filtrar($ce);
    	
     	
     	    $g="location:../vista/bibliEjemplares.php?cod=".$_POST['idmaterial']."&tipo=".$_POST['tipo'];
-    	    header($g);
+    	     header($g);
     	
 	 
 

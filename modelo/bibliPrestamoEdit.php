@@ -28,13 +28,7 @@ $array=$_POST;
             $a=1;
     }
     
-    if($array['cact'] != $array['activo']){
-        if($a==1)
-            $set.=", ";
-        $set.=" activo='".$array['activo']."' ";
-        $a=1;
-    }
-        
+     
                 
     $sql="update prestamos set ".$set." where idpre='".$array['idpre']."' and nombre='".$array['pnom']."';";
     
