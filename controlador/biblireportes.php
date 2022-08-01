@@ -22,6 +22,7 @@ padding-bottom:1rem;
 <label class="input-group-text">Datos sobre</label>
 <div class="ajuste" >
 <select id="datos" name="datos" class="form-select">
+  <option value="6">Ejemplares</option>
   <option value="1">Prestamos realizados</option>
   <option value="2">Prestamos retrasados</option>
   <option value="3">Prestamos no devueltos</option>

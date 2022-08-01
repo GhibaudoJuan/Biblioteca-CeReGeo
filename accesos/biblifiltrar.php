@@ -416,7 +416,7 @@ function reportes2($a,$b){
     $c="";
     switch ($a){
         case '1':{
-            $c.=" material, titulo, nombre, count(*) as cantidad ".$b."group by material , titulo, nombre ";
+            $c.=" titulo, nombre, count(*) as cantidad ".$b."group by  titulo, nombre ";
             break;
         }
         case '2':{
@@ -424,7 +424,7 @@ function reportes2($a,$b){
             break;
         }
         case '3':{
-            $c.=" material,titulo, count(*) as cantidad ".$b." group by material , titulo ";
+            $c.=" titulo, count(*) as cantidad ".$b." group by  titulo ";
             break;
         }
             

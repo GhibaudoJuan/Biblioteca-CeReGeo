@@ -114,7 +114,7 @@ $_SESSION['sql'] = $sql;
             <h5 class="modal-title" >Actualizar</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="ocultar()"></button>
           </div>
-            <?php include("../controlador/biblicuentaActualizar.php"); ?>
+            <?php include("../controlador/biblicuentaEdit.php"); ?>
         </div>
       </div>
   </div> 

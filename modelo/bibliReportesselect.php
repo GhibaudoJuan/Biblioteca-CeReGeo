@@ -13,7 +13,6 @@ $tabla="<table id='reportes' class='display tabth' style='width:100%'>
 <tr>
 <th>Nombre</th>
 <th>Fecha</th>
-<th>Descripcion</th>
 <th>PDF</th>
 </tr>
 </thead>
@@ -25,9 +24,8 @@ while ($mifila = pg_fetch_assoc($resultado))
     
     IF(file_exists('../reportes/'.$mifila['nombre'].'.pdf')){
     $tabla.="<tr>
-             <td>".$mifila['nombre']."</td>
-             <td>".$mifila['fecha']."</td>
              <td>".$mifila['descripcion']."</td>
+             <td>".$mifila['fecha']."</td>
              <td>
              <a href='../reportes/".$mifila['nombre'].".pdf' class='sindec' target='_blank' rel='noopener noreferrer'>
              <button type='submit' class='indexbutton'>Ver</button>

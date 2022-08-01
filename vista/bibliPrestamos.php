@@ -2,11 +2,10 @@
 if(!isset($_SESSION))session_start();
 require_once("../accesos/validacion.php");
 
-
 require_once("../accesos/biblifiltrar.php");
-
+require("../accesos/conf.php");
     
-    $sql = "select idpre,nombre, titulo, ejemplar, desde, hasta, devuelto, (CASE WHEN activo ='True' THEN '' ELSE 'Concretado' END ) as activo
+$sql = "select idpre,nombre, titulo, ejemplar, desde, hasta, devuelto, (CASE WHEN activo='False' THEN 'Concretado' WHEN hasta<=current_date - interval '".$atraso." days'  THEN 'Atrasado' ELSE '' END ) as activo
             from prestamos re inner join ejemplares e on (e.idejemplar=re.ejemplar) inner join material m on (e.idmaterial=m.idmat) ";
     //select de bibliotecarios
     if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']>'1')){
@@ -17,8 +16,8 @@ require_once("../accesos/biblifiltrar.php");
     }
 
     
-    
-
+   echo $atraso;
+echo $sql;
 $_SESSION['sql'] = $sql;
 $delete = 'delete from prestamos '.$where.';';
 $retorno = 'prestamo';

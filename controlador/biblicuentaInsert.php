@@ -19,7 +19,7 @@ $nombre=autostring('cuenta','nombre');
 
 <div class="input-group m-div">
 <label class="input-group-text" for="bcinu">Nombre Usuario</label>
-<div class="ajuste"><input type='text' id="bcinu"name="user" autofocus class="form-control"  maxlength="50" onfocusout="estaenlalista('bcinu',<?php echo $nomuser;?>)" placeholder="Nombre usuario" required></div>
+<div class="ajuste"><input type='text' id="bcinu" name="user" autofocus class="form-control"  maxlength="50" onfocusout="estaenlalista('bcinu',<?php echo $nomuser;?>)" placeholder="Nombre usuario" required></div>
 </div>
 
 

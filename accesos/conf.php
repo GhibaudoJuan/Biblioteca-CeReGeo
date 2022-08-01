@@ -1,6 +1,6 @@
 <?php 
 
-$paginacion=25;
-$reportesdir="/var/www/html/Biblioteca-CeReGeo/reportes/";
-$retraso=7;
+$paginacion=25; //en biblioteca
+$dir="/var/www/html/Biblioteca-CeReGeo/"; //direccion del proyecto
+$atraso=7; //en reservas y prestamos
 ?>

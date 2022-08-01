@@ -8,10 +8,11 @@
     
     ob_start();
     include_once('reportesarmar.php');
+    
     $html=ob_get_clean();
     
    
-  $nombrefile=$reportesdir.$nombrepdf.".pdf";
+    $nombrefile=$dir.'reportes/'.$nombrepdf.".pdf";
 
 
    

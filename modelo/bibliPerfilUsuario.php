@@ -8,13 +8,13 @@ $email=$_POST['email'];
 $actual=$_POST['contraactual'];
 $nueva=$_POST['contranueva'];
 $conf=$_POST['conf'];
-
+$nombreuser=$_POST['nombreuser'];
 require_once('../accesos/biblifiltrar.php');
 //llamo a una funcion para limbiar datos
 
 $actual=filtrar($actual);
 $nueva=filtrar($nueva);
-
+$nombreuser=filtrar($nombreuser);
 $email=filtrar($email);
 $conf=filtrar($conf);
 
@@ -23,6 +23,11 @@ $vacio=0;
 $res=pg_fetch_assoc(select($sql));
 
 $sql2="update cuenta set ";
+
+if(($nombreuser!=$_SESSION['user'])&&($nombreuser!="")){
+    $sql2.=" nombreuser='".$nombreuser."'";
+    $vacio=1;
+}
 
 if(($email!=$res['email'])&&($email!="")){
     $sql2.=" email='".$email."'";
@@ -38,12 +43,15 @@ if(($actual!="")&&($nueva!="")&&($conf!="")){
    
     	$res=pg_fetch_assoc(select($sql));
     	if(!password_verify($actual, $res['contrasenia'])){
-    	    $_SESSION['confactual']=false;
+    	    
+    	    $_SESSION['res']='1';
+    	    $_SESSION['error']="La contrase&ntildea actual es incorrecta.";
     	    header('location:../vista/bibliPerfilUsuario.php');	
     	   
     	}
     	if($nueva!=$conf){
-    	    $_SESSION['confnueva']=false;
+    	    $_SESSION['res']=1;
+    	    $_SESSION['error']="Las contrase&ntildeas nuevas no coinsiden.";
     	    header('location:../vista/bibliPerfilUsuario.php');	
     	   
     	}
@@ -54,18 +62,25 @@ if(($actual!="")&&($nueva!="")&&($conf!="")){
     	$sql2.=" contrasenia ='".$contra."'";
     	$vacio=1;
 }
+else 
+    echo "algo es vacio";
 
 
 $sql2.=" where nombreuser = '". $_SESSION['user']."';";
     	
     	   
-    	
+    	echo $sql2;
     	
     //inserto
     if($vacio==1)
     	$res = select($sql2);
     //guardo el resultado
     	$_SESSION['res']=$res;
+    	
+    	if($res){
+    	    $_SESSION['user']=$nombreuser;
+    	}
+    	
     	//redirigo
     	header('location:../vista/bibliPerfilUsuario.php');	 
 

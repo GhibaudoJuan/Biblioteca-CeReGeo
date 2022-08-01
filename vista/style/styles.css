@@ -19,6 +19,12 @@ footer{
 body, header, footer, main{
 	display:block;
 }
+.indexbutton:disabled, .indexbutton[disabled]{
+	background-color:#CECECE;
+}
+.indexbutton:enabled, .indexbutton[enabled]{
+	background-color:#1C43B9;
+}
 .div-ejem{
 	width:100%;
 	margin: 0 auto;

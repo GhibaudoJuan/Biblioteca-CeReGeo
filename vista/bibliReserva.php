@@ -2,11 +2,11 @@
 if(!isset($_SESSION))session_start();
 require_once("../accesos/validacion.php");
 require_once("../accesos/biblifiltrar.php");
-
+require("../accesos/conf.php");
 
 
     //select de bibliotecario
-    $sql = "select idres, nombre, material, titulo, fecha,(CASE WHEN activo ='True' THEN '' ELSE 'Concretado' END ) as activo
+    $sql = "select idres, nombre, material, titulo, fecha,(CASE WHEN activo='False' THEN 'Concretado' WHEN fecha<=current_date - interval '".$atraso." days'  THEN 'Atrasado' ELSE '' END ) as activo
             from reservas re inner join material ma on (ma.idmat= re.material) ";
     if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']>'1')){
       

@@ -10,7 +10,11 @@
 
 
 
-
+<div class="input-group m-div">
+<label class="input-group-text" for="email">Usuario</label>
+<div class="ajuste"><input type='text' id="nombreuser" name="nombreuser" class="form-control" maxlength="150"  required 
+value="<?php echo  $_SESSION["user"];?>"></div>
+</div>
 <div class="input-group m-div">
 <label class="input-group-text" for="email">E-mail</label>
 <div class="ajuste"><input type='email' id="email" name="email" class="form-control" maxlength="150"  required 
@@ -37,7 +41,7 @@ echo $a['email'];?>"></div>
 </div>
 <span class="span error" id="mostrarerror"></span>
 <br>
-<div class="alignr"><button type="submit" class="indexbutton">Guardar</button></div>
+<div class="alignr"><button type="submit" class="indexbutton" id="guardar">Guardar</button></div>
 
 
 

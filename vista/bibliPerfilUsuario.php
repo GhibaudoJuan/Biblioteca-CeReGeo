@@ -53,6 +53,10 @@ require_once("../accesos/validacion.php");
 
 	?>
 	</div> 
+	<footer style="">
+	<?php include("../controlador/footer.php");?>
+	</footer>
+	<?php include("../controlador/vent_error.php");?>
 <?php include("javascript/pluginBootstrap.html"); ?>
 </body>
 

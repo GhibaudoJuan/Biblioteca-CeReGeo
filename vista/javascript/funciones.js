@@ -65,7 +65,7 @@ function conftabla(a,b=4){
 		
 	}
 );
-console.log(a);
+//console.log(a);
 var table = $('#'+a).DataTable();
  //seleccion y deseleccion
     $('#'+a+' tbody').on( 'click', 'tr', function () {
@@ -87,7 +87,7 @@ var table = $('#'+a).DataTable();
 			$('#botoneditar').removeAttr("disabled");
 			$('#botonrestore').removeAttr("disabled");
 			
-			console.log(data[5]);
+			
 			if((data[5]=="Concretado")||(data[7]=="Concretado")){ 
 				$('#botonborrar').attr("disabled","disabled");
 				$('#botoneditar').attr("disabled","disabled");
@@ -189,6 +189,14 @@ function devolucion(a,b){
 	
 }
 function editar(a,b,c,d,e,f,g,h){
+	//cuenta
+	$('#cid').attr('value',a);
+	$('#cnombre').attr('value',b);
+	$('#enombreuser').attr('value',b);
+	
+	$('#cemail').attr('value',d);
+	$('#eemail').attr('value',d);
+	
 	
 	//actualizar prestamo
 	
@@ -198,7 +206,7 @@ function editar(a,b,c,d,e,f,g,h){
 	$('#pdesde').attr('value',e);
 	$('#cdesde').attr('value',e);
 	
-	
+	$('#phasta').attr('min',e);
 	$('#phasta').attr('value',f);
 	$('#chasta').attr('value',f);
 	
@@ -411,7 +419,7 @@ function ocultar(){
 
 
 
-
+//funcion vieja, no se usa
 //funcion de autocompletar form , cuando se selecciona una fila en una tabla se ejecuta
 function idtabla(a, b, c, d, e, f, g, h ,i){
 	deseleccion()
@@ -697,24 +705,40 @@ function actualizar(a){
 function contraconfir(){
 	if(document.getElementById("confpass").value!="")
 		if(document.getElementById("newpass").value!=document.getElementById("confpass").value){
-			document.getElementById("mostrarerror").innerHTML =" * Las contraseÃ±as no coinciden * ";
+			document.getElementById("mostrarerror").innerHTML =" * Las contrase&ntildeas no coinciden * ";	
+			$('#guardar').attr("disabled","disabled");
 		}else{
 			document.getElementById("mostrarerror").innerHTML ="";
+			$('#guardar').removeAttr("disabled");
 			}
-	if((document.getElementById("newpass").value=="")&&(document.getElementById("confpass").value==""))
+	if((document.getElementById("newpass").value=="")&&(document.getElementById("confpass").value=="")){
 		document.getElementById("mostrarerror").innerHTML ="";
+		$('#guardar').removeAttr("disabled");
+		}
+}
+function contraconfir2(a,b,c,d){
+	if(document.getElementById(a).value!="")
+		if(document.getElementById(b).value!=document.getElementById(a).value){
+			document.getElementById(c).innerHTML =" * Las contrase&ntildeas no coinciden * ";
+			$('#'+d).attr("disabled","disabled");
+		}else{
+			document.getElementById(c).innerHTML ="";
+			$('#'+d).removeAttr("disabled");
+			}
+	if((document.getElementById(b).value=="")&&(document.getElementById(a).value=="")){
+		document.getElementById(c).innerHTML ="";
+		$('#'+d).removeAttr("disabled");
+		}
 		
 }
-function estaenlalista(a,b){
+function estaenlalista(a,b,c="mostrarerror"){
 	let x=document.getElementById(a).value;
 	let si=b.includes(x);
 	if(si)
-		document.getElementById('mostrarerror').innerHTML="* Ya existe. *";
+		document.getElementById(c).innerHTML="* Ya existe. *";
 	else
-		document.getElementById('mostrarerror').innerHTML="";
+		document.getElementById(c).innerHTML="";
 	
-	console.log(a);
-	console.log(document.getElementById('bcinu').value);
 }
 
 function pagant(a,b){
