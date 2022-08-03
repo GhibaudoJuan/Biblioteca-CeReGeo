@@ -14,6 +14,7 @@ $tabla="<table id='reportes' class='display tabth' style='width:100%'>
 <th>Nombre</th>
 <th>Fecha</th>
 <th>PDF</th>
+<th>X</th>
 </tr>
 </thead>
 <tbody>";
@@ -28,8 +29,14 @@ while ($mifila = pg_fetch_assoc($resultado))
              <td>".$mifila['fecha']."</td>
              <td>
              <a href='../reportes/".$mifila['nombre'].".pdf' class='sindec' target='_blank' rel='noopener noreferrer'>
-             <button type='submit' class='indexbutton'>Ver</button>
+             <button type='button' class='btn'>Ver</button>
              </a>
+             </td>
+             <td>
+             <form action = '../modelo/bibliReportesBorrar.php' method='post'>
+             <input type='hidden' id='dir' name='dir' value='../reportes/".$mifila['nombre'].".pdf'>
+             <button type='submit' class='btn-close'/>
+             </form>
              </td>
              </tr>";
     }

@@ -71,44 +71,44 @@ var table = $('#'+a).DataTable();
     $('#'+a+' tbody').on( 'click', 'tr', function () {
         if ( $(this).hasClass('selected') ) {
             $(this).removeClass('selected');
-			$('#botonborrar').attr("disabled","disabled");
-			$('#botoneditar').attr("disabled","disabled");
-			$('#botonreserva').attr("disabled","disabled");
-			$('#botonprestamo').attr("disabled","disabled");
-			$('#botonreservaejemplar').attr("disabled","disabled");
-			$('#botonprestamoejemplar').attr("disabled","disabled");
-			$('#botonrestore').attr("disabled","disabled");			
+			$('#botonborrar').attr("disabled","disabled")
+			$('#botoneditar').attr("disabled","disabled")
+			$('#botonreserva').attr("disabled","disabled")
+			$('#botonprestamo').attr("disabled","disabled")
+			$('#botonreservaejemplar').attr("disabled","disabled")
+			$('#botonprestamoejemplar').attr("disabled","disabled")
+			$('#botonrestore').attr("disabled","disabled")
         }
         else {
-            table.$('tr.selected').removeClass('selected');
-            $(this).addClass('selected');
-			var data = table.row('.selected').data();
-			$('#botonborrar').removeAttr("disabled");
-			$('#botoneditar').removeAttr("disabled");
-			$('#botonrestore').removeAttr("disabled");
+            table.$('tr.selected').removeClass('selected')
+            $(this).addClass('selected')
+			var data = table.row('.selected').data()
+			$('#botonborrar').removeAttr("disabled")
+			$('#botoneditar').removeAttr("disabled")
+			$('#botonrestore').removeAttr("disabled")
 			
 			
 			if((data[5]=="Concretado")||(data[7]=="Concretado")){ 
-				$('#botonborrar').attr("disabled","disabled");
-				$('#botoneditar').attr("disabled","disabled");
-				$('#botonreserva').attr("disabled","disabled");
-				$('#botonprestamo').attr("disabled","disabled");
+				$('#botonborrar').attr("disabled","disabled")
+				$('#botoneditar').attr("disabled","disabled")
+				$('#botonreserva').attr("disabled","disabled")
+				$('#botonprestamo').attr("disabled","disabled")
 			}
 			else{
 				
-				$('#botonborrar').removeAttr("disabled");
-				$('#botoneditar').removeAttr("disabled");
-				$('#botonreserva').removeAttr("disabled");
-				$('#botonprestamo').removeAttr("disabled");
+				$('#botonborrar').removeAttr("disabled")
+				$('#botoneditar').removeAttr("disabled")
+				$('#botonreserva').removeAttr("disabled")
+				$('#botonprestamo').removeAttr("disabled")
 			}
 			if((data[4]!="Obsoleto") && (data[5]=='SI')){
-				$('#botonreservaejemplar').removeAttr("disabled");
+				$('#botonreservaejemplar').removeAttr("disabled")
 					if(data[4]!='Prestado')
-						$('#botonprestamoejemplar').removeAttr("disabled");
+						$('#botonprestamoejemplar').removeAttr("disabled")
 			}
 			else{
-				$('#botonreservaejemplar').attr("disabled","disabled");
-				$('#botonprestamoejemplar').attr("disabled","disabled");
+				$('#botonreservaejemplar').attr("disabled","disabled")
+				$('#botonprestamoejemplar').attr("disabled","disabled")
 			}
 				
 			
@@ -275,8 +275,37 @@ function editar(a,b,c,d,e,f,g,h){
 	
 	}	
 
-
-
+//funcion mostrar de reportes
+function mostrardivicion(){
+	if($('#datos').val()=='6'){
+		$('#dagrupar').hide()
+		$('#dmostrar').show()
+		}
+	else{
+		$('#dagrupar').show()
+		$('#dmostrar').hide()
+		}
+	
+}
+//funcion seleccionar de reportes
+function mostrarSelect(){
+	if ($('#mtodos').is(':checked')){
+		$('#mcodi').attr("disabled","disabled")
+		$('#mcode').attr("disabled","disabled")
+		$('#mprop').attr("disabled","disabled")
+		$('#mdis').attr("disabled","disabled")
+		$('#mest').attr("disabled","disabled")
+		$('#mcon').attr("disabled","disabled")
+	}
+	else{
+		$('#mcodi').removeAttr("disabled")
+		$('#mcode').removeAttr("disabled")
+		$('#mprop').removeAttr("disabled")
+		$('#mdis').removeAttr("disabled")
+		$('#mest').removeAttr("disabled")
+		$('#mcon').removeAttr("disabled")
+		}
+}
 
 //funcion para intercalar entre mostrar y ocultar
 function mostrarocultar(a){
@@ -416,6 +445,7 @@ function ocultar(){
 	if(document.getElementById("borrar2"))
 		document.getElementById("borrar2").style.display ="none";
 }
+
 
 
 

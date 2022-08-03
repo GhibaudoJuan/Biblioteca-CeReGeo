@@ -21,7 +21,7 @@ padding-bottom:1rem;
 <div class="input-group m-div">
 <label class="input-group-text">Datos sobre</label>
 <div class="ajuste" >
-<select id="datos" name="datos" class="form-select">
+<select id="datos" name="datos" class="form-select" onchange="mostrardivicion()">
   <option value="6">Ejemplares</option>
   <option value="1">Prestamos realizados</option>
   <option value="2">Prestamos retrasados</option>
@@ -48,7 +48,7 @@ padding-bottom:1rem;
 </div>
 </div>
 
-<div class="input-group m-div">
+<div id="dagrupar" class="input-group m-div">
 <label class="input-group-text">Agrupar seg&uacuten</label>
 <div class="ajuste" >
 <select id="cantidad" name="cantidad" class="form-select">
@@ -56,6 +56,42 @@ padding-bottom:1rem;
   <option value="2">Seg&uacuten usuario</option>
   <option value="3">Seg&uacuten material</option>
 </select>
+</div>
+</div>
+
+<div id="dmostrar" class="input-group m-div">
+<div class="ajuste" style="max-width:7rem;margin-right:2rem;">
+<label class="input-group-text">Mostrar</label>
+</div>
+<div class="ajuste">
+<div class="ajuste form-check form-switch">
+<input type="checkbox" class="form-check-input" id="mtodos" name="mtodos" value="True" onclick="mostrarSelect()" checked>
+<label class="form-check-label" for="mtodos">Todos</label>
+</div>
+<div class="ajuste form-check form-switch">
+<input type="checkbox" class="form-check-input" id="mcodi" name="mcodi" value="True" checked disabled>
+<label class="form-check-label" for="mcodi">Cod. Interno</label>
+</div>
+<div class="ajuste form-check form-switch">
+<input type="checkbox" class="form-check-input" id="mcode" name="mcode" value="True" checked disabled>
+<label class="form-check-label" for="mcode">Cod. Externo</label>
+</div>
+<div class="ajuste form-check form-switch">
+<input type="checkbox" class="form-check-input" id="mprop" name="mprop" value="True" checked disabled>
+<label class="form-check-label" for="mprop">Propietario</label>
+</div>
+<div class="ajuste form-check form-switch">
+<input type="checkbox" class="form-check-input" id="mdis" name="mdis" value="True" checked disabled>
+<label class="form-check-label" for="mdis">Disponibilidad</label>
+</div>
+<div class="ajuste form-check form-switch">
+<input type="checkbox" class="form-check-input" id="mest" name="mest" value="True" checked disabled>
+<label class="form-check-label" for="mest">Estado</label>
+</div>
+<div class="ajuste form-check form-switch">
+<input type="checkbox" class="form-check-input" id="mcon" name="mcon" value="True" checked disabled>
+<label class="form-check-label" for="mcon">Condici&oacuten</label>
+</div>
 </div>
 </div>
 <div class="input-group m-div">
@@ -77,6 +113,10 @@ padding-bottom:1rem;
 
 
 </body>
+<script type="text/javascript">
+$('#dagrupar').hide()
+</script>
+
 
 
 </html>
