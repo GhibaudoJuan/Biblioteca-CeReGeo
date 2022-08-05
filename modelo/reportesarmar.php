@@ -17,91 +17,221 @@ else{
 */
 
 //from
-$fecha=mostrardia();
-
+$fecha=mostrardia();//fecha en que se hace el reporte
+//se harma el from deacuerdo al tipo de reporte 
 switch($array['datos']){
     case '1':{ //prestamos realizados
         $from= " from prestamos p inner join ejemplares e on (e.idejemplar=p.ejemplar) inner join material m on (m.idmat=e.idmaterial) ";
-        $from.=reportes($array['datos'], $array['tiempo']);
-        $titulo="Cantidad de prestamos realizados";
-        $nombrepdf="prestamos_realizados_".$fecha;
+        $from.=reportes($array['datos'], $array['tiempo']);//agrego el factor tiempo a sql
+        $titulo="Cantidad de prestamos realizados"; //titulo del reporte
+        $nombrepdf="prestamos_realizados_".$fecha; //una parte del nombre del pdf
         break;
     }
     case '2':{ //prestamos retrasados
         $from=" from prestamos p inner join ejemplares e on (e.idejemplar=p.ejemplar) inner join material m on (m.idmat=e.idmaterial) where devuelto > hasta ";
-        $from.=reportes($array['datos'], $array['tiempo']);
-        $titulo="Cantidad de prestamos retrasados";
-        $nombrepdf="prestamos_retrasados_".$fecha;
+        $from.=reportes($array['datos'], $array['tiempo']);//agrego el factor tiempo a sql
+        $titulo="Cantidad de prestamos retrasados";//titulo del reporte
+        $nombrepdf="prestamos_retrasados_".$fecha;//una parte del nombre del pdf
         break;
     }
     case '3':{ //prestamos no devueltos
         $from=" from prestamos p inner join ejemplares e on (e.idejemplar=p.ejemplar)inner join  material m on (m.idmat=e.idmaterial) where devuelto is null ";
-        $from.=reportes($array['datos'], $array['tiempo']);
-        $titulo="Cantidad de prestamos no devueltos";
-        $nombrepdf="prestamos_no_devueltos_".$fecha;
+        $from.=reportes($array['datos'], $array['tiempo']);//agrego el factor tiempo a sql
+        $titulo="Cantidad de prestamos no devueltos";//titulo del reporte
+        $nombrepdf="prestamos_no_devueltos_".$fecha;//una parte del nombre del pdf
         break;
     }
     case '4':{ //reservas realizados
         $from=" from reservas inner join material on (idmat=material) ";
-        $from.=reportes($array['datos'], $array['tiempo']);
-        $titulo="Cantidad de reservas realizadas";
-        $nombrepdf="reservas_realizadas_".$fecha;
+        $from.=reportes($array['datos'], $array['tiempo']);//agrego el factor tiempo a sql
+        $titulo="Cantidad de reservas realizadas";//titulo del reporte
+        $nombrepdf="reservas_realizadas_".$fecha;//una parte del nombre del pdf
         break;
     }
     case '5':{ //Reservas no retiradas
         $from=" from reservas inner join material on (idmat=material) where activo='false' and retirado='false' ";
-        $from.=reportes($array['datos'], $array['tiempo']);
-        $titulo="Cantidad de reservas no retiradas";
-        $nombrepdf="reservas_no_retiradas_".$fecha;
+        $from.=reportes($array['datos'], $array['tiempo']);//agrego el factor tiempo a sql
+        $titulo="Cantidad de reservas no retiradas";//titulo del reporte
+        $nombrepdf="reservas_no_retiradas_".$fecha;//una parte del nombre del pdf
+        break;
+    }
+    case '6':{
+        $from=" from ejemplares ";
+        $from.=reportes($array['datos'], $array['tiempo']);//agrego el factor tiempo a sql
+        $titulo="Ejemplares";//titulo del reporte
+        $nombrepdf="ejemplares_".$fecha;//una parte del nombre del pdf
         break;
     }
 }
 
-$sql.=reportes2($array['cantidad'],$from);
-
-
-$sql.=";";
-
-
-
-$descri;
-
+//principio del html de la tabla
 $tabla="<table style='width:800px'>
 <thead>
 <tr>";
 
+$acum;
 
+if($array['datos']!='6'){//si no es un reporte de ejemplares
+$sql.=reportes2($array['cantidad'],$from); //agrego las columnas y la agrupacion al sql
 
-
-//echo $sql;
-$resultado = select($sql);
-
-
-switch ($array['cantidad']){ 
-    case '1':{ //todos
-        $tabla.=" <th style='width:200px'>Titulo</th>
-                  <th style='width:200px'>Nombre</th>
-                  <th>Cantidad</th></tr></thead><tbody>";
-        $total='<tr><td>Total</td><td></td><td>';
-        $descri=$titulo." agrupado segun Todos ";
-        break;
+        //armo las columnas que tendra la tabla
+        switch ($array['cantidad']){
+            case '1':{ //todos
+                $tabla.=" <th style='width:200px'>Titulo</th>
+                          <th style='width:200px'>Nombre</th>
+                          <th>Cantidad</th></tr></thead><tbody>";
+                $total='<tr><td>Total</td><td></td><td>';
+                $descri=$titulo." agrupado segun Todos ";
+                break;
+            }
+            case '2':{ //segun usuario
+                $tabla.="<th style='width:300px'>Nombre</th>
+                          <th>Cantidad</th></tr></thead><tbody>";
+                $total='<tr><td>Total</td><td>';
+                $descri=$titulo." agrupado segun Usuario ";
+                break;
+            }
+            case '3':{ //segun material
+                $tabla.=" <th style='width:300px'>Titulo</th>
+                          <th>Cantidad</th></tr></thead><tbody>";
+                $total='<tr><td>Total</td><td>';
+                $descri=$titulo." agrupado segun Titulo ";
+                break;
+            }
+        }
+        $sql.=";";
+        
+        
+        //echo $sql;
+        $resultado = select($sql);
+        while ($datos = pg_fetch_assoc($resultado)){
+            $tabla.='<tr>';
+            
+            
+            
+            
+            switch ($array['cantidad']){
+                case '1':{ //todos
+                    
+                    $tabla.='<td>'.$datos['titulo'].'</td>';
+                    
+                    $tabla.='<td>'.$datos['nombre'].'</td>';
+                    break;
+                }
+                case '2':{ //segun usuario
+                    $tabla.='<td>'.$datos['nombre'].'</td>';
+                    break;
+                }
+                case '3':{ //segun Titulo
+                    
+                    $tabla.='<td>'.$datos['titulo'].'</td>';
+                    break;
+                }
+            }
+            $tabla.='<td>'.$datos['cantidad'].'</td>';
+            
+            $tabla.="</tr>";
+            $acum+=$datos['cantidad'];
+            
+        }
+        $tabla.=$total.$acum.'</td></tr>';
+} 
+else { //si es un reporte de ejemplares
+    if($array['mtodos']){//si son todas las columnas
+        $sql.='idejemplar, codigo_externo, propietario, disponibilidad, estado, condicion ';
+        $tabla.='<th>Cod. Interno</th><th>Cod. Externo</th><th>Propietario</th><th>Disponibilidad</th><th>Estado</th><th>Condicion</th>';
+    
     }
-    case '2':{ //segun usuario
-        $tabla.="<th style='width:300px'>Nombre</th>
-                  <th>Cantidad</th></tr></thead><tbody>";
-        $total='<tr><td>Total</td><td>';
-        $descri=$titulo." agrupado segun Usuario ";
-        break;
+    else{//si son algunas columnas
+        $i=0;
+        if($array['mcodi']){
+            $sql.=' idejemplar';
+            $tabla.='<th>Cod. Interno</th>';
+            $i=1;
+        }
+        if($array['mcode']){
+            if ($i==1)
+                $sql.=',';
+            $sql.=' codigo_externo';
+            $tabla.='<th>Cod. Externo</th>';
+            $i=1;
+        }
+        if($array['mprop']){
+            if ($i==1)
+                $sql.=',';
+            $sql.=' propietario';
+            $tabla.='<th>Propietario</th>';
+            $i=1;
+            
+        }
+        if($array['mdis']){
+            if ($i==1)
+                $sql.=',';
+            $sql.=' disponibilidad';
+            $tabla.='<th>Disponibilidad</th>';
+            $i=1;
+        }
+        if($array['mest']){
+            if ($i==1)
+                $sql.=',';
+            $sql.=' estado';
+            $tabla.='<th>Estado</th>';
+            $i=1;
+        }
+        if($array['mcon']){
+            if ($i==1)
+                $sql.=',';
+            $sql.=' condicion';
+            $tabla.='<th>Condicion</th>';
+        }
+        
     }
-    case '3':{ //segun material
-        $tabla.=" <th style='width:300px'>Titulo</th>
-                  <th>Cantidad</th></tr></thead><tbody>";
-        $total='<tr><td>Total</td><td>';
-        $descri=$titulo." agrupado segun Titulo ";
-        break;
+    $sql.=$from;
+    $sql.=";";
+    $tabla.='</tr></thead><tbody>';
+    
+    //echo $sql;
+    $resultado = select($sql);
+    while ($datos = pg_fetch_assoc($resultado)){
+        $tabla.='<tr>';
+        
+        if($datos['disponibilidad'])
+            $datos['disponibilidad']='Si';
+        else
+            $datos['disponibilidad']='No';
+        
+        if($datos['estado']=='l')
+            $datos['estado']='Libre';
+        else 
+            $datos['estado']='Prestado';
+        
+        if($array['mtodos']){
+            $tabla.='<td>'.$datos['idejemplar'].'</td><td>'.$datos['codigo_externo'].'</td>
+                     <td>'.$datos['propietario'].'</td><td>'.$datos['disponibilidad'].'</td>
+                     <td>'.$datos['estado'].'</td><td>'.$datos['condicion'].'</td>';
+        }
+        else{
+            if($array['mcodi'])
+                $tabla.='<td>'.$datos['idejemplar'].'</td>';
+            if($array['mcode'])
+                $tabla.='<td>'.$datos['codigo_externo'].'</td>';
+            if($array['mprop'])
+                $tabla.='<td>'.$datos['propietario'].'</td>';
+            if($array['mdis'])
+                $tabla.='<td>'.$datos['disponibilidad'].'</td>';
+            if($array['mest'])
+                $tabla.='<td>'.$datos['estado'].'</td>';
+            if($array['mcon'])
+                $tabla.='<td>'.$datos['condicion'].'</td>';
+        }
+        
+        
+        $tabla.="</tr>";
+       
+        
     }
+   $descri.=$titulo;
 }
-
 
 
 switch($array['tiempo']){
@@ -120,39 +250,9 @@ switch($array['tiempo']){
 }
 
 
-$acum;
 
-while ($datos = pg_fetch_assoc($resultado)){
-        $tabla.='<tr>';
-    
-        
-       
-        
-        switch ($array['cantidad']){
-            case '1':{ //todos
-                                
-                $tabla.='<td>'.$datos['titulo'].'</td>';
-                
-                $tabla.='<td>'.$datos['nombre'].'</td>';
-                break;
-            }
-            case '2':{ //segun usuario
-                $tabla.='<td>'.$datos['nombre'].'</td>';
-                break;
-            }
-            case '3':{ //segun Titulo
-                                
-                $tabla.='<td>'.$datos['titulo'].'</td>';
-                break;
-            }
-        }
-        $tabla.='<td>'.$datos['cantidad'].'</td>';
-        
-        $tabla.="</tr>";
-        $acum+=$datos['cantidad'];
-    
-}
-$tabla.=$total.$acum.'</td></tr>';
+
+
 
 $tabla.=" </tbody></table>";
 

@@ -59,7 +59,11 @@ padding-bottom:1rem;
 </div>
 </div>
 
+
 <div id="dmostrar" class="input-group m-div">
+
+<!-- <input type='hidden' name='cantidad' value='4'> -->
+
 <div class="ajuste" style="max-width:7rem;margin-right:2rem;">
 <label class="input-group-text">Mostrar</label>
 </div>
@@ -114,7 +118,7 @@ padding-bottom:1rem;
 
 </body>
 <script type="text/javascript">
-$('#dagrupar').hide()
+mostrardivicion();
 </script>
 
 

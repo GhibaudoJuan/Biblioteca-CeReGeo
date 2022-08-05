@@ -407,6 +407,10 @@ function reportes($a, $b){
             $c.=" fecha ".$b;
             break;
         }
+        case '6':{
+            $c.="fecha_creacion ".$b;
+            break;
+        }
     }
     return $c;
     
@@ -427,10 +431,11 @@ function reportes2($a,$b){
             $c.=" titulo, count(*) as cantidad ".$b." group by  titulo ";
             break;
         }
-            
+                   
     }
     return $c;
 }
+
 
 
 ?>
