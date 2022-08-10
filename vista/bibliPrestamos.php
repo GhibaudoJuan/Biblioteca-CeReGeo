@@ -16,8 +16,8 @@ $sql = "select idpre,nombre, titulo, ejemplar, desde, hasta, devuelto, (CASE WHE
     }
 
     
-   echo $atraso;
-echo $sql;
+   
+
 $_SESSION['sql'] = $sql;
 $delete = 'delete from prestamos '.$where.';';
 $retorno = 'prestamo';
@@ -171,8 +171,7 @@ $retorno = 'prestamo';
 
 <script type="text/javascript">
 conftabla('prestamos','<?php echo $_SESSION['tipouser']?>');
-document.getElementById('reservaprox').style.display="none";
-document.getElementById('labelprox').innerHTML="";
+
 </script>
 <?php include("javascript/pluginBootstrap.html"); ?>
 </body>

@@ -1,7 +1,7 @@
 <?php 
 
 $nombre1= autostringn("select nombre from cuenta union select nombre from reservas union select nombre from prestamos;");
-
+$ejemplar1=autostring("ejemplares", "idejemplar");
 
 ?>
 <!doctype html>
@@ -33,10 +33,6 @@ $nombre1= autostringn("select nombre from cuenta union select nombre from reserv
 <div class="ajuste"><input type='date' id="bpid" name="fecha" class="form-control" required></div>
 </div>
 
-<div class="input-group m-div">
-<label class="input-group-text" for="reservaprox" id="labelprox">Pr&oacutexima reserva:</label>
-<div class="ajuste"><input type='date' class="form-control" id="reservaprox" disabled></div>
-</div>
 
 </div>
  <div class="modal-footer">
@@ -52,6 +48,7 @@ $nombre1= autostringn("select nombre from cuenta union select nombre from reserv
 <script>
 mindate('bpid',premindate);
 autocomplete(document.getElementById("nombre"), <?php echo $nombre1;?>);
+autocomplete(document.getElementById("presejemplar"),<?php echo $ejemplar1;?>);
 
 </script>
 </body>
