@@ -19,7 +19,20 @@ while ($mifila = pg_fetch_assoc($sql))
     $galeria.='<div class="cuadro-imagen" style="background-image:';
     
     if($mifila['portada']=='')
-        $galeria.=" url('../imagenes/noimage.jpg');";
+        switch ($mifila['tipo']){
+            case "Libro": //libro
+                $galeria.=" url('../imagenes/noimage.jpg');";
+                break;
+            case "Revista": //revista
+                $galeria.=" url('../imagenes/noimage.jpg');";
+                break;
+            case "Mapa": //mapa
+                $galeria.=" url('../imagenes/noimage.jpg');";
+                break;
+            case "Final": //final
+                $galeria.=" url('../imagenes/descarga.png');";
+                break;
+    }
     else
         $galeria.="url('../imagenes/".$mifila['portada']."');";
     

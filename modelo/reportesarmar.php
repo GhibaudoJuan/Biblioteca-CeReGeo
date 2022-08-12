@@ -88,7 +88,7 @@ $sql.=reportes2($array['cantidad'],$from); //agrego las columnas y la agrupacion
                 $tabla.="<th style='width:300px'>Nombre</th>
                           <th>Cantidad</th></tr></thead><tbody>";
                 $total='<tr><td>Total</td><td>';
-                $descri=$titulo." agrupado segun Usuario ";
+                $descri=$titulo." agrupado segun Personas ";
                 break;
             }
             case '3':{ //segun material

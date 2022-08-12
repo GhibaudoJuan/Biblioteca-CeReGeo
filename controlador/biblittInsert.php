@@ -25,22 +25,22 @@ $tidioma=autostring("material","idioma");
 
 
 <div class="input-group m-div">
-<label class="input-group-text w-label" for="ttitulo">Titulo</label>
-<div><input  type='text' id="ttitulo" name="titulo" class="form-control w-input ml-n"  maxlength="100"  placeholder="" required></div>
+<label class="input-group-text w-label" for="ttitulo">Titulo*</label>
+<div><input  type='text' id="ttitulo" name="titulo" class="form-control w-input ml-n"  maxlength="300"  placeholder="" required></div>
 
 <label class="input-group-text w-label" for="tportada">Portada</label>
 <div><input type='file' id="tportada" name="portada" class="form-control w-input ml-n"  placeholder=""> </div>
 
-<label class="input-group-text w-label" for="finalautor">Autor/es</label>
-<div class="autocomplete"><input id="finalautor" type='text' name="autores" class="form-control w-input"   maxlength="300"  placeholder=""></div>
+<label class="input-group-text w-label" for="finalautor">Autor/es*</label>
+<div class="autocomplete"><input id="finalautor" type='text' name="autores" class="form-control w-input"   maxlength="300"  placeholder="" required></div>
 </div>
 
 <div class="input-group m-div">
-<label class="input-group-text w-label" for="finaldirector">Director/es</label>
-<div class="autocomplete"><input id="finaldirector" type='text' name="directores" class="form-control w-input ml-n"  maxlength="300"  placeholder=""></div>
+<label class="input-group-text w-label" for="finaldirector">Director/es*</label>
+<div class="autocomplete"><input id="finaldirector" type='text' name="directores" class="form-control w-input ml-n"  maxlength="300"  placeholder="" required></div>
 
-<label class="input-group-text w-label" for="finaluni">Universidad</label>
-<div class="autocomplete"><input id="finaluni" type='text' name="universidad" class="form-control w-input ml-n"  maxlength="100"  placeholder=""></div>
+<label class="input-group-text w-label" for="finaluni">Universidad*</label>
+<div class="autocomplete"><input id="finaluni" type='text' name="universidad" class="form-control w-input ml-n"  maxlength="100"  placeholder="" required></div>
 
 <label class="input-group-text w-label" for="finallugar">Lugar</label>
 <div class="autocomplete"><input id="finallugar" type='text' name="lugar" class="form-control w-input"  maxlength="100"  placeholder=""></div>
@@ -48,6 +48,7 @@ $tidioma=autostring("material","idioma");
 <div class="input-group m-div">
 <label class="input-group-text w-label" for="tmes">Mes</label>
 <select id="tmes" name= "mes" class="form-select w-input ml-n">
+	<option value=""></option>
   <option value="1">1</option>
   <option value="2">2</option>
   <option value="3">3</option>

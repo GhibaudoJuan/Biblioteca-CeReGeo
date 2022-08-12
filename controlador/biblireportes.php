@@ -53,8 +53,8 @@ padding-bottom:1rem;
 <div class="ajuste" >
 <select id="cantidad" name="cantidad" class="form-select">
   <option value="1">Todos</option>
-  <option value="2">Seg&uacuten usuario</option>
-  <option value="3">Seg&uacuten material</option>
+  <option value="2">Personas</option>
+  <option value="3">Material</option>
 </select>
 </div>
 </div>

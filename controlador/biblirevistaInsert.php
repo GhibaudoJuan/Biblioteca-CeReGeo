@@ -19,8 +19,8 @@ $ridioma=autostring("material","idioma");
 
 
 <div class="input-group m-div">
-<label class="input-group-text w-label" for="rtitulo">Titulo</label>
-<div><input  type='text' id="rtitulo" name="titulo" class="form-control w-input ml-n"  maxlength="100" placeholder="" required></div>
+<label class="input-group-text w-label" for="rtitulo">Titulo*</label>
+<div><input  type='text' id="rtitulo" name="titulo" class="form-control w-input ml-n"  maxlength="300" placeholder="" required></div>
 
 <label class="input-group-text w-label" for="rportada">Portada</label>
 <div><input type='file' id="rportada" name="portada" class="form-control w-input ml-n" placeholder=""> </div>
@@ -45,6 +45,7 @@ $ridioma=autostring("material","idioma");
 <div class="input-group m-div">
 <label class="input-group-text w-label" for="rmes">Mes</label>
 <select id="rmes" name= "mes" class="form-select w-input ml-n">
+  <option value=""></option>
   <option value="1">1</option>
   <option value="2">2</option>
   <option value="3">3</option>

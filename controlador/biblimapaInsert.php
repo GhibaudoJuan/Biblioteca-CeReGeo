@@ -28,8 +28,8 @@ $midioma=autostring("material","idioma");
 
 
 <div class="input-group m-div">
-<label class="input-group-text w-label" for="mtitulo">Titulo</label>
-<div ><input  type='text' id="mtitulo" name="titulo" class="form-control w-input ml-n"  maxlength="100"  placeholder="" required></div>
+<label class="input-group-text w-label" for="mtitulo">Titulo*</label>
+<div ><input  type='text' id="mtitulo" name="titulo" class="form-control w-input ml-n"  maxlength="300"  placeholder="" required></div>
 
 <label class="input-group-text w-label" for="mportada">Portada</label>
 <div ><input type='file' id="mportada" name="portada" class="form-control w-input ml-n" placeholder=""> </div>
@@ -52,6 +52,7 @@ $midioma=autostring("material","idioma");
 <div class="input-group m-div">
 <label class="input-group-text w-label" for="mmes">Mes</label>
 <select id="mmes" name= "mes" class="form-select w-input ml-n">
+  <option value=""></option>
   <option value="1">1</option>
   <option value="2">2</option>
   <option value="3">3</option>
@@ -73,8 +74,8 @@ $midioma=autostring("material","idioma");
 <div class="autocomplete"><input type='text' id="midioma" name="idioma" class="form-control w-input" > </div>
 </div>
 <div class="input-group m-div">
-<label class="input-group-text w-label" for="mapatipo">Tipo Mapa</label>
-<div class="autocomplete"><input type='text' id="mapatipo" name="tipom" class="form-control w-input ml-n"  maxlength="50"  placeholder=""></div>
+<label class="input-group-text w-label" for="mapatipo">Tipo Mapa*</label>
+<div class="autocomplete"><input type='text' id="mapatipo" name="tipom" class="form-control w-input ml-n"  maxlength="50"  placeholder="" required></div>
 
 <label class="input-group-text w-label" for="mapaescala">Escala</label>
 <div class="autocomplete" ><input type='text' id="mapaescala" name="escala" class="form-control w-input ml-n" placeholder="1:1000" maxlength="50"  ></div>

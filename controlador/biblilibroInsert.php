@@ -18,14 +18,14 @@ $libroidioma=autostring("material","idioma");
 
 
 <div class="input-group m-div">
-<label class="input-group-text w-label" for="ltitulo">Titulo</label>
-<div><input  type='text' id="ltitulo" name="titulo" class="form-control w-input ml-n"  maxlength="100" placeholder="" required></div>
+<label class="input-group-text w-label" for="ltitulo">Titulo*</label>
+<div><input  type='text' id="ltitulo" name="titulo" class="form-control w-input ml-n"  maxlength="300" placeholder="" required></div>
 
 <label class="input-group-text w-label" for="lportada">Portada</label>
 <div><input type='file' id="lportada" name="portada" class="form-control w-input ml-n" placeholder=""></div>
 
-<label class="input-group-text w-label" for="libroautor">Autor/es</label>
-<div class=" autocomplete" ><input type='text' id="libroautor" name="autor"  class="form-control w-input"   maxlength="150" placeholder=""></div>
+<label class="input-group-text w-label" for="libroautor">Autor/es*</label>
+<div class=" autocomplete" ><input type='text' id="libroautor" name="autor"  class="form-control w-input"   maxlength="150" placeholder="" required></div>
 </div>
 
 <div class="input-group m-div">
@@ -46,6 +46,7 @@ $libroidioma=autostring("material","idioma");
 <div class="input-group m-div">
 <label class="input-group-text w-label" for="lmes">Mes</label>
 <select id="lmes" name= "mes" class="form-select w-input ml-n">
+  <option value=""></option>
   <option value="1">1</option>
   <option value="2">2</option>
   <option value="3">3</option>
@@ -60,8 +61,8 @@ $libroidioma=autostring("material","idioma");
   <option value="12">12</option>
 </select>
 
-<label class="input-group-text w-label" for="lanio">A&ntildeo</label>
-<div class="autocomplete"><input type='text' id="lanio" name="anio" class="form-control w-input ml-n" maxlength="4"> </div>
+<label class="input-group-text w-label" for="lanio">A&ntildeo*</label>
+<div class="autocomplete"><input type='text' id="lanio" name="anio" class="form-control w-input ml-n" maxlength="4" required> </div>
 
 <label class="input-group-text w-label" for="lidioma">Idioma</label>
 <div class="autocomplete"><input type='text' id="lidioma" name="idioma" class="form-control w-input" > </div>

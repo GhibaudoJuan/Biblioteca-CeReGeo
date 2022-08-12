@@ -214,7 +214,22 @@ function armarPortada($mifila,$tipo,$keyword){
     $galeria.='<div class="div-imagen-portada"><div class="imagen-portada" style="background-image:';
                     
     if($mifila['portada']=='')
-        $galeria.=" url('../imagenes/noimage.jpg');";
+        switch ($tipo){
+            case "1": //libro
+                $galeria.=" url('../imagenes/noimage.jpg');";
+                break;
+            case "2": //revista
+                $galeria.=" url('../imagenes/noimage.jpg');";
+                break;
+            case "3": //mapa
+                $galeria.=" url('../imagenes/noimage.jpg');";
+                break;
+            case "4": //final
+                $galeria.=" url('../imagenes/descarga.png');";
+                break;
+                
+    }
+       
     else
         $galeria.="url('../imagenes/".$mifila['portada']."');";
         
