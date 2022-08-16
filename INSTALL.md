@@ -7,6 +7,7 @@ instalacion de apache2:
                     sudo ufw enable
                     sudo ufw allow 80/tcp comment 'accept Apache'
                     sudo ufw allow 443/tcp comment 'accept HTTPS connections'
+                    sudo ufw allow 25/tcp comment 'accept Mail'
 
 instalacion de postgres:
 
