@@ -20,11 +20,9 @@ instalacion de php:
                     sudo apt install php
                     sudo apt install php-pgsql
 
-instalacion de git:
 
-                    sudo apt install git
                     
-una ves instalado git coloque el repositorio en /var/ww/html, si no tiene acceso cambie los permisos de acceso de la carpeta:
+coloque el repositorio en /var/ww/html, si no tiene acceso cambie los permisos de acceso de la carpeta:
 
                     sudo chown -R www-data:www-data /var/www/html     
                     sudo chmod -R 777 /var/www/html
