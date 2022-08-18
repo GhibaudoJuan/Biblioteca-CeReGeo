@@ -25,7 +25,7 @@ if(!isset($_SESSION))session_start();
 <ul id="menu0" class="desplega1 menu-top" >
 	
 	<li><a href="../vista/biblimaterial.php?pag=1">Biblioteca</a></li>
-	
+	<li><a href="../modelo/biblimail.php">mail</a></li>
 	
 	<?php if(isset($_SESSION['tipouser'])): ?>
 	<li><a href="../vista/bibliReserva.php">Reservas</a></li>
@@ -40,7 +40,7 @@ if(!isset($_SESSION))session_start();
 	<li><a href="../vista/bibliReportes.php">Reportes</a></li>
 	<li><a href="../vista/backup.php">Backup</a></li>
 	<?php endif; ?>
-	
+	<li><a href="../vista/about_us.php">About us</a></li>
 </ul>
 
 <div class="abso menu1 menu-top">

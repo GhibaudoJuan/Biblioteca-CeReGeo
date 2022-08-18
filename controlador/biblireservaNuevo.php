@@ -1,7 +1,7 @@
 <?php 
 
 $nombre= autostringn("select nombre from cuenta union select nombre from reservas union select nombre from prestamos;");
-$material=autostring("material","idmat");
+$material=autostring("material","titulo");
 
 ?>
 
@@ -16,8 +16,8 @@ $material=autostring("material","idmat");
 <div class="modal-body">
 
 <div class="input-group m-div">
-<label class="input-group-text" for="material">Codigo Material</label>
-<div class="ajuste autocomplete"><input type='text' name="material" id="resmaterial" class="form-control" maxlength="100" required>
+<label class="input-group-text" for="material">Titulo</label>
+<div class="ajuste autocomplete"><input type='text' name="material" id="resmaterial" class="form-control" maxlength="300" required>
 </div>
 </div>
 
@@ -31,7 +31,7 @@ $material=autostring("material","idmat");
 <label class="input-group-text" for="fr">Retiro</label>
 <div class="ajuste"><input id="frn" type='date' name="fecha" class="form-control"  required></div>
 </div>
-
+<input type="hidden" name="nuevo" value="true">
 <input type='hidden' name ='activo'value='True'>
 </div>
 
