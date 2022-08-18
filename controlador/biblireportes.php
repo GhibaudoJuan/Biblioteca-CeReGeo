@@ -27,7 +27,7 @@ padding-bottom:1rem;
   <option value="2">Prestamos retrasados</option>
   <option value="3">Prestamos no devueltos</option>
   <option value="4">Reservas realizadas</option>
-  <option value="5">Reservas no retiradas</option>
+  <option value="5">Reservas no retiradas en fecha</option>
   
 </select>
 </div>

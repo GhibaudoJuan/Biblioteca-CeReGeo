@@ -1,4 +1,6 @@
-
+<?php 
+$ejemplar1=autostring("ejemplares", "idejemplar");
+?>
 <!doctype html>
 <html>
 <head>
@@ -35,7 +37,7 @@
 
 
 <script>
-
+autocomplete(document.getElementById("ejemprestamo"),<?php echo $ejemplar1;?>);
 mindate('frp',premindate);
 </script>
 </body>

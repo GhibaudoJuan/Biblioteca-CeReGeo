@@ -51,12 +51,12 @@ switch($array['datos']){
     case '5':{ //Reservas no retiradas
         $from=" from reservas inner join material on (idmat=material) where activo='false' and retirado='false' ";
         $from.=reportes($array['datos'], $array['tiempo']);//agrego el factor tiempo a sql
-        $titulo="Cantidad de reservas no retiradas";//titulo del reporte
+        $titulo="Cantidad de reservas no retiradas en fecha";//titulo del reporte
         $nombrepdf="reservas_no_retiradas_".$fecha;//una parte del nombre del pdf
         break;
     }
     case '6':{
-        $from=" from ejemplares ";
+        $from=" from ejemplares e inner join material on (idmat=e.idmaterial) ";
         $from.=reportes($array['datos'], $array['tiempo']);//agrego el factor tiempo a sql
         $titulo="Ejemplares";//titulo del reporte
         $nombrepdf="ejemplares_".$fecha;//una parte del nombre del pdf
@@ -65,36 +65,43 @@ switch($array['datos']){
 }
 
 //principio del html de la tabla
-$tabla="<table style='width:800px'>
+$tabla="<table style='width:100%'>
 <thead>
 <tr>";
 
 $acum;
 
-if($array['datos']!='6'){//si no es un reporte de ejemplares
+switch ($array['datos']){//si no es un reporte de ejemplares
+    case '1':
+    case '2':
+    case '3':
+    case '4':
+    case '5':{
 $sql.=reportes2($array['cantidad'],$from); //agrego las columnas y la agrupacion al sql
 
         //armo las columnas que tendra la tabla
         switch ($array['cantidad']){
             case '1':{ //todos
-                $tabla.=" <th style='width:200px'>Titulo</th>
-                          <th style='width:200px'>Nombre</th>
+                $tabla.=" <th>Titulo</th>
+                          <th>Tipo</th>  
+                          <th>Nombre</th>
                           <th>Cantidad</th></tr></thead><tbody>";
-                $total='<tr><td>Total</td><td></td><td>';
+                $total='<tr><td>Total</td><td></td><td></td><td>';
                 $descri=$titulo." agrupado segun Todos ";
                 break;
             }
             case '2':{ //segun usuario
-                $tabla.="<th style='width:300px'>Nombre</th>
+                $tabla.="<th>Nombre</th>
                           <th>Cantidad</th></tr></thead><tbody>";
                 $total='<tr><td>Total</td><td>';
                 $descri=$titulo." agrupado segun Personas ";
                 break;
             }
             case '3':{ //segun material
-                $tabla.=" <th style='width:300px'>Titulo</th>
+                $tabla.=" <th>Titulo</th>
+                          <th>Tipo</th> 
                           <th>Cantidad</th></tr></thead><tbody>";
-                $total='<tr><td>Total</td><td>';
+                $total='<tr><td>Total</td><td></td><td>';
                 $descri=$titulo." agrupado segun Titulo ";
                 break;
             }
@@ -113,18 +120,19 @@ $sql.=reportes2($array['cantidad'],$from); //agrego las columnas y la agrupacion
             switch ($array['cantidad']){
                 case '1':{ //todos
                     
-                    $tabla.='<td>'.$datos['titulo'].'</td>';
-                    
-                    $tabla.='<td>'.$datos['nombre'].'</td>';
+                    $tabla.='<td style="width:350px;">'.$datos['titulo'].'</td>';
+                    $tabla.='<td style="width:100px;">'.$datos['tipo'].'</td>';
+                    $tabla.='<td style="width:350px;">'.$datos['nombre'].'</td>';
                     break;
                 }
                 case '2':{ //segun usuario
-                    $tabla.='<td>'.$datos['nombre'].'</td>';
+                    $tabla.='<td style="width:300px">'.$datos['nombre'].'</td>';
                     break;
                 }
                 case '3':{ //segun Titulo
                     
-                    $tabla.='<td>'.$datos['titulo'].'</td>';
+                    $tabla.='<td style="width:300px">'.$datos['titulo'].'</td>';
+                    $tabla.='<td style="width:70px">'.$datos['tipo'].'</td>';
                     break;
                 }
             }
@@ -135,11 +143,12 @@ $sql.=reportes2($array['cantidad'],$from); //agrego las columnas y la agrupacion
             
         }
         $tabla.=$total.$acum.'</td></tr>';
+        break;
 } 
-else { //si es un reporte de ejemplares
+    case '6': { //si es un reporte de ejemplares
     if($array['mtodos']){//si son todas las columnas
-        $sql.='idejemplar, codigo_externo, propietario, disponibilidad, estado, condicion ';
-        $tabla.='<th>Cod. Interno</th><th>Cod. Externo</th><th>Propietario</th><th>Disponibilidad</th><th>Estado</th><th>Condicion</th>';
+        $sql.='titulo, mes, anio, idioma, tipo, idejemplar, codigo_externo, propietario, disponibilidad, estado, condicion ';
+        $tabla.='<th>Titulo</th><th>Fecha</th><th>Idioma</th><th>Tipo</th><th>Cod. Interno</th><th>Cod. Externo</th><th>Propietario</th><th>Disponibilidad</th><th>Estado</th><th>Condicion</th>';
     
     }
     else{//si son algunas columnas
@@ -205,12 +214,14 @@ else { //si es un reporte de ejemplares
         else 
             $datos['estado']='Prestado';
         
-        if($array['mtodos']){
+        if($array['mtodos']){ //si son todos
+            $tabla.='<td>'.$datos['titulo'].'</td><td>'.$datos['mes'].'/'.$datos['anio'].'</td>
+                     <td>'.$datos['idioma'].'</td><td>'.$datos['tipo'].'</td>';
             $tabla.='<td>'.$datos['idejemplar'].'</td><td>'.$datos['codigo_externo'].'</td>
                      <td>'.$datos['propietario'].'</td><td>'.$datos['disponibilidad'].'</td>
                      <td>'.$datos['estado'].'</td><td>'.$datos['condicion'].'</td>';
         }
-        else{
+        else{ //si faltan campos
             if($array['mcodi'])
                 $tabla.='<td>'.$datos['idejemplar'].'</td>';
             if($array['mcode'])
@@ -231,6 +242,8 @@ else { //si es un reporte de ejemplares
         
     }
    $descri.=$titulo;
+   break;
+}
 }
 
 

@@ -423,7 +423,7 @@ function reportes($a, $b){
             break;
         }
         case '6':{
-            $c.="fecha_creacion ".$b;
+            $c.="e.fecha_creacion ".$b;
             break;
         }
     }
@@ -435,7 +435,7 @@ function reportes2($a,$b){
     $c="";
     switch ($a){
         case '1':{
-            $c.=" titulo, nombre, count(*) as cantidad ".$b."group by  titulo, nombre ";
+            $c.=" titulo, tipo, nombre, count(*) as cantidad ".$b."group by  titulo, tipo, nombre ";
             break;
         }
         case '2':{
@@ -443,7 +443,7 @@ function reportes2($a,$b){
             break;
         }
         case '3':{
-            $c.=" titulo, count(*) as cantidad ".$b." group by  titulo ";
+            $c.=" titulo, tipo, count(*) as cantidad ".$b." group by  titulo, tipo ";
             break;
         }
                    
