@@ -19,6 +19,9 @@ $sql = "delete from ejemplares where idmaterial='" .$array['idmaterial']."' and 
 	
    //guardo el resultado
 	$_SESSION['res']=$res;
+	if($res){
+	    $_SESSION['error']='Exito';
+	}
 	//redirigo
 
 	$g="location:../vista/bibliEjemplares.php?cod=".$_POST['idmaterial']."&tipo=".$_POST['tipo'];

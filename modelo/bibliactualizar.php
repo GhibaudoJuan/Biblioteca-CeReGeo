@@ -91,6 +91,9 @@ $sql2.=';';
 
 
 $_SESSION['res']=$res;
+if($res){
+    $_SESSION['error']='Exito';
+}
 
 
 header('location:../vista/bibliEjemplares.php?cod='.$compro['idmat'].'&tipo='.$array['tipo']);

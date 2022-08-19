@@ -55,6 +55,9 @@ $res = insertar('tt',$seg);
 
 //guardo el resultado
 $_SESSION['res']=$res;
+if($res){
+    $_SESSION['error']='Exito';
+}
 //redirigo
 $link='location:../vista/bibliEjemplares.php?cod='.$id['case'].'&tipo=Final';
 header($link);

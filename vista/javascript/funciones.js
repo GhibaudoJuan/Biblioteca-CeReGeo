@@ -325,24 +325,31 @@ function agendamenu(a){
 	}
 }
 function ocultar_error(){
-	if(document.getElementById('error'))
-		document.getElementById('error').style.display="none"
+	$('#error').hide()
+
+}
+function ocultar_exito(){
+	$('#exito').hide()
+	
 }
 function mostrar_error(a,b){
-	if(document.getElementById('error')){
-	
+		
 	if((b==0)){
-		ocultar_error();
+		
+		ocultar_error()
+		if(a!=''){
+		$('#exito').show()
+		document.getElementById('mensexito').innerHTML=a;
+		}
 	}
 	else{
-		
-	
-		document.getElementById('error').style.display="block";
+		ocultar_exito()
+		$('#error').show()
 		if(a!='')
 			document.getElementById('mens').innerHTML=a;
 	}
 
-	}
+	
 }
 
 function buscarAV(){

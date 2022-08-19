@@ -48,7 +48,9 @@ $res = select($sql);
 
 //guardo el resultado
 $_SESSION['res']=$res;
-
+if($res){
+    $_SESSION['error']='Exito';
+}
 //echo $sql;
 
 //redirigo

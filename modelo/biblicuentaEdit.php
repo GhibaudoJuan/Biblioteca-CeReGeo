@@ -64,7 +64,9 @@ $sql2.=" where idcuenta = '". $_POST['cid']."';";
     	$res = select($sql2);
     //guardo el resultado
     	$_SESSION['res']=$res;
-    	
+    	if($res){
+    	    $_SESSION['error']='Exito';
+    	}
     	    	
     	//redirigo
     	header('location:../vista/bibliCuenta.php');	

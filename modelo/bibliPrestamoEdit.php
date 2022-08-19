@@ -38,7 +38,9 @@ $array=$_POST;
 
 
 $_SESSION['res']=$res;
-
+if($res){
+    $_SESSION['error']='Exito';
+}
 header('location:../vista/bibliPrestamos.php');
             
 

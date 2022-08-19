@@ -17,12 +17,16 @@ if(pg_num_rows(select($sql))=='1'){
     $_SESSION['conf3']= true;
     */
 //armo el select
-$sql = "delete from cuenta where nombreuser='".$user."'";
+$sql = "delete from cuenta where idcuenta='".$user."'";
 //ejecuto funcion
 	$res = select($sql);
 	
    //guardo el resultado
 	$_SESSION['res']=$res;
+	if($res){
+	    $_SESSION['error']='Exito';
+	}
+	
 	//redirigo
 	header('location:../vista/bibliCuenta.php');	
 /*

@@ -40,6 +40,9 @@ else{
 
    //guardo el resultado
 	$_SESSION['res']=$res;
+	if($res){
+	    $_SESSION['error']='Exito';
+	}
 	//redirigo
 	
         header('location:../vista/bibliPrestamos.php');	

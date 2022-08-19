@@ -42,6 +42,9 @@ $id = pg_fetch_assoc($compr2);
     );
 $res = insertar('material',$sql);
 $_SESSION['res']=$res;
+if($res){
+    $_SESSION['error']='Exito';
+}
 
     
 ?>

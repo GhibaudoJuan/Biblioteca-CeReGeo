@@ -54,6 +54,9 @@ $con=filtrar($con);
     //guardo el resultado
     	$_SESSION['res']=$res;
     	//redirigo
+    	if($res){
+    	    $_SESSION['error']='Exito';
+    	}
    	
     	
     	    $g="location:../vista/bibliEjemplares.php?cod=".$_POST['idmaterial']."&tipo=".$_POST['tipo'];

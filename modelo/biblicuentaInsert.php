@@ -40,6 +40,9 @@ values((select case when max(idcuenta)>0 then max (idcuenta)+1 else 1 end from c
     	
     //guardo el resultado
     	$_SESSION['res']=$res;
+    	if($res){
+    	    $_SESSION['error']='Exito';
+    	}
     	//redirigo
     	header('location:../vista/bibliCuenta.php');	 
 

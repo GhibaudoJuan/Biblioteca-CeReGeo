@@ -12,6 +12,9 @@ $retorno=$_POST['retorno'];
 $res = select($borrar);
 //guardo el resultado
 $_SESSION['res']=$res;
+if($res){
+    $_SESSION['error']='Exito';
+}
 //redirigo
 
 switch($retorno){

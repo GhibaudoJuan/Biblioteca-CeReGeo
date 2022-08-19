@@ -79,6 +79,9 @@ $sql2.=" where nombreuser = '". $_SESSION['user']."';";
     	
     	if($res){
     	    $_SESSION['user']=$nombreuser;
+    	   
+    	    $_SESSION['error']='Exito';
+    	    
     	}
     	
     	//redirigo

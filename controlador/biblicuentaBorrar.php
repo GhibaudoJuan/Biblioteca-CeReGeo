@@ -16,7 +16,7 @@
 <label for="borrar1" style="font-size: 25px;">&#191Esta seguro de que quiere eliminarlo? </label>
 <br><br>
 <div class="input-group m-div">
-<label class="input-group-text">Nombre</label>
+<label class="input-group-text">Id</label>
 <div class="ajuste"><input type='text' id="borrarprimero" class="form-control" disabled></div>
 </div>
 <br>

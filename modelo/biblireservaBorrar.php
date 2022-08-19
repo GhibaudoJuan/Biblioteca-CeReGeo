@@ -29,6 +29,9 @@ $sql = "delete from reservas where nombre = '". $_SESSION['nombre']. "' and idre
 
    //guardo el resultado
 	$_SESSION['res']=$res;
+	if($res){
+	    $_SESSION['error']='Exito';
+	}
 	//redirigo
 header('location:../vista/bibliReserva.php');	
 

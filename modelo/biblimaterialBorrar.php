@@ -50,6 +50,9 @@ $res = select($sql2);
 	
 	    //guardo el resultado
 	    $_SESSION['res']=$res;
+	    if($res){
+	        $_SESSION['error']='Exito';
+	    }
 	    //redirigo
 	    header('location:../vista/biblimaterial.php?pag=1');	
 }
