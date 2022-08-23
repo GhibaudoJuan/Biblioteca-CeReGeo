@@ -147,50 +147,41 @@ $sql.=reportes2($array['cantidad'],$from); //agrego las columnas y la agrupacion
 } 
     case '6': { //si es un reporte de ejemplares
     if($array['mtodos']){//si son todas las columnas
-        $sql.='titulo, mes, anio, idioma, tipo, idejemplar, codigo_externo, propietario, disponibilidad, estado, condicion ';
-        $tabla.='<th>Titulo</th><th>Fecha</th><th>Idioma</th><th>Tipo</th><th>Cod. Interno</th><th>Cod. Externo</th><th>Propietario</th><th>Disponibilidad</th><th>Estado</th><th>Condicion</th>';
+        $sql.='idejemplar, titulo, mes, anio, idioma, tipo, codigo_externo, propietario, disponibilidad, estado, condicion ';
+        $tabla.='<th>Cod. Interno</th><th>Titulo</th><th>Fecha</th><th>Idioma</th><th>Tipo</th><th>Cod. Externo</th><th>Propietario</th><th>Disponibilidad</th><th>Estado</th><th>Condicion</th>';
     
     }
     else{//si son algunas columnas
-        $i=0;
-        if($array['mcodi']){
-            $sql.=' idejemplar';
-            $tabla.='<th>Cod. Interno</th>';
-            $i=1;
+        
+        $sql.=' idejemplar';
+        $tabla.='<th>Cod. Interno</th>';
+        
+        if($array['mdm']){   
+            $sql.=', titulo, mes, anio, idioma, tipo';
+            $tabla.='<th>Titulo</th><th>Fecha</th><th>Idioma</th><th>Tipo</th>';
         }
-        if($array['mcode']){
-            if ($i==1)
-                $sql.=',';
-            $sql.=' codigo_externo';
+        if($array['mcode']){ 
+            $sql.=', codigo_externo';
             $tabla.='<th>Cod. Externo</th>';
-            $i=1;
+           
         }
-        if($array['mprop']){
-            if ($i==1)
-                $sql.=',';
-            $sql.=' propietario';
+        if($array['mprop']){   
+            $sql.=', propietario';
             $tabla.='<th>Propietario</th>';
-            $i=1;
             
         }
-        if($array['mdis']){
-            if ($i==1)
-                $sql.=',';
-            $sql.=' disponibilidad';
+        if($array['mdis']){   
+            $sql.=', disponibilidad';
             $tabla.='<th>Disponibilidad</th>';
-            $i=1;
+            
         }
-        if($array['mest']){
-            if ($i==1)
-                $sql.=',';
-            $sql.=' estado';
+        if($array['mest']){ 
+            $sql.=', estado';
             $tabla.='<th>Estado</th>';
-            $i=1;
+           
         }
         if($array['mcon']){
-            if ($i==1)
-                $sql.=',';
-            $sql.=' condicion';
+            $sql.=', condicion';
             $tabla.='<th>Condicion</th>';
         }
         
@@ -215,15 +206,20 @@ $sql.=reportes2($array['cantidad'],$from); //agrego las columnas y la agrupacion
             $datos['estado']='Prestado';
         
         if($array['mtodos']){ //si son todos
-            $tabla.='<td>'.$datos['titulo'].'</td><td>'.$datos['mes'].'/'.$datos['anio'].'</td>
+            $tabla.='<td>'.$datos['idejemplar'].'</td>
+                     <td style="width:150px;">'.$datos['titulo'].'</td><td>'.$datos['mes'].'/'.$datos['anio'].'</td>
                      <td>'.$datos['idioma'].'</td><td>'.$datos['tipo'].'</td>';
-            $tabla.='<td>'.$datos['idejemplar'].'</td><td>'.$datos['codigo_externo'].'</td>
+            $tabla.='<td>'.$datos['codigo_externo'].'</td>
                      <td>'.$datos['propietario'].'</td><td>'.$datos['disponibilidad'].'</td>
-                     <td>'.$datos['estado'].'</td><td>'.$datos['condicion'].'</td>';
+                     <td>'.$datos['estado'].'</td><td style="width:100px;">'.$datos['condicion'].'</td>';
         }
         else{ //si faltan campos
-            if($array['mcodi'])
-                $tabla.='<td>'.$datos['idejemplar'].'</td>';
+            $tabla.='<td>'.$datos['idejemplar'].'</td>';
+            if($array['mdm'])
+                $tabla.='<td style="width:150px;">'.$datos['titulo'].'</td><td>'.$datos['mes'].'/'.$datos['anio'].'</td>
+                <td>'.$datos['idioma'].'</td><td>'.$datos['tipo'].'</td>';
+            
+                
             if($array['mcode'])
                 $tabla.='<td>'.$datos['codigo_externo'].'</td>';
             if($array['mprop'])
@@ -233,7 +229,7 @@ $sql.=reportes2($array['cantidad'],$from); //agrego las columnas y la agrupacion
             if($array['mest'])
                 $tabla.='<td>'.$datos['estado'].'</td>';
             if($array['mcon'])
-                $tabla.='<td>'.$datos['condicion'].'</td>';
+                $tabla.='<td style="width:100px;">'.$datos['condicion'].'</td>';
         }
         
         

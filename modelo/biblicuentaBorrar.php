@@ -10,12 +10,7 @@ $user=$_POST['id'];
 
 require_once('../accesos/biblifiltrar.php');
 
-/*
-$sql="select nombreuser from cuenta where nombreuser ='".$user."'";
 
-if(pg_num_rows(select($sql))=='1'){
-    $_SESSION['conf3']= true;
-    */
 //armo el select
 $sql = "delete from cuenta where idcuenta='".$user."'";
 //ejecuto funcion
@@ -29,11 +24,5 @@ $sql = "delete from cuenta where idcuenta='".$user."'";
 	
 	//redirigo
 	header('location:../vista/bibliCuenta.php');	
-/*
-}
-else{
-    //Guargo error
-	$_SESSION['conf3']= false ;
-	header('location:../vista/biblicuenta.php');
-}*/
+
 ?>

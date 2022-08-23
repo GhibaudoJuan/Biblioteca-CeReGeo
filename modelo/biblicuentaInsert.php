@@ -41,7 +41,16 @@ values((select case when max(idcuenta)>0 then max (idcuenta)+1 else 1 end from c
     //guardo el resultado
     	$_SESSION['res']=$res;
     	if($res){
-    	    $_SESSION['error']='Exito';
+    	    $subject='Usuario de Biblioteca del CeReGeo';
+    	       $message="Tu nombre de usuario es: ".$user.". Tu contraseña es: ".$contra.". La puedes cambiar en Tu Perfil.";
+    	       $headers="";
+    	    $mail=mail($email, $subject, $message, $headers);
+    	    if($mail){
+    	        $_SESSION['error']='Exito, email enviado';
+    	    }
+    	        else{
+    	        $_SESSION['error']='Usuario creado, pero email no enviado.';
+    	       }
     	}
     	//redirigo
     	header('location:../vista/bibliCuenta.php');	 

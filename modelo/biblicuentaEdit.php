@@ -50,6 +50,7 @@ if(($nueva!="")&&($conf!="")){
     	$contra= password_hash($nueva, PASSWORD_BCRYPT, $opciones);
     	$sql2.=" contrasenia ='".$contra."'";
     	$vacio=1;
+    	$band=1;
 }
 }
 
@@ -65,6 +66,16 @@ $sql2.=" where idcuenta = '". $_POST['cid']."';";
     //guardo el resultado
     	$_SESSION['res']=$res;
     	if($res){
+    	    if($band==1){
+    	        $subject='Nueva contraseña Biblioteca del CeReGeo';
+    	        $message="Tu nueva contraseña es: ".$contra.".";
+    	        $headers="";
+    	        $mail=mail($email, $subject, $message, $headers);
+    	        if($mail){
+    	            $_SESSION['error']='Exito';
+    	        }
+    	        $_SESSION['error']='Perfil cambiado pero email no enviado';
+    	    }
     	    $_SESSION['error']='Exito';
     	}
     	    	

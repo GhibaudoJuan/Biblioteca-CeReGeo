@@ -290,7 +290,8 @@ function mostrardivicion(){
 //funcion seleccionar de reportes
 function mostrarSelect(){
 	if ($('#mtodos').is(':checked')){
-		$('#mcodi').attr("disabled","disabled")
+		$('#mdm').attr("disabled","disabled")
+		
 		$('#mcode').attr("disabled","disabled")
 		$('#mprop').attr("disabled","disabled")
 		$('#mdis').attr("disabled","disabled")
@@ -298,7 +299,8 @@ function mostrarSelect(){
 		$('#mcon').attr("disabled","disabled")
 	}
 	else{
-		$('#mcodi').removeAttr("disabled")
+		$('#mdm').removeAttr("disabled")
+		
 		$('#mcode').removeAttr("disabled")
 		$('#mprop').removeAttr("disabled")
 		$('#mdis').removeAttr("disabled")

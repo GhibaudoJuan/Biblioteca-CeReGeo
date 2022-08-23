@@ -73,9 +73,10 @@ padding-bottom:1rem;
 <label class="form-check-label" for="mtodos">Todos</label>
 </div>
 <div class="ajuste form-check form-switch">
-<input type="checkbox" class="form-check-input" id="mcodi" name="mcodi" value="True" checked disabled>
-<label class="form-check-label" for="mcodi">Cod. Interno</label>
+<input type="checkbox" class="form-check-input" id="mdm" name="mdm" value="True" checked disabled>
+<label class="form-check-label" for="mdm">Datos del material</label>
 </div>
+
 <div class="ajuste form-check form-switch">
 <input type="checkbox" class="form-check-input" id="mcode" name="mcode" value="True" checked disabled>
 <label class="form-check-label" for="mcode">Cod. Externo</label>
