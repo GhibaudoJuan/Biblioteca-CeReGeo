@@ -21,7 +21,7 @@ while ($mifila = pg_fetch_assoc($resultado))
 {
     
     
-    IF(file_exists('../backup/'.$mifila['nombre'].'.sql')){
+    IF(file_exists('../backup/'.$mifila['nombre'].'.zip')){
     $tabla.="<tr>
              <td>".$mifila['nombre']."</td>
              <td>".$mifila['fecha']."</td>
