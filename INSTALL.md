@@ -19,6 +19,8 @@ instalacion de php:
 
                     sudo apt install php
                     sudo apt install php-pgsql
+                    sudo apt install php-zip
+                    
 
 
                     
