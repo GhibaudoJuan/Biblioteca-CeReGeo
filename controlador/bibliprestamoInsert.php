@@ -25,12 +25,12 @@ $nombre1= autostringn("select nombre from cuenta union select nombre from reserv
 <label class="input-group-text" for="bpid">Devolucion</label>
 <div class="ajuste"><input type='date' id="bpid" name="fecha" class="form-control" required></div>
 </div>
-
+<!-- 
 <div class="input-group m-div">
 <label class="input-group-text" for="reservaprox">Pr&oacutexima reserva:</label>
 <div class="ajuste"><input type='date' class="form-control" id="reservaprox" disabled></div>
 </div>
-
+-->
 </div>
 <div class="modal-footer"><button type="submit" class="indexbutton">Registrar</button></div>
 

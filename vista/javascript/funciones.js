@@ -157,7 +157,7 @@ function borrar(a,b){
 	$('#nombreborrar').attr('value',b);
 }
 function descargar(a){
-	$('#descargar').attr('href','../backup/'+a+'.sql');
+	$('#descargar').attr('href','../backup/'+a+'.zip');
 	
 }
 function valuereserva(a){
