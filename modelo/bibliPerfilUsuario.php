@@ -1,5 +1,5 @@
 <?php
-
+/* edicion del perfil por parte del usuario*/
 if(!isset($_SESSION))session_start();
 //copio _POST a otras variable
 
@@ -38,7 +38,7 @@ if(($actual!="")&&($nueva!="")&&($conf!="")){
     	$opciones = [
     	  'cost' => 12,
     	];
-    	//encripto la contraseña
+    	//encripto la contraseÃ±a
     	
    
     	$res=pg_fetch_assoc(select($sql));
@@ -81,8 +81,8 @@ $sql2.=" where nombreuser = '". $_SESSION['user']."';";
     	if($res){
     	    $_SESSION['user']=$nombreuser;
     	    if($band=1){
-    	    $subject='Nueva contraseña Biblioteca del CeReGeo';
-    	    $message="Tu nueva contraseña es: ".$nueva.".";
+    	    $subject='Nueva contraseÃ±a Biblioteca del CeReGeo';
+    	    $message="Tu nueva contraseÃ±a es: ".$nueva.".";
     	    $headers="";
     	    $mail=mail($email, $subject, $message, $headers);
     	    if($mail){
