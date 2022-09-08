@@ -1,5 +1,6 @@
 <?php 
-
+/* construccion de la tabla de ejemplares
+*/
 
 $tabla="<table id='ejemplar' class='display tabth' style='width:100%'>
 <thead>
