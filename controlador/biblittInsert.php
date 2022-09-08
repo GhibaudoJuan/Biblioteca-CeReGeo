@@ -1,5 +1,7 @@
 <?php 
-
+/*form de la vista nuevo
+ *
+ */
 $ttautor= autostring("tt", "autores");
 $ttdirector= autostring("tt", "directores");
 $ttuni= autostring("tt", "universidad");

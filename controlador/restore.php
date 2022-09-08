@@ -1,3 +1,4 @@
+<?php /*form de la vista backup, continuacion de un modal */?>
 <!doctype html>
 <html>
 <head>

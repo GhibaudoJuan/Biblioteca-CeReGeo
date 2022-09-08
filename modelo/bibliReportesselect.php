@@ -1,5 +1,5 @@
 <?php
-
+/*construccion de la tabla de reportes en la vista de reportes */
 require_once("../accesos/biblifiltrar.php");
 
 

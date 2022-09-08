@@ -1,5 +1,5 @@
 <?php
-
+/*construccion de la tabla de prestamos de la vista de prestamos*/
 
 
 require_once("../accesos/biblifiltrar.php");

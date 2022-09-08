@@ -1,5 +1,7 @@
 <?php 
-
+/*form de la vista material
+ * forms de la busqueda avanzada
+ */
 require_once('../accesos/biblifiltrar.php');
 
 $keyword= autostring("keywords", "descri");

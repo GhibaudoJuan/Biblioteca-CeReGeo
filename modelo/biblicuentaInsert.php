@@ -1,5 +1,5 @@
 <?php
-
+/* insertar una nueva cuenta */
 if(!isset($_SESSION))session_start();
 
 require_once('../accesos/validacion.php');

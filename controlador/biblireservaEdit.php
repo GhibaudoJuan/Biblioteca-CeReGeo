@@ -1,4 +1,7 @@
-
+<?php 
+/*form de la vista reserva
+ * continuacion de un modal
+ */?>
 <!doctype html>
 <html>
 <head>

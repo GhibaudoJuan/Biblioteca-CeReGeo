@@ -1,4 +1,5 @@
 <?php 
+/*funciones para validar el acceso de un usuario*/
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }

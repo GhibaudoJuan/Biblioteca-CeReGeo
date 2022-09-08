@@ -1,4 +1,5 @@
-
+<?php /*form de la vista ejemplar
+continuacion de un modal que pregunta si esta seguro de querer borrar un contenido*/?>
 <!doctype html>
 <html>
 <head>

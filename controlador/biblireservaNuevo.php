@@ -1,5 +1,7 @@
 <?php 
-
+/*form de la vista reserva
+ * continuacion de un modal
+ */
 $nombre= autostringn("select nombre from cuenta union select nombre from reservas union select nombre from prestamos;");
 $material=autostring("material","titulo");
 

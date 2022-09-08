@@ -1,3 +1,4 @@
+//funciones en javasscript
 function conftabla(a,b=4){
 	$(document).ready( function () {
 	var nover;	

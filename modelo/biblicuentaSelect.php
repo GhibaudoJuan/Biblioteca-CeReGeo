@@ -1,5 +1,5 @@
 <?php
-
+/* construccion de la tabla de cuentas */
 
 
 require_once("../accesos/biblifiltrar.php");

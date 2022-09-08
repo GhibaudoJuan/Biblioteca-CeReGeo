@@ -1,5 +1,5 @@
 <?php
-
+/*todas las funciones de php*/ 
 //para limpiar datos
 function filtrar($algo): string{
 $a = filter_var($algo, FILTER_SANITIZE_STRING);
@@ -51,7 +51,7 @@ function select($sql){
     pg_close($dbconn);
     return $res;
 }
-
+//funcion para agregar los dias en letras
 function diasemana($dia){
     switch($dia){
         case 0:
@@ -78,7 +78,7 @@ function diasemana($dia){
     }
     return $dia;
 }
-
+//armado de las tablas 
 function tabladata($sql,$array){
     $tabla="";
     
@@ -265,6 +265,7 @@ function armarJoin($a){
 
 
 //para armar el where de una consulta con un where delante
+//solo usado en la vista de material
 function armarWhere ($array){
     
     $a =0;
@@ -360,7 +361,7 @@ function armartipo2 ($algo){
     return $tabla;
     
 }
-//arma el string que se usa en el autocompletar
+//arma el string que se usa en el autocompletar con una columna de una tabla
 function autostring ($tabla, $columna){
     $a="select distinct ".$columna." from ".$tabla.";";
     
@@ -379,6 +380,7 @@ function autostring ($tabla, $columna){
     $lista.="]";
     return $lista;
 }
+//armar el string que se usa en el autocompletar pero con una consulta
 function autostringn ($tabla){
        
     $res=select($tabla);
@@ -397,7 +399,7 @@ function autostringn ($tabla){
     return $lista;
 }
 
-
+//armado del select de reportes segun la fecha
 function reportes($a, $b){
     $c="";
     
@@ -431,6 +433,7 @@ function reportes($a, $b){
     
     
 }
+//armado del select, columnas y agrupaciones
 function reportes2($a,$b){
     $c="";
     switch ($a){

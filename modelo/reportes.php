@@ -1,5 +1,5 @@
 <?php  
-
+/*construccion del reporte en pdf*/
     require_once('../accesos/conf.php');
     require_once('../vendor/autoload.php');
     

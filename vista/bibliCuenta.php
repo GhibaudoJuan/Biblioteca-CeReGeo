@@ -1,4 +1,7 @@
 <?php
+/*vista cuenta
+ * muestra la informacion sobre las cuentas
+ */
 if(!isset($_SESSION))session_start();
 
 require_once("../accesos/validacion.php");

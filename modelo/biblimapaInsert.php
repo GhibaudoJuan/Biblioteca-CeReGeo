@@ -1,5 +1,5 @@
 <?php
-
+/*insertar un nuevo mapa*/
 if(!isset($_SESSION))session_start();
 //copio _POST a otras variable
 

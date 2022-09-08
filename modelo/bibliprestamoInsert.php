@@ -1,4 +1,5 @@
 <?php
+/*agregar un nuevo prestamo*/
 //inicio secion
 if(!isset($_SESSION))session_start();
 

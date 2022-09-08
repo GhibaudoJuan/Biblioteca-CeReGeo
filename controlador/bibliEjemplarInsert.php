@@ -1,5 +1,6 @@
 <?php 
-
+/*form de la vista ejemplar
+ * continuacion de un modal*/
 require_once('../accesos/biblifiltrar.php');
 $ejempid= autostring("ejemplares", "idejemplar");
 $ejempprop= autostring("ejemplares", "propietario");

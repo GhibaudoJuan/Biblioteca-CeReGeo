@@ -1,4 +1,5 @@
 <?php
+/*borrar un reporte del servidor*/
 //inicio secion
 if(!isset($_SESSION))session_start();
 

@@ -1,5 +1,7 @@
 <?php 
-
+/*form de la vista material
+ * busqueda por titulo
+ */
 require_once('../accesos/biblifiltrar.php');
 
 $titulos= autostring("material", "titulo");

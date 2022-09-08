@@ -1,3 +1,7 @@
+<?php 
+/* form de la vista perfilusuario
+*
+*/?>
 <!doctype html>
 <html>
 <head>

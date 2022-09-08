@@ -1,5 +1,7 @@
 <?php 
-
+/*form de la vista cuenta
+ * continuacion de un modal para editar los datos de una cuenta
+ */
 require_once('../accesos/biblifiltrar.php');
 
 

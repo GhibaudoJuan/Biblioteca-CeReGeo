@@ -1,4 +1,5 @@
 <?php
+/*eliminacion de una reserva*/
 //inicio secion
 if(!isset($_SESSION))session_start();
 

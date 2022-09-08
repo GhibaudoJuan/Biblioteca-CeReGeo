@@ -1,5 +1,7 @@
 <?php 
-
+/*form de la vista nuevo
+ *
+ */
 $mapaloc= autostring("mapas", "localidad");
 $mapaprov= autostring("mapas", "provincia");
 $mapapais= autostring("mapas", "pais");

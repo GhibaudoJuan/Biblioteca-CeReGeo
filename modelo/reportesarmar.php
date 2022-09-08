@@ -1,5 +1,5 @@
 <?php 
-
+/*armado del reporte*/
 require_once("../accesos/biblifiltrar.php");
 
 $array=$_POST;

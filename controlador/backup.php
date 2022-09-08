@@ -1,3 +1,7 @@
+<?php 
+/*form de la vista backup 
+ * 
+ */?>
 <!doctype html>
 <html>
 <head>

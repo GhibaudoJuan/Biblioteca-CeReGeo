@@ -1,4 +1,7 @@
 <?php 
+/*form de la vista ejemplar
+ * continuacion de un modal
+ */
 $ejemplar1=autostring("ejemplares", "idejemplar");
 ?>
 <!doctype html>

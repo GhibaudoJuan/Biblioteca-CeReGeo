@@ -1,4 +1,5 @@
 <?php
+/*eliminacion de un final*/
 //inicio secion
 if(!isset($_SESSION))session_start();
 

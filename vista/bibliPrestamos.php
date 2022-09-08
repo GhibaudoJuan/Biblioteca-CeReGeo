@@ -1,4 +1,7 @@
 <?php
+/*vista prestamos
+ * muestra la informacion sobre los prestamos realizados en la biblioteca
+ */
 if(!isset($_SESSION))session_start();
 require_once("../accesos/validacion.php");
 

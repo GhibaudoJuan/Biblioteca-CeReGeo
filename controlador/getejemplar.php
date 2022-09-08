@@ -1,3 +1,4 @@
+<?php /*input repetidos usados en algunos form de la vista ejemplar*/?>
 <!doctype html>
 <html>
 <head>

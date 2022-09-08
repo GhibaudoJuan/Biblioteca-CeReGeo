@@ -1,4 +1,7 @@
 <?php 
+/*vista backup
+ * muestra la informacion sobre los backup
+ */
 if(!isset($_SESSION))session_start();
 
 require_once("../accesos/validacion.php");

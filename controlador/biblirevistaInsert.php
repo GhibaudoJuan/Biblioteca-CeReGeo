@@ -1,5 +1,7 @@
 <?php 
-
+/*form de la vista nuevo
+ *
+ */
 $revedit= autostring("revistas", "reveditorial");
 $revcol= autostring("revistas", "coleccion");
 $ridioma=autostring("material","idioma");

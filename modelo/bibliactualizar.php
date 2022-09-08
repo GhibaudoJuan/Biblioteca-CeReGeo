@@ -1,4 +1,5 @@
 <?php 
+/* actualizacion de la infrmacion del contenido*/
 if(!isset($_SESSION))session_start();
 //copio _POST a otras variable
 require_once('../accesos/biblifiltrar.php');

@@ -1,4 +1,7 @@
-
+<?php 
+/*form de la vista prestamos
+ * continuacion de un modal para editar un prestamo
+ */?>
 <!doctype html>
 <html>
 <head>

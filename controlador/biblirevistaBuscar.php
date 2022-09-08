@@ -1,4 +1,7 @@
-
+<?php /*form de la vista material
+ * parte de la busqueda avanzada
+ */
+?>
 <!doctype html>
 <html>
 <head>

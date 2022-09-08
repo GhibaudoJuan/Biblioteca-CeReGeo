@@ -1,5 +1,7 @@
 <?php
-
+/* construccion de la tabla de backup 
+ * 
+ * */
 require_once("../accesos/biblifiltrar.php");
 
 

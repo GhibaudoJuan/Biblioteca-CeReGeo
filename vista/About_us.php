@@ -1,4 +1,7 @@
 <?php
+/*vista about us
+ *muestra datos sobre el proyecto 
+ */
 if(!isset($_SESSION))session_start();
 
 ?>

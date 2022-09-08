@@ -1,4 +1,7 @@
 <?php
+/*vista reportes
+ * muestra la informacion sobre los reportes
+ */
 if(!isset($_SESSION))session_start();
 require_once("../accesos/validacion.php");
 validaracceso(1);

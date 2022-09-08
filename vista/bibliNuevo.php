@@ -1,4 +1,7 @@
 <?php 
+/*vista nuevo
+ * muestra la informacion para agregar un nuevo contenido a la biblioteca
+ */
 if(!isset($_SESSION))session_start();
 require_once("../accesos/biblifiltrar.php");
 require_once("../accesos/validacion.php");

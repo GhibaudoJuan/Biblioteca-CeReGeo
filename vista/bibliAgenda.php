@@ -1,4 +1,5 @@
 <?php
+/*no se usa*/
 if(!isset($_SESSION))session_start();
 require_once("../accesos/validacion.php");
 require_once("../accesos/biblifiltrar.php");

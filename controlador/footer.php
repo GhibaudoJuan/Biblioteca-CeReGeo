@@ -1,3 +1,6 @@
+<?php 
+/*footer*/
+ ?>
 <!doctype html>
 <html>
 <head>

@@ -1,3 +1,8 @@
+<?php 
+/*form de la vista prestamos
+ * continuacion de un modal que pregunta si quiere borrar un prestamo
+ * 
+ */?>
 <!doctype html>
 <html>
 <head>

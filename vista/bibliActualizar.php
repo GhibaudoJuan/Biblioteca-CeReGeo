@@ -1,4 +1,7 @@
 <?php 
+/*vista actualizar contenido
+ * muestra la informacion para actualizar los datos de un contenido
+ */
 if(!isset($_SESSION))session_start();
 require_once("../accesos/biblifiltrar.php");
 require_once("../accesos/validacion.php");

@@ -1,5 +1,5 @@
 <?php
-
+/*construccion del cuadro de portada de la vista en ejemplares*/
 
 
 require_once("../accesos/biblifiltrar.php");

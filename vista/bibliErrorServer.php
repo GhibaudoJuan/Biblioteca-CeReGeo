@@ -1,4 +1,8 @@
-
+<?php 
+/*vista error del servidor
+ * muestra que el servidor dio un error 
+ * no muestra informacion sobre el error
+ */?>
 <!doctype html>
 <html>
 <head>

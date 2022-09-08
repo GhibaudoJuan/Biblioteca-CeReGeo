@@ -1,5 +1,5 @@
 <?php
-
+/* actualizar datos de una cuenta por parte del administrador*/
 if(!isset($_SESSION))session_start();
 //copio _POST a otras variable
 

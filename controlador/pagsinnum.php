@@ -1,3 +1,5 @@
+<?php 
+/*mensaje usado si no hay resultados en la tabla de la vista material*/?>
 <html>
 <head>
 </head>

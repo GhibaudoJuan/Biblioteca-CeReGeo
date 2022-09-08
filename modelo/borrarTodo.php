@@ -1,4 +1,5 @@
 <?php
+/*eliminacion de todo el contenido de una tabla*/
 //inicio secion
 if(!isset($_SESSION))session_start();
 

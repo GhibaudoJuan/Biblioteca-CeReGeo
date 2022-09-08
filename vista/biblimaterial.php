@@ -1,4 +1,7 @@
 <?php 
+/*vista material
+ * muestra la informacion sobre el contenido de la biblioteca
+ */
 if(!isset($_SESSION))session_start();
 
 

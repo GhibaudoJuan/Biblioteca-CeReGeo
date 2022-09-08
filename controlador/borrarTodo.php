@@ -1,3 +1,7 @@
+<?php 
+/*form para preguntas si estas seguro de querer borrar todo el contenido de una tabla
+ * continuacion de un modal
+ */?>
 <!doctype html>
 <html>
 <head>

@@ -1,4 +1,6 @@
 <?php 
+/*vista de inicio de sesion
+ */
 session_start();
 session_regenerate_id(true);
 require_once("../accesos/biblifiltrar.php");

@@ -1,5 +1,7 @@
 <?php 
-
+/*form de la vista cuenta
+ * continuacion de un modal para agregar una cuenta
+ */
 require_once('../accesos/biblifiltrar.php');
 
 

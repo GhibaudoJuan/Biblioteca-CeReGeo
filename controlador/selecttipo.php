@@ -1,3 +1,4 @@
+<?php /*select usado en la busqueda avanzada*/?>
 <!doctype html>
 <html>
 <head>

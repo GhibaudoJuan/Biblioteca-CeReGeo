@@ -1,5 +1,7 @@
 <?php 
-
+/*form de la vista material
+ * parte de la busqueda avanzada
+ */
 require_once('../accesos/biblifiltrar.php');
 
 $mhoja= autostring("mapas", "hoja");

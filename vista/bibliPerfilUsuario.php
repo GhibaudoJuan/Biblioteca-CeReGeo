@@ -1,4 +1,7 @@
 <?php 
+/*vista perfilusuario
+ * muestra la informacion sobre la cuenta a un usuario
+ */
 if(!isset($_SESSION))session_start();
 require_once("../accesos/biblifiltrar.php");
 require_once("../accesos/validacion.php");

@@ -1,5 +1,5 @@
 <?php 
-
+/*ventana usada para mostrar los errores*/
 if(!isset($_SESSION))session_start();
 $error="'";
 $error.=$_SESSION['error'];

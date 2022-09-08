@@ -1,5 +1,5 @@
 <?php
-
+/*construccion de la tabla de reservas de la vista de reservas*/
 
 
 require_once("../accesos/biblifiltrar.php");

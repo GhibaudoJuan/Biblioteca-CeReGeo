@@ -1,4 +1,7 @@
 <?php 
+/*form de la vista ejemplar
+ * contunuacion de un modal para el tratamiento de las palabras claves
+ */
 require_once('../accesos/biblifiltrar.php');
 $palabras= autostring("keywords", "descri");
 

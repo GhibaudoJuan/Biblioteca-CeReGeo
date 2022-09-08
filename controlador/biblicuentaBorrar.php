@@ -1,4 +1,7 @@
-<?php if(!isset($_SESSION))session_start(); ?>
+<?php 
+/*form de la vista cuenta
+ * continuacion de un modal que pregunta si esta seguro de eliminar una cuenta*/
+if(!isset($_SESSION))session_start(); ?>
 
 
 <!doctype html>

@@ -1,4 +1,7 @@
 <?php 
+/*vista ejemplar
+ * muestra la informacion de los ejemplares
+ */
 if(!isset($_SESSION))session_start();
 require_once("../accesos/biblifiltrar.php");
 

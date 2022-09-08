@@ -1,5 +1,7 @@
 <?php 
-
+/*form de la vista nuevo
+ * 
+ */
 require_once('../accesos/biblifiltrar.php');
 
 $libroautores= autostring("libros", "autor");

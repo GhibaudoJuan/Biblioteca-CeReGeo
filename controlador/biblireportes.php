@@ -1,3 +1,7 @@
+<?php 
+/*form de la vista reportes
+ * seleccion de los parametros para la construccion de los reportes
+ */?>
 <!doctype html>
 <html>
 <head>
