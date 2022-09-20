@@ -13,7 +13,6 @@ main{
 }
 footer{
 	position:relativa;
-	background-color:rgb(202, 236, 137);
 	height:10rem;
 }
 body, header, footer, main{
@@ -604,4 +603,11 @@ background-color: #1C43B9;
 	color:black;
 }
 
-
+.ayuda{
+	position:absolute;
+	top:13.2rem;
+	left:1rem;
+	width:2rem;
+	height:2rem;
+	border-radius:50%;
+}

@@ -27,7 +27,7 @@ $_SESSION['sql'] = $sql;
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Backup</title>
+<title>Copia de seguridad</title>
 
 <!-- cargamos los estilos -->
 <?php include("style/biblicss.html"); ?>
@@ -46,7 +46,7 @@ margin:0!important;
 	
 
 
-	<header class="titulo" ><h2>Backup</h2></header>
+	<header class="titulo" ><h2>Copia de seguridad</h2></header>
 	<!-- separado del menu-->
 	<main>
 	<div class="divicion" style="border-bottom: solid 1px black;">
@@ -55,13 +55,13 @@ margin:0!important;
 	</div>
 	</div>
 	
-	<header class="titulo" ><h2>Restore</h2></header>
+	<header class="titulo" ><h2>Restauraci&oacuten</h2></header>
 	<div style="padding:3rem;"></div>
 	<div  class="divicion">
 	<div  style="width:70%;"><?php include("../modelo/backupselect.php"); ?></div>
 	<div class="ajuste r-3 m-1" style="">
 	
-	<button type="button" id="botonrestore" data-bs-toggle="modal" data-bs-target="#miModal" class="indexbutton" onclick="mostrar('restore')" disabled>Restore</button>
+	<button type="button" id="botonrestore" data-bs-toggle="modal" data-bs-target="#miModal" class="indexbutton" onclick="mostrar('restore')" disabled>Restaurar</button>
     <a id="descargar" class='sindec' target='_blank' rel='noopener noreferrer'><button type='button' class='indexbutton'>Descargar</button></a>
              
 	</div>

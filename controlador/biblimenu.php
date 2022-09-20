@@ -39,9 +39,9 @@ if(!isset($_SESSION))session_start();
 	<?php if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']=='0')): ?>
 	<li><a href="../vista/bibliCuenta.php">Cuentas</a></li>
 	<li><a href="../vista/bibliReportes.php">Reportes</a></li>
-	<li><a href="../vista/backup.php">Backup</a></li>
+	<li><a href="../vista/backup.php">Respaldos</a></li>
 	<?php endif; ?>
-	<li><a href="../vista/about_us.php">About us</a></li>
+	<li><a href="../vista/about_us.php">Acerca de</a></li>
 </ul>
 
 <div class="abso menu1 menu-top">

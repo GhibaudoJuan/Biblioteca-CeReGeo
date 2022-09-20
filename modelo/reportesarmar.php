@@ -87,14 +87,14 @@ $sql.=reportes2($array['cantidad'],$from); //agrego las columnas y la agrupacion
                           <th>Nombre</th>
                           <th>Cantidad</th></tr></thead><tbody>";
                 $total='<tr><td>Total</td><td></td><td></td><td>';
-                $descri=$titulo." agrupado segun Todos ";
+                $descri=$titulo." ";
                 break;
             }
             case '2':{ //segun usuario
                 $tabla.="<th>Nombre</th>
                           <th>Cantidad</th></tr></thead><tbody>";
                 $total='<tr><td>Total</td><td>';
-                $descri=$titulo." agrupado segun Personas ";
+                $descri=$titulo." agrupado por personas ";
                 break;
             }
             case '3':{ //segun material
@@ -102,7 +102,7 @@ $sql.=reportes2($array['cantidad'],$from); //agrego las columnas y la agrupacion
                           <th>Tipo</th> 
                           <th>Cantidad</th></tr></thead><tbody>";
                 $total='<tr><td>Total</td><td></td><td>';
-                $descri=$titulo." agrupado segun Titulo ";
+                $descri=$titulo." agrupado por titulos ";
                 break;
             }
         }
@@ -126,12 +126,12 @@ $sql.=reportes2($array['cantidad'],$from); //agrego las columnas y la agrupacion
                     break;
                 }
                 case '2':{ //segun usuario
-                    $tabla.='<td style="width:300px">'.$datos['nombre'].'</td>';
+                    $tabla.='<td style="width:500px">'.$datos['nombre'].'</td>';
                     break;
                 }
                 case '3':{ //segun Titulo
                     
-                    $tabla.='<td style="width:300px">'.$datos['titulo'].'</td>';
+                    $tabla.='<td style="width:500px">'.$datos['titulo'].'</td>';
                     $tabla.='<td style="width:70px">'.$datos['tipo'].'</td>';
                     break;
                 }
@@ -273,7 +273,7 @@ $tabla.=" </tbody></table>";
 <!doctype html>
 <html>
 <head>
-
+<meta charset="utf-8">
 <style type="text/css">
 
 table{

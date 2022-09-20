@@ -48,12 +48,25 @@ while($valor=pg_fetch_assoc($palabrasclave)){
 <div class="modal-footer"><button type="submit" class="indexbutton">Agregar</button></div>
 
 
+<button type="button" class="btn-secondary ayuda" id="ayuda">?</button>
 
-
+<div id="dayuda" style="margin:0px 1rem 0px 1rem;text-align:justify;text-justify: inter-word;display:none;">
+<p>-Si "Cambiar" tiene el valor "---" se agregara el valor de "Por" como nueva palabra clave.</p>
+<p>-Si "Cambiar" tiene el valor de una palabra clave &eacutesta se remplazara por el valor de "Por".</p>
+<p>-Si "Cambiar" tiene el valor de una palabra clave y "Por" esta vacia, se eliminara la palabra clave de "Cambiar".</p>
+</div>
 </form>
 
 <script>
 autocomplete(document.getElementById("wordnew"), <?php echo $palabras;?>);
+
+$('#ayuda').click(function(){
+if($('#dayuda').is(':visible'))
+	$('#dayuda').hide()
+else
+	$('#dayuda').show()
+	
+});
 </script>
 </body>
 

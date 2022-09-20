@@ -30,7 +30,7 @@ if(!isset($_SESSION))session_start();
 
 
 
-	<header class="titulo"><h2>About us</h2></header>
+	<header class="titulo"><h2>Acerca de</h2></header>
 	<main style="text-align:center">
 	<span>Proyecto de fin de carrera de Analista de Sistemas - UADER para la material Taller de Integracion.</span><br><br>
 	<span>Programador Principal:</span><br>

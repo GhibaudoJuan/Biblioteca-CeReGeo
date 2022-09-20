@@ -8,15 +8,9 @@
 <body>
 
 
-<div class="">
+<div>
 
-	<p> aca va el footer </p>
 	
-
-
-
-
-
 </div>
 
 
