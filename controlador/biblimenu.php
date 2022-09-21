@@ -31,7 +31,7 @@ if(!isset($_SESSION))session_start();
 	<?php if(isset($_SESSION['tipouser'])): ?>
 	<li><a href="../vista/bibliReserva.php">Reservas</a></li>
 	<!--<li><a href="../vista/bibliAgenda.php">Agenda</a></li>-->
-	<li><a href="../vista/bibliPrestamos.php">Prestamos</a></li>
+	<li><a href="../vista/bibliPrestamos.php">Pr&eacutestamos</a></li>
 	<?php endif; ?>
 	<?php if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']<='1')): ?>
 	<!-- <li><a href="../vista/bibliNuevo.php">Nuevo</a></li>-->
