@@ -30,7 +30,7 @@ $midioma=autostring("material","idioma");
 
 
 <div class="input-group m-div">
-<label class="input-group-text w-label" for="mtitulo">Titulo*</label>
+<label class="input-group-text w-label" for="mtitulo">T&iacutetulo*</label>
 <div ><input  type='text' id="mtitulo" name="titulo" class="form-control w-input ml-n"  maxlength="300"  placeholder="" required></div>
 
 <label class="input-group-text w-label" for="mportada">Portada</label>
@@ -82,7 +82,7 @@ $midioma=autostring("material","idioma");
 <label class="input-group-text w-label" for="mapaescala">Escala</label>
 <div class="autocomplete" ><input type='text' id="mapaescala" name="escala" class="form-control w-input ml-n" placeholder="1:1000" maxlength="50"  ></div>
 
-<label class="input-group-text w-label" for="mdesc">Descripcion</label>
+<label class="input-group-text w-label" for="mdesc">Descripci&oacuten</label>
 <div><input type='text' id="mdesc" name="descripcion" class="form-control w-input" maxlength="300"  placeholder=""></div>
 </div>
 

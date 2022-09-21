@@ -41,7 +41,7 @@ $retorno = 'prestamo';
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Prestamos</title>
+<title>Pr&eacutestamos</title>
 
 <!-- cargamos los estilos -->
 <?php include("style/biblicss.html"); ?>
@@ -74,7 +74,7 @@ $retorno = 'prestamo';
 <button type="button" class="indexbutton" data-bs-toggle="modal" data-bs-target="#miModal" onclick="mostrar('borrartodo')">Borrar Todo</button>
 	<?php endif;?>
 	<!-- Devolucion -->	
-<button type="button" id="botonprestamo" data-bs-toggle="modal" data-bs-target="#miModal" disabled class="indexbutton" onclick="mostrar('prestamo')">Devolucion</button>
+<button type="button" id="botonprestamo" data-bs-toggle="modal" data-bs-target="#miModal" disabled class="indexbutton" onclick="mostrar('prestamo')">Devoluci&oacuten</button>
 	
 	</div>
 	<?php endif;?>
@@ -157,7 +157,7 @@ $retorno = 'prestamo';
   <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" >Devolucion</h5>
+            <h5 class="modal-title" >Devoluci&oacuten</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="ocultar()"></button>
           </div>
           

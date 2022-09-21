@@ -21,7 +21,7 @@ $ridioma=autostring("material","idioma");
 
 
 <div class="input-group m-div">
-<label class="input-group-text w-label" for="rtitulo">Titulo*</label>
+<label class="input-group-text w-label" for="rtitulo">T&iacutetulo*</label>
 <div><input  type='text' id="rtitulo" name="titulo" class="form-control w-input ml-n"  maxlength="300" placeholder="" required></div>
 
 <label class="input-group-text w-label" for="rportada">Portada</label>
@@ -75,7 +75,7 @@ $ridioma=autostring("material","idioma");
 <label class="input-group-text w-label" for="rejemplar">Ejemplar</label>
 <div><input type='number' id="rejemplar" name="ejemplar" class="form-control w-input ml-n"  maxlength="50" min="0" max="99999999" placeholder=""></div>
 
-<label class="input-group-text w-label" for="rdesc">Descripcion</label>
+<label class="input-group-text w-label" for="rdesc">Descripci&oacuten</label>
 <div><input type='text' id="rdesc" name="descripcion" class="form-control w-input" maxlength="300" placeholder=""></div>
 </div>
 

@@ -26,12 +26,12 @@ $resultado = select($sql);
 $tabla="<table id='prestamos' class='display tabth' style='width:100%'>
 <thead>
 <tr>
-<th>Prestamo</th>
+<th>Pr&eacutestamo</th>
 <th>Nombre</th>
-<th>Titulo</th>
+<th>T&iacutetulo</th>
 <th>Cod. Ejemplar</th>
 <th>Retiro</th>
-<th>Devolucion</th>
+<th>Devoluci&oacuten</th>
 <th>Devuelto</th>
 <th>Estado</th>
 </thead><tbody>";

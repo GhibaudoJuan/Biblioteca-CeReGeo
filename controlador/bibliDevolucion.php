@@ -25,7 +25,7 @@ continuacion de un modal
 </div>
 
 </div>
-<div class="modal-footer"><button type="submit" class="indexbutton">Devolucion</button></div>
+<div class="modal-footer"><button type="submit" class="indexbutton">Devoluci&oacuten</button></div>
 
 
 </form>

@@ -27,7 +27,7 @@ $tidioma=autostring("material","idioma");
 
 
 <div class="input-group m-div">
-<label class="input-group-text w-label" for="ttitulo">Titulo*</label>
+<label class="input-group-text w-label" for="ttitulo">T&iacutetulo*</label>
 <div><input  type='text' id="ttitulo" name="titulo" class="form-control w-input ml-n"  maxlength="300"  placeholder="" required></div>
 
 <label class="input-group-text w-label" for="tportada">Portada</label>
@@ -78,7 +78,7 @@ $tidioma=autostring("material","idioma");
 <label class="input-group-text w-label" for="tipott">Tipo</label>
 <div class="autocomplete"><input id="tipott" type='text' name="tipott" class="form-control w-input ml-n"   maxlength="300"  placeholder=""></div>
 
-<label class="input-group-text w-label" for="tdesc">Descripcion</label>
+<label class="input-group-text w-label" for="tdesc">Descripci&oacuten</label>
 <div><input type='text' id="tdesc" name="descripcion"  class="form-control w-input" maxlength="300" placeholder=""></div>
 </div>
 

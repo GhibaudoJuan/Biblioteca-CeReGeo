@@ -20,7 +20,7 @@ $libroidioma=autostring("material","idioma");
 
 
 <div class="input-group m-div">
-<label class="input-group-text w-label" for="ltitulo">Titulo*</label>
+<label class="input-group-text w-label" for="ltitulo">T&iacutetulo*</label>
 <div><input  type='text' id="ltitulo" name="titulo" class="form-control w-input ml-n"  maxlength="300" placeholder="" required></div>
 
 <label class="input-group-text w-label" for="lportada">Portada</label>
@@ -76,7 +76,7 @@ $libroidioma=autostring("material","idioma");
 
 
 
-<label class="input-group-text w-label" for="ldesc">Descripcion</label>
+<label class="input-group-text w-label" for="ldesc">Descripci&oacuten</label>
 <div><input type='text' id="ldesc" name="descripcion" class="form-control w-input" maxlength="300" placeholder=""></div>
 </div>
 

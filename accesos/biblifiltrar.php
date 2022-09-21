@@ -167,7 +167,7 @@ function armarPortada($mifila,$tipo,$keyword){
         $galeria.='<div class="flex"><div class="ajuste"><span><b>Fecha:</b> '.$mifila['mes'].'/'.$mifila['anio'].'</span></div><div class="ajuste"><b>Idioma:</b> '.$mifila['idioma'].'</span></div></div>';
          
         //descripcion
-        $galeria.='<div class="ajuste"><span><b>Descripcion:</b> '.$mifila['descripcion'].'</span></div>';
+        $galeria.='<div class="ajuste"><span><b>Descripci&oacuten:</b> '.$mifila['descripcion'].'</span></div>';
         
         //palabras claves
         $galeria.='<div class="rela"><span><b>Palabras claves:</b> </span>';
