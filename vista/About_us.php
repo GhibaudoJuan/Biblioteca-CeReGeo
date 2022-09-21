@@ -36,9 +36,9 @@ if(!isset($_SESSION))session_start();
 	<span>Programador Principal:</span><br>
 	<span> Juan Manuel Ghibaudo</span><br><br>
 	<span>Supervisores: </span><br>
-	<span>Diaz Santiago Ra&uacutel</span><br>
-	 <span>Francisco M. Viva Mayer</span><br>
-	 <span>Sonia Vera</span><br>
+	<span>Lic. Santiago Ra&uacutel Diaz</span><br>
+	 <span>Lic. Francisco M. Viva Mayer</span><br>
+	 <span>Lic. Sonia Vera</span><br>
 	
     </main>
 	<!-- Menu -->
