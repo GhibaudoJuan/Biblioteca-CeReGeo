@@ -52,7 +52,7 @@ while($valor=pg_fetch_assoc($palabrasclave)){
 
 <div id="dayuda" style="margin:0px 1rem 0px 1rem;text-align:justify;text-justify: inter-word;display:none;">
 <p>-Si "Cambiar" tiene el valor "---" se agregara el valor de "Por" como nueva palabra clave.</p>
-<p>-Si "Cambiar" tiene el valor de una palabra clave &eacutesta se remplazara por el valor de "Por".</p>
+<p>-Si "Cambiar" tiene el valor de una palabra clave &eacutesta se reemplazar&aacute por el valor de "Por".</p>
 <p>-Si "Cambiar" tiene el valor de una palabra clave y "Por" esta vacia, se eliminara la palabra clave de "Cambiar".</p>
 </div>
 </form>
