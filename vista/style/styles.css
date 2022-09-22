@@ -430,7 +430,7 @@ background-color: #1C43B9;
 
 }
 .desc {
-	padding: 1rem;
+	padding-left: 1rem;
 	margin-left:200px;
 	position:absolute;
 	width:70%;
