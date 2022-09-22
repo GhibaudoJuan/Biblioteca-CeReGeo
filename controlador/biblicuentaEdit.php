@@ -41,11 +41,11 @@ $nomuser=autostring('cuenta','nombreuser');
 
 <div class="input-group m-div">
 <label class="input-group-text" for="newpass">Contraseña nueva</label>
-<div class="ajuste"><input type='password' name="contranueva" class="form-control" id="enewpass" maxlength="150" onfocusout="contraconfir2('econfpass','enewpass','emostrarerror','eguardar')"></div>
+<div class="ajuste"><input type='password' name="contranueva" class="form-control" id="enewpass" minlength="8" maxlength="150" onfocusout="contraconfir2('econfpass','enewpass','emostrarerror','eguardar')"></div>
 </div>
 <div class="input-group m-div">
 <label class="input-group-text" for="canfpass">Confirmar</label>
-<div class="ajuste"><input type='password' name="conf" class="form-control" id="econfpass" maxlength="150" onfocusout="contraconfir2('econfpass','enewpass','emostrarerror','eguardar')"></div>
+<div class="ajuste"><input type='password' name="conf" class="form-control" id="econfpass" minlength="8" maxlength="150" onfocusout="contraconfir2('econfpass','enewpass','emostrarerror','eguardar')"></div>
 </div>
 <span class="span error" id="emostrarerror"></span>
 <br>
