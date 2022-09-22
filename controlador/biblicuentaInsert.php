@@ -33,11 +33,11 @@ $nombre=autostring('cuenta','nombre');
 
 <div class="input-group m-div">
 <label class="input-group-text" for="newpass">Contraseña</label>
-<div class="ajuste"><input type='password' name="contra" class="form-control" id="newpass" maxlength="150" onfocusout="contraconfir()" placeholder="Contraseña" required></div>
+<div class="ajuste"><input type='password' name="contra" class="form-control" id="newpass" minlength="8" maxlength="150" onfocusout="contraconfir()" placeholder="Contraseña" required></div>
 </div>
 <div class="input-group m-div">
 <label class="input-group-text" for="confpass">Confirmar</label>
-<div class="ajuste"><input type='password' name="confir" class="form-control" id="confpass" maxlength="150" onfocusout ="contraconfir()" placeholder="Confirmar Contraseña" required></div>
+<div class="ajuste"><input type='password' name="confir" class="form-control" id="confpass" minlength="8" maxlength="150" onfocusout ="contraconfir()" placeholder="Confirmar Contraseña" required></div>
 </div>
 
 <div class="input-group m-div">
