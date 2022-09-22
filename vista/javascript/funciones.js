@@ -8,16 +8,16 @@ function conftabla(a,b=4){
 			case 'reservas':				
 				columna=5;
 				if(b>2)
-					nover=[0,1,2];
+					nover=[1,2];
 				if(b==1)
-					nover=[0,2];
+					nover=[2];
 				break;
 			case 'prestamos':
 				columna=7;
 				if(b>2)
-					nover=[0,1];
+					nover=[1];
 				if(b==1)
-					nover=[0];
+					nover=[];
 				break;
 			case 'ejemplar':
 				columna=0;
