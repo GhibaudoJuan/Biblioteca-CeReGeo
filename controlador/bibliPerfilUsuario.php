@@ -33,15 +33,15 @@ echo $a['email'];?>"></div>
 
 <div class="input-group m-div">
 <label class="input-group-text" for="contact">Contraseña actual</label>
-<div class="ajuste"><input type='password' id="contact" name="contraactual" class="form-control" maxlength="150"></div>
+<div class="ajuste"><input type='password' id="contact" name="contraactual" class="form-control" minlength="8" maxlength="150"></div>
 </div>
 <div class="input-group m-div">
 <label class="input-group-text" for="newpass">Contraseña nueva</label>
-<div class="ajuste"><input type='password' name="contranueva" class="form-control" id="newpass" maxlength="150" onfocusout="contraconfir()"></div>
+<div class="ajuste"><input type='password' name="contranueva" class="form-control" id="newpass" minlength="8" maxlength="150" onfocusout="contraconfir()"></div>
 </div>
 <div class="input-group m-div">
 <label class="input-group-text" for="canfpass">Confirmar</label>
-<div class="ajuste"><input type='password' name="conf" class="form-control" id="confpass" maxlength="150" onfocusout="contraconfir()"></div>
+<div class="ajuste"><input type='password' name="conf" class="form-control" id="confpass" minlength="8" maxlength="150" onfocusout="contraconfir()"></div>
 </div>
 <span class="span error" id="mostrarerror"></span>
 <br>
