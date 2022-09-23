@@ -13,7 +13,7 @@ continuacion de un modal que pregunta si esta seguro de querer borrar un ejempla
 <div class="modal-body">
 <input type='hidden' id="bejempplar" name ='idejemplar' >
 
-<label for="bejempplar" style="font-size: 25px;">&#191Esta seguro de que quiere eliminarlo? </label>
+<label for="bejempplar" style="font-size: 25px;">&#191Est&aacute seguro de que quiere eliminarlo? </label>
 <br><br>
 <?php include("getejemplar.php");?>
 <div class="input-group m-div">
