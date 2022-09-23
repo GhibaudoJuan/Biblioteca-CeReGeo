@@ -11,7 +11,7 @@ continuacion de un modal que pregunta si esta seguro de querer borrar un conteni
 
 <div class="modal-body">
 <?php include("getejemplar.php");?>
-<span style="font-size: 25px;">&#191Esta seguro de que quiere eliminarlo? </span>
+<span style="font-size: 25px;">&#191Est&aacute seguro de que quiere eliminarlo? </span>
 </div>
 <div class="modal-footer">
 <button type="submit" class="indexbutton">Borrar</button>
