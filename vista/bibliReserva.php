@@ -75,7 +75,7 @@ $retorno='reserva';
 	<button type="button" class="indexbutton" data-bs-toggle="modal" data-bs-target="#miModal" onclick="mostrar('borrartodo')">Borrar Todo</button>
     <?php endif;?>
     <!-- Pasar a Prestamo -->	
-	<button type="button" id="botonreserva" data-bs-toggle="modal" data-bs-target="#miModal" disabled class="indexbutton" onclick="mostrar('prestamo')">Prestamo</button>
+	<button type="button" id="botonreserva" data-bs-toggle="modal" data-bs-target="#miModal" disabled class="indexbutton" onclick="mostrar('prestamo')">Pr&eacutestamo</button>
 		 
 	<?php endif;?>
 	 
@@ -129,7 +129,7 @@ $retorno='reserva';
  <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" >Prestamo</h5>
+            <h5 class="modal-title" >Pr&eacutestamo</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="ocultar()"></button>
           </div>
           

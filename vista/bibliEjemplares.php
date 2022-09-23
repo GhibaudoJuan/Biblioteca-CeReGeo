@@ -152,7 +152,7 @@ $_SESSION['atrasejemplar']="../vista/bibliEjemplares.php?cod=".$idej."&tipo=".$t
 				<button type="button" id="botonreservaejemplar" data-bs-toggle="modal" data-bs-target="#miModal" disabled class="indexbutton"  onclick="mostrar('reserva')">Reserva</button>
 				<?php  if($_SESSION['tipouser']<'2'):?>
 				<!-- Prestamo -->
-				<button type="button" id="botonprestamoejemplar" data-bs-toggle="modal" data-bs-target="#miModal" disabled class="indexbutton"  onclick="mostrar('prestamo')">Prestamo</button>
+				<button type="button" id="botonprestamoejemplar" data-bs-toggle="modal" data-bs-target="#miModal" disabled class="indexbutton"  onclick="mostrar('prestamo')">Pr&eacutestamo</button>
      			<?php endif;
      			 endif;?>
      			</div>
@@ -208,7 +208,7 @@ $_SESSION['atrasejemplar']="../vista/bibliEjemplares.php?cod=".$idej."&tipo=".$t
       <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" >Prestamo</h5>
+                <h5 class="modal-title" >Pr&eacutestamo</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="ocultar()"></button>
               </div>
               

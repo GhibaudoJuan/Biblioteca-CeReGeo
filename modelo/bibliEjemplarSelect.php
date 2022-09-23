@@ -11,7 +11,7 @@ $tabla="<table id='ejemplar' class='display tabth' style='width:100%'>
 <th>Propietario</th>
 <th>Estado</th>
 <th>Disponibilidad</th>   	
-<th>Condicion</th>   	
+<th>Condici&oacuten</th>   	
 </tr>
 </thead><tbody>";
 

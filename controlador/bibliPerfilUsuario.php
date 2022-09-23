@@ -1,7 +1,13 @@
 <?php 
 /* form de la vista perfilusuario
 *
-*/?>
+*/
+
+require_once('../accesos/biblifiltrar.php');
+
+$nomuser=autostring('cuenta','nombreuser');
+
+?>
 <!doctype html>
 <html>
 <head>
@@ -16,7 +22,7 @@
 
 <div class="input-group m-div">
 <label class="input-group-text" for="email">Usuario</label>
-<div class="ajuste"><input type='text' id="nombreuser" name="nombreuser" class="form-control" maxlength="150"  required 
+<div class="ajuste"><input type='text' id="nombreuser" name="nombreuser" class="form-control" onfocusout="estaenlalista('nombreuser',<?php echo $nomuser;?>)" maxlength="150"  required 
 value="<?php echo  $_SESSION["user"];?>"></div>
 </div>
 <div class="input-group m-div">

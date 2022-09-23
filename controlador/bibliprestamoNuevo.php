@@ -31,7 +31,7 @@ $ejemplar1=autostring("ejemplares", "idejemplar");
 </div>
 
 <div class="input-group m-div">
-<label class="input-group-text" for="bpid">Devolucion</label>
+<label class="input-group-text" for="bpid">Devoluci&oacuten</label>
 <div class="ajuste"><input type='date' id="bpid" name="fecha" class="form-control" required></div>
 </div>
 
