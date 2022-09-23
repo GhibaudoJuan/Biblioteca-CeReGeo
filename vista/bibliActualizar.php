@@ -75,9 +75,9 @@ margin-right:10rem;
 
 
 
-	<header class="titulo" ><h2>Actualizar</h2></header>
+	<header class="titulo" style="top:7rem!important"><h2>Actualizar</h2></header>
 	<!-- separado del menu-->
-	<main>
+	<main style="top:8rem!important">
 	
 	
 	<div  class ="div-ejem">
@@ -119,7 +119,7 @@ margin-right:10rem;
 
 
         <!-- Boton atras -->
-   		<div  class="abso atras" style="top:6rem!important;">
+   		<div  class="abso atras" >
 			<form action = <?php   echo $form;?> method="post">
 
 			<button type="submit" class="indexbutton">Atras</button>
