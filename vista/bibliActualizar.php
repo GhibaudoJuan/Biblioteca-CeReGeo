@@ -109,6 +109,7 @@ margin-right:10rem;
 	<div class="alignr"><button type="submit"  class="indexbutton">Registrar</button></div>
 	</form>
 	</div>
+	<p style="text-align: center">* Campo Obligatorio</p>
 	</div>
 	
 	
