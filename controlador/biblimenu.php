@@ -38,7 +38,11 @@ if(!isset($_SESSION))session_start();
 	<?php endif; ?>
 	<?php if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']=='0')): ?>
 	<li><a href="../vista/bibliCuenta.php">Cuentas</a></li>
+	<?php endif; ?>
+	<?php if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']<='1')): ?>
 	<li><a href="../vista/bibliReportes.php">Reportes</a></li>
+	<?php endif; ?>
+	<?php if(isset($_SESSION['tipouser'])&&($_SESSION['tipouser']=='0')): ?>
 	<li><a href="../vista/backup.php">Respaldos</a></li>
 	<?php endif; ?>
 	<li><a href="../vista/about_us.php">Acerca de</a></li>
