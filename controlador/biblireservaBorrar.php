@@ -19,7 +19,7 @@
 
 
 
-<span style="font-size: 25px;">&#191Esta seguro de que quiere eliminarlo? </span>
+<span style="font-size: 25px;">&#191Est&aacute seguro de que quiere eliminarlo? </span>
 <br><br>
 <?php if ($_SESSION['tipouser']<'2'):?>
 <div class="input-group m-div">
