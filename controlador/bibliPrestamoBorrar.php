@@ -20,7 +20,7 @@
 
 
 
-<span style="font-size: 25px;">&#191Esta seguro de que quiere eliminarlo? </span>
+<span style="font-size: 25px;">&#191Est&aacute seguro de que quiere eliminarlo? </span>
 <br><br>
 <div class="input-group m-div">
 <label class="input-group-text">Nombre:</label>
