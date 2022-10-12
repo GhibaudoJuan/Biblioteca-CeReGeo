@@ -554,7 +554,7 @@ function mindate(a, b){
 		var month=fecha.getMonth()+1;
 		var year=fecha.getFullYear();
 		var con = year+"-";
-		if(fecha.getMonth()<10)
+		if(month<10)
 			con=con+"0"+month+"-";
 		else
 			con=con+month+"-";
@@ -563,7 +563,7 @@ function mindate(a, b){
 		else
 			con=con+day;
 		document.getElementById(a).min =con;
-		//console.log(con);
+		console.log(con);
 	}
 }
 
