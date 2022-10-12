@@ -50,12 +50,13 @@ entramos a postgres, creamos un usuario y una base de datos.
 fin
                     
  en php.ini
- max_execution_time 36000
-max_input_time 60
-upload_max_filesize 2000M
-post_max_size 2000M
+ 
+                  max_execution_time 36000
+                  max_input_time 60
+                  upload_max_filesize 2000M
+                  post_max_size 2000M
 
-smtp= servidor de correo ejemplo: smtp.gmail.com
-smtp_port=25
+                  smtp= servidor de correo ejemplo: smtp.gmail.com
+                  smtp_port=25
                     
                   
