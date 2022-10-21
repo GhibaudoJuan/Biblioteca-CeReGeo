@@ -46,10 +46,18 @@ entramos a postgres, creamos un usuario y una base de datos.
                     \i /var/www/html/Biblioteca-CeReGeo/postgresql/script.sql
                     \i /var/www/html/Biblioteca-CeReGeo/postgresql/funciones.sql
                     \i /var/www/html/Biblioteca-CeReGeo/postgresql/trigger.sql
-                    
+
+ahora hay que cambiar el archivo de configuración
+en la carpeta accesos en el archivo conectserver.php estan las variables para poder acceder al servidor
+    
+                  $server es la direccion del servidor
+                  $basedatos es el nombre de la base de datos creada en los pasos anteriores
+                  $usuario es el nombre de usuario creado en los pasos anteriores
+                  $contra es la contraseña del usuario creado en los pasos anteriores
 fin
-                    
- en php.ini
+         
+          
+ cambios en php.ini
  
                   max_execution_time 36000
                   max_input_time 60
