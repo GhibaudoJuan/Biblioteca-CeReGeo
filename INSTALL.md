@@ -32,7 +32,7 @@ coloque el repositorio en /var/ww/html, si no tiene acceso cambie los permisos d
 con todo instalado:
 entramos a postgres, creamos un usuario y una base de datos. 
                   
-                    pslq postgres
+                    sudo -u postgres psql
                     create user juan with password 'juan' createdb;
                     create database biblioteca;
                     grant all privileges on database biblioteca to juan;
