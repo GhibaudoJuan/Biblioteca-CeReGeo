@@ -54,6 +54,10 @@ en la carpeta accesos en el archivo conectserver.php estan las variables para po
                   $basedatos es el nombre de la base de datos creada en los pasos anteriores
                   $usuario es el nombre de usuario creado en los pasos anteriores
                   $contra es la contraseña del usuario creado en los pasos anteriores
+                  
+en el archivo conf.php se tiene que cambiar la variable $dir
+
+                  $dir es la dirreccion en que se instala el proyecto
 fin
          
           
