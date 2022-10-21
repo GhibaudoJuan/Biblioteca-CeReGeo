@@ -11,7 +11,7 @@ if(!isset($_SESSION['res'])){
 }
 
 
-header("location:vista/biblimaterial.php?pag=1")
+header("location:vista/biblimaterial.php?pag=1");
 
 ?>
 
