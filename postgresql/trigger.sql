@@ -8,7 +8,7 @@ create trigger trgestadoejemplarprestamo after insert or delete on prestamos
 execute procedure fxestadoejemplarprestamo();
 
 
-create trigger trginsertreserva before insert on prestamos
+create trigger trginsertprestamos before insert on prestamos
 	for each row
 execute procedure fxinsertprestamos();
 
