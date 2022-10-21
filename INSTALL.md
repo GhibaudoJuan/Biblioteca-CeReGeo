@@ -55,9 +55,9 @@ en la carpeta accesos en el archivo conectserver.php estan las variables para po
                   $usuario es el nombre de usuario creado en los pasos anteriores
                   $contra es la contraseña del usuario creado en los pasos anteriores
                   
-en el archivo conf.php se tiene que cambiar la variable $dir
+en el archivo conf.php se tiene que cambiar la variable $dir la cual contiene la dirreción en que se instala el proyecto
 
-                  $dir es la dirreccion en que se instala el proyecto
+                  $dir= "/var/www/html/Biblioteca-CeReGeo";
 fin
          
           
