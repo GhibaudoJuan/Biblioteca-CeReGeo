@@ -58,7 +58,7 @@ if($res){
 }
 //redirigo
 
-$link='location:../vista/bibliEjemplares.php?cod='.$id['case'].'&tipo=Revista';
-header($link);
-
+$link='../vista/bibliEjemplares.php?cod='.$id['case'].'&tipo=Revista';
+//header($link);
+echo '<script>window.location="'.$link.'"</script>';
 ?>

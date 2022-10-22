@@ -2,7 +2,7 @@
 /*todas las funciones de php*/ 
 //para limpiar datos
 function filtrar($algo): string{
-$a = filter_var($algo, FILTER_SANITIZE_STRING);
+$a = filter_var($algo, FILTER_UNSAFE_RAW);
 return $a; 
 }
 //comprobacion de seguridad

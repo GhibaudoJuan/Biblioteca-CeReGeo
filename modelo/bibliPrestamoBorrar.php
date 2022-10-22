@@ -19,6 +19,7 @@ $sql = "delete from prestamos where idpre='" .$array['idpre']."' and nombre ='".
 	    $_SESSION['error']='Exito';
 	}
 	//redirigo
-	header('location:../vista/bibliPrestamos.php');	
+	//header('location:../vista/bibliPrestamos.php');	
+	echo '<script>window.location="../vista/bibliPrestamos.php"</script>';
 
 ?>

@@ -54,14 +54,16 @@ $res = select($sql2);
 	        $_SESSION['error']='Exito';
 	    }
 	    //redirigo
-	    header('location:../vista/biblimaterial.php?pag=1');	
+	    //header('location:../vista/biblimaterial.php?pag=1');	
+	    echo '<script>window.location="../vista/biblimaterial.php?pag=1"</script>';
 }
 else {
     //si no se pude borrar porque hay conflictor de relacion con otras tablas
     $_SESSION['res']=false;
     $_SESSION['error']="No se elimino debido ha que hay Ejemplares asociados.";
-    $g="location:../vista/bibliEjemplares.php?cod=".$array['idmaterial']."&tipo=".$array['tipo'];
-    header($g);
+    $g="../vista/bibliEjemplares.php?cod=".$array['idmaterial']."&tipo=".$array['tipo'];
+    //header($g);
+    echo '<script>window.location="'.$g.'"</script>';
 }
    
 	

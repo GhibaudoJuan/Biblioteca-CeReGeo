@@ -30,7 +30,8 @@ putenv("PGPASSWORD");
 if($cmdresult!=0){
     $_SESSION['res']=1;
     $_SESSION['error']="No se pudo hacer el Back up.";
-    header('location:../vista/backup.php');
+    //header('location:../vista/backup.php');
+    echo '<script>window.location="../vista/backup.php"</script>';
 }
 $a = new ZipArchive;
 $c = '../imagenes/';
@@ -51,7 +52,8 @@ if($b){
 else{
     $_SESSION['res']=1;
     $_SESSION['error']='falló, código:' . $res;
-    header('location:../vista/backup.php');
+    //header('location:../vista/backup.php');
+    echo '<script>window.location="../vista/backup.php"</script>';
 }
 unlink($dir.'/'.$_POST['backup'].'.sql');
 }
@@ -69,7 +71,8 @@ if(isset($_POST['restore'])){
         
         $_SESSION['res']=1;
         $_SESSION['error']='falló, código:' . $zb;
-        header('location:../vista/backup.php');
+        //header('location:../vista/backup.php');
+        echo '<script>window.location="../vista/backup.php"</script>';
     }
     $za->close();
     
@@ -88,7 +91,7 @@ if(isset($_POST['restore'])){
     unlink($dir.'/'.$_POST['restore'].'.sql');
 }
 $_SESSION['res']=0;
-header('location:../vista/backup.php');
-
+//header('location:../vista/backup.php');
+echo '<script>window.location="../vista/backup.php"</script>';
 
 ?>

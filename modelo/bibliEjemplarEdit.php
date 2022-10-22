@@ -65,8 +65,9 @@ $_SESSION['res']=$res;
 if($res){
     $_SESSION['error']='Exito';
 }
-$g="location:../vista/bibliEjemplares.php?cod=".$array['idmaterial']."&tipo=".$array['tipo'];
-header($g);
+$g="../vista/bibliEjemplares.php?cod=".$array['idmaterial']."&tipo=".$array['tipo'];
+//header($g);
+echo '<script>window.location="'.$g.'"</script>';
             
 
 

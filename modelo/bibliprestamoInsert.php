@@ -46,7 +46,7 @@ else{
 	}
 	//redirigo
 	
-        header('location:../vista/bibliPrestamos.php');	
-
+        //header('location:../vista/bibliPrestamos.php');	
+        echo '<script>window.location="../vista/bibliPrestamos.php"</script>';
 
 ?>

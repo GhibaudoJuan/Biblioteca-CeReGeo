@@ -54,6 +54,6 @@ if($res){
 //echo $sql;
 
 //redirigo
-header('location:../vista/bibliReserva.php');
-
+//header('location:../vista/bibliReserva.php');
+echo '<script>window.location="../vista/bibliReserva.php"</script>';
 ?>

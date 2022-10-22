@@ -23,7 +23,7 @@ if($array['idpre']!=''){
      $_SESSION['error']='Exito';
  }
 }
-header('location:../vista/bibliPrestamos.php');
-          
+//header('location:../vista/bibliPrestamos.php');
+ echo '<script>window.location="../vista/bibliPrestamos.php"</script>';
 
 ?>

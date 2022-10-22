@@ -80,7 +80,7 @@ $sql2.=" where idcuenta = '". $_POST['cid']."';";
     	}
     	    	
     	//redirigo
-    	header('location:../vista/bibliCuenta.php');	
-
+    	//header('location:../vista/bibliCuenta.php');	
+    	echo '<script>window.location="../vista/bibliCuenta.php"</script>';
 
 ?>

@@ -53,6 +53,6 @@ values((select case when max(idcuenta)>0 then max (idcuenta)+1 else 1 end from c
     	       }
     	}
     	//redirigo
-    	header('location:../vista/bibliCuenta.php');	 
-
+    	//header('location:../vista/bibliCuenta.php');	 
+    	echo '<script>window.location="../vista/bibliCuenta.php"</script>';
 ?>

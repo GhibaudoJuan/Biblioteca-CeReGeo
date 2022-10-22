@@ -97,8 +97,8 @@ if($res){
 }
 
 
-header('location:../vista/bibliEjemplares.php?cod='.$compro['idmat'].'&tipo='.$array['tipo']);
-            
+//header('location:../vista/bibliEjemplares.php?cod='.$compro['idmat'].'&tipo='.$array['tipo']);
+echo '<script>window.location="../vista/bibliEjemplares.php?cod='.$compro['idmat'].'&tipo='.$array['tipo'].'"</script>';
     
 
 

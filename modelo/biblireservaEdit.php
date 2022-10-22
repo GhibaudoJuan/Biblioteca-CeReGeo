@@ -29,8 +29,8 @@ $_SESSION['res']=$res;
 if($res){
     $_SESSION['error']='Exito';
 }
-header('location:../vista/biblireserva.php');
-            
+//header('location:../vista/biblireserva.php');
+echo '<script>window.location="../vista/bibliReserva.php"</script>';
 
 
 

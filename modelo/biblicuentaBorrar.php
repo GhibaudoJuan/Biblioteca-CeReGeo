@@ -24,6 +24,6 @@ $sql = "delete from cuenta where idcuenta='".$user."'";
 	}
 	
 	//redirigo
-	header('location:../vista/bibliCuenta.php');	
-
+	//header('location:../vista/bibliCuenta.php');	
+echo '<script>window.location="../vista/bibliCuenta.php"</script>';
 ?>

@@ -27,6 +27,6 @@ $seg = "delete from libros where idlibro= '".$id."';";
 	if($res){
 	    $_SESSION['error']='Exito';
 	}
-	header('location:../vista/biblimaterial.php?pag=1');	
-
+	//header('location:../vista/biblimaterial.php?pag=1');	
+    echo '<script>window.location="../vista/biblimaterial.php?pag=1"</script>';
 ?>

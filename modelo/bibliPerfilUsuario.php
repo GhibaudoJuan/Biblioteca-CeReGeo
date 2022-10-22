@@ -46,13 +46,15 @@ if(($actual!="")&&($nueva!="")&&($conf!="")){
     	    
     	    $_SESSION['res']='1';
     	    $_SESSION['error']="La contrase&ntildea actual es incorrecta.";
-    	    header('location:../vista/bibliPerfilUsuario.php');	
+    	    //header('location:../vista/bibliPerfilUsuario.php');	
+    	    echo '<script>window.location="../vista/bibliPerfilUsuario.php"</script>';
     	   
     	}
     	if($nueva!=$conf){
     	    $_SESSION['res']=1;
     	    $_SESSION['error']="Las contrase&ntildeas nuevas no coinsiden.";
-    	    header('location:../vista/bibliPerfilUsuario.php');	
+    	    //header('location:../vista/bibliPerfilUsuario.php');	
+    	    echo '<script>window.location="../vista/bibliPerfilUsuario.php"</script>';
     	   
     	}
     	
@@ -95,7 +97,7 @@ $sql2.=" where nombreuser = '". $_SESSION['user']."';";
     	}
     	
     	//redirigo
-    	header('location:../vista/bibliPerfilUsuario.php');	 
-
+    	//header('location:../vista/bibliPerfilUsuario.php');	 
+    	echo '<script>window.location="../vista/bibliPerfilUsuario.php"</script>';
 
 ?>

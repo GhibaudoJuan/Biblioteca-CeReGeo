@@ -34,6 +34,6 @@ $sql = "delete from reservas where nombre = '". $_SESSION['nombre']. "' and idre
 	    $_SESSION['error']='Exito';
 	}
 	//redirigo
-header('location:../vista/bibliReserva.php');	
-
+//header('location:../vista/bibliReserva.php');	
+echo '<script>window.location="../vista/bibliReserva.php"</script>';
 ?>

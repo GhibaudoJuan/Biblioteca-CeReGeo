@@ -20,11 +20,14 @@ if($res){
 
 switch($retorno){
     case 'prestamo':
-        header('location:../vista/bibliPrestamos.php?');	  
+        //header('location:../vista/bibliPrestamos.php');	  
+        echo '<script>window.location="../vista/bibliPrestamos.php"</script>';
     case 'reserva':
-        header('location:../vista/bibliReserva.php');	
+        //header('location:../vista/bibliReserva.php');	
+        echo '<script>window.location="../vista/bibliReserva.php"</script>';
     default:
-        header('location:../vista/biblimaterial.php?pag=1');	
+        //header('location:../vista/biblimaterial.php?pag=1');	
+        echo '<script>window.location="../vista/biblimaterial.php?pag=1"</script>';
 }
 
 

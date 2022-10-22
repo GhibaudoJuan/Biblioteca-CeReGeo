@@ -59,7 +59,7 @@ if($res){
     $_SESSION['error']='Exito';
 }
 //redirigo
-$link='location:../vista/bibliEjemplares.php?cod='.$id['case'].'&tipo=Final';
-header($link);
-
+$link='../vista/bibliEjemplares.php?cod='.$id['case'].'&tipo=Final';
+//header($link);
+echo '<script>window.location="'.$link.'"</script>';
 ?>

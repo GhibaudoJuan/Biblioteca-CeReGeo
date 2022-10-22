@@ -59,8 +59,9 @@ $con=filtrar($con);
     	}
    	
     	
-    	    $g="location:../vista/bibliEjemplares.php?cod=".$_POST['idmaterial']."&tipo=".$_POST['tipo'];
-    	     header($g);
+    	    $g="../vista/bibliEjemplares.php?cod=".$_POST['idmaterial']."&tipo=".$_POST['tipo'];
+    	    //header($g);
+    	    echo '<script>window.location="'.$g.'"</script>';
     	
 	 
 

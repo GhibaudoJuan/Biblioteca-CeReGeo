@@ -6,6 +6,6 @@ if(!isset($_SESSION))session_start();
 
 unlink($_POST['dir']);
 
-	header('location:../vista/bibliReportes.php');	
-
+	//header('location:../vista/bibliReportes.php');	
+	echo '<script>window.location="../vista/bibliReportes.php"</script>';
 ?>

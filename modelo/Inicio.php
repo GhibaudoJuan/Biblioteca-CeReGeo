@@ -18,7 +18,8 @@ if(vtoken($cod)){
 
     if((!is_string($user))&&(!is_string($pass))){
         $_SESSION['val']=false;
-       header('location:../vista/iniciosesion.php');
+        //header('location:../vista/iniciosesion.php');
+        echo '<script>window.location="../vista/iniciosesion.php"</script>';
       
     }
 
@@ -40,23 +41,27 @@ if(vtoken($cod)){
 						$_SESSION['user']=$user;
 						$_SESSION['nombre']=$hash['nombre'];
 						$_SESSION['tipouser']=$hash['tipo'];
-						header('location:../vista/biblimaterial.php?pag=1');
+						//header('location:../vista/biblimaterial.php?pag=1');
+						echo '<script>window.location="../vista/biblimaterial.php?pag=1"</script>';
 					}
 					else{
 					$_SESSION['val']=false;
-					header('location:../vista/iniciosesion.php');		
+					//header('location:../vista/iniciosesion.php');	
+					echo '<script>window.location="../vista/iniciosesion.php"</script>';
 				
 					}
 				}
 				else{
 					$_SESSION['val']=false;
-					header('location:../iniciosesion.php');
+					//header('location:../vista/iniciosesion.php');
+					echo '<script>window.location="../vista/iniciosesion.php"</script>';
 				
 				}
 			}
 		}
 		else{
-			header('location:../vista/iniciosesion.php');
+		    //header('location:../vista/iniciosesion.php');
+		    echo '<script>window.location="../vista/iniciosesion.php"</script>';
 		   
 		}
 	

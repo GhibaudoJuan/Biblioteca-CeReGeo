@@ -41,8 +41,8 @@
         $html2pdf->output($nombrepdf.'.pdf','D');
         
     }
-    header('location:../vista/bibliReportes.php');	
-
+    //header('location:../vista/bibliReportes.php');	
+echo '<script>window.location="../vista/bibliReportes.php"</script>';
     
 
 
