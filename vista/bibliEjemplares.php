@@ -65,9 +65,8 @@ $sql3="select descri from keywords where mat_id='".$idej."' order by word_id asc
 $keyword=select($sql3);
 
 //fecha proxima reserva
-/*
 $sql4= "select min(fecha) as proxima         
-        from ejemplares e inner join reservas r on (r.material=e.idmaterial) and (r.ejemplar=e.idejemplar) 
+        from ejemplares e inner join reservas r on (r.material=e.idmaterial) and(r.ejemplar=e.idejemplar) 
         where idmaterial = '".$idej."' and activo='true';";
 
 $proximo=select($sql4);
@@ -78,7 +77,7 @@ while ($datos = pg_fetch_assoc($proximo))
    $array[$datos['ejemplar']]=$datos['proxima'];
     
 }
-*/
+
     
 
 
