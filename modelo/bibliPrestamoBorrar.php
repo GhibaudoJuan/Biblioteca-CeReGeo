@@ -1,5 +1,6 @@
 <?php
 /*eliminacion de un prestamo*/
+ob_start();
 if(!isset($_SESSION))session_start();
 //copio _POST a otras variable
 require_once('../accesos/biblifiltrar.php');
@@ -19,7 +20,7 @@ $sql = "delete from prestamos where idpre='" .$array['idpre']."' and nombre ='".
 	    $_SESSION['error']='Exito';
 	}
 	//redirigo
-	//header('location:../vista/bibliPrestamos.php');	
-	echo '<script>window.location="../vista/bibliPrestamos.php"</script>';
+	header('location:../vista/bibliPrestamos.php');	
+	//echo '<script>window.location="../vista/bibliPrestamos.php"</script>';
 
 ?>

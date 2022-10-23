@@ -1,5 +1,6 @@
 <?php 
 /* actualizacion de la infrmacion del contenido*/
+ob_start();
 if(!isset($_SESSION))session_start();
 //copio _POST a otras variable
 require_once('../accesos/biblifiltrar.php');
@@ -97,8 +98,8 @@ if($res){
 }
 
 
-//header('location:../vista/bibliEjemplares.php?cod='.$compro['idmat'].'&tipo='.$array['tipo']);
-echo '<script>window.location="../vista/bibliEjemplares.php?cod='.$compro['idmat'].'&tipo='.$array['tipo'].'"</script>';
+header('location:../vista/bibliEjemplares.php?cod='.$compro['idmat'].'&tipo='.$array['tipo']);
+//echo '<script>window.location="../vista/bibliEjemplares.php?cod='.$compro['idmat'].'&tipo='.$array['tipo'].'"</script>';
     
 
 

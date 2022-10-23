@@ -1,5 +1,6 @@
 <?php
 /* edicion del perfil por parte del usuario*/
+ob_start();
 if(!isset($_SESSION))session_start();
 //copio _POST a otras variable
 
@@ -46,15 +47,15 @@ if(($actual!="")&&($nueva!="")&&($conf!="")){
     	    
     	    $_SESSION['res']='1';
     	    $_SESSION['error']="La contrase&ntildea actual es incorrecta.";
-    	    //header('location:../vista/bibliPerfilUsuario.php');	
-    	    echo '<script>window.location="../vista/bibliPerfilUsuario.php"</script>';
+    	    header('location:../vista/bibliPerfilUsuario.php');	
+    	    //echo '<script>window.location="../vista/bibliPerfilUsuario.php"</script>';
     	   
     	}
     	if($nueva!=$conf){
     	    $_SESSION['res']=1;
     	    $_SESSION['error']="Las contrase&ntildeas nuevas no coinsiden.";
-    	    //header('location:../vista/bibliPerfilUsuario.php');	
-    	    echo '<script>window.location="../vista/bibliPerfilUsuario.php"</script>';
+    	    header('location:../vista/bibliPerfilUsuario.php');	
+    	    //echo '<script>window.location="../vista/bibliPerfilUsuario.php"</script>';
     	   
     	}
     	
@@ -72,7 +73,7 @@ else
 $sql2.=" where nombreuser = '". $_SESSION['user']."';";
     	
     	   
-    	echo $sql2;
+    	
     	
     //inserto
     if($vacio==1)
@@ -97,7 +98,7 @@ $sql2.=" where nombreuser = '". $_SESSION['user']."';";
     	}
     	
     	//redirigo
-    	//header('location:../vista/bibliPerfilUsuario.php');	 
-    	echo '<script>window.location="../vista/bibliPerfilUsuario.php"</script>';
+    	header('location:../vista/bibliPerfilUsuario.php');	 
+    	//echo '<script>window.location="../vista/bibliPerfilUsuario.php"</script>';
 
 ?>

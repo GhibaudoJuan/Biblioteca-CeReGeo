@@ -1,5 +1,6 @@
 <?php
 /* insertar una nueva cuenta */
+ob_start();
 if(!isset($_SESSION))session_start();
 
 require_once('../accesos/validacion.php');
@@ -53,6 +54,6 @@ values((select case when max(idcuenta)>0 then max (idcuenta)+1 else 1 end from c
     	       }
     	}
     	//redirigo
-    	//header('location:../vista/bibliCuenta.php');	 
-    	echo '<script>window.location="../vista/bibliCuenta.php"</script>';
+    	header('location:../vista/bibliCuenta.php');	 
+    	//echo '<script>window.location="../vista/bibliCuenta.php"</script>';
 ?>

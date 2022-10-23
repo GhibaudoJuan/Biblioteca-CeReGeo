@@ -1,5 +1,6 @@
 <?php 
 /*agregar un nuevo contenido*/
+
 if(!isset($_SESSION))session_start();
 
 $titulo=$_POST['titulo'];

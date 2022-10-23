@@ -1,6 +1,7 @@
 <?php
 /* eliminacion de un libro*/
 //inicio secion
+ob_start();
 if(!isset($_SESSION))session_start();
 
 
@@ -27,6 +28,6 @@ $seg = "delete from libros where idlibro= '".$id."';";
 	if($res){
 	    $_SESSION['error']='Exito';
 	}
-	//header('location:../vista/biblimaterial.php?pag=1');	
-    echo '<script>window.location="../vista/biblimaterial.php?pag=1"</script>';
+	header('location:../vista/biblimaterial.php?pag=1');	
+    //echo '<script>window.location="../vista/biblimaterial.php?pag=1"</script>';
 ?>

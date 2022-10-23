@@ -3,6 +3,7 @@
 Delete de un ejemplar.
 El $_POST proviene de "../controlaror/bibliEjemplarBorrar.php"
 */
+ob_start();
 if(!isset($_SESSION))session_start();
 //copio _POST a otras variable
 require_once('../accesos/biblifiltrar.php');
@@ -25,6 +26,6 @@ $sql = "delete from ejemplares where idmaterial='" .$array['idmaterial']."' and 
 	//redirigo
 
 	$g="../vista/bibliEjemplares.php?cod=".$_POST['idmaterial']."&tipo=".$_POST['tipo'];
-	//header($g);
-    echo '<script>window.location="'.$g.'"</script>';
+	header($g);
+    //echo '<script>window.location="'.$g.'"</script>';
 ?>

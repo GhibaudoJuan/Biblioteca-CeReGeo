@@ -3,6 +3,7 @@
 Update de la tabla prestamos.
 El $_POST proviene de "--/controlador/bibliDevolucion.php"
 */
+ob_start();
 if(!isset($_SESSION))session_start();
 //copio _POST a otras variable
 require_once('../accesos/biblifiltrar.php');
@@ -23,7 +24,7 @@ if($array['idpre']!=''){
      $_SESSION['error']='Exito';
  }
 }
-//header('location:../vista/bibliPrestamos.php');
- echo '<script>window.location="../vista/bibliPrestamos.php"</script>';
+header('location:../vista/bibliPrestamos.php');
+ //echo '<script>window.location="../vista/bibliPrestamos.php"</script>';
 
 ?>

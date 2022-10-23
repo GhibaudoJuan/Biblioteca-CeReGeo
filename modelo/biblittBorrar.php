@@ -1,6 +1,7 @@
 <?php
 /*eliminacion de un final*/
 //inicio secion
+ob_start();
 if(!isset($_SESSION))session_start();
 
 
@@ -31,8 +32,8 @@ if($res)
 	    $_SESSION['error']='Exito';
 	}
 	//redirigo
-	//header('location:../vista/biblimaterial.php?pag=1');
-	echo '<script>window.location="../vista/biblimaterial.php?pag=1"</script>';
+	header('location:../vista/biblimaterial.php?pag=1');
+	//echo '<script>window.location="../vista/biblimaterial.php?pag=1"</script>';
 /*
 }
 else{

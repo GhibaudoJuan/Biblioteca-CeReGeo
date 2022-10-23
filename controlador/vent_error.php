@@ -57,7 +57,7 @@ $error.="'";
 </div>
 <script type="text/javascript">
 mostrar_error(<?php echo $error;?>,<?php echo $_SESSION['res'];?>)
-console.log(<?php echo $_SESSION['res'];?>);
+console.log(<?php echo $_SESSION['res'];?>)
 </script>
 <?php $_SESSION['res']=0;
       unset($_SESSION['error']);

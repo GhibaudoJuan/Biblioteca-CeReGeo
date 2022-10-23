@@ -1,5 +1,6 @@
 <?php
 /* actualizar datos de una cuenta por parte del administrador*/
+ob_start();
 if(!isset($_SESSION))session_start();
 //copio _POST a otras variable
 
@@ -80,7 +81,7 @@ $sql2.=" where idcuenta = '". $_POST['cid']."';";
     	}
     	    	
     	//redirigo
-    	//header('location:../vista/bibliCuenta.php');	
-    	echo '<script>window.location="../vista/bibliCuenta.php"</script>';
+    	header('location:../vista/bibliCuenta.php');	
+    	//echo '<script>window.location="../vista/bibliCuenta.php"</script>';
 
 ?>

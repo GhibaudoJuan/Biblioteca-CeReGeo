@@ -1,5 +1,6 @@
 <?php
 /*insertar una nueva revista*/
+ob_start();
 if(!isset($_SESSION))session_start();
 //copio _POST a otras variable
 require_once('../accesos/biblifiltrar.php');
@@ -59,6 +60,6 @@ if($res){
 //redirigo
 
 $link='../vista/bibliEjemplares.php?cod='.$id['case'].'&tipo=Revista';
-//header($link);
-echo '<script>window.location="'.$link.'"</script>';
+header('location:'.$link);
+//echo '<script>window.location="'.$link.'"</script>';
 ?>

@@ -1,6 +1,7 @@
 <?php
 /*agregar un nuevo prestamo*/
 //inicio secion
+ob_start();
 if(!isset($_SESSION))session_start();
 
 
@@ -46,7 +47,7 @@ else{
 	}
 	//redirigo
 	
-        //header('location:../vista/bibliPrestamos.php');	
-        echo '<script>window.location="../vista/bibliPrestamos.php"</script>';
+        header('location:../vista/bibliPrestamos.php');	
+        //echo '<script>window.location="../vista/bibliPrestamos.php"</script>';
 
 ?>

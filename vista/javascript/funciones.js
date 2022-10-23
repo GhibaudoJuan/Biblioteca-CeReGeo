@@ -344,6 +344,7 @@ function mostrar_error(a,b){
 		$('#exito').show()
 		document.getElementById('mensexito').innerHTML=a;
 		}
+		
 	}
 	else{
 		ocultar_exito()
@@ -558,12 +559,12 @@ function mindate(a, b){
 			con=con+"0"+month+"-";
 		else
 			con=con+month+"-";
-		if(fecha.getDate()<10)
+		if(day<10)
 			con=con+"0"+day;
 		else
 			con=con+day;
 		document.getElementById(a).min =con;
-		console.log(con);
+		
 	}
 }
 

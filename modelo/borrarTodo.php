@@ -1,6 +1,7 @@
 <?php
 /*eliminacion de todo el contenido de una tabla*/
 //inicio secion
+ob_start();
 if(!isset($_SESSION))session_start();
 
 require_once('../accesos/biblifiltrar.php');
@@ -20,14 +21,14 @@ if($res){
 
 switch($retorno){
     case 'prestamo':
-        //header('location:../vista/bibliPrestamos.php');	  
-        echo '<script>window.location="../vista/bibliPrestamos.php"</script>';
+        header('location:../vista/bibliPrestamos.php');	  
+        //echo '<script>window.location="../vista/bibliPrestamos.php"</script>';
     case 'reserva':
-        //header('location:../vista/bibliReserva.php');	
-        echo '<script>window.location="../vista/bibliReserva.php"</script>';
+        header('location:../vista/bibliReserva.php');	
+        //echo '<script>window.location="../vista/bibliReserva.php"</script>';
     default:
-        //header('location:../vista/biblimaterial.php?pag=1');	
-        echo '<script>window.location="../vista/biblimaterial.php?pag=1"</script>';
+        header('location:../vista/biblimaterial.php?pag=1');	
+        //echo '<script>window.location="../vista/biblimaterial.php?pag=1"</script>';
 }
 
 

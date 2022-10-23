@@ -1,5 +1,6 @@
 <?php
 /*insertar un nuevo final*/
+ob_start();
 if(!isset($_SESSION))session_start();
 //copio _POST a otras variable
 
@@ -60,6 +61,6 @@ if($res){
 }
 //redirigo
 $link='../vista/bibliEjemplares.php?cod='.$id['case'].'&tipo=Final';
-//header($link);
-echo '<script>window.location="'.$link.'"</script>';
+header('location:'.$link);
+//echo '<script>window.location="'.$link.'"</script>';
 ?>

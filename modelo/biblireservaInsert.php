@@ -1,5 +1,6 @@
 <?php
 /*insertar una nueva reserva*/
+ob_start();
 if(!isset($_SESSION))session_start();
 //copio _POST a otras variable
 
@@ -54,6 +55,6 @@ if($res){
 //echo $sql;
 
 //redirigo
-//header('location:../vista/bibliReserva.php');
-echo '<script>window.location="../vista/bibliReserva.php"</script>';
+header('location:../vista/bibliReserva.php');
+//echo '<script>window.location="../vista/bibliReserva.php"</script>';
 ?>

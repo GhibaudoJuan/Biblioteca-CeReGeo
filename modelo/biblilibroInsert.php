@@ -1,5 +1,6 @@
 <?php
 /* insertar un nuevo libro*/
+ob_start();
 if(!isset($_SESSION))session_start();
 //copio _POST a otras variable
 require_once('../accesos/biblifiltrar.php');
@@ -55,6 +56,6 @@ $isbn=filtrar($isbn);
     	}
     	//redirigo
     	$link='../vista/bibliEjemplares.php?cod='.$id['case'].'&tipo=Libro';
-    	//header($link);
-    	echo '<script>window.location="'.$link.'"</script>';
+    	header('location:'.$link);
+    	//echo '<script>window.location="'.$link.'"</script>';
 ?>

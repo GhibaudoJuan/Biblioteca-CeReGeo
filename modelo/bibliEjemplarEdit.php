@@ -4,6 +4,7 @@ Update de ejemplar
 El $_POST proviene de "../controlador/bibliEjemplarEdit.php"
 Se utilizan los if para armar el set
 */
+ob_start();
 if(!isset($_SESSION))session_start();
 //copio _POST a otras variable
 require_once('../accesos/biblifiltrar.php');
@@ -66,8 +67,8 @@ if($res){
     $_SESSION['error']='Exito';
 }
 $g="../vista/bibliEjemplares.php?cod=".$array['idmaterial']."&tipo=".$array['tipo'];
-//header($g);
-echo '<script>window.location="'.$g.'"</script>';
+header($g);
+//echo '<script>window.location="'.$g.'"</script>';
             
 
 

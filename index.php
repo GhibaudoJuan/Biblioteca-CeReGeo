@@ -1,5 +1,6 @@
 <?php 
 /*inicio*/
+ob_start();
 session_start();
 session_regenerate_id(true);
 require_once("accesos/biblifiltrar.php");
@@ -11,8 +12,8 @@ if(!isset($_SESSION['res'])){
 }
 
 
-//header("location:vista/biblimaterial.php?pag=1");
-echo '<script>window.location="vista/biblimaterial.php?pag=1"</script>';
+header("location:vista/biblimaterial.php?pag=1");
+//echo '<script>window.location="vista/biblimaterial.php?pag=1"</script>';
 ?>
 
 

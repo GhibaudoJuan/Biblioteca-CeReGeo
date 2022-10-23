@@ -1,5 +1,6 @@
 <?php 
 /*modificacion de un prestamo*/
+ob_start();
 if(!isset($_SESSION))session_start();
 //copio _POST a otras variable
 require_once('../accesos/biblifiltrar.php');
@@ -42,8 +43,8 @@ $_SESSION['res']=$res;
 if($res){
     $_SESSION['error']='Exito';
 }
-//header('location:../vista/bibliPrestamos.php');
-echo '<script>window.location="../vista/bibliPrestamos.php"</script>';
+header('location:../vista/bibliPrestamos.php');
+//echo '<script>window.location="../vista/bibliPrestamos.php"</script>';
 
 
 

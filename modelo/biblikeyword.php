@@ -1,5 +1,6 @@
 <?php
 /* tratamiento de las palabras claves del contenido de la vista de Ejemplares*/
+ob_start();
 if(!isset($_SESSION))session_start();
 //copio _POST a otras variable
 require_once('../accesos/biblifiltrar.php');
@@ -35,8 +36,8 @@ switch ($array['keyword']){
         //ejecuto el select
         select($insert);
         //redirigo
-        //header('location:../vista/bibliNuevo.php');
-        echo '<script>window.location="../vista/bibliNuevo.php"</script>';
+        header('location:../vista/bibliNuevo.php');
+        //echo '<script>window.location="../vista/bibliNuevo.php"</script>';
         break;
     case 'update':
         //pregunto si hay que remplazar palabra o es nueva
@@ -62,8 +63,8 @@ switch ($array['keyword']){
             }
         }
         //redirigo
-        //header('location:'.$_SESSION['atrasejemplar']);
-        echo '<script>window.location="'.$_SESSION['atrasejemplar'].'"</script>';
+        header('location:'.$_SESSION['atrasejemplar']);
+        //echo '<script>window.location="'.$_SESSION['atrasejemplar'].'"</script>';
         break;
     case 'delete':
         //esta en el update

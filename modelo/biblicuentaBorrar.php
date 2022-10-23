@@ -1,6 +1,7 @@
 <?php
 /* borrar cuenta*/
 //inicio secion
+ob_start();
 if(!isset($_SESSION))session_start();
 require_once('../accesos/validacion.php');
 validaracceso(0);
@@ -24,6 +25,6 @@ $sql = "delete from cuenta where idcuenta='".$user."'";
 	}
 	
 	//redirigo
-	//header('location:../vista/bibliCuenta.php');	
-echo '<script>window.location="../vista/bibliCuenta.php"</script>';
+	header('location:../vista/bibliCuenta.php');	
+//echo '<script>window.location="../vista/bibliCuenta.php"</script>';
 ?>

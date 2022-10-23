@@ -1,5 +1,7 @@
 <?php
 /*modificacion de una reserva*/
+//armo el select
+ob_start();
 if(!isset($_SESSION))session_start();
 //copio _POST a otras variable
 require_once('../accesos/biblifiltrar.php');
@@ -29,8 +31,8 @@ $_SESSION['res']=$res;
 if($res){
     $_SESSION['error']='Exito';
 }
-//header('location:../vista/biblireserva.php');
-echo '<script>window.location="../vista/bibliReserva.php"</script>';
+header('location:../vista/biblireserva.php');
+//echo '<script>window.location="../vista/bibliReserva.php"</script>';
 
 
 

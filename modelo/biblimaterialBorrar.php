@@ -42,8 +42,7 @@ $sql2="delete from ".$tipo." where ".$id."='".$array['idmaterial']."';";
 //armo el select del material
 $sql = "delete from material where idmat='" .$array['idmaterial']."';";
 //ejecuto funcion
-	echo $sql2;
-	echo $sql;
+	
 $res = select($sql2);
 	if($res)
 	    $res=select($sql);
@@ -54,16 +53,16 @@ $res = select($sql2);
 	        $_SESSION['error']='Exito';
 	    }
 	    //redirigo
-	    //header('location:../vista/biblimaterial.php?pag=1');	
-	    echo '<script>window.location="../vista/biblimaterial.php?pag=1"</script>';
+	    header('location:../vista/biblimaterial.php?pag=1');	
+	    //echo '<script>window.location="../vista/biblimaterial.php?pag=1"</script>';
 }
 else {
     //si no se pude borrar porque hay conflictor de relacion con otras tablas
     $_SESSION['res']=false;
     $_SESSION['error']="No se elimino debido ha que hay Ejemplares asociados.";
     $g="../vista/bibliEjemplares.php?cod=".$array['idmaterial']."&tipo=".$array['tipo'];
-    //header($g);
-    echo '<script>window.location="'.$g.'"</script>';
+    header('location='.$g);
+    //echo '<script>window.location="'.$g.'"</script>';
 }
    
 	
