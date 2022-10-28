@@ -2,7 +2,7 @@
 /*configuracion del servidor*/
 $server="127.0.0.1"; //direccion del server
 $basedatos="biblioteca"; //nombre de la base de datos
-$usuario="juan"; //usuario para backup
-$contra="juan";  //contraseña para backup
+$usuario="juan"; //usuario para la base de datos
+$contra="juan";  //contraseÃ±a para la base de datos
 $conect="host=".$server." dbname=".$basedatos." user=".$usuario." password=".$contra; //coneccion a la base de datos
 ?>
