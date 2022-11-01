@@ -50,7 +50,7 @@ $ejempprop= autostring("ejemplares", "propietario");
 <script>
 autocomplete(document.getElementById("ejemprop"), <?php echo $ejempprop;?>);
 autocomplete(document.getElementById("beice"), <?php echo $ejempid;?>);
-beice
+
 </script>
 </body>
 
