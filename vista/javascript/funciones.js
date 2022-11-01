@@ -318,6 +318,7 @@ function mostrarocultar(a){
 	else
 	document.getElementById(a.id).style.display="block"
 }
+//no se utiliza debido a que se descarto la vista agenda
 function agendamenu(a){
 	if(document.getElementById( a.id  ).style.display=="block"){
 	document.getElementById(a.id).style.display="none";
