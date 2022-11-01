@@ -88,7 +88,7 @@ var table = $('#'+a).DataTable();
 			$('#botoneditar').removeAttr("disabled")
 			$('#botonrestore').removeAttr("disabled")
 			
-			
+			//para reserva y prestamos
 			if((data[5]=="Concretado")||(data[7]=="Concretado")){ 
 				$('#botonborrar').attr("disabled","disabled")
 				$('#botoneditar').attr("disabled","disabled")
@@ -102,6 +102,7 @@ var table = $('#'+a).DataTable();
 				$('#botonreserva').removeAttr("disabled")
 				$('#botonprestamo').removeAttr("disabled")
 			}
+			//para ejemplar
 			if((data[4]!="Obsoleto") && (data[5]=='SI')){
 				$('#botonreservaejemplar').removeAttr("disabled")
 					if(data[4]!='Prestado')
