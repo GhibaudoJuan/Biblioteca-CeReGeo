@@ -5,18 +5,18 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 if(!isset($_SESSION['user'])){
 //header('location:../index.php');
-echo '<script>wondow.location="location:../index.php"</script>';
+echo '<script>window.location="location:../index.php"</script>';
 }
 if((isset($_SESSION['val']))&&($_SESSION['val']==false)){
     //header('location:../index.php');
-    echo '<script>wondow.location="location:../index.php"</script>';
+    echo '<script>window.location="location:../index.php"</script>';
 }
 
 function validaracceso($tipo){
     
     if($_SESSION['tipouser']>$tipo){
         //header('location:../index.php');
-        echo '<script>wondow.location="location:../index.php"</script>';
+        echo '<script>window.location="location:../index.php"</script>';
     }
     
 }

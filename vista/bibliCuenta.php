@@ -44,7 +44,7 @@ $_SESSION['sql'] = $sql;
 <body >
 
 
-	<header class="titulo" ><h2>Cuenta</h2></header>
+	<header class="titulo" ><h2>Cuentas</h2></header>
 	
 	<main class="flex"> 
 	

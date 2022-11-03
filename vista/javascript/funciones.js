@@ -88,7 +88,7 @@ var table = $('#'+a).DataTable();
 			$('#botoneditar').removeAttr("disabled")
 			$('#botonrestore').removeAttr("disabled")
 			
-			
+			//para reserva y prestamos
 			if((data[5]=="Concretado")||(data[7]=="Concretado")){ 
 				$('#botonborrar').attr("disabled","disabled")
 				$('#botoneditar').attr("disabled","disabled")
@@ -102,6 +102,7 @@ var table = $('#'+a).DataTable();
 				$('#botonreserva').removeAttr("disabled")
 				$('#botonprestamo').removeAttr("disabled")
 			}
+			//para ejemplar
 			if((data[4]!="Obsoleto") && (data[5]=='SI')){
 				$('#botonreservaejemplar').removeAttr("disabled")
 					if(data[4]!='Prestado')
@@ -159,35 +160,23 @@ function borrar(a,b){
 }
 function descargar(a){
 	$('#descargar').attr('href','../backup/'+a+'.zip');
-	
 }
 function valuereserva(a){
 		$('#resmaterial').attr('value',a);
-		
 }
 function valueprestamo(b,c){
-		
-		$('#presejemplar').attr('value',b);
-		$('#reservaprox').attr('value',c);
-		
-
-		
+	$('#presejemplar').attr('value',b);
+	$('#reservaprox').attr('value',c);
 }
 function pasarprestamo(a,b){
-
 	$('#pasarprestamonom').attr('value',a);
 	$('#idprestamo').attr('value',b);
-	
-
-
 }
 function devolucion(a,b){
 	$('#bdid').attr('value',a);
 	$('#bdnom').attr('value',b);
 	$('#bdprestamo').attr('value',a);
 	$('#bdnombre').attr('value',b);
-
-	
 }
 function editar(a,b,c,d,e,f,g,h){
 	//cuenta
@@ -215,8 +204,6 @@ function editar(a,b,c,d,e,f,g,h){
 	$('#pdevuelto').attr('value',g);
 	$('#cdevuelto').attr('value',g);
 	
-
-	
 	//actualizar reserva
 
 	$('#resid').attr('value',a);
@@ -224,8 +211,6 @@ function editar(a,b,c,d,e,f,g,h){
 		
 	$('#resdesde').attr('value',e);
 	$('#cresdesde').attr('value',e);
-	
-	
 	
 	//actualizar ejemplar
 	
@@ -236,31 +221,7 @@ function editar(a,b,c,d,e,f,g,h){
 	
 	$('#pprop').attr('value',d);
 	$('#cprop').attr('value',d);
-	/*
-	switch(e){
-			case 'Libre':
-				document.getElementById("pes").value ='l';
-				//$('#l').attr('selected','true');
-				$('#ces').attr('value','l');
-				break;
-			case 'Reservado':
-				document.getElementById("pes").value ='r';
-				//$('#r').attr('selected','true');
-				$('#ces').attr('value','r');
-				break;
-			case 'Prestado':
-				document.getElementById("pes").value ='p';
-				//$('#p').attr('selected','true');
-				$('#ces').attr('value','p');
-				break;
-			case 'Obsoleto':
-				document.getElementById("pes").value ='o';
-				//$('#o').attr('selected','true');
-				$('#ces').attr('value','o');
-				break;
-		}
-	*/
-
+	
 		if(f=="SI"){
 			//$('#pdis1').attr('checked','true');
 			$('#cdis').attr('value','true');
@@ -317,16 +278,7 @@ function mostrarocultar(a){
 	else
 	document.getElementById(a.id).style.display="block"
 }
-function agendamenu(a){
-	if(document.getElementById( a.id  ).style.display=="block"){
-	document.getElementById(a.id).style.display="none";
-	document.getElementById(a.id+'1').innerText='+';
-	}
-	else{
-	document.getElementById(a.id).style.display="block";
-	document.getElementById(a.id+'1').innerText='-';
-	}
-}
+
 function ocultar_error(){
 	$('#error').hide()
 
@@ -355,7 +307,7 @@ function mostrar_error(a,b){
 
 	
 }
-
+//funcion que muestra el formulario de busqueda avanzada
 function buscarAV(){
 	
 	
@@ -385,9 +337,6 @@ function buscarAV(){
 	
 }
 
-
-
-
 //funcion del menu de la pagina nuevo
 function funcionnuevo(a, b){
 	
@@ -412,12 +361,6 @@ function funcionnuevo(a, b){
 	
 	document.getElementById(a.id).style.backgroundColor=" #2957ba";
 	document.getElementById(a.id).style.color=" #fff";
-}
-
-
-function reportes(a,b){
-	mostrar(a)
-	document.getElementById('pdf').src="../reportes/"+b;
 }
 
 function valuekeyword(a,b){
@@ -457,95 +400,6 @@ function ocultar(){
 		document.getElementById("borrar2").style.display ="none";
 }
 
-
-
-
-//funcion vieja, no se usa
-//funcion de autocompletar form , cuando se selecciona una fila en una tabla se ejecuta
-function idtabla(a, b, c, d, e, f, g, h ,i){
-	deseleccion()
-	selection(a)
-	if(document.getElementById("prest"))
-		document.getElementById("prest").value =b;
-	if(document.getElementById("pasarprestamoid"))
-		document.getElementById("pasarprestamoid").value =b; //no se usa más
-	if(document.getElementById("pasarprestamonom"))
-			document.getElementById("pasarprestamonom").value =c;
-   
-	//borrar
-	if (document.getElementById("borrar1"))
-		document.getElementById("borrar1").value =b;
-	if(document.getElementById("nombre1"))
-		document.getElementById("nombre1").value =c;
-	//reserva y prestamo en ejemplares
-	if(document.getElementById("reservar1"))
-		document.getElementById("reservar1").value =b;
-	if(document.getElementById("idprestamo"))
-		document.getElementById("idprestamo").value =d;
-	if(document.getElementById("ejemprestamo"))
-		document.getElementById("ejemprestamo").value =f;
-	if(document.getElementById("insertidpre"))
-		document.getElementById("insertidpre").value =b;
-		
-		
-	//actualizar prestamos
-	if(document.getElementById("pid"))
-		document.getElementById("pid").value =b;
-	if(document.getElementById("pnom"))		
-		document.getElementById("pnom").value =c;
-		
-	if(document.getElementById("pdesde")){
-		document.getElementById("pdesde").value =f;
-		document.getElementById("cdesde").value =f;
-	}
-	if(document.getElementById("phasta")){
-		document.getElementById("phasta").value =g;
-		document.getElementById("chasta").value =g;
-	}
-	if(document.getElementById("pdevuelto")){
-		document.getElementById("pdevuelto").value =h;
-		document.getElementById("cdevuelto").value =h;
-	}
-
-		
-	if((document.getElementById("pce"))&&(document.getElementById("pac"))){
-		if(i=="Activo"){
-			document.getElementById("pac").checked = true;
-			document.getElementById("cact").value = 'True';
-		}
-		if(i=="Cerrado"){
-			document.getElementById("pce").checked = true;
-			document.getElementById("cact").value = 'False';
-		}
-	
-	}
-	
-	
-	//actualizar reserva
-
-
-	if(document.getElementById("resid"))
-		document.getElementById("resid").value =b;
-	if(document.getElementById("resnom"))
-		document.getElementById("resnom").value =c;	
-	if(document.getElementById("resdesde")){
-		document.getElementById("resdesde").value =g;
-		document.getElementById("cresdesde").value =g;
-	}
-	
-	if((document.getElementById("resce"))&&(document.getElementById("resac"))){
-		if(h=="Activo"){
-			document.getElementById("resac").checked = true;
-			document.getElementById("resact").value = 'True';
-		}
-		if(h=="Cerrado"){
-			document.getElementById("resce").checked = true;
-			document.getElementById("resact").value = 'False';
-		}
-	
-	}	
-}
-
 function mindate(a, b){
 	
 	if(document.getElementById(a)){
@@ -573,26 +427,6 @@ function setmindate(a,b){
 		document.getElementById(a).min=b;
 }
 
-
-
-function selection(a){
-	document.getElementById(a).style.backgroundColor="#CCCCCC";
-}
-function deseleccion(){
-	let x =0;
-	let y ;
-		
-	do{
-		y ="id";
-		z=y+x
-		//console.log(z)
-		if(document.getElementById(z))
-		document.getElementById(z).style.backgroundColor="";
-		x++;
-		
-	}
-	while(document.getElementById(z));
-}
 
 //funcion llamada al pulsar el boton actualizar
 function actualizar(a){
@@ -742,7 +576,7 @@ function actualizar(a){
 		}
 	}
 }
-
+//funcion para comprobar que las contrasenias sean iguales
 function contraconfir(){
 	if(document.getElementById("confpass").value!="")
 		if(document.getElementById("newpass").value!=document.getElementById("confpass").value){
