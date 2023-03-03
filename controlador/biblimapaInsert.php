@@ -73,7 +73,7 @@ $midioma=autostring("material","idioma");
 <div class=" autocomplete"><input type='text' id="manio" name="anio" class="form-control w-input ml-n" maxlength="4" onkeydown="isnumero()"> </div>
 
 <label class="input-group-text w-label" for="midioma">Idioma</label>
-<div class="autocomplete"><input type='text' id="midioma" name="idioma" class="form-control w-input" > </div>
+<div class="autocomplete"><input type='text' id="midioma" name="idioma" class="form-control w-input" maxlength="50"> </div>
 </div>
 <div class="input-group m-div">
 <label class="input-group-text w-label" for="mapatipo">Tipo Mapa*</label>
