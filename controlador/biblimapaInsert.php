@@ -37,18 +37,18 @@ $midioma=autostring("material","idioma");
 <div ><input type='file' id="mportada" name="portada" class="form-control w-input ml-n" placeholder=""> </div>
 
 <label class="input-group-text w-label" for="hoja">Hoja</label>
-<div><input type='text' id="hoja" name="hoja" class="form-control w-input"  maxlength="50"  placeholder=""></div>
+<div><input type='text' id="hoja" name="hoja" class="form-control w-input"  maxlength="30"  placeholder=""></div>
 </div>
 
 <div class="input-group m-div">
 <label class="input-group-text w-label" for="mapaloc">Localidad</label>
-<div class="autocomplete" ><input type='text' id="mapaloc" name="localidad" class="form-control w-input ml-n"  maxlength="50" placeholder=""></div>
+<div class="autocomplete" ><input type='text' id="mapaloc" name="localidad" class="form-control w-input ml-n"  maxlength="150" placeholder=""></div>
 
 <label class="input-group-text w-label" for="mapaprov">Provincias</label>
-<div class="autocomplete" ><input type='text' id="mapaprov" name="provincia" class="form-control w-input ml-n"  maxlength="50" placeholder=""></div>
+<div class="autocomplete" ><input type='text' id="mapaprov" name="provincia" class="form-control w-input ml-n"  maxlength="150" placeholder=""></div>
 
 <label class="input-group-text w-label" for="mapapais">Paises</label>
-<div class="autocomplete"><input type='text' id="mapapais" name="pais" class="form-control w-input"  maxlength="50"  placeholder=""></div>
+<div class="autocomplete"><input type='text' id="mapapais" name="pais" class="form-control w-input"  maxlength="150"  placeholder=""></div>
 </div>
 
 <div class="input-group m-div">
@@ -80,7 +80,7 @@ $midioma=autostring("material","idioma");
 <div class="autocomplete"><input type='text' id="mapatipo" name="tipom" class="form-control w-input ml-n"  maxlength="50"  placeholder="" required></div>
 
 <label class="input-group-text w-label" for="mapaescala">Escala</label>
-<div class="autocomplete" ><input type='text' id="mapaescala" name="escala" class="form-control w-input ml-n" placeholder="1:1000" maxlength="50"  ></div>
+<div class="autocomplete" ><input type='text' id="mapaescala" name="escala" class="form-control w-input ml-n" placeholder="1:1000" maxlength="30"  ></div>
 
 <label class="input-group-text w-label" for="mdesc">Descripci&oacuten</label>
 <div><input type='text' id="mdesc" name="descripcion" class="form-control w-input" maxlength="300"  placeholder=""></div>
