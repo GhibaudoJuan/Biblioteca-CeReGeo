@@ -42,7 +42,7 @@ $libroidioma=autostring("material","idioma");
 
 
 <label class="input-group-text w-label" for="isbn">ISBN</label>
-<div><input type='text' id="isbn" name="isbn"  class="form-control w-input"  maxlength="50" placeholder=""></div>
+<div><input type='text' id="isbn" name="isbn"  class="form-control w-input"  maxlength="30" placeholder=""></div>
 </div>
 
 <div class="input-group m-div">
