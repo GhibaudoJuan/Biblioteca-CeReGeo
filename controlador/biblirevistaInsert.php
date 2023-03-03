@@ -29,13 +29,13 @@ $ridioma=autostring("material","idioma");
 
 
 <label class="input-group-text w-label" for="issn">ISSN</label>
-<div><input type='text' id="issn" name="issn" class="form-control w-input"  maxlength="150" placeholder=""></div>
+<div><input type='text' id="issn" name="issn" class="form-control w-input"  maxlength="30" placeholder=""></div>
 </div>
 
 
 <div class="input-group m-div">
 <label class="input-group-text w-label" for="rcoleccion">Coleccion</label>
-<div class="autocomplete"><input type='text' id="revcol" name="coleccion" class="form-control w-input ml-n"  maxlength="30" placeholder=""></div>
+<div class="autocomplete"><input type='text' id="revcol" name="coleccion" class="form-control w-input ml-n"  maxlength="100" placeholder=""></div>
 
 <label class="input-group-text w-label" for="rnum">&#8470</label>
 <div><input type='number' id="rnum" name="num" class="form-control w-input ml-n"  maxlength="30" min="0" max="9999999999" placeholder=""></div>
@@ -66,7 +66,7 @@ $ridioma=autostring("material","idioma");
 <div><input type='text' id="ranio" name="anio" class="form-control w-input ml-n" maxlength="4" onkeydown="isnumero()"> </div>
 
 <label class="input-group-text w-label" for="ridioma">Idioma</label>
-<div class="autocomplete"><input type='text' id="ridioma" name="idioma" class="form-control w-input" > </div>
+<div class="autocomplete"><input type='text' id="ridioma" name="idioma" class="form-control w-input" maxlength="50"> </div>
 </div>
 <div class="input-group m-div">
 <label class="input-group-text w-label" for="rvolumen">Volumen</label>
