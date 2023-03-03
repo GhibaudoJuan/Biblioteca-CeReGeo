@@ -67,7 +67,7 @@ $libroidioma=autostring("material","idioma");
 <div class="autocomplete"><input type='text' id="lanio" name="anio" class="form-control w-input ml-n" maxlength="4" required onkeydown="isnumero()"> </div>
 
 <label class="input-group-text w-label" for="lidioma">Idioma</label>
-<div class="autocomplete"><input type='text' id="lidioma" name="idioma" class="form-control w-input" > </div>
+<div class="autocomplete"><input type='text' id="lidioma" name="idioma" class="form-control w-input" maxlength="50"> </div>
 </div>
 
 <div class="input-group m-div">
