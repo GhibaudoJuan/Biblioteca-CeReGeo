@@ -615,7 +615,16 @@ function estaenlalista(a,b,c="mostrarerror"){
 		document.getElementById(c).innerHTML="";
 	
 }
-
+function isnumero()
+        {
+            if((event.keyCode < 45 || event.keyCode > 57) && 
+			(event.keyCode < 96 || event.keyCode > 105) && 
+			event.keyCode !==190  && event.keyCode !==110 && 
+			event.keyCode !==8 && event.keyCode !==9 ){
+            event.returnValue = false;
+        }
+            
+        }
 function pagant(a,b){
 	if(document.getElementById(a))
 		if(b=='1'){

@@ -63,7 +63,7 @@ $ridioma=autostring("material","idioma");
 </select>
 
 <label class="input-group-text w-label" for="ranio">A&ntildeo</label>
-<div><input type='text' id="ranio" name="anio" class="form-control w-input ml-n" maxlength="4"> </div>
+<div><input type='text' id="ranio" name="anio" class="form-control w-input ml-n" maxlength="4" onkeydown="isnumero()"> </div>
 
 <label class="input-group-text w-label" for="ridioma">Idioma</label>
 <div class="autocomplete"><input type='text' id="ridioma" name="idioma" class="form-control w-input" > </div>
