@@ -61,7 +61,7 @@ else {
     $_SESSION['res']=false;
     $_SESSION['error']="No se elimino debido ha que hay Ejemplares asociados.";
     $g="../vista/bibliEjemplares.php?cod=".$array['idmaterial']."&tipo=".$array['tipo'];
-    header('location='.$g);
+    header('location:'.$g);
     //echo '<script>window.location="'.$g.'"</script>';
 }
    
