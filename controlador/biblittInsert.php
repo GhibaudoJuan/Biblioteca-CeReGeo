@@ -69,14 +69,14 @@ $tidioma=autostring("material","idioma");
 <div><input type='text' id="tanio" name="anio" class="form-control w-input ml-n" maxlength="4" onkeydown="isnumero()"> </div>
 
 <label class="input-group-text w-label" for="tidioma">Idioma</label>
-<div class="autocomplete"><input type='text' id="tidioma" name="idioma" class="form-control w-input" > </div>
+<div class="autocomplete"><input type='text' id="tidioma" name="idioma" class="form-control w-input" maxlength="50"> </div>
 </div>
  <div class="input-group m-div">
 <label class="input-group-text w-label" for="numpag">Nro Paginas</label>
 <div><input type='number' id="numpag" name="numpag" class="form-control w-input ml-n"  maxlength="30" min="0" max="9999999999999999" placeholder=""></div>
 
 <label class="input-group-text w-label" for="tipott">Tipo</label>
-<div class="autocomplete"><input id="tipott" type='text' name="tipott" class="form-control w-input ml-n"   maxlength="300"  placeholder=""></div>
+<div class="autocomplete"><input id="tipott" type='text' name="tipott" class="form-control w-input ml-n"   maxlength="50"  placeholder=""></div>
 
 <label class="input-group-text w-label" for="tdesc">Descripci&oacuten</label>
 <div><input type='text' id="tdesc" name="descripcion"  class="form-control w-input" maxlength="300" placeholder=""></div>
