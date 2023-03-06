@@ -21,18 +21,18 @@ $ejempprop= autostring("ejemplares", "propietario");
 
 <div class="input-group m-div">
 <label class="input-group-text" for="beice">Codigo Ejemplar</label>
-<div class="ajuste autocomplete"><input type='text' id="beice"name="idejemplar"  class="form-control"  maxlength="50" min="0" max="50" placeholder="Codigo Ejemplar" required></div>
+<div class="ajuste autocomplete"><input type='text' id="beice"name="idejemplar"  class="form-control"  maxlength="50"  placeholder="Codigo Ejemplar" required></div>
 </div>
 
 <div class="input-group m-div">
 <label class="input-group-text" for="ce">Cod. Externo</label>
-<div class="ajuste autocomplete"><input type='text' id="ce" name="ce"  class="form-control"  maxlength="50" min="0" max="50" placeholder="Codigo Externo"></div>
+<div class="ajuste autocomplete"><input type='text' id="ce" name="ce"  class="form-control"  maxlength="50"  placeholder="Codigo Externo"></div>
 </div>
 
 
 <div class="input-group m-div">
 <label class="input-group-text" for="ejemprop">Propietario</label>
-<div class="ajuste autocomplete"><input type='text' id="ejemprop" name="propietario"  class="form-control"  maxlength="50" min="0" max="50" placeholder="Propietario"></div>
+<div class="ajuste autocomplete"><input type='text' id="ejemprop" name="propietario"  class="form-control"  maxlength="100"  placeholder="Propietario"></div>
 </div>
 <div class="input-group m-div">
 <label class="input-group-text" for="condicion">Condicion</label>
