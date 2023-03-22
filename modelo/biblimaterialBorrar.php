@@ -59,7 +59,7 @@ $res = select($sql2);
 else {
     //si no se pude borrar porque hay conflictor de relacion con otras tablas
     $_SESSION['res']=false;
-    $_SESSION['error']="No se elimino debido ha que hay Ejemplares asociados.";
+    $_SESSION['error']="Error: No se elimino debido ha que hay Ejemplares asociados.";
     $g="../vista/bibliEjemplares.php?cod=".$array['idmaterial']."&tipo=".$array['tipo'];
     header('location:'.$g);
     //echo '<script>window.location="'.$g.'"</script>';
