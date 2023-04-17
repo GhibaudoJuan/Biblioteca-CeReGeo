@@ -8,12 +8,7 @@ validaracceso(1);
 
 require_once("../accesos/biblifiltrar.php");
 
-    
-    
-    $sql = "select nombre, fecha, descripcion
-            from reportes order by id asc;";
 
-$_SESSION['sql'] = $sql;
 
 ?>
 

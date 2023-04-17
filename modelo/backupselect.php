@@ -3,9 +3,12 @@
  * 
  * */
 require_once("../accesos/biblifiltrar.php");
+require_once("../accesos/validacion.php");
+validaracceso(0);
+$sql = "select nombre, fecha
+            from backup order by id asc;";
 
-
-
+$_SESSION['sql'] = $sql;
 
 
 $resultado = select($sql);

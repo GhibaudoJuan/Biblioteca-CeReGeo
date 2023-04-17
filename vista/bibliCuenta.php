@@ -9,12 +9,6 @@ validaracceso(0);
 require_once("../accesos/biblifiltrar.php");
 
 
-$sql = "select idcuenta, nombreuser, nombre, email, nombrecuenta from cuenta c inner join tipocuenta t on (c.tipo=t.id) ";
-
-
-$_SESSION['sql'] = $sql;
-
-
 ?>
 
 
