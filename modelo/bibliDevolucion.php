@@ -16,7 +16,7 @@ if($array['idpre']!=''){ //compruebo que el prestamo no esta vacio
         $_SESSION['error']='Exito';
     }
 }
-header('location:../vista/bibliPrestamos.php'); //redirigo
+header('location:../vista/bibliPrestamos.php'); //redirijo
 
 
 ?>
