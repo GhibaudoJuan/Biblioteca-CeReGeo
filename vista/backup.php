@@ -80,7 +80,7 @@ margin:0!important;
 	
 	
 	
-<?php #include("../modelo/backup.php"); ?>
+
 	
 	<!-- Menu -->
 	<div class="fondo"><?php include("../controlador/biblimenu.php");?></div> 
