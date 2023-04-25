@@ -27,9 +27,9 @@ padding-bottom:1rem;
 <div class="ajuste" >
 <select id="datos" name="datos" class="form-select" onchange="mostrardivicion()">
   <option value="6">Ejemplares</option>
-  <option value="1">Prestamos realizados</option>
-  <option value="2">Prestamos retrasados</option>
-  <option value="3">Prestamos no devueltos</option>
+  <option value="1">Pr&eacutestamos realizados</option>
+  <option value="2">Pr&eacutestamos retrasados</option>
+  <option value="3">Pr&eacutestamos no devueltos</option>
   <option value="4">Reservas realizadas</option>
   <option value="5">Reservas no retiradas en fecha</option>
   
