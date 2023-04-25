@@ -2,7 +2,7 @@
 /*todas las funciones de php*/ 
 //para limpiar datos
 function filtrar($algo): string{
-return (filter_var($algo, FILTER_SANITIZE_STRING));
+return filter_var($algo, FILTER_SANITIZE_STRING);
 }
 //comprobacion de seguridad
 function vtoken($algo):bool{
