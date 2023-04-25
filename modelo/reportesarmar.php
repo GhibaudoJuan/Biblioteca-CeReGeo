@@ -23,21 +23,21 @@ switch($array['datos']){
     case '1':{ //prestamos realizados
         $from= " from prestamos p inner join ejemplares e on (e.idejemplar=p.ejemplar) inner join material m on (m.idmat=e.idmaterial) ";
         $from.=reportes($array['datos'], $array['tiempo']);//agrego el factor tiempo a sql
-        $titulo="Cantidad de prestamos realizados"; //titulo del reporte
+        $titulo="Cantidad de pr&eacutestamos realizados"; //titulo del reporte
         $nombrepdf="prestamos_realizados_".$fecha; //una parte del nombre del pdf
         break;
     }
     case '2':{ //prestamos retrasados
         $from=" from prestamos p inner join ejemplares e on (e.idejemplar=p.ejemplar) inner join material m on (m.idmat=e.idmaterial) where devuelto > hasta ";
         $from.=reportes($array['datos'], $array['tiempo']);//agrego el factor tiempo a sql
-        $titulo="Cantidad de prestamos retrasados";//titulo del reporte
+        $titulo="Cantidad de pr&eacutestamos retrasados";//titulo del reporte
         $nombrepdf="prestamos_retrasados_".$fecha;//una parte del nombre del pdf
         break;
     }
     case '3':{ //prestamos no devueltos
         $from=" from prestamos p inner join ejemplares e on (e.idejemplar=p.ejemplar)inner join  material m on (m.idmat=e.idmaterial) where devuelto is null ";
         $from.=reportes($array['datos'], $array['tiempo']);//agrego el factor tiempo a sql
-        $titulo="Cantidad de prestamos no devueltos";//titulo del reporte
+        $titulo="Cantidad de pr&eacutestamos no devueltos";//titulo del reporte
         $nombrepdf="prestamos_no_devueltos_".$fecha;//una parte del nombre del pdf
         break;
     }
