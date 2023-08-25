@@ -61,7 +61,7 @@ en el archivo conf.php se tiene que cambiar la variable $dir la cual contiene la
 fin
          
           
- cambios en php.ini
+ cambios en php.ini ((/etc/php/7.4/apache2/php.ini)
  
                   max_execution_time 36000
                   max_input_time 60
